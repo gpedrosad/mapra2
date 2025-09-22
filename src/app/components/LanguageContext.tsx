@@ -71,6 +71,17 @@ const dictionary: Record<Language, Record<string, string>> = {
     medium_oil_on_canvas: "óleo sobre tela",
     medium_oil_on_natural_canvas: "óleo sobre telas naturales",
 
+    // ContactForm
+    cf_title: "Contacto",
+    cf_subtitle:
+      "Completa tu nombre y correo. Te redirigiremos a WhatsApp.",
+    cf_name: "Nombre",
+    cf_email: "Correo",
+    cf_message: "Mensaje (opcional)",
+    cf_submit: "Enviar por WhatsApp",
+    cf_err_name: "Ingresá tu nombre.",
+    cf_err_email: "Ingresá un correo válido.",
+
     // UI
     ui_lang_es: "ES",
     ui_lang_en: "EN",
@@ -130,6 +141,17 @@ const dictionary: Record<Language, Record<string, string>> = {
     // 🔹 Mediums (to translate 'info')
     medium_oil_on_canvas: "oil on canvas",
     medium_oil_on_natural_canvas: "oil on natural canvas",
+
+    // ContactForm
+    cf_title: "Contact",
+    cf_subtitle:
+      "Enter your name and email. We will redirect you to WhatsApp with your data prefilled.",
+    cf_name: "Name",
+    cf_email: "Email",
+    cf_message: "Message (optional)",
+    cf_submit: "Send via WhatsApp",
+    cf_err_name: "Please enter your name.",
+    cf_err_email: "Please enter a valid email.",
 
     // UI
     ui_lang_es: "ES",

@@ -25,10 +25,12 @@ export type ArtistHeroProps = {
   className?: string;
 };
 
+// ✅ Placeholder de avatar (foto de perfil genérica)
 const fallbackAvatar =
-  "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=1200&auto=format&fit=crop";
-const fallbackBanner =
-  "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1200&auto=format&fit=crop";
+  "https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=720&auto=format&fit=crop";
+
+// ✅ Fondo por defecto usando tu imagen local bosque.jpeg
+const fallbackBanner = "/bosque.jpeg";
 
 // KEYS por defecto (no textos) para permitir traducción real
 const TECH_KEYS = ["ah_technique_1", "ah_technique_2", "ah_technique_3"];
@@ -54,8 +56,8 @@ export default function ArtistHero({
   title,
   location,
   bio,
-  avatarUrl = fallbackAvatar,
-  bannerUrl = fallbackBanner,
+  avatarUrl = fallbackAvatar,   // ← usa placeholder si no pasás uno
+  bannerUrl = fallbackBanner,   // ← usa /bosque.jpeg de fondo por defecto
   phone = "+56 9 5618 9912",
   instagramUrl,
   websiteUrl,
@@ -127,7 +129,7 @@ export default function ArtistHero({
           priority
           sizes="100vw"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/20 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/25 to-transparent" />
       </div>
 
       {/* Contenido */}

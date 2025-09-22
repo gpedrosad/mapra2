@@ -4,6 +4,7 @@ import { ArtGallery } from "./components/ArtCard"; // named export
 import type { Artwork } from "./components/ArtCard"; // <- importamos el tipo
 import Footer from "./components/Footer";
 import Prensa from "./components/Prensa";
+import ContactForm from "./components/ContactForm";
 
 export default function Home() {
   // Data ajustada: sin títulos ni precios, con info (medidas + técnica)
@@ -36,6 +37,7 @@ export default function Home() {
         <ArtistHero />
         <ArtGallery items={items} />
         <Prensa />
+        <ContactForm />
       </div>
       <div>
         <Footer email="contacto@marcelapedrosa.com" />

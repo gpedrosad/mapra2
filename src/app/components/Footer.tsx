@@ -50,8 +50,15 @@ export default function Footer({
 }: FooterProps) {
   const { t } = useLanguage();
   const year = new Date().getFullYear();
+
+  // WS del sitio
   const waHref = buildWaLink(phone, whatsappText ?? t("wa_text_default"));
   const phoneLabel = prettyPhone(phone);
+
+  // --- Crédito autor con mini ícono y WhatsApp directo ---
+  const authorName = "Gonzalo Pedrosa";
+  const authorPhone = "+56968257817";
+  const authorWaHref = buildWaLink(authorPhone, "Hola Gonzalo, vi el sitio y quisiera hablar.");
 
   return (
     <footer
@@ -105,6 +112,22 @@ export default function Footer({
             )}
           </nav>
         </div>
+
+        {/* Línea de crédito con mini ícono de WhatsApp */}
+        {authorWaHref && (
+          <div className="mt-6 text-xs text-white/80 flex items-center justify-center gap-1">
+            <span>Creado por</span>
+            <a
+              href={authorWaHref}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1 underline underline-offset-4 decoration-white/50 hover:decoration-white"
+              title={`Contactar a ${authorName} por WhatsApp`}
+            >
+              <span className="font-medium">{authorName}</span>
+            </a>
+          </div>
+        )}
       </div>
     </footer>
   );
