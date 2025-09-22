@@ -1,6 +1,6 @@
 "use client";
 
-// src/components/ArtistHero.tsx
+// src/app/components/ArtistHero.tsx
 import Image from "next/image";
 import { motion } from "framer-motion";
 import WhatsAppButton from "./WhatsAppButton";
@@ -46,6 +46,9 @@ const FALLBACK_THEME: Record<string, string> = {
   ah_theme_3: "Figurativo",
 };
 
+// ✅ Tipado para params de i18n (sin `any`)
+type I18nParams = Record<string, string | number>;
+
 export default function ArtistHero({
   name = "Marcela Pedrosa",
   title,
@@ -63,14 +66,18 @@ export default function ArtistHero({
   const { t } = useLanguage();
 
   // Traducción segura con fallback legible
-  const tr = (key: string, params?: Record<string, any>, fallback?: string) => {
+  const tr = (key: string, params?: I18nParams, fallback?: string) => {
     const res = t?.(key, params);
     if (typeof res === "string" && res && res !== key) return res;
     return fallback ?? key; // si no hay traducción, volvemos al fallback o a la key
   };
 
   // Lista de técnicas/temas: acepta keys o texto literal
-  const translateList = (list: string[] | undefined, map: Record<string, string>, defaultKeys: string[]) => {
+  const translateList = (
+    list: string[] | undefined,
+    map: Record<string, string>,
+    defaultKeys: string[]
+  ) => {
     const src = list && list.length ? list : defaultKeys; // si no pasan nada, usamos keys por defecto
     return src.map((item) => {
       // Si parece key i18n, intentamos traducirla
@@ -87,7 +94,8 @@ export default function ArtistHero({
   };
 
   // Textos principales con fallback legible
-  const i18nTitle = title ?? tr("ah_title", undefined, "Artista visual — Impresionismo figurativo");
+  const i18nTitle =
+    title ?? tr("ah_title", undefined, "Artista visual — Impresionismo figurativo");
   const i18nLocation = location ?? tr("ah_location", undefined, "Concepción, Chile");
   const i18nBio =
     bio ??
@@ -192,7 +200,11 @@ export default function ArtistHero({
               <div className="mt-7 flex flex-wrap items-center justify-center lg:justify-start gap-3">
                 <WhatsAppButton
                   phone={phone}
-                  text={tr("ah_cta_whatsapp_text", { name }, `Hola, me gustaría hablar con ${name}.`)}
+                  text={tr(
+                    "ah_cta_whatsapp_text",
+                    { name },
+                    `Hola, me gustaría hablar con ${name}.`
+                  )}
                   label={tr("ah_cta_whatsapp", undefined, "Escribir por WhatsApp")}
                   size="lg"
                 />
@@ -203,7 +215,11 @@ export default function ArtistHero({
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-2 rounded-xl px-4 py-2 text-sm border border-zinc-300 dark:border-zinc-700 text-zinc-900 dark:text-zinc-100 hover:bg-zinc-50 dark:hover:bg-zinc-800 transition-colors"
-                    aria-label={tr("ah_cta_instagram_aria", { name }, `Abrir Instagram de ${name}`)}
+                    aria-label={tr(
+                      "ah_cta_instagram_aria",
+                      { name },
+                      `Abrir Instagram de ${name}`
+                    )}
                     title={tr("ah_cta_instagram_title", undefined, "Abrir Instagram")}
                   >
                     <FaInstagram className="opacity-90" />
