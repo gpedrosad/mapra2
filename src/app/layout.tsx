@@ -30,7 +30,7 @@ export default function RootLayout({
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         {/* Provider CLIENTE envolviendo todo el contenido */}
         <LanguageProvider>
-          <div className="mx-auto max-w-6xl px-4 sm:px-6 pt-4">
+          {/*<div className="mx-auto max-w-6xl px-4 sm:px-6 pt-4">
             <div className="flex justify-end">
               <LanguageToggle />
             </div>

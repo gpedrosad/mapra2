@@ -6,37 +6,33 @@ import { FaWhatsapp, FaInstagram } from "react-icons/fa";
 import { useLanguage } from "./LanguageContext";
 
 type FooterProps = {
-  /** Marca o nombre a mostrar en el copyright */
   brand?: string;
-  /** Email de contacto (se usará en mailto:) */
   email: string;
-  /** Teléfono para WhatsApp (se normaliza a dígitos) */
   phone?: string;
-  /** URL completa al perfil de Instagram */
   instagramUrl?: string;
-  /** Texto que se prellena en WhatsApp */
   whatsappText?: string;
-  /** Clases extra (opcional) */
   className?: string;
 };
 
+// === Paleta (mismo verde del menú) ===
+const BRAND_GREEN = "#0F3B2E";
+// Si quieres reutilizar en Tailwind, usamos una CSS var:
+type CSSVars = React.CSSProperties & { ["--brand-green"]?: string };
+
 function buildWaLink(phone?: string, text?: string) {
   if (!phone) return undefined;
-  const digits = phone.replace(/[^\d]/g, ""); // wa.me requiere solo dígitos
+  const digits = phone.replace(/[^\d]/g, "");
   if (!digits) return undefined;
   const base = `https://wa.me/${digits}`;
   return text ? `${base}?text=${encodeURIComponent(text)}` : base;
 }
 
-// Formatea bonito para mostrar (ej: +56 9 5618 9912) y deja fallback genérico
 function prettyPhone(phone?: string) {
   if (!phone) return "";
   const d = phone.replace(/[^\d]/g, "");
   if (d.startsWith("56") && d.length === 11) {
-    // +56 9 XXXX XXXX (Chile)
     return `+56 ${d.slice(2, 3)} ${d.slice(3, 7)} ${d.slice(7)}`;
   }
-  // fallback: devuelve lo recibido
   return phone.startsWith("+") ? phone : `+${phone}`;
 }
 
@@ -51,18 +47,27 @@ export default function Footer({
   const { t } = useLanguage();
   const year = new Date().getFullYear();
 
-  // WS del sitio
   const waHref = buildWaLink(phone, whatsappText ?? t("wa_text_default"));
   const phoneLabel = prettyPhone(phone);
 
-  // --- Crédito autor con mini ícono y WhatsApp directo ---
   const authorName = "Gonzalo Pedrosa";
   const authorPhone = "+56968257817";
-  const authorWaHref = buildWaLink(authorPhone, "Hola Gonzalo, vi el sitio y quisiera hablar.");
+  const authorWaHref = buildWaLink(
+    authorPhone,
+    "Hola Gonzalo, vi el sitio y quisiera hablar."
+  );
+
+  // Variable CSS para usar en clases Tailwind con var()
+  const cssVars = { ["--brand-green"]: BRAND_GREEN } as CSSVars;
 
   return (
     <footer
-      className={["border-t border-white/10", "bg-black text-white", className].join(" ")}
+      style={cssVars}
+      className={[
+        "border-t border-white/10",
+        "bg-[var(--brand-green)] text-white", // <-- usa la misma variable verde
+        className,
+      ].join(" ")}
     >
       <div className="mx-auto max-w-6xl px-4 sm:px-6 py-10">
         <div className="flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
