@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import HamburgerMenu from "../components/HamburgerMenu";
+import Footer from "../components/Footer";
 
 export const metadata: Metadata = {
   title: "Política de Privacidad — Marcela Pedrosa",
@@ -9,6 +11,7 @@ export const metadata: Metadata = {
 export default function PrivacidadPage() {
   return (
     <main className="min-h-screen bg-white">
+      <HamburgerMenu />
       <div className="mx-auto max-w-3xl px-4 sm:px-6 py-10">
         {/* Breadcrumb */}
         <nav className="mb-6">
@@ -145,6 +148,7 @@ export default function PrivacidadPage() {
           </p>
         </div>
       </div>
+      <Footer email="contacto@marcelapedrosa.com" />
     </main>
   );
 }

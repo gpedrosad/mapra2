@@ -35,15 +35,9 @@ export default function Home() {
           <ArtGallery items={items} />
         </section>
 
-        {/* Prensa */}
-        <section id="prensa" className="scroll-mt-24">
-          <Prensa />
-        </section>
+     
 
-        {/* Contacto */}
-        <section id="contacto" className="scroll-mt-24">
-          <ContactForm />
-        </section>
+ 
       </div>
 
       <Footer email="contacto@marcelapedrosa.com" />

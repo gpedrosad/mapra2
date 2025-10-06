@@ -6,14 +6,14 @@ import React, { useState, useEffect, useRef } from "react";
 type NavItem = { label: string; href: string; target?: "_self" | "_blank" };
 
 const NAV_ITEMS: NavItem[] = [
-  { label: "Inicio", href: "#top" },
-  { label: "Pinturas", href: "#pinturas" },
+  { label: "Inicio", href: "/" },
+  { label: "Pinturas", href: "/pinturas" },
   { label: "Esculturas", href: "/esculturas" }, // ajusta si usas anchor
-  { label: "Prensa", href: "#prensa" },
+  { label: "Prensa", href: "/prensa" },
   { label: "Tiempos de entrega", href: "/tiempos-de-entrega" },
   { label: "Política de Privacidad", href: "/privacidad" },
   { label: "Política de Devolución", href: "/devoluciones" },
-  { label: "Contacto", href: "#contacto" },
+  { label: "Contacto", href: "/contacto" },
 ];
 
 export default function HamburgerMenu({ className }: { className?: string }) {
