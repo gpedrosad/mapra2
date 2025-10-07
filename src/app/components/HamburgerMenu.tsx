@@ -8,7 +8,7 @@ type NavItem = { label: string; href: string; target?: "_self" | "_blank" };
 const NAV_ITEMS: NavItem[] = [
   { label: "Inicio", href: "/" },
   { label: "Pinturas", href: "/pinturas" },
-  { label: "Esculturas", href: "/esculturas" }, // ajusta si usas anchor
+  { label: "Esculturas", href: "/esculturas" },
   { label: "Prensa", href: "/prensa" },
   { label: "Tiempos de entrega", href: "/tiempos-de-entrega" },
   { label: "Política de Privacidad", href: "/privacidad" },
@@ -19,24 +19,20 @@ const NAV_ITEMS: NavItem[] = [
 export default function HamburgerMenu({ className }: { className?: string }) {
   const [isOpen, setIsOpen] = useState(false);
   const firstLinkRef = useRef<HTMLAnchorElement | null>(null);
-
-  // estado auxiliar (si te sirve más adelante)
   const [isAuthenticated, setIsAuthenticated] = useState(false);
 
   useEffect(() => {
-    // ejemplo similar al tuyo; déjalo o bórralo si no usas auth
     const user = localStorage.getItem("user");
     if (user) setIsAuthenticated(true);
   }, []);
 
   const toggleMenu = () => setIsOpen((v) => !v);
 
-  // Cerrar con ESC + enfocar primer link
+  // Cerrar con ESC + enfocar primer link + bloquear scroll al abrir
   useEffect(() => {
     if (!isOpen) return;
     const onKey = (e: KeyboardEvent) => e.key === "Escape" && setIsOpen(false);
     window.addEventListener("keydown", onKey);
-    // enfoque inicial y bloqueo de scroll
     document.body.style.overflow = "hidden";
     const t = setTimeout(() => firstLinkRef.current?.focus(), 20);
     return () => {
@@ -49,79 +45,28 @@ export default function HamburgerMenu({ className }: { className?: string }) {
   return (
     <header
       className={[
-        "sticky top-0 z-50 flex items-center justify-between p-4",
-        "bg-[#0F3B2E] text-[#F0C06C] shadow-md",
+        "sticky top-0 z-50 bg-[#0F3B2E] text-[#F0C06C] shadow-md",
         className || "",
       ].join(" ")}
     >
-      {/* Marca simple */}
-      <div className="flex items-center">
-        <Link
-          href="/"
-          className="font-semibold tracking-wide hover:text-white transition-colors"
-        >
-          Marcela Pedrosa
-        </Link>
-      </div>
-
-      {/* Botón hamburguesa (mobile) */}
-      <button
-        onClick={toggleMenu}
-        className="sm:hidden focus:outline-none"
-        aria-label={isOpen ? "Cerrar menú" : "Abrir menú"}
-        aria-expanded={isOpen}
-        aria-controls="mobile-menu"
-      >
-        <svg
-          className="w-6 h-6"
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-        >
-          {!isOpen ? (
-            // ícono hamburguesa
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth="2"
-              d="M4 6h16M4 12h16M4 18h16"
-            />
-          ) : (
-            // ícono cerrar
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth="2"
-              d="M6 18L18 6M6 6l12 12"
-            />
-          )}
-        </svg>
-      </button>
-
-      {/* Menú de navegación para pantallas grandes */}
-      <nav className="hidden sm:flex space-x-6">
-        {NAV_ITEMS.map((item) => (
+      <div className="mx-auto w-full max-w-6xl px-4 py-4 flex items-center justify-between">
+        {/* Marca */}
+        <div className="flex items-center">
           <Link
-            key={item.href}
-            href={item.href}
-            className="hover:text-white transition-colors"
+            href="/"
+            className="font-semibold tracking-wide hover:text-white transition-colors"
           >
-            {item.label}
+            Marcela Pedrosa
           </Link>
-        ))}
-      </nav>
+        </div>
 
-      {/* FULLSCREEN: menú desplegable para pantallas pequeñas */}
-      <div
-        id="mobile-menu"
-        className={`fixed inset-0 bg-[#0F3B2E] text-[#F0C06C] flex flex-col items-center justify-center space-y-8 transform ${
-          isOpen ? "translate-x-0" : "translate-x-full"
-        } transition-transform duration-300 ease-in-out sm:hidden z-50`}
-      >
+        {/* Botón hamburguesa: visible hasta LG */}
         <button
           onClick={toggleMenu}
-          className="absolute top-4 right-4 focus:outline-none"
-          aria-label="Cerrar menú"
+          className="lg:hidden focus:outline-none"
+          aria-label={isOpen ? "Cerrar menú" : "Abrir menú"}
+          aria-expanded={isOpen}
+          aria-controls="mobile-menu"
         >
           <svg
             className="w-6 h-6"
@@ -129,13 +74,43 @@ export default function HamburgerMenu({ className }: { className?: string }) {
             stroke="currentColor"
             viewBox="0 0 24 24"
           >
-            {/* X */}
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth="2"
-              d="M6 18L18 6M6 6l12 12"
-            />
+            {!isOpen ? (
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16" />
+            ) : (
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
+            )}
+          </svg>
+        </button>
+
+        {/* Nav horizontal: sólo en LG y superior */}
+        <nav className="hidden lg:flex items-center gap-6 xl:gap-8">
+          {NAV_ITEMS.map((item) => (
+            <Link
+              key={item.href}
+              href={item.href}
+              className="hover:text-white transition-colors whitespace-nowrap"
+            >
+              {item.label}
+            </Link>
+          ))}
+        </nav>
+      </div>
+
+      {/* Overlay móvil/tablet: visible en < LG */}
+      <div
+        id="mobile-menu"
+        className={`fixed inset-0 bg-[#0F3B2E] text-[#F0C06C] flex flex-col items-center justify-center space-y-8 transform ${
+          isOpen ? "translate-x-0" : "translate-x-full"
+        } transition-transform duration-300 ease-in-out lg:hidden z-50`}
+        aria-hidden={!isOpen}
+      >
+        <button
+          onClick={toggleMenu}
+          className="absolute top-4 right-4 focus:outline-none"
+          aria-label="Cerrar menú"
+        >
+          <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
           </svg>
         </button>
 
