@@ -43,7 +43,7 @@ export default function TiemposEntregaPage() {
         </div>
 
         {/* Nota importante */}
-        <div className="mt-8 p-4 bg-gray-50 rounded-lg border-l-4 border-[#C68C2C]">
+        <div className="mt-8 p-4 bg-gray-50 rounded-lg border-l-4 border-[#960018]">
           <p className="text-sm text-gray-700 leading-relaxed">
             <strong>Nota:</strong> Los plazos pueden variar por disponibilidad de enmarcado, distancia y operador logístico. Te notificaremos cualquier cambio.
           </p>
@@ -53,7 +53,7 @@ export default function TiemposEntregaPage() {
         <div className="mt-10">
           <Link
             href="/"
-            className="inline-flex items-center rounded-xl bg-[#0F3B2E] px-4 py-2 text-sm font-medium text-[#F0C06C] shadow-sm hover:opacity-95 transition-opacity"
+            className="inline-flex items-center rounded-xl bg-[#960018] px-4 py-2 text-sm font-medium text-white shadow-sm hover:opacity-95 transition-opacity"
           >
             Volver al inicio
           </Link>

@@ -1,11 +1,9 @@
 // app/page.tsx  (Next.js App Router)
 import ArtistHero from "./components/ArtistHero";
-import { ArtGallery } from "./components/ArtCard"; // named export
 import type { Artwork } from "./components/ArtCard";
 import Footer from "./components/Footer";
-import Prensa from "./components/Prensa";
-import ContactForm from "./components/ContactForm";
 import HamburgerMenu from "./components/HamburgerMenu";
+import MonthlyArtOfferCard from "./components/MonthlyArtOfferCard";
 
 export default function Home() {
   // Data ajustada: sin títulos ni precios, con info (medidas + técnica)
@@ -29,11 +27,13 @@ export default function Home() {
         <section id="oferta" className="scroll-mt-24">
           <ArtistHero />
         </section>
-
+        
+      
         {/* Galería de Pinturas */}
-        <section id="pinturas" className="scroll-mt-24">
+        {/* <section id="pinturas" className="scroll-mt-24">
           <ArtGallery items={items} />
-        </section>
+        </section> */}
+        <MonthlyArtOfferCard/>
 
      
 
