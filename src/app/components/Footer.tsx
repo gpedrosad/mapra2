@@ -15,7 +15,7 @@ type FooterProps = {
 };
 
 // === Paleta (mismo verde del menú) ===
-const BRAND_GREEN = "#0F3B2E";
+const BRAND_GREEN = "#960018";
 // Si quieres reutilizar en Tailwind, usamos una CSS var:
 type CSSVars = React.CSSProperties & { ["--brand-green"]?: string };
 

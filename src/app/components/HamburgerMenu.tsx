@@ -19,12 +19,7 @@ const NAV_ITEMS: NavItem[] = [
 export default function HamburgerMenu({ className }: { className?: string }) {
   const [isOpen, setIsOpen] = useState(false);
   const firstLinkRef = useRef<HTMLAnchorElement | null>(null);
-  const [isAuthenticated, setIsAuthenticated] = useState(false);
 
-  useEffect(() => {
-    const user = localStorage.getItem("user");
-    if (user) setIsAuthenticated(true);
-  }, []);
 
   const toggleMenu = () => setIsOpen((v) => !v);
 
@@ -45,7 +40,7 @@ export default function HamburgerMenu({ className }: { className?: string }) {
   return (
     <header
       className={[
-        "sticky top-0 z-50 bg-[#0F3B2E] text-[#F0C06C] shadow-md",
+        "sticky top-0 z-50 bg-[#960018] text-white shadow-md",
         className || "",
       ].join(" ")}
     >
@@ -99,7 +94,7 @@ export default function HamburgerMenu({ className }: { className?: string }) {
       {/* Overlay móvil/tablet: visible en < LG */}
       <div
         id="mobile-menu"
-        className={`fixed inset-0 bg-[#0F3B2E] text-[#F0C06C] flex flex-col items-center justify-center space-y-8 transform ${
+        className={`fixed inset-0 bg-[#960018] text-white flex flex-col items-center justify-center space-y-8 transform ${
           isOpen ? "translate-x-0" : "translate-x-full"
         } transition-transform duration-300 ease-in-out lg:hidden z-50`}
         aria-hidden={!isOpen}
