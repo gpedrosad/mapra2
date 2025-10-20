@@ -53,15 +53,19 @@ export default function MonthlyArtOfferCardSimple() {
       style={{ ["--brand-color" as any]: BRAND_COLOR }}
       className="overflow-hidden bg-white dark:bg-zinc-900 border border-zinc-200/80 dark:border-zinc-800 shadow-sm inline-block w-full"
     >
-      {/* Imagen + badge */}
-      <div className="relative">
-        <img
-          src={IMG_URL}
-          alt={`Obra de arte ${TITLE}`}
-          className="block w-full h-auto"
-          loading="eager"
-          decoding="async"
-        />
+      {/* Imagen + badge (altura controlada por breakpoint) */}
+      <div className="relative bg-white dark:bg-zinc-900">
+        <div className="w-full h- sm:h-56 md:h-64 lg:h-72 xl:h-80 2xl:h-[28rem] flex items-center justify-center">
+          <img
+            src={IMG_URL}
+            alt={`Obra de arte ${TITLE}`}
+            className="max-h-full w-auto object-contain"
+            loading="eager"
+            decoding="async"
+            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 70vw, 600px"
+          />
+        </div>
+
         <div className="absolute left-3 top-3">
           <span className="inline-flex items-center gap-2 px-3 py-1 text-xs font-semibold tracking-wide uppercase text-white bg-[var(--brand-color)]">
             Oferta del mes
@@ -118,7 +122,9 @@ export default function MonthlyArtOfferCardSimple() {
           </a>
         </div>
 
-      
+        <p className="mt-3 text-xs text-zinc-500 dark:text-zinc-400">
+          Precio sujeto a disponibilidad. Imágenes referenciales.
+        </p>
       </div>
     </motion.article>
   );

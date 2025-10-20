@@ -81,7 +81,7 @@ export default function DevolucionesPage() {
             Opción directa para escribirnos:{" "}
             <a 
               href="mailto:contacto@marcelapedrosa.com" 
-              className="text-[#0F3B2E] hover:underline font-medium"
+              className="text-[#960018] hover:underline font-medium"
             >
               contacto@marcelapedrosa.com
             </a>
@@ -108,7 +108,7 @@ export default function DevolucionesPage() {
         <div className="mt-10">
           <Link
             href="/"
-            className="inline-flex items-center rounded-xl bg-[#0F3B2E] px-4 py-2 text-sm font-medium text-[#F0C06C] shadow-sm hover:opacity-95 transition-opacity"
+            className="inline-flex items-center rounded-xl bg-[#960018] px-4 py-2 text-sm font-medium text-white shadow-sm hover:opacity-95 transition-opacity"
           >
             Volver al inicio
           </Link>
