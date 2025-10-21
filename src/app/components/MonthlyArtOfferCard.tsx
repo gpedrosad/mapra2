@@ -13,7 +13,7 @@ const INFO = "90×120 óleo sobre tela";
 
 const CURRENCY = "CLP";
 const PRICE_LIST = 1_200_000;
-const PRICE_SALE = 920_000; // deja undefined si no hay oferta
+const PRICE_SALE: number | undefined = 920_000; // poné undefined si no hay oferta
 
 const WHATSAPP_PHONE = "+56956189912";
 const WHATSAPP_MESSAGE = `Hola, me interesa la obra ${TITLE}. ¿Está disponible?`;
@@ -35,27 +35,31 @@ function formatPrice(value: number, currency = "CLP") {
   }).format(value);
 }
 
+/** ─── Tipado para custom property ────────────────────────────────────── */
+type BrandStyle = React.CSSProperties & { ["--brand-color"]: string };
+
 /** ─── Componente simple ──────────────────────────────────────────────── */
 export default function MonthlyArtOfferCardSimple() {
-  const hasSale =
-    typeof PRICE_SALE === "number" && (PRICE_SALE as number) < PRICE_LIST;
-  const pct = hasSale
-    ? Math.round((1 - (PRICE_SALE as number) / PRICE_LIST) * 100)
+  const hasSale = typeof PRICE_SALE === "number" && PRICE_SALE < PRICE_LIST;
+  const pct = hasSale && PRICE_SALE
+    ? Math.round((1 - PRICE_SALE / PRICE_LIST) * 100)
     : 0;
 
   const waHref = buildWaLink(WHATSAPP_PHONE, WHATSAPP_MESSAGE);
+
+  const cardStyle: BrandStyle = { ["--brand-color"]: BRAND_COLOR };
 
   return (
     <motion.article
       initial={{ opacity: 0, y: 10 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.35 }}
-      style={{ ["--brand-color" as any]: BRAND_COLOR }}
+      style={cardStyle}
       className="overflow-hidden bg-white dark:bg-zinc-900 border border-zinc-200/80 dark:border-zinc-800 shadow-sm inline-block w-full"
     >
-      {/* Imagen + badge (altura controlada por breakpoint) */}
+      {/* Imagen + badge */}
       <div className="relative bg-white dark:bg-zinc-900">
-        <div className="w-full h- sm:h-56 md:h-64 lg:h-72 xl:h-80 2xl:h-[28rem] flex items-center justify-center">
+        <div className="w-full sm:h-56 md:h-64 lg:h-72 xl:h-80 2xl:h-[28rem] flex items-center justify-center">
           <img
             src={IMG_URL}
             alt={`Obra de arte ${TITLE}`}
@@ -89,10 +93,10 @@ export default function MonthlyArtOfferCardSimple() {
         </p>
 
         <div className="mt-4 flex flex-wrap items-end gap-x-3 gap-y-1">
-          {hasSale ? (
+          {hasSale && PRICE_SALE !== undefined ? (
             <>
               <span className="text-2xl font-bold text-zinc-900 dark:text-zinc-100">
-                {formatPrice(PRICE_SALE as number, CURRENCY)}
+                {formatPrice(PRICE_SALE, CURRENCY)}
               </span>
               <span className="text-sm line-through text-zinc-500 dark:text-zinc-400">
                 {formatPrice(PRICE_LIST, CURRENCY)}
@@ -117,12 +121,10 @@ export default function MonthlyArtOfferCardSimple() {
             aria-label="Consultar por WhatsApp"
             title="Consultar por WhatsApp"
           >
-            <FaWhatsapp className="h-5 w-5" aria-hidden />
+            <FaWhatsapp className="h-5 w-5" aria-hidden={true} />
             <span>Consultar por WhatsApp</span>
           </a>
         </div>
-
-    
       </div>
     </motion.article>
   );
