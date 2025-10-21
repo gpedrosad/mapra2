@@ -122,9 +122,7 @@ export default function MonthlyArtOfferCardSimple() {
           </a>
         </div>
 
-        <p className="mt-3 text-xs text-zinc-500 dark:text-zinc-400">
-          Precio sujeto a disponibilidad. Imágenes referenciales.
-        </p>
+    
       </div>
     </motion.article>
   );
