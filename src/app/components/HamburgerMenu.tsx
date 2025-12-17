@@ -8,7 +8,7 @@ type NavItem = { label: string; href: string; target?: "_self" | "_blank" };
 const NAV_ITEMS: NavItem[] = [
   { label: "Inicio", href: "/" },
   { label: "Pinturas", href: "/pinturas" },
-  { label: "Esculturas", href: "/esculturas" },
+  { label: "Cerámica Gres", href: "/esculturas" },
   { label: "Prensa", href: "/prensa" },
   { label: "Tiempos de entrega", href: "/tiempos-de-entrega" },
   { label: "Política de Privacidad", href: "/privacidad" },

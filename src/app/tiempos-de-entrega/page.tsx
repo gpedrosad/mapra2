@@ -5,7 +5,7 @@ import HamburgerMenu from "../components/HamburgerMenu";
 
 export const metadata: Metadata = {
   title: "Tiempos de Entrega — Marcela Pedrosa",
-  description: "Plazos de entrega de obras originales y esculturas.",
+  description: "Plazos de entrega de obras originales y cerámica gres.",
 };
 
 export default function TiemposEntregaPage() {
@@ -34,7 +34,7 @@ export default function TiemposEntregaPage() {
         {/* Contenido principal */}
         <div className="space-y-6">
           <p className="text-gray-800 leading-relaxed">
-            Tiempo de entrega para obras sin enmarcado o esculturas: 48 horas en la Región del BioBio y de 3 a 5 días hábiles a otras regiones.
+            Tiempo de entrega para obras sin enmarcado o cerámica gres: 48 horas en la Región del BioBio y de 3 a 5 días hábiles a otras regiones.
           </p>
 
           <p className="text-gray-800 leading-relaxed">
