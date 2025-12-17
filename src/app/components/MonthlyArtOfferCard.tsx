@@ -59,11 +59,11 @@ export default function MonthlyArtOfferCardSimple() {
     >
       {/* Imagen + badge */}
       <div className="relative bg-white dark:bg-zinc-900">
-        <div className="w-full sm:h-56 md:h-64 lg:h-72 xl:h-80 2xl:h-[28rem] flex items-center justify-center">
+        <div className="w-full h-56 sm:h-60 md:h-64 lg:h-72 xl:h-80 2xl:h-[28rem] px-4 flex items-center justify-center">
           <img
             src={IMG_URL}
             alt={`Obra de arte ${TITLE}`}
-            className="max-h-full w-auto object-contain"
+            className="max-h-full max-w-full w-auto object-contain"
             loading="eager"
             decoding="async"
             sizes="(max-width: 640px) 100vw, (max-width: 1024px) 70vw, 600px"
