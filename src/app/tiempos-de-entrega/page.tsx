@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Footer from "../components/Footer";
-import HamburgerMenu from "../components/HamburgerMenu";
 
 export const metadata: Metadata = {
   title: "Tiempos de Entrega — Marcela Pedrosa",
@@ -11,7 +10,6 @@ export const metadata: Metadata = {
 export default function TiemposEntregaPage() {
   return (
     <main className="min-h-screen bg-transparent">
-      <HamburgerMenu />
       <div className="mx-auto max-w-3xl px-4 sm:px-6 py-10">
         {/* Breadcrumb */}
         <nav className="mb-6">

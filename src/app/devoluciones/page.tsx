@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import HamburgerMenu from "../components/HamburgerMenu";
 
 export const metadata: Metadata = {
   title: "Política de Devolución — Marcela Pedrosa",
@@ -10,7 +9,6 @@ export const metadata: Metadata = {
 export default function DevolucionesPage() {
   return (
     <main className="min-h-screen bg-transparent">
-      <HamburgerMenu />
       <div className="mx-auto max-w-3xl px-4 sm:px-6 py-10">
         {/* Breadcrumb */}
         <nav className="mb-6">

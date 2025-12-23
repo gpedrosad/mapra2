@@ -1,4 +1,3 @@
-    import HamburgerMenu from "../components/HamburgerMenu";
 import { ArtGallery } from "../components/ArtCard";
 import type { Artwork } from "../components/ArtCard";   
 import Footer from "../components/Footer";
@@ -12,7 +11,6 @@ export default function PinturasPage() {
     ];
     return (
         <main className="min-h-screen bg-transparent">
-            <HamburgerMenu />
             <ArtGallery items={items} />
             <Footer email="contacto@marcelapedrosa.com" />
         </main>

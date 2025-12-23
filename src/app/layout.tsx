@@ -4,6 +4,7 @@ import "./globals.css";
 
 // 👇 importa *named* desde app/components (ajusta el path si lo movés)
 import { LanguageProvider, LanguageToggle } from "./components/LanguageContext";
+import HamburgerMenu from "./components/HamburgerMenu";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -30,6 +31,7 @@ export default function RootLayout({
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         {/* Provider CLIENTE envolviendo todo el contenido */}
         <LanguageProvider>
+          <HamburgerMenu />
           
           {/*<div className="mx-auto max-w-6xl px-4 sm:px-6 pt-4">
             <div className="flex justify-end">

@@ -55,7 +55,7 @@ export default function HamburgerMenu({ className }: { className?: string }) {
           </Link>
         </div>
 
-        {/* Botón hamburguesa: visible hasta LG */}
+        {/* Botón hamburguesa: visible en < LG (mobile/tablet/desktop chico) */}
         <button
           onClick={toggleMenu}
           className="lg:hidden focus:outline-none"
@@ -77,7 +77,7 @@ export default function HamburgerMenu({ className }: { className?: string }) {
           </svg>
         </button>
 
-        {/* Nav horizontal: sólo en LG y superior */}
+        {/* Nav horizontal: solo en LG y superior (desktop grande) */}
         <nav className="hidden lg:flex items-center gap-6 xl:gap-8">
           {NAV_ITEMS.map((item) => (
             <Link
@@ -91,7 +91,7 @@ export default function HamburgerMenu({ className }: { className?: string }) {
         </nav>
       </div>
 
-      {/* Overlay móvil/tablet: visible en < LG */}
+      {/* Overlay hamburguesa: visible en < LG */}
       <div
         id="mobile-menu"
         className={`fixed inset-0 bg-[#960018] text-white flex flex-col items-center justify-center space-y-8 transform ${
