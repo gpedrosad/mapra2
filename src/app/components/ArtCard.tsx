@@ -60,6 +60,7 @@ export function ArtGallery({
   lastOnWideId = "c3",
 }: GalleryProps) {
   const [isWide, setIsWide] = useState(false); // >= 2xl (1536px)
+  const [activeIndex, setActiveIndex] = useState<number | null>(null);
   const { t } = useLanguage();
 
   useEffect(() => {
@@ -74,6 +75,35 @@ export function ArtGallery({
     };
   }, []);
 
+  // Cerrar lightbox con ESC + bloquear scroll al abrir
+  useEffect(() => {
+    if (activeIndex === null) return;
+
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setActiveIndex(null);
+      if (e.key === "ArrowRight") {
+        setActiveIndex((idx) =>
+          idx === null ? null : (idx + 1) % displayItems.length
+        );
+      }
+      if (e.key === "ArrowLeft") {
+        setActiveIndex((idx) =>
+          idx === null ? null : (idx - 1 + displayItems.length) % displayItems.length
+        );
+      }
+    };
+
+    window.addEventListener("keydown", onKey);
+    const prevOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+
+    return () => {
+      window.removeEventListener("keydown", onKey);
+      document.body.style.overflow = prevOverflow;
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [activeIndex]);
+
   const displayItems = useMemo(() => {
     if (!isWide || !lastOnWideId) return items;
     const arr = [...items];
@@ -85,36 +115,119 @@ export function ArtGallery({
     return arr;
   }, [items, isWide, lastOnWideId]);
 
-  return (
-    // Mosaico: 1 col (mobile), 2 col (sm+), 3 col (2xl+)
-    <div className={`columns-1 sm:columns-2 2xl:columns-3 gap-x-6 [column-fill:_balance] ${className}`}>
-      {displayItems.map((item, idx) => (
-        <motion.article
-          key={item.id}
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: idx * 0.04 }}
-          className="overflow-hidden bg-transparent border border-zinc-200/80 dark:border-zinc-800 shadow-sm inline-block w-full mb-6"
-          style={{ breakInside: "avoid" }}
-        >
-          <div className="relative flex items-center justify-center bg-transparent">
-            <img
-              src={item.imageUrl}
-              alt={t("gal_alt")}
-              className="block w-full h-auto"
-              loading="lazy"
-              decoding="async"
-            />
-          </div>
+  const activeItem = activeIndex === null ? null : displayItems[activeIndex];
+  const activeAlt =
+    activeItem?.title?.trim() ||
+    (activeItem ? `${t("gal_title")}: ${activeItem.id}` : t("gal_alt"));
 
-          <div className="p-4">
-            <p className="text-sm sm:text-base text-zinc-700 dark:text-zinc-300">
-              {translateInfo(item.info, (k) => t(k))}
-            </p>
+  return (
+    <>
+      {/* Mosaico: 1 col (mobile), 2 col (sm+), 3 col (2xl+) */}
+      <div className={`columns-1 sm:columns-2 2xl:columns-3 gap-x-6 [column-fill:_balance] ${className}`}>
+        {displayItems.map((item, idx) => (
+          <motion.article
+            key={item.id}
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: idx * 0.04 }}
+            className="overflow-hidden bg-transparent border border-zinc-200/80 dark:border-zinc-800 shadow-sm inline-block w-full mb-6"
+            style={{ breakInside: "avoid" }}
+          >
+            <button
+              type="button"
+              onClick={() => setActiveIndex(idx)}
+              className="relative block w-full bg-transparent text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#960018]/50"
+              aria-label={t("gal_alt")}
+            >
+              <img
+                src={item.imageUrl}
+                alt={item.title?.trim() || t("gal_alt")}
+                className="block w-full h-auto cursor-zoom-in"
+                loading="lazy"
+                decoding="async"
+              />
+            </button>
+
+            <div className="p-4">
+              <p className="text-sm sm:text-base text-zinc-700 dark:text-zinc-300">
+                {translateInfo(item.info, (k) => t(k))}
+              </p>
+            </div>
+          </motion.article>
+        ))}
+      </div>
+
+      {/* Lightbox */}
+      {activeItem && (
+        <div
+          className="fixed inset-0 z-[60] bg-black/70 backdrop-blur-[2px]"
+          role="dialog"
+          aria-modal="true"
+          aria-label={activeAlt}
+          onMouseDown={(e) => {
+            // cerrar si se hace clic en el fondo
+            if (e.target === e.currentTarget) setActiveIndex(null);
+          }}
+        >
+          <div className="absolute inset-0 p-4 sm:p-6 flex items-center justify-center">
+            <div className="relative w-full max-w-5xl">
+              <img
+                src={activeItem.imageUrl}
+                alt={activeAlt}
+                className="mx-auto max-h-[82vh] w-auto max-w-full object-contain shadow-2xl"
+                decoding="async"
+              />
+
+              {/* Controles */}
+              <button
+                type="button"
+                onClick={() => setActiveIndex(null)}
+                className="absolute -top-2 -right-2 sm:top-0 sm:right-0 inline-flex items-center justify-center h-10 w-10 rounded-full bg-white/90 text-zinc-900 hover:bg-white shadow focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/60"
+                aria-label="Cerrar"
+              >
+                <span aria-hidden className="text-2xl leading-none">
+                  ×
+                </span>
+              </button>
+
+              <button
+                type="button"
+                onClick={() =>
+                  setActiveIndex((idx) =>
+                    idx === null ? null : (idx - 1 + displayItems.length) % displayItems.length
+                  )
+                }
+                className="absolute left-0 top-1/2 -translate-y-1/2 inline-flex items-center justify-center h-11 w-11 rounded-full bg-white/90 text-zinc-900 hover:bg-white shadow focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/60"
+                aria-label="Anterior"
+              >
+                <span aria-hidden className="text-xl leading-none">
+                  ‹
+                </span>
+              </button>
+
+              <button
+                type="button"
+                onClick={() =>
+                  setActiveIndex((idx) =>
+                    idx === null ? null : (idx + 1) % displayItems.length
+                  )
+                }
+                className="absolute right-0 top-1/2 -translate-y-1/2 inline-flex items-center justify-center h-11 w-11 rounded-full bg-white/90 text-zinc-900 hover:bg-white shadow focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/60"
+                aria-label="Siguiente"
+              >
+                <span aria-hidden className="text-xl leading-none">
+                  ›
+                </span>
+              </button>
+
+              <div className="mt-3 text-center text-sm text-white/90">
+                {translateInfo(activeItem.info, (k) => t(k))}
+              </div>
+            </div>
           </div>
-        </motion.article>
-      ))}
-    </div>
+        </div>
+      )}
+    </>
   );
 }
 
