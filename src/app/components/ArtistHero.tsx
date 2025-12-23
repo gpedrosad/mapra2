@@ -115,7 +115,7 @@ export default function ArtistHero({
       className={[
         "relative overflow-hidden rounded-2xl",
         "border border-zinc-200/80 dark:border-zinc-800",
-        "bg-white dark:bg-zinc-950",
+        "bg-transparent",
         className,
       ].join(" ")}
     >

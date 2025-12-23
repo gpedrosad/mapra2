@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 
 export default function DevolucionesPage() {
   return (
-    <main className="min-h-screen bg-white">
+    <main className="min-h-screen bg-transparent">
       <HamburgerMenu />
       <div className="mx-auto max-w-3xl px-4 sm:px-6 py-10">
         {/* Breadcrumb */}

@@ -55,10 +55,10 @@ export default function MonthlyArtOfferCardSimple() {
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.35 }}
       style={cardStyle}
-      className="overflow-hidden bg-white dark:bg-zinc-900 border border-zinc-200/80 dark:border-zinc-800 shadow-sm inline-block w-full"
+      className="overflow-hidden bg-transparent border border-zinc-200/80 dark:border-zinc-800 shadow-sm inline-block w-full"
     >
       {/* Imagen + badge */}
-      <div className="relative bg-white dark:bg-zinc-900">
+      <div className="relative bg-transparent">
         <div className="w-full h-56 sm:h-60 md:h-64 lg:h-72 xl:h-80 2xl:h-[28rem] px-4 flex items-center justify-center">
           <img
             src={IMG_URL}

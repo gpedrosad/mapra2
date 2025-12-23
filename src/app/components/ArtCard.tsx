@@ -94,10 +94,10 @@ export function ArtGallery({
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: idx * 0.04 }}
-          className="overflow-hidden bg-white dark:bg-zinc-900 border border-zinc-200/80 dark:border-zinc-800 shadow-sm inline-block w-full mb-6"
+          className="overflow-hidden bg-transparent border border-zinc-200/80 dark:border-zinc-800 shadow-sm inline-block w-full mb-6"
           style={{ breakInside: "avoid" }}
         >
-          <div className="relative flex items-center justify-center bg-white dark:bg-zinc-900">
+          <div className="relative flex items-center justify-center bg-transparent">
             <img
               src={item.imageUrl}
               alt={t("gal_alt")}

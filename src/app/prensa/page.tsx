@@ -4,7 +4,7 @@ import Footer from "../components/Footer";
 
 export default function PrensaPage() {
     return (
-        <main className="min-h-screen bg-white">
+        <main className="min-h-screen bg-transparent">
             <HamburgerMenu />
             <Prensa />
             <Footer email="contacto@marcelapedrosa.com" />

@@ -85,7 +85,7 @@ export default function ContactForm({
     <section
       className={[
         "rounded-2xl border border-zinc-200/80 dark:border-zinc-800",
-        "bg-white dark:bg-zinc-950 shadow-sm",
+        "bg-transparent shadow-sm",
         "p-6 sm:p-8",
         className,
       ].join(" ")}

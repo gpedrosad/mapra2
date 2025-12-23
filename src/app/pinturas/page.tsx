@@ -11,7 +11,7 @@ export default function PinturasPage() {
         { id: "c4", imageUrl: "/mujer.jpeg", info: "100x130 óleo sobre tela" },
     ];
     return (
-        <main className="min-h-screen bg-white">
+        <main className="min-h-screen bg-transparent">
             <HamburgerMenu />
             <ArtGallery items={items} />
             <Footer email="contacto@marcelapedrosa.com" />

@@ -3,7 +3,7 @@ import HamburgerMenu from "../components/HamburgerMenu";
 
 export default function ContactoPage() {
     return (
-        <main className="min-h-screen bg-white">
+        <main className="min-h-screen bg-transparent">
             <HamburgerMenu />
             <ContactForm />
         </main>

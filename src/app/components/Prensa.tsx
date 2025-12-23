@@ -62,10 +62,10 @@ export default function Prensa({ item = defaultItem, className = "" }: Props) {
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.35 }}
       aria-labelledby={titleId}
-      className={`overflow-hidden bg-white dark:bg-zinc-900 border border-zinc-200/80 dark:border-zinc-800 shadow-sm transition-all ${className}`}
+      className={`overflow-hidden bg-transparent border border-zinc-200/80 dark:border-zinc-800 shadow-sm transition-all ${className}`}
     >
       {/* Imagen sin zoom ni recorte (respeta proporción original) */}
-      <figure className="relative flex items-center justify-center bg-white dark:bg-zinc-900">
+      <figure className="relative flex items-center justify-center bg-transparent">
         <img
           src={item.imageUrl}
           alt={t("pr_alt", { name: "Marcela Pedrosa" })}
