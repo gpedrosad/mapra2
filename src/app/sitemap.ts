@@ -1,6 +1,6 @@
 import { MetadataRoute } from "next";
 
-const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://marcelapedrosa.com";
+const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://mpedrosa.studio";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   return [
@@ -9,12 +9,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: new Date(),
       changeFrequency: "weekly",
       priority: 1.0,
-    },
-    {
-      url: `${BASE_URL}/biografia`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.9, // Alta prioridad para posicionar su identidad
     },
     {
       url: `${BASE_URL}/pinturas`,
