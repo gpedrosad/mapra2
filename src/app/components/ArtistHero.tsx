@@ -2,6 +2,7 @@
 
 // src/app/components/ArtistHero.tsx
 import Image from "next/image";
+import Link from "next/link";
 import { motion } from "framer-motion";
 import WhatsAppButton from "./WhatsAppButton";
 import { useLanguage } from "./LanguageContext";
@@ -243,6 +244,61 @@ export default function ArtistHero({
                   </a>
                 )}
               </div>
+
+              {/* Navegación de Categorías */}
+              <motion.div
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.1, duration: 0.3 }}
+                className="mt-6 lg:mt-8"
+              >
+                <div className="flex flex-row items-center justify-center gap-3 sm:gap-4 lg:gap-6 overflow-x-auto pb-2 scrollbar-hide">
+                  <motion.div
+                    whileHover={{ y: -2 }}
+                    whileTap={{ scale: 0.98 }}
+                    transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                  >
+                    <Link
+                      href="/pinturas"
+                      className="group relative block rounded-2xl bg-white/60 dark:bg-zinc-900/60 backdrop-blur-sm border border-zinc-200/80 dark:border-zinc-800/80 px-6 py-4 sm:px-8 sm:py-5 lg:px-10 lg:py-6 transition-all duration-200 hover:bg-white/80 dark:hover:bg-zinc-900/80 hover:border-zinc-300 dark:hover:border-zinc-700 hover:shadow-sm"
+                    >
+                      <h3 className="text-base sm:text-lg lg:text-xl font-medium tracking-tight text-zinc-900 dark:text-zinc-100 whitespace-nowrap">
+                        Pintura
+                      </h3>
+                    </Link>
+                  </motion.div>
+
+                  <motion.div
+                    whileHover={{ y: -2 }}
+                    whileTap={{ scale: 0.98 }}
+                    transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                  >
+                    <Link
+                      href="/esculturas"
+                      className="group relative block rounded-2xl bg-white/60 dark:bg-zinc-900/60 backdrop-blur-sm border border-zinc-200/80 dark:border-zinc-800/80 px-6 py-4 sm:px-8 sm:py-5 lg:px-10 lg:py-6 transition-all duration-200 hover:bg-white/80 dark:hover:bg-zinc-900/80 hover:border-zinc-300 dark:hover:border-zinc-700 hover:shadow-sm"
+                    >
+                      <h3 className="text-base sm:text-lg lg:text-xl font-medium tracking-tight text-zinc-900 dark:text-zinc-100 whitespace-nowrap">
+                        Cerámica
+                      </h3>
+                    </Link>
+                  </motion.div>
+
+                  <motion.div
+                    whileHover={{ y: -2 }}
+                    whileTap={{ scale: 0.98 }}
+                    transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                  >
+                    <Link
+                      href="/esculturas"
+                      className="group relative block rounded-2xl bg-white/60 dark:bg-zinc-900/60 backdrop-blur-sm border border-zinc-200/80 dark:border-zinc-800/80 px-6 py-4 sm:px-8 sm:py-5 lg:px-10 lg:py-6 transition-all duration-200 hover:bg-white/80 dark:hover:bg-zinc-900/80 hover:border-zinc-300 dark:hover:border-zinc-700 hover:shadow-sm"
+                    >
+                      <h3 className="text-base sm:text-lg lg:text-xl font-medium tracking-tight text-zinc-900 dark:text-zinc-100 whitespace-nowrap">
+                        Artesanía
+                      </h3>
+                    </Link>
+                  </motion.div>
+                </div>
+              </motion.div>
             </motion.div>
           </div>
         </div>
