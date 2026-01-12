@@ -25,10 +25,10 @@ export const metadata: Metadata = {
   metadataBase: new URL(BASE_URL),
   title: {
     default: ARTIST_NAME,
-    template: `%s | ${ARTIST_NAME} - Pintora Penquista`,
+    template: `%s | ${ARTIST_NAME} - Artista `,
   },
   description:
-    "Portafolio oficial de Marcela Pedrosa, artista visual de Concepción especializada en óleo y cerámica. Trayectoria, exposiciones y taller. Pintora penquista reconocida por su impresionismo figurativo.",
+    "Portafolio oficial de Marcela Pedrosa, artista visual de Concepción especializada en óleo y cerámica. Trayectoria, exposiciones y taller. Pintora reconocida por su impresionismo figurativo.",
   keywords: [
     "Marcela Pedrosa",
     "Pintora de Concepción",
