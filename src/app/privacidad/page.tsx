@@ -4,7 +4,7 @@ import Footer from "../components/Footer";
 
 export const metadata: Metadata = {
   title: "Política de Privacidad — Marcela Pedrosa",
-  description: "Cómo recopilamos, utilizamos y protegemos su información en marcelapedrosa.com.",
+  description: "Cómo recopilamos, utilizamos y protegemos su información en mpedrosa.studio.",
 };
 
 export default function PrivacidadPage() {

@@ -19,7 +19,7 @@ const geistMono = Geist_Mono({
 
 // Configuración de SEO centrada en la identidad de Marcela Pedrosa
 const ARTIST_NAME = "Marcela Pedrosa";
-const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://marcelapedrosa.com";
+const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://mpedrosa.studio";
 
 export const metadata: Metadata = {
   metadataBase: new URL(BASE_URL),
