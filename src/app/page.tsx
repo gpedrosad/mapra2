@@ -5,19 +5,25 @@ import Footer from "./components/Footer";
 
 export default function Home() {
   return (
-    <>
-      <main className="min-h-screen bg-[var(--background)]">
-        <div className="space-y-10">
-          {/* Sección oferta del mes (si la usas como ancla desde el menú) */}
-          <section id="ofertames" className="scroll-mt-24">
-            <ArtistHero />
-          </section>
+    <div className="flex min-h-screen flex-col bg-[var(--background)]">
+      {/* Hero Section - Full bleed, sin padding superior para impacto visual */}
+      <section id="inicio" className="scroll-mt-0">
+        <ArtistHero />
+      </section>
 
+      {/* Main Content Area */}
+      <main className="flex-1">
+        {/* Oferta del Mes - Sección destacada con espaciado generoso */}
+        <section
+          id="ofertames"
+          className="scroll-mt-24 py-16 sm:py-20 lg:py-24"
+        >
           <MonthlyArtOfferCard />
-        </div>
+        </section>
       </main>
 
+      {/* Footer con separación visual clara */}
       <Footer email="contacto@marcelapedrosa.com" />
-    </>
+    </div>
   );
 }
