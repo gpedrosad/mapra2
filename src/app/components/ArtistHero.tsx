@@ -26,9 +26,8 @@ export type ArtistHeroProps = {
   className?: string;
 };
 
-// ✅ Placeholder de avatar (foto de perfil genérica)
-const fallbackAvatar =
-  "https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=720&auto=format&fit=crop";
+// ✅ Foto de perfil de Marcela Pedrosa
+const fallbackAvatar = "/MarcelaPedrosa.png";
 
 // ✅ Fondo por defecto usando tu imagen local bosque.jpeg
 const fallbackBanner = "/bosque.jpeg";
