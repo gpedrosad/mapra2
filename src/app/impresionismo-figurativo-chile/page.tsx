@@ -189,9 +189,9 @@ export default function ImpresionismoFigurativoChilePage() {
             </p>
 
             <p className="text-zinc-700 leading-relaxed mb-6">
-              "Mi pintura busca transmitir emociones para que quien la mira pueda captarlas. Trabajo 
+              &ldquo;Mi pintura busca transmitir emociones para que quien la mira pueda captarlas. Trabajo 
               series figurativas e impresionistas, especialmente fachadas y bosques. El impresionismo 
-              me permite capturar no solo lo que veo, sino lo que siento frente al paisaje."
+              me permite capturar no solo lo que veo, sino lo que siento frente al paisaje.&rdquo;
             </p>
 
             <div className="bg-[#0F3B2E] text-white rounded-xl p-8 my-10 text-center">
