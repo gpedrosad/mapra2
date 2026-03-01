@@ -134,10 +134,10 @@ export default function ArtistaVisualBiobioPage() {
             </p>
 
             <p className="text-zinc-700 leading-relaxed mb-6">
-              "Mi pintura busca transmitir emociones para que quien la mira pueda captarlas. Trabajo 
+              &ldquo;Mi pintura busca transmitir emociones para que quien la mira pueda captarlas. Trabajo 
               series figurativas e impresionistas, especialmente fachadas y bosques. Pinto principalmente 
               en óleo sobre telas naturales por la nobleza del material: maleable, intenso y durable 
-              en el tiempo."
+              en el tiempo.&rdquo;
             </p>
 
             <h3 className="text-2xl font-semibold text-[#0F3B2E] mt-10 mb-4">
