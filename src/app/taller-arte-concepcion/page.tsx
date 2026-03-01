@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     description:
       "Taller especializado en pintura al óleo e impresionismo. Ubicado en Concepción, Región del Biobío.",
     url: `${BASE_URL}/taller-arte-concepcion`,
-    type: "place",
+    type: "website",
     images: [
       {
         url: `${BASE_URL}/bosque.jpeg`,
