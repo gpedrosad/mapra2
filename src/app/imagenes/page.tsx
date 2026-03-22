@@ -1,5 +1,5 @@
 import ImageAdminClient from "./ImageAdminClient";
 
-export default function AdminImagenesPage() {
+export default function ImagenesPage() {
   return <ImageAdminClient />;
 }
