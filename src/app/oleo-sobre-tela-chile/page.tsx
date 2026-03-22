@@ -3,6 +3,8 @@ import Image from "next/image";
 import Link from "next/link";
 import Footer from "../components/Footer";
 import WhatsAppButton from "../components/WhatsAppButton";
+import { getOgImageUrl, getSiteImageUrl } from "@/lib/cloudinary";
+import { getManagedImageUrl } from "@/lib/managed-image-store";
 
 const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://mpedrosa.studio";
 
@@ -30,7 +32,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: `${BASE_URL}/mujer.jpeg`,
+        url: getOgImageUrl("mujer", BASE_URL),
         width: 1200,
         height: 630,
         alt: "Óleo sobre tela de Marcela Pedrosa, Chile",
@@ -42,7 +44,11 @@ export const metadata: Metadata = {
   },
 };
 
-export default function OleoSobreTelaChilePage() {
+export default async function OleoSobreTelaChilePage() {
+  const heroImageUrl =
+    (await getManagedImageUrl("pages.oleo.hero")) ||
+    getSiteImageUrl("mujer");
+
   return (
     <main className="min-h-screen bg-[var(--background)]">
       {/* Hero Section */}
@@ -60,7 +66,7 @@ export default function OleoSobreTelaChilePage() {
           {/* Imagen destacada */}
           <div className="relative w-full h-[400px] sm:h-[500px] rounded-2xl overflow-hidden shadow-lg mb-12">
             <Image
-              src="/mujer.jpeg"
+              src={heroImageUrl}
               alt="Pintura al óleo sobre tela de Marcela Pedrosa, Chile"
               fill
               className="object-cover"

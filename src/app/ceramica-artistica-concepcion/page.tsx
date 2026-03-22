@@ -3,6 +3,8 @@ import Image from "next/image";
 import Link from "next/link";
 import Footer from "../components/Footer";
 import WhatsAppButton from "../components/WhatsAppButton";
+import { getOgImageUrl, getSiteImageUrl } from "@/lib/cloudinary";
+import { getManagedImageUrl } from "@/lib/managed-image-store";
 
 const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://mpedrosa.studio";
 
@@ -30,7 +32,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: `${BASE_URL}/elefante.jpeg`,
+        url: getOgImageUrl("elefante", BASE_URL),
         width: 1200,
         height: 630,
         alt: "Cerámica artística de Marcela Pedrosa, Concepción",
@@ -42,7 +44,11 @@ export const metadata: Metadata = {
   },
 };
 
-export default function CeramicaArtisticaConcepcionPage() {
+export default async function CeramicaArtisticaConcepcionPage() {
+  const heroImageUrl =
+    (await getManagedImageUrl("pages.ceramica.hero")) ||
+    getSiteImageUrl("elefante");
+
   return (
     <main className="min-h-screen bg-[var(--background)]">
       {/* Hero Section */}
@@ -60,7 +66,7 @@ export default function CeramicaArtisticaConcepcionPage() {
           {/* Imagen destacada */}
           <div className="relative w-full h-[400px] sm:h-[500px] rounded-2xl overflow-hidden shadow-lg mb-12">
             <Image
-              src="/elefante.jpeg"
+              src={heroImageUrl}
               alt="Cerámica artística de Marcela Pedrosa en Concepción"
               fill
               className="object-cover"

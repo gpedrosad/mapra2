@@ -5,13 +5,11 @@ const nextConfig: NextConfig = {
     remotePatterns: [
       {
         protocol: "https",
-        hostname: "images.unsplash.com",
+        hostname: "res.cloudinary.com",
         port: "",
         pathname: "/**",
       },
     ],
-    // Alternativa simple:
-    // domains: ["images.unsplash.com"],
   },
 };
 

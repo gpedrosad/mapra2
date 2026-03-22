@@ -4,6 +4,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { useLanguage } from "./LanguageContext";
+import { getSiteImageUrl } from "@/lib/cloudinary";
 
 type PressArticle = {
   imageUrl: string;
@@ -24,7 +25,7 @@ type Props = {
 
 // Claves por defecto (para permitir traducción real)
 const defaultItem: PressArticle = {
-  imageUrl: "/prensa.jpeg",
+  imageUrl: getSiteImageUrl("prensa"),
   title: "pr_title_default",
   deck: "pr_deck_default",
   source: "pr_source_cronica",

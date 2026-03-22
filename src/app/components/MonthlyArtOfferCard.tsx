@@ -3,11 +3,11 @@
 import React from "react";
 import { motion } from "framer-motion";
 import WhatsAppButton from "./WhatsAppButton";
+import { getSiteImageUrl } from "@/lib/cloudinary";
 
 /** ─── Config hardcodeada ─────────────────────────────────────────────── */
 const BRAND_COLOR = "#960018";
 
-const IMG_URL = "/elefante.jpeg";
 const TITLE = "Elefante";
 const INFO = "90×120 óleo sobre tela";
 
@@ -31,8 +31,14 @@ function formatPrice(value: number, currency = "CLP") {
 /** ─── Tipado para custom property ────────────────────────────────────── */
 type BrandStyle = React.CSSProperties & { ["--brand-color"]: string };
 
+type MonthlyArtOfferCardProps = {
+  imageUrl?: string;
+};
+
 /** ─── Componente simple ──────────────────────────────────────────────── */
-export default function MonthlyArtOfferCard() {
+export default function MonthlyArtOfferCard({
+  imageUrl = getSiteImageUrl("elefante"),
+}: MonthlyArtOfferCardProps) {
   const hasSale = typeof PRICE_SALE === "number" && PRICE_SALE < PRICE_LIST;
   const pct = hasSale && PRICE_SALE
     ? Math.round((1 - PRICE_SALE / PRICE_LIST) * 100)
@@ -74,7 +80,7 @@ export default function MonthlyArtOfferCard() {
               <div className="relative w-full max-w-[520px] rounded-2xl bg-white/70 p-4 sm:p-5 shadow-[0_6px_24px_rgba(0,0,0,0.06)] ring-1 ring-zinc-200/70">
                 <div className="relative aspect-[4/3] w-full overflow-hidden rounded-xl bg-white">
                   <img
-                    src={IMG_URL}
+                    src={imageUrl}
                     alt={`Obra ${TITLE}`}
                     className="h-full w-full object-contain transition-transform duration-500 ease-out group-hover:scale-[1.02]"
                     loading="eager"

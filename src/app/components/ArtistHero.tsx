@@ -8,6 +8,7 @@ import WhatsAppButton from "./WhatsAppButton";
 import { useLanguage } from "./LanguageContext";
 import { FaInstagram } from "react-icons/fa";
 import { FiGlobe } from "react-icons/fi";
+import { getSiteImageUrl } from "@/lib/cloudinary";
 
 export type ArtistHeroProps = {
   name?: string;
@@ -27,10 +28,10 @@ export type ArtistHeroProps = {
 };
 
 // ✅ Foto de perfil de Marcela Pedrosa
-const fallbackAvatar = "/MarcelaPedrosa.png";
+const fallbackAvatar = getSiteImageUrl("MarcelaPedrosa");
 
 // ✅ Fondo por defecto usando tu imagen local bosque.jpeg
-const fallbackBanner = "/bosque.jpeg";
+const fallbackBanner = getSiteImageUrl("bosque");
 
 // KEYS por defecto (no textos) para permitir traducción real
 const TECH_KEYS = ["ah_technique_1", "ah_technique_2", "ah_technique_3"];

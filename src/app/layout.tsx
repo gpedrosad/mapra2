@@ -6,6 +6,7 @@ import "./globals.css";
 import { LanguageProvider } from "./components/LanguageContext";
 import JsonLd from "./components/seo/JsonLd";
 import HamburgerMenu from "./components/HamburgerMenu";
+import { getAbsoluteSiteImageUrl, getOgImageUrl } from "@/lib/cloudinary";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -55,7 +56,7 @@ export const metadata: Metadata = {
       "Portafolio oficial de Marcela Pedrosa, artista visual de Concepción especializada en óleo y cerámica. Trayectoria, exposiciones y taller.",
     images: [
       {
-        url: `${BASE_URL}/bosque.jpeg`,
+        url: getOgImageUrl("bosque", BASE_URL),
         width: 1200,
         height: 630,
         alt: `Obra de ${ARTIST_NAME}`,
@@ -67,7 +68,7 @@ export const metadata: Metadata = {
     title: `${ARTIST_NAME} - Pintora Penquista`,
     description:
       "Portafolio oficial de Marcela Pedrosa, artista visual de Concepción especializada en óleo y cerámica.",
-    images: [`${BASE_URL}/bosque.jpeg`],
+    images: [getOgImageUrl("bosque", BASE_URL)],
   },
   robots: {
     index: true,
@@ -108,7 +109,7 @@ export default function RootLayout({
             name: "Concepción, Chile",
           }}
           url={BASE_URL}
-          image={`${BASE_URL}/bosque.jpeg`} // Actualiza con la URL de su foto de perfil profesional
+          image={getAbsoluteSiteImageUrl("bosque", BASE_URL)}
           sameAs={sameAs}
           email="contacto@marcelapedrosa.com"
           telephone="+56 9 5618 9912"

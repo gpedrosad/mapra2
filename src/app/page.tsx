@@ -2,13 +2,23 @@
 import ArtistHero from "./components/ArtistHero";
 import MonthlyArtOfferCard from "./components/MonthlyArtOfferCard";
 import Footer from "./components/Footer";
+import { getManagedImageUrls } from "@/lib/managed-image-store";
 
-export default function Home() {
+export default async function Home() {
+  const imageUrls = await getManagedImageUrls([
+    "home.hero.avatar",
+    "home.hero.banner",
+    "home.offer.image",
+  ]);
+
   return (
     <div className="flex min-h-screen flex-col bg-[var(--background)]">
       {/* Hero Section - Full bleed, sin padding superior para impacto visual */}
       <section id="inicio" className="scroll-mt-0">
-        <ArtistHero />
+        <ArtistHero
+          avatarUrl={imageUrls["home.hero.avatar"]}
+          bannerUrl={imageUrls["home.hero.banner"]}
+        />
       </section>
 
       {/* Main Content Area */}
@@ -18,7 +28,7 @@ export default function Home() {
           id="ofertames"
           className="scroll-mt-24 py-16 sm:py-20 lg:py-24"
         >
-          <MonthlyArtOfferCard />
+          <MonthlyArtOfferCard imageUrl={imageUrls["home.offer.image"]} />
         </section>
       </main>
 

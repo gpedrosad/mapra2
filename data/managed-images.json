@@ -1,0 +1,124 @@
+{
+  "sections": {
+    "home.hero.avatar": {
+      "publicId": "MarcelaPedrosa_ig7ogm",
+      "alt": "Retrato de Marcela Pedrosa"
+    },
+    "home.hero.banner": {
+      "publicId": "bosque_wvvs3r",
+      "alt": "Obra de Marcela Pedrosa"
+    },
+    "home.offer.image": {
+      "publicId": "elefante_l0mpmz",
+      "alt": "Oferta del mes de Marcela Pedrosa"
+    },
+    "press.feature.image": {
+      "publicId": "prensa_zr8m9e",
+      "alt": "Recorte de prensa de Marcela Pedrosa"
+    },
+    "pages.artista-visual.hero": {
+      "publicId": "gente_ik69lq",
+      "alt": "Obra de Marcela Pedrosa, artista visual del Biobío"
+    },
+    "pages.ceramica.hero": {
+      "publicId": "elefante_l0mpmz",
+      "alt": "Cerámica artística de Marcela Pedrosa en Concepción"
+    },
+    "pages.impresionismo.hero": {
+      "publicId": "bosque_wvvs3r",
+      "alt": "Ejemplo de impresionismo figurativo de Marcela Pedrosa"
+    },
+    "pages.mujeres.hero": {
+      "publicId": "gente_ik69lq",
+      "alt": "Obra de Marcela Pedrosa, mujer artista chilena"
+    },
+    "pages.oleo.hero": {
+      "publicId": "mujer_nb6pao",
+      "alt": "Pintura al óleo sobre tela de Marcela Pedrosa"
+    },
+    "pages.pintora.hero": {
+      "publicId": "bosque_wvvs3r",
+      "alt": "Obra de Marcela Pedrosa, pintora en Concepción"
+    },
+    "pages.taller.hero": {
+      "publicId": "elefante_l0mpmz",
+      "alt": "Obra creada en el taller de arte de Marcela Pedrosa"
+    },
+    "gallery.c1": {
+      "publicId": "bosque_wvvs3r",
+      "alt": "Pintura c1 de Marcela Pedrosa",
+      "info": "158x122 óleo sobre tela"
+    },
+    "gallery.c2": {
+      "publicId": "gente_ik69lq",
+      "alt": "Pintura c2 de Marcela Pedrosa",
+      "info": "110x110 óleo sobre tela"
+    },
+    "gallery.c3": {
+      "publicId": "elefante_l0mpmz",
+      "alt": "Pintura c3 de Marcela Pedrosa",
+      "info": "90x120 óleo sobre tela"
+    },
+    "gallery.c4": {
+      "publicId": "mujer_nb6pao",
+      "alt": "Pintura c4 de Marcela Pedrosa",
+      "info": "100x130 óleo sobre tela"
+    },
+    "gallery.c5": {
+      "publicId": "c5_t6xso9",
+      "alt": "Pintura c5 de Marcela Pedrosa",
+      "info": "óleo sobre tela"
+    },
+    "gallery.c6": {
+      "publicId": "c6_ab7jmc",
+      "alt": "Pintura c6 de Marcela Pedrosa",
+      "info": "óleo sobre tela"
+    },
+    "gallery.c7": {
+      "publicId": "c7_o7ggf4",
+      "alt": "Pintura c7 de Marcela Pedrosa",
+      "info": "óleo sobre tela"
+    },
+    "gallery.c8": {
+      "publicId": "c8_pw3lea",
+      "alt": "Pintura c8 de Marcela Pedrosa",
+      "info": "óleo sobre tela"
+    },
+    "gallery.c9": {
+      "publicId": "c9_kf7psh",
+      "alt": "Pintura c9 de Marcela Pedrosa",
+      "info": "óleo sobre tela"
+    },
+    "gallery.c10": {
+      "publicId": "c10_trroe3",
+      "alt": "Pintura c10 de Marcela Pedrosa",
+      "info": "óleo sobre tela"
+    },
+    "gallery.c11": {
+      "publicId": "c11_oy6mdw",
+      "alt": "Pintura c11 de Marcela Pedrosa",
+      "info": "óleo sobre tela"
+    },
+    "gallery.c12": {
+      "publicId": "c12_qtsjik",
+      "alt": "Pintura c12 de Marcela Pedrosa",
+      "info": "óleo sobre tela"
+    },
+    "gallery.c13": {
+      "publicId": "c13_iqxkyv",
+      "alt": "Pintura c13 de Marcela Pedrosa",
+      "info": "óleo sobre tela"
+    },
+    "gallery.c14": {
+      "publicId": "c14_v0dphn",
+      "alt": "Pintura c14 de Marcela Pedrosa",
+      "info": "óleo sobre tela"
+    },
+    "gallery.c15": {
+      "publicId": "c15_rntbzb",
+      "alt": "Pintura c15 de Marcela Pedrosa",
+      "info": "óleo sobre tela"
+    }
+  },
+  "galleryExtras": []
+}

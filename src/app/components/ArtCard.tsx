@@ -3,6 +3,7 @@
 import React, { useEffect, useMemo, useState } from "react";
 import { motion } from "framer-motion";
 import { useLanguage } from "./LanguageContext";
+import { getSiteImageUrl } from "@/lib/cloudinary";
 
 export type Artwork = {
   id: string;
@@ -236,10 +237,10 @@ export default function DemoArtGallery() {
   const { t } = useLanguage();
 
   const items: Artwork[] = [
-    { id: "c1", imageUrl: "/bosque.jpeg",   info: "158x122 óleo sobre tela" },
-    { id: "c2", imageUrl: "/gente.jpeg",    info: "110x110 óleo sobre tela" },
-    { id: "c3", imageUrl: "/elefante.jpeg", info: "90x120 óleo sobre tela" }, // elefante
-    { id: "c4", imageUrl: "/mujer.jpeg",    info: "100x130 óleo sobre tela" },
+    { id: "c1", imageUrl: getSiteImageUrl("bosque"), info: "158x122 óleo sobre tela" },
+    { id: "c2", imageUrl: getSiteImageUrl("gente"), info: "110x110 óleo sobre tela" },
+    { id: "c3", imageUrl: getSiteImageUrl("elefante"), info: "90x120 óleo sobre tela" },
+    { id: "c4", imageUrl: getSiteImageUrl("mujer"), info: "100x130 óleo sobre tela" },
   ];
 
   return (

@@ -3,6 +3,8 @@ import Image from "next/image";
 import Link from "next/link";
 import Footer from "../components/Footer";
 import WhatsAppButton from "../components/WhatsAppButton";
+import { getOgImageUrl, getSiteImageUrl } from "@/lib/cloudinary";
+import { getManagedImageUrl } from "@/lib/managed-image-store";
 
 const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://mpedrosa.studio";
 
@@ -30,7 +32,7 @@ export const metadata: Metadata = {
     type: "profile",
     images: [
       {
-        url: `${BASE_URL}/bosque.jpeg`,
+        url: getOgImageUrl("bosque", BASE_URL),
         width: 1200,
         height: 630,
         alt: "Obra de Marcela Pedrosa, pintora en Concepción",
@@ -42,7 +44,11 @@ export const metadata: Metadata = {
   },
 };
 
-export default function PintoraConcepcionPage() {
+export default async function PintoraConcepcionPage() {
+  const heroImageUrl =
+    (await getManagedImageUrl("pages.pintora.hero")) ||
+    getSiteImageUrl("bosque");
+
   return (
     <main className="min-h-screen bg-[var(--background)]">
       {/* Hero Section */}
@@ -60,7 +66,7 @@ export default function PintoraConcepcionPage() {
           {/* Imagen destacada */}
           <div className="relative w-full h-[400px] sm:h-[500px] rounded-2xl overflow-hidden shadow-lg mb-12">
             <Image
-              src="/bosque.jpeg"
+              src={heroImageUrl}
               alt="Obra de Marcela Pedrosa, pintora profesional en Concepción"
               fill
               className="object-cover"
