@@ -17,6 +17,9 @@
 /.next/
 /out/
 
+# copias locales de .next (no subir; ocupan cientos de MB)
+.next-build-backup-*/
+
 # production
 /build
 
