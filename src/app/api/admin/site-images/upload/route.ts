@@ -2,6 +2,8 @@ import { createHash } from "crypto";
 import { NextRequest, NextResponse } from "next/server";
 import {
   createManagedGalleryExtra,
+  createManagedGresExtra,
+  toManagedImageSectionAdminJson,
   updateManagedImageSection,
 } from "@/lib/managed-image-store";
 
@@ -40,7 +42,6 @@ export async function POST(request: NextRequest) {
   const formData = await request.formData();
   const mode = formData.get("mode");
   const sectionId = formData.get("sectionId");
-  const alt = formData.get("alt");
   const info = formData.get("info");
   const file = formData.get("file");
 
@@ -64,7 +65,12 @@ export async function POST(request: NextRequest) {
   }
 
   const timestamp = `${Math.floor(Date.now() / 1000)}`;
-  const uploadTargetId = typeof sectionId === "string" ? sectionId : "gallery-extra";
+  const uploadTargetId =
+    typeof sectionId === "string"
+      ? sectionId
+      : mode === "gres-extra"
+        ? "gres-extra"
+        : "gallery-extra";
   const publicId = `mapra/managed/${sanitizeSectionId(uploadTargetId)}-${Date.now()}`;
   const signature = signCloudinaryParams(
     {
@@ -101,7 +107,7 @@ export async function POST(request: NextRequest) {
 
   if (!payload.public_id) {
     return NextResponse.json(
-      { error: "Cloudinary no devolvió un public_id válido." },
+      { error: "El servicio de imágenes no confirmó la subida correctamente." },
       { status: 400 }
     );
   }
@@ -111,16 +117,19 @@ export async function POST(request: NextRequest) {
       mode === "gallery-extra"
         ? await createManagedGalleryExtra({
             publicId: payload.public_id,
-            alt: typeof alt === "string" ? alt : undefined,
             info: typeof info === "string" ? info : undefined,
           })
-        : typeof sectionId === "string"
-          ? await updateManagedImageSection(sectionId, {
+        : mode === "gres-extra"
+          ? await createManagedGresExtra({
               publicId: payload.public_id,
-              alt: typeof alt === "string" ? alt : undefined,
               info: typeof info === "string" ? info : undefined,
             })
-          : null;
+          : typeof sectionId === "string"
+            ? await updateManagedImageSection(sectionId, {
+                publicId: payload.public_id,
+                info: typeof info === "string" ? info : undefined,
+              })
+            : null;
 
     if (!section) {
       return NextResponse.json(
@@ -129,7 +138,7 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    return NextResponse.json({ section });
+    return NextResponse.json({ section: toManagedImageSectionAdminJson(section) });
   } catch (error) {
     const message =
       error instanceof Error ? error.message : "No se pudo guardar la imagen.";
