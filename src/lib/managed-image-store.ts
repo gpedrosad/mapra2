@@ -59,6 +59,97 @@ export function toManagedImageSectionAdminJson(
 const DATA_DIR = path.join(process.cwd(), "data");
 const DATA_FILE = path.join(DATA_DIR, "managed-images.json");
 
+/** JSON de estado junto a las imágenes en Cloudinary (`raw`). */
+const MANAGED_JSON_PUBLIC_ID = "mapra/managed/site-images-data";
+
+function shouldPersistManagedImagesInCloudinary(): boolean {
+  if (
+    !process.env.CLOUDINARY_API_KEY?.trim() ||
+    !process.env.CLOUDINARY_API_SECRET?.trim()
+  ) {
+    return false;
+  }
+  if (
+    !process.env.CLOUDINARY_CLOUD_NAME?.trim() &&
+    !process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME?.trim()
+  ) {
+    return false;
+  }
+  return (
+    process.env.VERCEL === "1" ||
+    process.env.MANAGED_IMAGES_CLOUDINARY === "1"
+  );
+}
+
+async function readDataFromCloudinary(): Promise<ManagedImageData | null> {
+  const cloud_name =
+    process.env.CLOUDINARY_CLOUD_NAME || process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME;
+  const api_key = process.env.CLOUDINARY_API_KEY;
+  const api_secret = process.env.CLOUDINARY_API_SECRET;
+  if (!cloud_name || !api_key || !api_secret) {
+    return null;
+  }
+
+  const { v2: cloudinary } = await import("cloudinary");
+  cloudinary.config({ cloud_name, api_key, api_secret });
+
+  try {
+    const resource = await cloudinary.api.resource(MANAGED_JSON_PUBLIC_ID, {
+      resource_type: "raw",
+    });
+    const url = resource.secure_url;
+    if (typeof url !== "string" || !url) {
+      return null;
+    }
+    const res = await fetch(url, { cache: "no-store" });
+    if (!res.ok) {
+      return null;
+    }
+    return normalizeData(JSON.parse(await res.text()));
+  } catch {
+    return null;
+  }
+}
+
+async function writeDataToCloudinary(data: ManagedImageData): Promise<void> {
+  const cloud_name =
+    process.env.CLOUDINARY_CLOUD_NAME || process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME;
+  const api_key = process.env.CLOUDINARY_API_KEY;
+  const api_secret = process.env.CLOUDINARY_API_SECRET;
+  if (!cloud_name || !api_key || !api_secret) {
+    throw new Error(
+      "Cloudinary no está configurado (CLOUDINARY_CLOUD_NAME, API_KEY, API_SECRET)."
+    );
+  }
+
+  const { v2: cloudinary } = await import("cloudinary");
+  cloudinary.config({ cloud_name, api_key, api_secret });
+
+  const json = JSON.stringify(data, null, 2);
+  const dataUri = `data:application/json;base64,${Buffer.from(json, "utf8").toString("base64")}`;
+
+  await cloudinary.uploader.upload(dataUri, {
+    resource_type: "raw",
+    public_id: MANAGED_JSON_PUBLIC_ID,
+    overwrite: true,
+    invalidate: true,
+  });
+}
+
+async function readDataFromFile(): Promise<ManagedImageData> {
+  try {
+    const raw = await readFile(DATA_FILE, "utf8");
+    return normalizeData(JSON.parse(raw));
+  } catch {
+    return defaultData();
+  }
+}
+
+async function writeDataToFile(data: ManagedImageData): Promise<void> {
+  await mkdir(DATA_DIR, { recursive: true });
+  await writeFile(DATA_FILE, JSON.stringify(data, null, 2) + "\n", "utf8");
+}
+
 function defaultOverrides(): ManagedImageOverrides {
   return Object.fromEntries(
     MANAGED_IMAGE_SECTIONS.filter(
@@ -157,30 +248,25 @@ function normalizeData(raw: unknown): ManagedImageData {
   };
 }
 
-async function ensureDataFile() {
-  await mkdir(DATA_DIR, { recursive: true });
-
-  try {
-    await readFile(DATA_FILE, "utf8");
-  } catch {
-    await writeFile(DATA_FILE, JSON.stringify(defaultData(), null, 2) + "\n", "utf8");
-  }
-}
-
 async function readData(): Promise<ManagedImageData> {
-  await ensureDataFile();
-
-  try {
-    const raw = await readFile(DATA_FILE, "utf8");
-    return normalizeData(JSON.parse(raw));
-  } catch {
-    return defaultData();
+  if (shouldPersistManagedImagesInCloudinary()) {
+    const fromCloud = await readDataFromCloudinary();
+    if (fromCloud) {
+      return fromCloud;
+    }
+    return readDataFromFile();
   }
+
+  return readDataFromFile();
 }
 
 async function writeData(data: ManagedImageData) {
-  await ensureDataFile();
-  await writeFile(DATA_FILE, JSON.stringify(data, null, 2) + "\n", "utf8");
+  if (shouldPersistManagedImagesInCloudinary()) {
+    await writeDataToCloudinary(data);
+    return;
+  }
+
+  await writeDataToFile(data);
 }
 
 function hydrateSection(
