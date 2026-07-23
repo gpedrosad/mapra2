@@ -50,6 +50,8 @@ Para no romper código existente:
 ## Reglas rápidas
 
 1. Preferí `ink` / `ink-muted` / `line` antes que `zinc-*` en superficies nuevas.
-2. El acento de marca es `--brand` (`#960018`), no verde.
+2. El acento de marca es `--brand` (`#960018`), no verde (`#0F3B2E` está deprecado).
 3. El fondo de página es cream; no uses grises fríos grandes como plano de fondo.
-4. Si cambiás un token, actualizá este doc y `globals.css` juntos.
+4. Páginas SEO: títulos `font-display` + `text-ink`; CTAs de bloque `bg-brand`; bullets `text-brand`.
+5. Formularios: inputs `border-line-strong` + focus `ring-brand`; submit `bg-brand`.
+6. Si cambiás un token, actualizá este doc y `globals.css` juntos.

@@ -90,15 +90,15 @@ export default async function MarcelaPedrosaPage() {
       <section className="relative py-16 sm:py-20 lg:py-24">
         <div className="mx-auto max-w-4xl px-4 sm:px-6">
           <div className="text-center">
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-[#0F3B2E] mb-6">
+            <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-medium tracking-tight text-ink mb-6">
               Marcela Pedrosa
             </h1>
-            <p className="text-xl sm:text-2xl text-zinc-700 mb-8 leading-relaxed">
+            <p className="text-xl sm:text-2xl text-ink-body mb-8 leading-relaxed">
               Pintora y artista visual en Concepción, Chile
             </p>
           </div>
 
-          <div className="relative w-full max-w-md mx-auto h-[420px] sm:h-[480px] rounded-2xl overflow-hidden shadow-lg mb-12">
+          <div className="relative w-full max-w-md mx-auto h-[420px] sm:h-[480px] overflow-hidden mb-12">
             <Image
               src={heroImageUrl}
               alt="Retrato de Marcela Pedrosa, pintora en Concepción"
@@ -113,11 +113,11 @@ export default async function MarcelaPedrosaPage() {
       <section className="py-12 sm:py-16">
         <div className="mx-auto max-w-4xl px-4 sm:px-6">
           <article className="prose prose-lg max-w-none">
-            <h2 className="text-3xl font-semibold text-[#0F3B2E] mb-6">
+            <h2 className="text-3xl font-semibold text-ink mb-6">
               Quién es Marcela Pedrosa
             </h2>
 
-            <p className="text-zinc-700 leading-relaxed mb-6">
+            <p className="text-ink-body leading-relaxed mb-6">
               <strong>Marcela Pedrosa</strong> es una{" "}
               <strong>pintora y artista visual de Concepción</strong>, Región del
               Biobío. Su trabajo se centra en el <strong>óleo sobre tela</strong> y
@@ -125,7 +125,7 @@ export default async function MarcelaPedrosaPage() {
               conexión emocional, atmósfera y luz —no solo decorar un espacio.
             </p>
 
-            <p className="text-zinc-700 leading-relaxed mb-6">
+            <p className="text-ink-body leading-relaxed mb-6">
               Con más de 20 años de experiencia en pintura al óleo, desarrolla
               series de fachadas urbanas, bosques y paisajes del sur de Chile.
               Complementa su obra pictórica con <strong>cerámica artística en
@@ -134,53 +134,53 @@ export default async function MarcelaPedrosaPage() {
               culturales de la región.
             </p>
 
-            <h3 className="text-2xl font-semibold text-[#0F3B2E] mt-10 mb-4">
+            <h3 className="text-2xl font-semibold text-ink mt-10 mb-4">
               Identidad y territorio
             </h3>
 
-            <p className="text-zinc-700 leading-relaxed mb-6">
+            <p className="text-ink-body leading-relaxed mb-6">
               Como <strong>pintora penquista</strong>, su lenguaje visual está
               ligado a Concepción y el Biobío: arquitectura local, bosques nativos
               y la luz del sur. Desde su{" "}
               <Link
                 href="/taller-arte-concepcion"
-                className="text-[#0F3B2E] underline"
+                className="text-brand underline"
               >
                 taller de arte
               </Link>{" "}
               produce obras originales y encargos personalizados.
             </p>
 
-            <h3 className="text-2xl font-semibold text-[#0F3B2E] mt-10 mb-4">
+            <h3 className="text-2xl font-semibold text-ink mt-10 mb-4">
               Especialidades
             </h3>
 
-            <div className="bg-zinc-50 rounded-xl p-6 mb-8">
-              <ul className="space-y-3 text-zinc-700">
+            <div className="bg-surface rounded-xl p-6 mb-8">
+              <ul className="space-y-3 text-ink-body">
                 <li className="flex items-start">
-                  <span className="text-[#0F3B2E] mr-2">•</span>
+                  <span className="text-brand mr-2">•</span>
                   <span>Óleo sobre tela e impresionismo figurativo</span>
                 </li>
                 <li className="flex items-start">
-                  <span className="text-[#0F3B2E] mr-2">•</span>
+                  <span className="text-brand mr-2">•</span>
                   <span>Fachadas, bosques y paisaje del Biobío</span>
                 </li>
                 <li className="flex items-start">
-                  <span className="text-[#0F3B2E] mr-2">•</span>
+                  <span className="text-brand mr-2">•</span>
                   <span>Cerámica artística en gres</span>
                 </li>
                 <li className="flex items-start">
-                  <span className="text-[#0F3B2E] mr-2">•</span>
+                  <span className="text-brand mr-2">•</span>
                   <span>Obras disponibles y encargos desde Concepción</span>
                 </li>
               </ul>
             </div>
 
-            <div className="bg-[#0F3B2E] text-white rounded-xl p-8 my-10 text-center">
+            <div className="bg-brand text-white rounded-xl p-8 my-10 text-center">
               <h3 className="text-2xl font-semibold mb-4">
                 Conoce la obra de Marcela Pedrosa
               </h3>
-              <p className="mb-6 text-zinc-100">
+              <p className="mb-6 text-white/90">
                 Galería, prensa o consulta directa
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
@@ -192,7 +192,7 @@ export default async function MarcelaPedrosaPage() {
                 />
                 <Link
                   href="/pinturas"
-                  className="inline-block bg-white text-[#0F3B2E] px-6 py-3 rounded-xl font-medium hover:bg-zinc-100 transition-colors"
+                  className="inline-block bg-white text-brand px-6 py-3 rounded-xl font-medium hover:bg-cream transition-colors"
                 >
                   Ver pinturas
                 </Link>
@@ -200,38 +200,38 @@ export default async function MarcelaPedrosaPage() {
             </div>
           </article>
 
-          <div className="mt-12 pt-8 border-t border-zinc-200">
-            <h3 className="text-xl font-semibold text-[#0F3B2E] mb-4">
+          <div className="mt-12 pt-8 border-t border-line">
+            <h3 className="text-xl font-semibold text-ink mb-4">
               Explorar
             </h3>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <Link
                 href="/pintora-concepcion"
-                className="block p-4 rounded-lg border border-zinc-200 hover:border-[#0F3B2E] hover:bg-zinc-50 transition-colors"
+                className="block p-4 rounded-lg border border-line hover:border-brand hover:bg-surface transition-colors"
               >
-                <span className="font-medium text-[#0F3B2E]">
+                <span className="font-medium text-ink">
                   Pintora en Concepción →
                 </span>
               </Link>
               <Link
                 href="/prensa"
-                className="block p-4 rounded-lg border border-zinc-200 hover:border-[#0F3B2E] hover:bg-zinc-50 transition-colors"
+                className="block p-4 rounded-lg border border-line hover:border-brand hover:bg-surface transition-colors"
               >
-                <span className="font-medium text-[#0F3B2E]">Prensa →</span>
+                <span className="font-medium text-ink">Prensa →</span>
               </Link>
               <Link
                 href="/artista-visual-biobio"
-                className="block p-4 rounded-lg border border-zinc-200 hover:border-[#0F3B2E] hover:bg-zinc-50 transition-colors"
+                className="block p-4 rounded-lg border border-line hover:border-brand hover:bg-surface transition-colors"
               >
-                <span className="font-medium text-[#0F3B2E]">
+                <span className="font-medium text-ink">
                   Artista visual Biobío →
                 </span>
               </Link>
               <Link
                 href="/mujeres-artistas-chilenas"
-                className="block p-4 rounded-lg border border-zinc-200 hover:border-[#0F3B2E] hover:bg-zinc-50 transition-colors"
+                className="block p-4 rounded-lg border border-line hover:border-brand hover:bg-surface transition-colors"
               >
-                <span className="font-medium text-[#0F3B2E]">
+                <span className="font-medium text-ink">
                   Mujeres artistas chilenas →
                 </span>
               </Link>
