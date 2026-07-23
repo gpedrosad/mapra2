@@ -53,7 +53,7 @@ export default function MonthlyArtOfferCard({
         <p className="text-[11px] sm:text-sm font-medium uppercase tracking-[0.2em] text-[var(--brand-color)] mb-2 sm:mb-3">
           Destacado
         </p>
-        <h2 className="text-2xl sm:text-3xl lg:text-4xl font-semibold tracking-tight text-zinc-900">
+        <h2 className="font-display text-2xl sm:text-3xl lg:text-4xl font-medium tracking-tight text-zinc-900">
           Oferta del mes
         </h2>
         <p className="mt-3 sm:mt-4 text-sm sm:text-base text-zinc-600 max-w-xl leading-relaxed">
@@ -108,7 +108,7 @@ export default function MonthlyArtOfferCard({
           <div className="lg:col-span-5 p-6 sm:p-8 lg:p-10 flex flex-col justify-center">
             {/* Título y descripción */}
             <div>
-              <h3 className="text-2xl sm:text-3xl lg:text-3xl font-semibold tracking-tight text-zinc-900">
+              <h3 className="font-display text-2xl sm:text-3xl lg:text-3xl font-medium tracking-tight text-zinc-900">
                 {TITLE}
               </h3>
               <p className="mt-2 text-sm sm:text-base text-zinc-500 leading-relaxed">

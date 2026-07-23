@@ -19,8 +19,12 @@ const dictionary: Record<Language, Record<string, string>> = {
     // ArtistHero
     ah_title: "Artista visual — Impresionismo figurativo",
     ah_location: "Concepción, Chile",
+    ah_bio_lead:
+      "Cada una de mis pinturas nace del deseo de crear una conexión emocional genuina.",
     ah_bio:
-      "Mi pintura busca transmitir emociones para que quien la mira pueda captarlas. Trabajo series figurativas e impresionistas, especialmente fachadas y bosques. Pinto principalmente en óleo sobre telas naturales por la nobleza del material: maleable, intenso y durable en el tiempo.",
+      "Cada una de mis pinturas nace del deseo de crear una conexión emocional genuina. No busco únicamente decorar un espacio, sino transformarlo a través de la atmósfera, la luz y las emociones que la obra despierta en quien la contempla.\n\nDesarrollo series figurativas con una mirada impresionista, la obra se carga de sensibilidad, memoria y significado. Cada pieza está concebida para aportar carácter, calidez y personalidad, invitando a una experiencia íntima que enriquece tanto hogares como espacios de trabajo.\n\nTrabajo principalmente en óleo sobre telas naturales, un material noble que me permite alcanzar profundidad cromática, riqueza de texturas y una gran permanencia en el tiempo. Cada obra es original y realizada íntegramente a mano, respetando los procesos y detalles que hacen de cada pintura una pieza única.\n\nMi propósito es crear arte que acompañe, inspire y permanezca; obras con identidad propia, capaces de dialogar con quienes las observan y de convertirse en parte de sus historias.",
+    ah_about_title: "Sobre la artista",
+    ah_about_eyebrow: "Presentación",
     ah_label_technique: "Técnica",
     ah_label_themes: "Temas",
     ah_label_location: "Ubicación",
@@ -90,8 +94,12 @@ const dictionary: Record<Language, Record<string, string>> = {
     // ArtistHero
     ah_title: "Visual artist — Figurative impressionism",
     ah_location: "Concepción, Chile",
+    ah_bio_lead:
+      "Each of my paintings is born from the desire to create a genuine emotional connection.",
     ah_bio:
-      "My painting seeks to convey emotions so that whoever looks at it can capture them. I work on figurative and impressionist series, especially facades and forests. I mainly paint in oil on natural canvas for the nobility of the material: malleable, intense and durable over time.",
+      "Each of my paintings is born from the desire to create a genuine emotional connection. I don't seek merely to decorate a space, but to transform it through the atmosphere, light, and emotions that the work awakens in those who contemplate it.\n\nI develop figurative series with an impressionist sensibility; the work is charged with feeling, memory, and meaning. Each piece is conceived to bring character, warmth, and personality, inviting an intimate experience that enriches both homes and workplaces.\n\nI work mainly in oil on natural canvases, a noble material that allows me to achieve chromatic depth, rich textures, and lasting permanence over time. Each work is original and made entirely by hand, respecting the processes and details that make every painting a unique piece.\n\nMy purpose is to create art that accompanies, inspires, and endures—works with their own identity, able to converse with those who observe them and become part of their stories.",
+    ah_about_title: "About the artist",
+    ah_about_eyebrow: "Introduction",
     ah_label_technique: "Technique",
     ah_label_themes: "Themes",
     ah_label_location: "Location",

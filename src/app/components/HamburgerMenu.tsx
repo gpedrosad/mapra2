@@ -49,7 +49,7 @@ export default function HamburgerMenu({ className }: { className?: string }) {
         <div className="flex items-center">
           <Link
             href="/"
-            className="font-semibold tracking-wide hover:text-white transition-colors"
+            className="font-display text-lg font-medium tracking-tight hover:text-white transition-colors"
           >
             Marcela Pedrosa
           </Link>
@@ -114,7 +114,7 @@ export default function HamburgerMenu({ className }: { className?: string }) {
             key={item.href}
             href={item.href}
             ref={idx === 0 ? firstLinkRef : undefined}
-            className="text-2xl sm:text-3xl font-semibold hover:text-white transition-colors"
+            className="font-display text-2xl sm:text-3xl font-medium hover:text-white transition-colors"
             onClick={() => setIsOpen(false)}
           >
             {item.label}
