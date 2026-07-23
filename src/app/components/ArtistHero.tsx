@@ -20,8 +20,6 @@ export type ArtistHeroProps = {
   phone?: string;
   instagramUrl?: string;
   websiteUrl?: string;
-  /** Puede ser texto literal o keys i18n (p.ej. "ah_technique_1") */
-  techniques?: string[];
   /** Puede ser texto literal o keys i18n (p.ej. "ah_theme_1") */
   themes?: string[];
   className?: string;
@@ -33,14 +31,8 @@ const fallbackAvatar = getSiteImageUrl("MarcelaPedrosa");
 // ✅ Fondo por defecto usando Cloudinary (bosque)
 const fallbackBanner = getSiteImageUrl("bosque");
 
-const TECH_KEYS = ["ah_technique_1", "ah_technique_2", "ah_technique_3"];
 const THEME_KEYS = ["ah_theme_1", "ah_theme_2", "ah_theme_3"];
 
-const FALLBACK_TECHNIQUE: Record<string, string> = {
-  ah_technique_1: "Óleo sobre telas naturales",
-  ah_technique_2: "Pincelada suelta",
-  ah_technique_3: "Capas y veladuras",
-};
 const FALLBACK_THEME: Record<string, string> = {
   ah_theme_1: "Fachadas",
   ah_theme_2: "Bosques",
@@ -76,7 +68,6 @@ export default function ArtistHero({
   phone = "+56 9 5618 9912",
   instagramUrl,
   websiteUrl,
-  techniques,
   themes,
   className = "",
 }: ArtistHeroProps) {
@@ -99,7 +90,7 @@ export default function ArtistHero({
   ) => {
     const src = list && list.length ? list : defaultKeys;
     return src.map((item) => {
-      if (/^ah_(technique|theme)_\d+$/i.test(item)) {
+      if (/^ah_theme_\d+$/i.test(item)) {
         const translated = t?.(item);
         if (translated && translated !== item) return translated;
         return map[item] ?? item;
@@ -120,7 +111,6 @@ export default function ArtistHero({
       "Cada una de mis pinturas nace del deseo de crear una conexión emocional genuina."
     );
 
-  const i18nTechniques = translateList(techniques, FALLBACK_TECHNIQUE, TECH_KEYS);
   const i18nThemes = translateList(themes, FALLBACK_THEME, THEME_KEYS);
 
   return (
@@ -220,11 +210,7 @@ export default function ArtistHero({
                 animate="show"
                 className="mt-7 text-sm text-ink-muted text-center lg:text-left leading-relaxed"
               >
-                {[
-                  i18nTechniques[0],
-                  i18nThemes.slice(0, 2).join(" · "),
-                  i18nLocation,
-                ]
+                {[i18nThemes.slice(0, 2).join(" · "), i18nLocation]
                   .filter(Boolean)
                   .join("  ·  ")}
               </motion.p>

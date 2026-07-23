@@ -40,10 +40,7 @@ const dictionary: Record<Language, Record<string, string>> = {
     ah_alt_banner: "Obra de {{name}}",
     ah_alt_avatar: "Retrato de {{name}}",
 
-    // Ítems traducibles de técnica/temas (defaults)
-    ah_technique_1: "Óleo sobre telas naturales",
-    ah_technique_2: "Pincelada suelta",
-    ah_technique_3: "Capas y veladuras",
+    // Ítems traducibles de temas (defaults)
     ah_theme_1: "Fachadas",
     ah_theme_2: "Bosques",
     ah_theme_3: "Figurativo",
@@ -115,10 +112,7 @@ const dictionary: Record<Language, Record<string, string>> = {
     ah_alt_banner: "{{name}}’s artwork",
     ah_alt_avatar: "{{name}}’s portrait",
 
-    // Technique/Theme defaults
-    ah_technique_1: "Oil on natural canvas",
-    ah_technique_2: "Loose brushwork",
-    ah_technique_3: "Layers and glazes",
+    // Theme defaults
     ah_theme_1: "Facades",
     ah_theme_2: "Forests",
     ah_theme_3: "Figurative",
