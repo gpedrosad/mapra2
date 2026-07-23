@@ -1,23 +1,58 @@
 @import "tailwindcss";
 
+/*
+  Tokens de marca — Marcela Pedrosa
+  Fuente de verdad: también documentada en docs/BRAND.md
+*/
 :root {
-  --background: #fcfbe9;
-  --foreground: #171717;
+  /* Superficies */
+  --cream: #fcfbe9;
+  --background: var(--cream);
+  --surface: #fffdf3;
+  --surface-elevated: #ffffff;
+
+  /* Marca */
+  --brand: #960018;
+  --brand-hover: #7a0014;
+  --brand-soft: color-mix(in srgb, var(--brand) 12%, transparent);
+
+  /* Tinta (reemplazo cálido de zinc genérico) */
+  --ink: #1a1714;
+  --ink-body: #3f3a34;
+  --ink-muted: #6b645c;
+  --ink-subtle: #8f877c;
+  --ink-faint: #b7aea2;
+
+  /* Líneas / bordes */
+  --line: color-mix(in srgb, var(--ink) 12%, transparent);
+  --line-strong: color-mix(in srgb, var(--ink) 22%, transparent);
+
+  /* Alias legacy */
+  --foreground: var(--ink);
+  --brand-color: var(--brand);
+  --brand-green: var(--brand);
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-cream: var(--cream);
+  --color-surface: var(--surface);
+  --color-surface-elevated: var(--surface-elevated);
+  --color-brand: var(--brand);
+  --color-brand-hover: var(--brand-hover);
+  --color-brand-soft: var(--brand-soft);
+  --color-ink: var(--ink);
+  --color-ink-body: var(--ink-body);
+  --color-ink-muted: var(--ink-muted);
+  --color-ink-subtle: var(--ink-subtle);
+  --color-ink-faint: var(--ink-faint);
+  --color-line: var(--line);
+  --color-line-strong: var(--line-strong);
+
   --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
   --font-mono: var(--font-geist-mono), ui-monospace, monospace;
   --font-display: var(--font-fraunces), ui-serif, Georgia, serif;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #fcfbe9;
-    --foreground: #ededed;
-  }
 }
 
 body {

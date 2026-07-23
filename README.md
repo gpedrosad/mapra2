@@ -1,5 +1,10 @@
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
+## Marca visual
+
+Paleta y tipografía del sitio: ver [`docs/BRAND.md`](docs/BRAND.md).  
+Tokens en código: `src/app/globals.css` (`--cream`, `--brand`, `--ink`, etc.).
+
 ## Getting Started
 
 First, run the development server:

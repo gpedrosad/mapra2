@@ -51,12 +51,12 @@ export default function AboutArtist({ className = "" }: { className?: string }) 
           }}
           className="text-center"
         >
-          <p className="text-[11px] uppercase tracking-[0.22em] text-zinc-400 mb-3">
+          <p className="text-[11px] uppercase tracking-[0.22em] text-ink-subtle mb-3">
             {tr("ah_about_eyebrow", undefined, "Presentación")}
           </p>
           <h2
             id="about-artist-title"
-            className="font-display text-3xl sm:text-4xl lg:text-[2.75rem] font-medium tracking-tight text-zinc-900"
+            className="font-display text-3xl sm:text-4xl lg:text-[2.75rem] font-medium tracking-tight text-ink"
           >
             {title}
           </h2>
@@ -69,7 +69,7 @@ export default function AboutArtist({ className = "" }: { className?: string }) 
                 hidden: { opacity: 0, y: 16 },
                 show: { opacity: 1, y: 0, transition: { duration: 0.55, ease: easeOut } },
               }}
-              className="text-xl sm:text-2xl text-zinc-900 leading-[1.55] tracking-[-0.01em]"
+              className="text-xl sm:text-2xl text-ink leading-[1.55] tracking-[-0.01em]"
             >
               {lead}
             </motion.p>
@@ -82,7 +82,7 @@ export default function AboutArtist({ className = "" }: { className?: string }) 
                 hidden: { opacity: 0, y: 14 },
                 show: { opacity: 1, y: 0, transition: { duration: 0.5, ease: easeOut } },
               }}
-              className="text-[1.05rem] sm:text-lg text-zinc-600 leading-[1.8]"
+              className="text-[1.05rem] sm:text-lg text-ink-muted leading-[1.8]"
             >
               {paragraph}
             </motion.p>
@@ -94,9 +94,9 @@ export default function AboutArtist({ className = "" }: { className?: string }) 
                 hidden: { opacity: 0, y: 14 },
                 show: { opacity: 1, y: 0, transition: { duration: 0.55, ease: easeOut } },
               }}
-              className="mt-2 border-t border-zinc-900/15 pt-7"
+              className="mt-2 border-t border-line-strong pt-7"
             >
-              <p className="font-display text-lg sm:text-xl text-zinc-800 italic leading-[1.65]">
+              <p className="font-display text-lg sm:text-xl text-ink-body italic leading-[1.65]">
                 {closing}
               </p>
             </motion.blockquote>

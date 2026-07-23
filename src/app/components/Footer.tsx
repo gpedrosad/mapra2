@@ -14,11 +14,6 @@ type FooterProps = {
   className?: string;
 };
 
-// === Paleta (mismo verde del menú) ===
-const BRAND_GREEN = "#960018";
-// Si quieres reutilizar en Tailwind, usamos una CSS var:
-type CSSVars = React.CSSProperties & { ["--brand-green"]?: string };
-
 function buildWaLink(phone?: string, text?: string) {
   if (!phone) return undefined;
   const digits = phone.replace(/[^\d]/g, "");
@@ -57,15 +52,11 @@ export default function Footer({
     "Hola Gonzalo, vi el sitio y quisiera hablar."
   );
 
-  // Variable CSS para usar en clases Tailwind con var()
-  const cssVars = { ["--brand-green"]: BRAND_GREEN } as unknown as CSSVars;
-
   return (
     <footer
-      style={cssVars}
       className={[
         "border-t border-white/10",
-        "bg-[var(--brand-green)] text-white",
+        "bg-brand text-white",
         className,
       ].join(" ")}
     >

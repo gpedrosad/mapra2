@@ -9,7 +9,9 @@ import { getManagedImageUrl } from "@/lib/managed-image-store";
 const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://mpedrosa.studio";
 
 export const metadata: Metadata = {
-  title: "Impresionismo Figurativo Chile | Marcela Pedrosa - Arte Impresionista Contemporáneo",
+  title: {
+    absolute: "Impresionismo Figurativo Chile | Marcela Pedrosa - Arte Impresionista Contemporáneo",
+  },
   description:
     "Impresionismo figurativo en Chile. Marcela Pedrosa, artista especializada en pintura impresionista figurativa. Obras al óleo que fusionan impresionismo y figuración desde Concepción.",
   keywords: [

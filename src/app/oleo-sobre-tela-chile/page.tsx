@@ -9,7 +9,9 @@ import { getManagedImageUrl } from "@/lib/managed-image-store";
 const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://mpedrosa.studio";
 
 export const metadata: Metadata = {
-  title: "Óleo sobre Tela Chile | Marcela Pedrosa - Pintura al Óleo Profesional",
+  title: {
+    absolute: "Óleo sobre Tela Chile | Marcela Pedrosa - Pintura al Óleo Profesional",
+  },
   description:
     "Óleo sobre tela en Chile por Marcela Pedrosa. Técnica tradicional de pintura al óleo, obras originales de alta calidad. Artista especializada en impresionismo figurativo desde Concepción.",
   keywords: [

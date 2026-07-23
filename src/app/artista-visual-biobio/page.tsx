@@ -9,7 +9,9 @@ import { getManagedImageUrl } from "@/lib/managed-image-store";
 const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://mpedrosa.studio";
 
 export const metadata: Metadata = {
-  title: "Artista Visual Biobío | Marcela Pedrosa - Arte Contemporáneo Región del Biobío",
+  title: {
+    absolute: "Artista Visual Biobío | Marcela Pedrosa - Arte Contemporáneo Región del Biobío",
+  },
   description:
     "Marcela Pedrosa, artista visual de la Región del Biobío. Especializada en pintura al óleo e impresionismo figurativo. Obras originales desde Concepción para toda la región del Biobío y Chile.",
   keywords: [

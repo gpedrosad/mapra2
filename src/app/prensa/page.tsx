@@ -1,38 +1,58 @@
+import type { Metadata } from "next";
 import Prensa from "../components/Prensa";
 import Footer from "../components/Footer";
 import { getManagedImageUrl } from "@/lib/managed-image-store";
 
+const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://mpedrosa.studio";
+
+export const metadata: Metadata = {
+  title: {
+    absolute: "Prensa | Marcela Pedrosa — Pintura y Arte en Concepción",
+  },
+  description:
+    "Prensa, entrevistas y exposiciones de Marcela Pedrosa, pintora y artista visual en Concepción. Cobertura de su trayectoria en arte y pintura.",
+  alternates: {
+    canonical: `${BASE_URL}/prensa`,
+  },
+  openGraph: {
+    title: "Prensa | Marcela Pedrosa",
+    description:
+      "Recortes, entrevistas y menciones sobre la pintura y el arte de Marcela Pedrosa en Concepción.",
+    url: `${BASE_URL}/prensa`,
+  },
+};
+
 export default async function PrensaPage() {
-    const pressImageUrl = await getManagedImageUrl("press.feature.image");
+  const pressImageUrl = await getManagedImageUrl("press.feature.image");
 
-    return (
-        <main className="min-h-screen bg-transparent">
-            <section className="mx-auto max-w-6xl px-4 sm:px-6 py-10 sm:py-14">
-                <header className="mb-6 sm:mb-10">
-                    <h1 className="text-3xl sm:text-4xl font-semibold tracking-tight text-zinc-900">
-                        Prensa
-                    </h1>
-                    <p className="mt-2 text-sm sm:text-base text-zinc-700 max-w-2xl">
-                        Recortes, entrevistas y menciones destacadas.
-                    </p>
-                </header>
+  return (
+    <main className="min-h-screen bg-transparent">
+      <section className="mx-auto max-w-6xl px-4 sm:px-6 py-10 sm:py-14">
+        <header className="mb-6 sm:mb-10">
+          <h1 className="text-3xl sm:text-4xl font-semibold tracking-tight text-zinc-900">
+            Prensa
+          </h1>
+          <p className="mt-2 text-sm sm:text-base text-zinc-700 max-w-2xl">
+            Recortes, entrevistas y menciones destacadas.
+          </p>
+        </header>
 
-                <div className="grid grid-cols-1 gap-6">
-                    <Prensa
-                        className="w-full"
-                        item={{
-                            imageUrl: pressImageUrl,
-                            title: "pr_title_default",
-                            deck: "pr_deck_default",
-                            source: "pr_source_cronica",
-                            section: "pr_section_entertainment",
-                            date: "pr_date_2019_05_13",
-                        }}
-                    />
-                </div>
-            </section>
+        <div className="grid grid-cols-1 gap-6">
+          <Prensa
+            className="w-full"
+            item={{
+              imageUrl: pressImageUrl,
+              title: "pr_title_default",
+              deck: "pr_deck_default",
+              source: "pr_source_cronica",
+              section: "pr_section_entertainment",
+              date: "pr_date_2019_05_13",
+            }}
+          />
+        </div>
+      </section>
 
-            <Footer email="contacto@marcelapedrosa.com" />
-        </main>
-    );
+      <Footer email="contacto@marcelapedrosa.com" />
+    </main>
+  );
 }

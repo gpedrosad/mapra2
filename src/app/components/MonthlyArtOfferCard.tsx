@@ -5,9 +5,6 @@ import { motion } from "framer-motion";
 import WhatsAppButton from "./WhatsAppButton";
 import { getSiteImageUrl } from "@/lib/cloudinary";
 
-/** ─── Config hardcodeada ─────────────────────────────────────────────── */
-const BRAND_COLOR = "#960018";
-
 const TITLE = "Elefante";
 const INFO = "90×120 óleo sobre tela";
 
@@ -28,123 +25,90 @@ function formatPrice(value: number, currency = "CLP") {
   }).format(value);
 }
 
-/** ─── Tipado para custom property ────────────────────────────────────── */
-type BrandStyle = React.CSSProperties & { ["--brand-color"]: string };
-
 type MonthlyArtOfferCardProps = {
   imageUrl?: string;
 };
 
-/** ─── Componente simple ──────────────────────────────────────────────── */
 export default function MonthlyArtOfferCard({
-  imageUrl = getSiteImageUrl("elefante"),
+  imageUrl,
 }: MonthlyArtOfferCardProps) {
+  const resolvedImageUrl = imageUrl?.trim() || getSiteImageUrl("elefante");
   const hasSale = typeof PRICE_SALE === "number" && PRICE_SALE < PRICE_LIST;
   const pct = hasSale && PRICE_SALE
     ? Math.round((1 - PRICE_SALE / PRICE_LIST) * 100)
     : 0;
 
-  const cardStyle: BrandStyle = { ["--brand-color"]: BRAND_COLOR };
-
   return (
-    <section style={cardStyle} className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-      {/* Header de sección con jerarquía clara */}
+    <section className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
       <header className="mb-8 sm:mb-10 lg:mb-12">
-        <p className="text-[11px] sm:text-sm font-medium uppercase tracking-[0.2em] text-[var(--brand-color)] mb-2 sm:mb-3">
+        <p className="text-[11px] font-medium uppercase tracking-[0.2em] text-brand mb-3">
           Destacado
         </p>
-        <h2 className="font-display text-2xl sm:text-3xl lg:text-4xl font-medium tracking-tight text-zinc-900">
+        <h2 className="font-display text-2xl sm:text-3xl lg:text-4xl font-medium tracking-tight text-ink">
           Oferta del mes
         </h2>
-        <p className="mt-3 sm:mt-4 text-sm sm:text-base text-zinc-600 max-w-xl leading-relaxed">
+        <p className="mt-3 sm:mt-4 text-sm sm:text-base text-ink-muted max-w-xl leading-relaxed">
           Una obra seleccionada con precio especial por tiempo limitado.
         </p>
       </header>
 
       <motion.article
-        initial={{ opacity: 0, y: 10 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.35 }}
+        initial={{ opacity: 0, y: 14 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-40px" }}
+        transition={{ duration: 0.5 }}
         aria-label={`Oferta del mes: ${TITLE}`}
-        className={[
-          "group overflow-hidden rounded-3xl",
-          "bg-white/60 backdrop-blur-[2px]",
-          "border border-zinc-200/70 dark:border-zinc-800",
-          "shadow-[0_8px_30px_rgba(0,0,0,0.06)] hover:shadow-[0_16px_40px_rgba(0,0,0,0.08)] transition-all duration-300",
-        ].join(" ")}
+        className="group"
       >
-        <div className="lg:grid lg:grid-cols-12">
-          {/* Imagen - con fondo sutil y marco elegante */}
-          <div className="relative lg:col-span-7 bg-gradient-to-br from-zinc-50/90 via-white/50 to-zinc-100/70">
-            <div className="relative flex items-center justify-center p-5 sm:p-7 lg:p-10">
-              <div className="relative w-full max-w-[520px] rounded-2xl bg-white/70 p-4 sm:p-5 shadow-[0_6px_24px_rgba(0,0,0,0.06)] ring-1 ring-zinc-200/70">
-                <div className="relative aspect-[4/3] w-full overflow-hidden rounded-xl bg-white">
-                  <img
-                    src={imageUrl}
-                    alt={`Obra ${TITLE}`}
-                    className="h-full w-full object-contain transition-transform duration-500 ease-out group-hover:scale-[1.02]"
-                    loading="eager"
-                    decoding="async"
-                    sizes="(max-width: 1024px) 100vw, 700px"
-                  />
-                </div>
-              </div>
-            </div>
-
-            {/* Badge de oferta - más refinado */}
-            <div className="absolute left-4 top-4 sm:left-6 sm:top-6">
-              <span className="inline-flex items-center gap-2 rounded-full px-3.5 py-1.5 text-[11px] font-semibold tracking-[0.18em] uppercase text-white bg-[var(--brand-color)] shadow-md shadow-[var(--brand-color)]/20">
-                Oferta del mes
-                {hasSale && pct > 0 && (
-                  <span className="ml-0.5 bg-white/20 px-2 py-0.5 rounded-full tracking-normal">
-                    -{pct}%
-                  </span>
-                )}
-              </span>
-            </div>
+        <div className="lg:grid lg:grid-cols-12 lg:gap-12 lg:items-center">
+          <div className="relative lg:col-span-7 flex items-center justify-center">
+            <img
+              src={resolvedImageUrl}
+              alt={`Obra ${TITLE}`}
+              className="w-full h-auto max-h-[520px] object-contain transition-transform duration-700 ease-out group-hover:scale-[1.015]"
+              loading="eager"
+              decoding="async"
+              sizes="(max-width: 1024px) 100vw, 700px"
+            />
           </div>
 
-          {/* Contenido - con mejor jerarquía y espaciado */}
-          <div className="lg:col-span-5 p-6 sm:p-8 lg:p-10 flex flex-col justify-center">
-            {/* Título y descripción */}
+          <div className="lg:col-span-5 mt-8 lg:mt-0 flex flex-col justify-center">
             <div>
-              <h3 className="font-display text-2xl sm:text-3xl lg:text-3xl font-medium tracking-tight text-zinc-900">
+              {hasSale && pct > 0 && (
+                <p className="text-[11px] uppercase tracking-[0.18em] text-brand mb-2">
+                  −{pct}% este mes
+                </p>
+              )}
+              <h3 className="font-display text-2xl sm:text-3xl font-medium tracking-tight text-ink">
                 {TITLE}
               </h3>
-              <p className="mt-2 text-sm sm:text-base text-zinc-500 leading-relaxed">
+              <p className="mt-2 text-sm sm:text-base text-ink-muted leading-relaxed">
                 {INFO}
               </p>
             </div>
 
-            {/* Bloque de precio - separación visual clara */}
-            <div className="mt-6 sm:mt-8 pt-6 sm:pt-8 border-t border-zinc-200/60">
+            <div className="mt-7 pt-6 border-t border-line">
               {hasSale && PRICE_SALE !== undefined ? (
-                <div className="space-y-3">
-                  <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1">
-                    <span className="text-3xl sm:text-4xl font-semibold text-zinc-900">
-                      {formatPrice(PRICE_SALE, CURRENCY)}
-                    </span>
-                    <span className="text-base text-zinc-400 line-through">
-                      {formatPrice(PRICE_LIST, CURRENCY)}
-                    </span>
-                  </div>
-                  <span className="inline-flex items-center rounded-full border border-[var(--brand-color)]/25 bg-[var(--brand-color)]/5 px-3 py-1.5 text-xs font-semibold text-[var(--brand-color)]">
-                    Ahorra {pct}%
+                <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1">
+                  <span className="font-display text-3xl sm:text-4xl font-medium text-ink">
+                    {formatPrice(PRICE_SALE, CURRENCY)}
+                  </span>
+                  <span className="text-base text-ink-faint line-through">
+                    {formatPrice(PRICE_LIST, CURRENCY)}
                   </span>
                 </div>
               ) : (
-                <span className="text-3xl sm:text-4xl font-semibold text-zinc-900">
+                <span className="font-display text-3xl sm:text-4xl font-medium text-ink">
                   {formatPrice(PRICE_LIST, CURRENCY)}
                 </span>
               )}
 
-              <p className="mt-4 text-sm text-zinc-500 leading-relaxed">
+              <p className="mt-4 text-sm text-ink-muted leading-relaxed">
                 Consulta disponibilidad y opciones de entrega por WhatsApp.
               </p>
             </div>
 
-            {/* CTA con más espacio */}
-            <div className="mt-6 sm:mt-8">
+            <div className="mt-7">
               <WhatsAppButton
                 phone={WHATSAPP_PHONE}
                 text={WHATSAPP_MESSAGE}

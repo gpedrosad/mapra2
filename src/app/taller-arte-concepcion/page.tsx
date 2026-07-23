@@ -9,7 +9,9 @@ import { getManagedImageUrl } from "@/lib/managed-image-store";
 const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://mpedrosa.studio";
 
 export const metadata: Metadata = {
-  title: "Taller de Arte en Concepción | Marcela Pedrosa - Pintura al Óleo y Cerámica",
+  title: {
+    absolute: "Taller de Arte en Concepción | Marcela Pedrosa - Pintura al Óleo y Cerámica",
+  },
   description:
     "Taller de arte en Concepción dirigido por Marcela Pedrosa. Especializado en pintura al óleo, técnicas de impresionismo y cerámica artística. Ubicado en la Región del Biobío, Chile.",
   keywords: [

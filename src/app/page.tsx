@@ -1,9 +1,19 @@
 // app/page.tsx  (Next.js App Router)
+import type { Metadata } from "next";
 import ArtistHero from "./components/ArtistHero";
 import AboutArtist from "./components/AboutArtist";
 import MonthlyArtOfferCard from "./components/MonthlyArtOfferCard";
 import Footer from "./components/Footer";
 import { getManagedImageUrls } from "@/lib/managed-image-store";
+
+const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://mpedrosa.studio";
+
+/** Solo canonical: el título/descripción SEO vienen del layout (sin cambiar la UI). */
+export const metadata: Metadata = {
+  alternates: {
+    canonical: BASE_URL,
+  },
+};
 
 export default async function Home() {
   const imageUrls = await getManagedImageUrls([

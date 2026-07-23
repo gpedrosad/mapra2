@@ -3,10 +3,12 @@ import type { Artwork } from "../components/ArtCard";
 import Footer from "../components/Footer";
 import { listGresArtworks } from "@/lib/managed-image-store";
 
-const BASE_URL = "https://www.marcelapedrosa.com";
+const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://mpedrosa.studio";
 
 export const metadata = {
-  title: "Cerámica Gres | Marcela Pedrosa",
+  title: {
+    absolute: "Cerámica Gres | Marcela Pedrosa — Arte en Concepción",
+  },
   description:
     "Piezas en cerámica gres de alta temperatura. Marcela Pedrosa, artista en Concepción.",
   openGraph: {

@@ -9,7 +9,9 @@ import { getManagedImageUrl } from "@/lib/managed-image-store";
 const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://mpedrosa.studio";
 
 export const metadata: Metadata = {
-  title: "Cerámica Artística Concepción | Marcela Pedrosa - Cerámica en Gres",
+  title: {
+    absolute: "Cerámica Artística Concepción | Marcela Pedrosa - Cerámica en Gres",
+  },
   description:
     "Cerámica artística en Concepción. Marcela Pedrosa, ceramista especializada en gres de alta temperatura. Piezas únicas decorativas y escultóricas desde la Región del Biobío.",
   keywords: [

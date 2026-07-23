@@ -66,10 +66,10 @@ export default function WhatsAppButton({
 
   const classes = cn(
     "inline-flex items-center justify-center gap-2 rounded-xl",
-    "bg-[#960018] text-white",
-    "hover:bg-[#960018] active:bg-[#960018]",
+    "bg-brand text-white",
+    "hover:bg-brand-hover active:bg-brand-hover",
     "shadow-sm hover:shadow-md transition-all",
-    "focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[#960018]",
+    "focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-brand",
     fullWidth && "w-full",
     sizeClasses,
     className

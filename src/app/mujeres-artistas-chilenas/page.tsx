@@ -9,7 +9,9 @@ import { getManagedImageUrl } from "@/lib/managed-image-store";
 const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://mpedrosa.studio";
 
 export const metadata: Metadata = {
-  title: "Mujeres Artistas Chilenas | Marcela Pedrosa - Arte Femenino en Chile",
+  title: {
+    absolute: "Mujeres Artistas Chilenas | Marcela Pedrosa - Arte Femenino en Chile",
+  },
   description:
     "Mujeres artistas chilenas contemporáneas. Marcela Pedrosa, pintora y ceramista de Concepción. Historia y presente del arte femenino en Chile, desde pioneras hasta artistas actuales.",
   keywords: [

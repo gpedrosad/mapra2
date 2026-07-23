@@ -18,6 +18,27 @@ const STATIC_IMAGE_PUBLIC_IDS = {
   c15: "c15_rntbzb",
 } as const;
 
+/** Fallback local (/public) cuando falta CLOUDINARY_CLOUD_NAME en .env */
+const STATIC_IMAGE_LOCAL_PATHS = {
+  MarcelaPedrosa: "/MarcelaPedrosa.png",
+  bosque: "/bosque.jpeg",
+  gente: "/gente.jpeg",
+  prensa: "/prensa.jpeg",
+  mujer: "/mujer.jpeg",
+  elefante: "/elefante.jpeg",
+  c5: "/c5.jpeg",
+  c6: "/c6.jpeg",
+  c7: "/c7.jpeg",
+  c8: "/c8.jpeg",
+  c9: "/c9.jpeg",
+  c10: "/c10.jpeg",
+  c11: "/c11.jpeg",
+  c12: "/c12.jpeg",
+  c13: "/c13.jpeg",
+  c14: "/c14.jpeg",
+  c15: "/c15.jpeg",
+} as const;
+
 export type SiteImageKey = keyof typeof STATIC_IMAGE_PUBLIC_IDS;
 
 function getCloudName() {
@@ -54,7 +75,16 @@ export function getSiteImageUrl(
   key: SiteImageKey,
   transformation = "f_auto,q_auto"
 ) {
-  return buildCloudinaryImageUrl(STATIC_IMAGE_PUBLIC_IDS[key], transformation);
+  const cloudinaryUrl = buildCloudinaryImageUrl(
+    STATIC_IMAGE_PUBLIC_IDS[key],
+    transformation
+  );
+
+  if (cloudinaryUrl) {
+    return cloudinaryUrl;
+  }
+
+  return STATIC_IMAGE_LOCAL_PATHS[key];
 }
 
 export function getAbsoluteSiteImageUrl(

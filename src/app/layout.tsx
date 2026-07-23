@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { Fraunces, Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
-// 👇 importa *named* desde app/components (ajusta el path si lo movés)
 import { LanguageProvider } from "./components/LanguageContext";
 import JsonLd from "./components/seo/JsonLd";
 import HamburgerMenu from "./components/HamburgerMenu";
@@ -24,31 +23,32 @@ const fraunces = Fraunces({
   axes: ["SOFT", "opsz"],
 });
 
-// Configuración de SEO centrada en la identidad de Marcela Pedrosa
 const ARTIST_NAME = "Marcela Pedrosa";
 const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://mpedrosa.studio";
 
 export const metadata: Metadata = {
   metadataBase: new URL(BASE_URL),
   title: {
-    default: ARTIST_NAME,
-    template: `%s | ${ARTIST_NAME} - Artista `,
+    default: `${ARTIST_NAME} | Pintura y Arte en Concepción`,
+    template: `%s | ${ARTIST_NAME}`,
   },
   description:
-    "Portafolio oficial de Marcela Pedrosa, artista visual de Concepción especializada en óleo y cerámica. Trayectoria, exposiciones y taller. Pintora reconocida por su impresionismo figurativo.",
+    "Marcela Pedrosa, pintora y artista visual en Concepción, Chile. Pintura al óleo, arte contemporáneo e impresionismo figurativo. Obras originales y taller en el Biobío.",
   keywords: [
     "Marcela Pedrosa",
-    "Pintora de Concepción",
-    "Artista visual Biobío",
-    "Biografía Marcela Pedrosa",
-    "Taller de arte Pedrosa",
-    "Mujeres artistas chilenas",
-    "Pintora penquista",
-    "Óleo sobre tela Concepción",
-    "Cerámica artística Chile",
-    "Impresionismo figurativo Chile",
-    "Artista visual Concepción",
-    "Pinturas originales Biobío",
+    "pintura Concepción",
+    "arte Concepción",
+    "pintora Concepción",
+    "artista visual Concepción",
+    "pintura Chile",
+    "arte Biobío",
+    "pintora penquista",
+    "óleo sobre tela Concepción",
+    "taller de arte Concepción",
+    "impresionismo figurativo Chile",
+    "mujeres artistas chilenas",
+    "pinturas originales Concepción",
+    "cerámica artística Concepción",
   ],
   authors: [{ name: ARTIST_NAME }],
   creator: ARTIST_NAME,
@@ -56,24 +56,24 @@ export const metadata: Metadata = {
     type: "website",
     locale: "es_CL",
     url: BASE_URL,
-    siteName: ARTIST_NAME,
-    title: `${ARTIST_NAME} - Pintora Penquista`,
+    siteName: `${ARTIST_NAME} — Pintura y Arte`,
+    title: `${ARTIST_NAME} | Pintura y Arte en Concepción`,
     description:
-      "Portafolio oficial de Marcela Pedrosa, artista visual de Concepción especializada en óleo y cerámica. Trayectoria, exposiciones y taller.",
+      "Pintora y artista visual en Concepción. Óleo sobre tela, impresionismo figurativo y obras originales desde el Biobío.",
     images: [
       {
         url: getOgImageUrl("bosque", BASE_URL),
         width: 1200,
         height: 630,
-        alt: `Obra de ${ARTIST_NAME}`,
+        alt: `Pintura de ${ARTIST_NAME}, artista en Concepción`,
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: `${ARTIST_NAME} - Pintora Penquista`,
+    title: `${ARTIST_NAME} | Pintura y Arte en Concepción`,
     description:
-      "Portafolio oficial de Marcela Pedrosa, artista visual de Concepción especializada en óleo y cerámica.",
+      "Pintora y artista visual en Concepción. Óleo sobre tela e impresionismo figurativo.",
     images: [getOgImageUrl("bosque", BASE_URL)],
   },
   robots: {
@@ -87,9 +87,6 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
-  alternates: {
-    canonical: BASE_URL,
-  },
 };
 
 export default function RootLayout({
@@ -97,20 +94,17 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  // Configuración del Schema.org Person
-  // Nota: Actualiza instagramUrl cuando tengas la URL real de Instagram
-  const instagramUrl = process.env.NEXT_PUBLIC_INSTAGRAM_URL; // Ejemplo: "https://instagram.com/marcelapedrosa"
+  const instagramUrl = process.env.NEXT_PUBLIC_INSTAGRAM_URL;
   const sameAs = instagramUrl ? [instagramUrl] : [];
 
   return (
-    <html lang="es">
+    <html lang="es-CL">
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${fraunces.variable} font-sans antialiased`}
       >
-        {/* Schema.org Person para SEO de marca personal */}
         <JsonLd
           name={ARTIST_NAME}
-          jobTitle="Pintora y Ceramista"
+          jobTitle="Pintora y artista visual"
           nationality="Chilena"
           homeLocation={{
             "@type": "Place",
@@ -121,19 +115,25 @@ export default function RootLayout({
           sameAs={sameAs}
           email="contacto@marcelapedrosa.com"
           telephone="+56 9 5618 9912"
-          description="Portafolio oficial de Marcela Pedrosa, artista visual de Concepción especializada en óleo y cerámica. Trayectoria, exposiciones y taller."
+          description="Marcela Pedrosa, pintora y artista visual en Concepción especializada en pintura al óleo, arte contemporáneo e impresionismo figurativo."
+          knowsAbout={[
+            "Pintura",
+            "Arte",
+            "Pintura en Concepción",
+            "Arte en Concepción",
+            "Óleo sobre tela",
+            "Impresionismo figurativo",
+            "Cerámica artística",
+          ]}
+          areaServed={["Concepción", "Región del Biobío", "Chile"]}
+          address={{
+            addressLocality: "Concepción",
+            addressRegion: "Biobío",
+            addressCountry: "CL",
+          }}
         />
-        {/* Provider CLIENTE envolviendo todo el contenido */}
         <LanguageProvider>
           <HamburgerMenu />
-          
-          {/*<div className="mx-auto max-w-6xl px-4 sm:px-6 pt-4">
-            <div className="flex justify-end">
-            <LanguageToggle />
-            </div>
-            </div>
-            
-            {/* 👇 Asegurate de que children esté DENTRO del Provider */}
           {children}
         </LanguageProvider>
       </body>

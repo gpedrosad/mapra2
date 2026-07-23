@@ -9,7 +9,9 @@ import { getManagedImageUrl } from "@/lib/managed-image-store";
 const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://mpedrosa.studio";
 
 export const metadata: Metadata = {
-  title: "Pintora en Concepción | Marcela Pedrosa - Artista Visual Penquista",
+  title: {
+    absolute: "Pintora en Concepción | Marcela Pedrosa - Artista Visual Penquista",
+  },
   description:
     "Marcela Pedrosa, pintora profesional en Concepción, Chile. Especializada en óleo sobre tela, impresionismo figurativo. Taller de arte en Concepción, Región del Biobío. Obras originales disponibles.",
   keywords: [
@@ -202,18 +204,32 @@ export default async function PintoraConcepcionPage() {
             </h3>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <Link
-                href="/pinturas"
+                href="/marcela-pedrosa"
                 className="block p-4 rounded-lg border border-zinc-200 hover:border-[#0F3B2E] hover:bg-zinc-50 transition-colors"
               >
-                <span className="font-medium text-[#0F3B2E]">Ver Pinturas →</span>
-                <p className="text-sm text-zinc-600 mt-1">Galería completa de obras en óleo</p>
+                <span className="font-medium text-[#0F3B2E]">Marcela Pedrosa →</span>
+                <p className="text-sm text-zinc-600 mt-1">Biografía y trayectoria</p>
               </Link>
               <Link
-                href="/prensa"
+                href="/comprar-pintura-concepcion"
                 className="block p-4 rounded-lg border border-zinc-200 hover:border-[#0F3B2E] hover:bg-zinc-50 transition-colors"
               >
-                <span className="font-medium text-[#0F3B2E]">Prensa y Exposiciones →</span>
-                <p className="text-sm text-zinc-600 mt-1">Trayectoria y reconocimientos</p>
+                <span className="font-medium text-[#0F3B2E]">Comprar pintura →</span>
+                <p className="text-sm text-zinc-600 mt-1">Obras originales en Concepción</p>
+              </Link>
+              <Link
+                href="/encargos-pintura"
+                className="block p-4 rounded-lg border border-zinc-200 hover:border-[#0F3B2E] hover:bg-zinc-50 transition-colors"
+              >
+                <span className="font-medium text-[#0F3B2E]">Encargos de pintura →</span>
+                <p className="text-sm text-zinc-600 mt-1">Óleo a medida desde el taller</p>
+              </Link>
+              <Link
+                href="/pintura-fachadas-concepcion"
+                className="block p-4 rounded-lg border border-zinc-200 hover:border-[#0F3B2E] hover:bg-zinc-50 transition-colors"
+              >
+                <span className="font-medium text-[#0F3B2E]">Fachadas y bosques →</span>
+                <p className="text-sm text-zinc-600 mt-1">Temas recurrentes de la obra</p>
               </Link>
             </div>
           </div>
