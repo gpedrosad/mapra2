@@ -2,9 +2,14 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Footer from "../components/Footer";
 
+const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://mpedrosa.studio";
+
 export const metadata: Metadata = {
   title: "Política de Privacidad — Marcela Pedrosa",
   description: "Cómo recopilamos, utilizamos y protegemos su información en mpedrosa.studio.",
+  alternates: {
+    canonical: `${BASE_URL}/privacidad`,
+  },
 };
 
 export default function PrivacidadPage() {

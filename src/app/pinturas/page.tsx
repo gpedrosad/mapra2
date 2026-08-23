@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { ArtGallery } from "../components/ArtCard";
 import type { Artwork } from "../components/ArtCard";
 import Footer from "../components/Footer";
+import ItemListJsonLd from "../components/seo/ItemListJsonLd";
 import { listGalleryArtworks } from "@/lib/managed-image-store";
 import { getOgImageUrl } from "@/lib/cloudinary";
 import Link from "next/link";
@@ -46,6 +47,17 @@ export default async function PinturasPage() {
   const items: Artwork[] = await listGalleryArtworks();
   return (
     <main className="min-h-screen bg-[var(--background)]">
+      <ItemListJsonLd
+        listName="Pinturas de Marcela Pedrosa"
+        listUrl={`${BASE_URL}/pinturas`}
+        items={items.map((item) => ({
+          name: item.title?.trim() || `Obra ${item.id}`,
+          imageUrl: item.imageUrl,
+          url: `${BASE_URL}/pinturas`,
+          description: item.info,
+        }))}
+      />
+
       <section className="mx-auto w-full max-w-6xl px-4 sm:px-6 py-10 sm:py-12">
         <header className="mb-8 sm:mb-10">
           <h1 className="text-3xl sm:text-4xl font-semibold tracking-tight text-[#0F3B2E]">

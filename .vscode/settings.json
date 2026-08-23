@@ -1,0 +1,17 @@
+{
+  "typescript.tsserver.maxTsServerMemory": 3072,
+  "typescript.tsserver.watchOptions": {
+    "excludeDirectories": ["**/node_modules", "**/.next", "**/.agents", "**/scripts"]
+  },
+  "files.watcherExclude": {
+    "**/node_modules/**": true,
+    "**/.next/**": true,
+    "**/.agents/**": true,
+    "**/scripts/**": true
+  },
+  "search.exclude": {
+    "**/node_modules": true,
+    "**/.next": true,
+    "**/.agents": true
+  }
+}

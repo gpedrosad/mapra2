@@ -4,13 +4,13 @@ import React from "react";
 import { motion } from "framer-motion";
 import WhatsAppButton from "./WhatsAppButton";
 import { getSiteImageUrl } from "@/lib/cloudinary";
-
-const TITLE = "Elefante";
-const INFO = "90×120 óleo sobre tela";
-
-const CURRENCY = "CLP";
-const PRICE_LIST = 1_200_000;
-const PRICE_SALE: number | undefined = 920_000; // poné undefined si no hay oferta
+import {
+  TITLE,
+  INFO,
+  CURRENCY,
+  PRICE_LIST,
+  PRICE_SALE,
+} from "@/lib/monthly-offer";
 
 const WHATSAPP_PHONE = "+56956189912";
 const WHATSAPP_MESSAGE = `Hola, me interesa la obra ${TITLE}. ¿Está disponible?`;

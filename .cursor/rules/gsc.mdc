@@ -1,0 +1,16 @@
+---
+description: Scripts GSC OAuth locales e informes Search Console
+globs: scripts/gsc*,docs/gsc*,docs/ai-self-learn/**
+alwaysApply: false
+---
+
+# GSC (mpedrosa)
+
+- Auth OAuth local; **no** MCP. Playbook: `docs/gsc-oauth-setup.md`.
+- Propiedad: `sc-domain:mpedrosa.studio` · secretos vía `.secrets` (symlink).
+- Informes: `npm run gsc:report` / `gsc:report:md` → `docs/gsc-informe-YYYY-MM-DD.md`.
+- Sitemap válido en GSC: solo `https://mpedrosa.studio/sitemap.xml`.
+- Antes de auditar: leer `docs/ai-self-learn/INDEX.md`.
+- No reescribir informes históricos; generar uno nuevo si se pide análisis.
+- No pegar tokens ni JSON OAuth en el chat.
+- No importar `googleapis` en `.ts`/`.tsx` del app (rompe el language server); solo en `scripts/*.mjs`.

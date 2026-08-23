@@ -4,6 +4,7 @@ import React from "react";
 import { FiMail } from "react-icons/fi";
 import { FaWhatsapp, FaInstagram } from "react-icons/fa";
 import { useLanguage } from "./LanguageContext";
+import { INSTAGRAM_URL } from "@/lib/site";
 
 type FooterProps = {
   brand?: string;
@@ -35,7 +36,7 @@ export default function Footer({
   brand = "Marcela Pedrosa",
   email,
   phone = "+56 9 5618 9912",
-  instagramUrl,
+  instagramUrl = INSTAGRAM_URL,
   whatsappText,
   className = "",
 }: FooterProps) {
@@ -112,6 +113,28 @@ export default function Footer({
             </div>
           </nav>
         </div>
+
+        {/* Enlaces a hubs SEO (mismo estilo tipográfico; sin cambiar paleta) */}
+        <nav
+          aria-label="Explorar"
+          className="mt-6 flex flex-wrap items-center justify-center gap-x-5 gap-y-2 text-xs sm:text-sm text-white/80"
+        >
+          {[
+            { href: "/marcela-pedrosa", label: "La artista" },
+            { href: "/pintora-concepcion", label: "Pintora en Concepción" },
+            { href: "/comprar-pintura-concepcion", label: "Comprar pintura" },
+            { href: "/arte-concepcion", label: "Arte en Concepción" },
+            { href: "/encargos-pintura", label: "Encargos" },
+          ].map((item) => (
+            <a
+              key={item.href}
+              href={item.href}
+              className="hover:text-white hover:underline underline-offset-4 decoration-white/40 transition-colors"
+            >
+              {item.label}
+            </a>
+          ))}
+        </nav>
 
         {/* Línea de crédito (centrada) */}
         {authorWaHref && (

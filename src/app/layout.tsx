@@ -6,6 +6,7 @@ import { LanguageProvider } from "./components/LanguageContext";
 import JsonLd from "./components/seo/JsonLd";
 import HamburgerMenu from "./components/HamburgerMenu";
 import { getAbsoluteSiteImageUrl, getOgImageUrl } from "@/lib/cloudinary";
+import { INSTAGRAM_URL, SITE_URL } from "@/lib/site";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -24,7 +25,7 @@ const fraunces = Fraunces({
 });
 
 const ARTIST_NAME = "Marcela Pedrosa";
-const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://mpedrosa.studio";
+const BASE_URL = SITE_URL;
 
 export const metadata: Metadata = {
   metadataBase: new URL(BASE_URL),
@@ -94,8 +95,7 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const instagramUrl = process.env.NEXT_PUBLIC_INSTAGRAM_URL;
-  const sameAs = instagramUrl ? [instagramUrl] : [];
+  const sameAs = [INSTAGRAM_URL];
 
   return (
     <html lang="es-CL">

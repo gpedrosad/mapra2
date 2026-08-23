@@ -96,9 +96,9 @@ export default function ContactForm({
       ].join(" ")}
     >
       <header className="mb-6">
-        <h2 className="font-display text-2xl sm:text-3xl font-medium tracking-tight text-ink">
+        <h1 className="font-display text-2xl sm:text-3xl font-medium tracking-tight text-ink">
           {L.title}
-        </h2>
+        </h1>
         <p className="mt-2 text-sm text-ink-muted leading-relaxed">{L.subtitle}</p>
       </header>
 

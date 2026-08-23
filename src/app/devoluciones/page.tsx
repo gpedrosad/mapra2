@@ -2,9 +2,14 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Footer from "../components/Footer";
 
+const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://mpedrosa.studio";
+
 export const metadata: Metadata = {
   title: "Política de Devolución — Marcela Pedrosa",
   description: "Cambios y devoluciones según normativa aplicable.",
+  alternates: {
+    canonical: `${BASE_URL}/devoluciones`,
+  },
 };
 
 export default function DevolucionesPage() {

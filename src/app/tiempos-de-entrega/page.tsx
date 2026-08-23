@@ -2,9 +2,14 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Footer from "../components/Footer";
 
+const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://mpedrosa.studio";
+
 export const metadata: Metadata = {
   title: "Tiempos de Entrega — Marcela Pedrosa",
   description: "Plazos de entrega de obras originales y cerámica gres.",
+  alternates: {
+    canonical: `${BASE_URL}/tiempos-de-entrega`,
+  },
 };
 
 export default function TiemposEntregaPage() {

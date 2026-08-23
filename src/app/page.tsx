@@ -4,9 +4,19 @@ import ArtistHero from "./components/ArtistHero";
 import AboutArtist from "./components/AboutArtist";
 import MonthlyArtOfferCard from "./components/MonthlyArtOfferCard";
 import Footer from "./components/Footer";
+import ProductJsonLd from "./components/seo/ProductJsonLd";
 import { getManagedImageUrls } from "@/lib/managed-image-store";
+import { getSiteImageUrl } from "@/lib/cloudinary";
+import {
+  TITLE,
+  INFO,
+  CURRENCY,
+  PRICE_LIST,
+  PRICE_SALE,
+} from "@/lib/monthly-offer";
+import { INSTAGRAM_URL, SITE_URL } from "@/lib/site";
 
-const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://mpedrosa.studio";
+const BASE_URL = SITE_URL;
 
 /** Solo canonical: el título/descripción SEO vienen del layout (sin cambiar la UI). */
 export const metadata: Metadata = {
@@ -22,13 +32,31 @@ export default async function Home() {
     "home.offer.image",
   ]);
 
+  const offerImage =
+    imageUrls["home.offer.image"]?.trim() || getSiteImageUrl("elefante");
+  const offerPrice =
+    typeof PRICE_SALE === "number" && PRICE_SALE < PRICE_LIST
+      ? PRICE_SALE
+      : PRICE_LIST;
+
   return (
     <div className="flex min-h-screen flex-col bg-[var(--background)]">
+      <ProductJsonLd
+        name={TITLE}
+        description={INFO}
+        imageUrl={offerImage}
+        price={offerPrice}
+        priceCurrency={CURRENCY}
+        url={`${BASE_URL}/#ofertames`}
+        availability="https://schema.org/InStock"
+      />
+
       {/* Hero Section - Full bleed, sin padding superior para impacto visual */}
       <section id="inicio" className="scroll-mt-0">
         <ArtistHero
           avatarUrl={imageUrls["home.hero.avatar"]}
           bannerUrl={imageUrls["home.hero.banner"]}
+          instagramUrl={INSTAGRAM_URL}
         />
       </section>
 
@@ -45,7 +73,10 @@ export default async function Home() {
       </main>
 
       {/* Footer con separación visual clara */}
-      <Footer email="contacto@marcelapedrosa.com" />
+      <Footer
+        email="contacto@marcelapedrosa.com"
+        instagramUrl={INSTAGRAM_URL}
+      />
     </div>
   );
 }

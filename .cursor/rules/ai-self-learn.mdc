@@ -1,0 +1,20 @@
+---
+description: Memoria self-learn del proyecto — leer INDEX antes de SEO/GSC/Ads/Google; anotar hallazgos densos.
+alwaysApply: true
+---
+
+# AI Self-Learn (mpedrosa.studio)
+
+Antes de SEO, GSC, Ads, OAuth Google, sitemaps o analytics:
+
+1. Leer `docs/ai-self-learn/INDEX.md` (hechos densos).
+2. Si el dato ya está ahí o en el doc enlazado, **no** re-rastrear repo/web desde cero ni rehacer OAuth.
+3. Tras un hallazgo estable o cambio relevante: añadir líneas a `docs/ai-self-learn/log.md` y actualizar el bullet en `INDEX.md`.
+
+Reglas de anotación:
+
+- 1 bullet = 1 hecho usable (URL, métrica, decisión, fecha).
+- Enlazar informes (`docs/gsc-informe-*.md`, `docs/gsc-oauth-setup.md`); no pegar tablas ni tokens.
+- Marcar `pendiente:` vs hecho.
+
+GSC / Google OAuth: seguir `docs/gsc-oauth-setup.md` (scripts locales; sin MCP GSC).
