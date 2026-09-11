@@ -97,6 +97,15 @@ export const MANAGED_IMAGE_SECTIONS: ManagedImageSectionDefinition[] = [
     hiddenInAdmin: true,
   },
   {
+    id: "pages.pintoras.hero",
+    group: "Páginas SEO",
+    label: "Hero pintoras chilenas",
+    defaultPublicId: "gente_ik69lq",
+    defaultAlt: "Obra de Marcela Pedrosa, pintora chilena",
+    paths: ["/pintoras-chilenas"],
+    hiddenInAdmin: true,
+  },
+  {
     id: "pages.taller.hero",
     group: "Páginas SEO",
     label: "Hero taller de arte",
