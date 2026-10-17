@@ -184,6 +184,27 @@ export default async function EncargosPinturaPage() {
                 </a>
               </div>
             </div>
+            <p className="text-ink-body leading-relaxed mb-6">
+              El paso a paso de la consulta está en{" "}
+              <Link href="/guias/como-encargar-una-pintura" className="text-brand underline">
+                cómo encargar una pintura
+              </Link>
+              . Qué se conversa del valor, sin cifras en el sitio, está en{" "}
+              <Link href="/guias/cuanto-cuesta-un-cuadro-original-en-chile" className="text-brand underline">
+                qué define el valor de un cuadro
+              </Link>{" "}
+              y en{" "}
+              <Link href="/guias/oleo-vs-acrilico" className="text-brand underline">óleo o acrílico</Link>.
+              Si la obra ya existe, mira{" "}
+              <Link href="/cuadros/regalar-pintura-original" className="text-brand underline">
+                regalar una pintura original
+              </Link>{" "}
+              o{" "}
+              <Link href="/cuadros/para-oficina" className="text-brand underline">
+                cuadros para oficina
+              </Link>
+              .
+            </p>
           </article>
 
           <div className="mt-12 pt-8 border-t border-line">

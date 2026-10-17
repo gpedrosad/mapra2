@@ -7,13 +7,15 @@ import { getSiteImageUrl } from "@/lib/cloudinary";
 import { getManagedImageUrl } from "@/lib/managed-image-store";
 import { pageMetadata } from "@/lib/metadata";
 import Breadcrumbs from "../components/seo/Breadcrumbs";
+import CatalogFichaLinks from "../components/seo/CatalogFichaLinks";
+import { FaqJsonLd } from "../components/seo/GuideParts";
 import SiteHub from "../components/seo/SiteHub";
 
 
 export const metadata: Metadata = pageMetadata({
-  title: 'Óleo sobre tela en Chile | Marcela Pedrosa',
+  title: 'Óleo sobre tela en Chile | medidas | Pedrosa',
   description:
-    'Óleo sobre tela de Marcela Pedrosa, desde Concepción. Pintura original e impresionismo figurativo en Chile.',
+    'Óleo sobre tela de Marcela Pedrosa en Concepción. Medidas publicadas: 158x122, 110x110, 90x120 y 100x130. El resto se consulta.',
   path: '/oleo-sobre-tela-chile',
   ogImageKey: 'mujer',
   imageAlt: 'Pintura al óleo sobre tela de Marcela Pedrosa',
@@ -31,6 +33,21 @@ export const metadata: Metadata = pageMetadata({
   ],
 });
 
+const OLEO_FAQS = [
+  {
+    q: "¿Qué medidas de óleo sobre tela están publicadas?",
+    a: "Cuatro fichas traen números: 158x122, 110x110, 90x120 y 100x130, todas óleo sobre tela. El resto de la galería dice óleo sobre tela y la medida se pide al consultar.",
+  },
+  {
+    q: "¿Cómo se consulta un óleo sobre tela?",
+    a: "Por WhatsApp al +56 9 5618 9912 o por correo a contacto@marcelapedrosa.com. El precio no está en la ficha.",
+  },
+  {
+    q: "¿Dónde ver las obras al óleo?",
+    a: "Cada pintura publicada tiene ficha en el sitio. También están agrupadas para comprar cuadros al óleo en Chile y por motivo: retrato, bosque, animales y bodegón.",
+  },
+];
+
 export default async function OleoSobreTelaChilePage() {
   const heroImageUrl =
     (await getManagedImageUrl("pages.oleo.hero")) ||
@@ -38,6 +55,7 @@ export default async function OleoSobreTelaChilePage() {
 
   return (
     <main className="min-h-screen bg-[var(--background)]">
+      <FaqJsonLd faqs={OLEO_FAQS} />
       {/* Hero Section */}
       <section className="relative py-16 sm:py-20 lg:py-24">
         <div className="mx-auto max-w-4xl px-4 sm:px-6">
@@ -70,7 +88,7 @@ export default async function OleoSobreTelaChilePage() {
         <div className="mx-auto max-w-4xl px-4 sm:px-6">
           <article className="prose prose-lg max-w-none">
             <h2 className="text-3xl font-semibold text-ink mb-6">
-              La Pintura al Óleo sobre Tela: Tradición y Calidad
+              Óleo sobre tela en Chile, con las medidas publicadas
             </h2>
 
             <p className="text-ink-body leading-relaxed mb-6">
@@ -346,6 +364,63 @@ export default async function OleoSobreTelaChilePage() {
               Sus obras en <strong>óleo sobre tela</strong> forman parte de colecciones privadas en 
               Chile y el extranjero, testimonio de la calidad técnica y el valor artístico de su trabajo.
             </p>
+
+            <h2 className="text-2xl font-semibold text-ink mt-10 mb-4">
+              Preguntas sobre el óleo sobre tela
+            </h2>
+            <div className="space-y-4 my-8">
+              {OLEO_FAQS.map((faq) => (
+                <div key={faq.q} className="bg-white border border-line rounded-xl p-6">
+                  <h3 className="font-semibold text-ink mb-2">{faq.q}</h3>
+                  <p className="text-ink-body text-sm">{faq.a}</p>
+                </div>
+              ))}
+            </div>
+
+            <p className="text-ink-body leading-relaxed mb-6">
+              Para comprar, la página de{" "}
+              <Link href="/comprar-cuadros-al-oleo-chile" className="text-brand underline">
+                cuadros al óleo en Chile
+              </Link>{" "}
+              lista estas obras con envío. Si partes por el muro, mira{" "}
+              <Link href="/cuadros" className="text-brand underline">cuadros</Link>,{" "}
+              <Link href="/cuadros/grandes-al-oleo" className="text-brand underline">
+                los formatos con medida
+              </Link>{" "}
+              y{" "}
+              <Link href="/cuadros/para-living" className="text-brand underline">
+                cuadros para el living
+              </Link>
+              . Las guías{" "}
+              <Link href="/guias" className="text-brand underline">para elegir obra</Link>,{" "}
+              <Link href="/guias/oleo-vs-acrilico" className="text-brand underline">óleo o acrílico</Link>,{" "}
+              <Link href="/guias/cuidar-y-colgar-pintura-al-oleo" className="text-brand underline">
+                cuidar y colgar un óleo
+              </Link>,{" "}
+              <Link href="/guias/elegir-cuadro-para-el-living" className="text-brand underline">
+                elegir un cuadro para el living
+              </Link>{" "}
+              y{" "}
+              <Link href="/guias/cuanto-cuesta-un-cuadro-original-en-chile" className="text-brand underline">
+                qué define el valor
+              </Link>{" "}
+              explican el oficio sin publicar un precio. Por motivo:{" "}
+              <Link href="/retratos-al-oleo" className="text-brand underline">retratos</Link>,{" "}
+              <Link href="/figuras-al-oleo" className="text-brand underline">figuras</Link>,{" "}
+              <Link href="/pintura-de-animales" className="text-brand underline">animales</Link>,{" "}
+              <Link href="/pintura-de-bosques" className="text-brand underline">bosques</Link>,{" "}
+              <Link href="/bodegon-oleo" className="text-brand underline">bodegón</Link>{" "}
+              y{" "}
+              <Link href="/cuadros/paisajes-bosques-biobio" className="text-brand underline">
+                paisajes del Biobío
+              </Link>
+              . La guía del estilo está en{" "}
+              <Link href="/guias/que-es-el-impresionismo-figurativo" className="text-brand underline">
+                qué es el impresionismo figurativo
+              </Link>
+              .
+            </p>
+            <CatalogFichaLinks />
           </article>
 
           {/* Enlaces relacionados */}

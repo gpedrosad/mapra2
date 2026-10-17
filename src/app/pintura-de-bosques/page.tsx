@@ -116,6 +116,11 @@ export default async function PinturaDeBosquesPage() {
                 note: "La serie como la presenta el sitio, fachadas incluidas",
               },
               {
+                href: "/cuadros/paisajes-bosques-biobio",
+                label: "Cuadros de bosques del Biobío",
+                note: "Las mismas dos telas, para consultar y colgar",
+              },
+              {
                 href: "/impresionismo-figurativo-chile",
                 label: "Impresionismo figurativo",
                 note: "El estilo nombrado para estos paisajes",

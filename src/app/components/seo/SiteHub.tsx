@@ -10,6 +10,7 @@ const CLUSTERS = [
       { href: "/artista-visual-biobio", label: "Artista visual del Biobío" },
       { href: "/pintoras-chilenas", label: "Pintoras chilenas" },
       { href: "/mujeres-artistas-chilenas", label: "Mujeres artistas chilenas" },
+      { href: "/artistas-chilenas", label: "Perfiles de artistas chilenas" },
     ],
   },
   {
@@ -26,9 +27,12 @@ const CLUSTERS = [
     title: "Comprar",
     links: [
       { href: "/comprar-cuadros-al-oleo-chile", label: "Cuadros al óleo en Chile" },
+      { href: "/comprar-arte-chile", label: "Comprar arte en Chile" },
       { href: "/comprar-pintura-concepcion", label: "Comprar en Concepción" },
       { href: "/pinturas", label: "Pinturas originales a la venta" },
-      { href: "/cuadros-para-living", label: "Cuadros para el living" },
+      { href: "/cuadros", label: "Cuadros según el espacio" },
+      { href: "/cuadros/para-living", label: "Cuadros para el living" },
+      { href: "/guias", label: "Guías para elegir obra" },
       { href: "/encargos-pintura", label: "Encargar una pintura" },
       { href: "/tiempos-de-entrega", label: "Tiempos de entrega" },
       { href: "/contacto", label: "Contacto" },

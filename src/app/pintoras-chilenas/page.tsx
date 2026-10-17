@@ -11,9 +11,9 @@ import SiteHub from "../components/seo/SiteHub";
 
 
 export const metadata: Metadata = pageMetadata({
-  title: 'Pintoras chilenas famosas y actuales | Marcela Pedrosa',
+  title: 'Pintoras chilenas famosas y actuales | Pedrosa',
   description:
-    'Pintoras chilenas famosas y actuales. Artistas chilenas, mujeres pintoras: de las pioneras a Marcela Pedrosa, en Concepción.',
+    'Pintoras chilenas famosas y actuales, y artistas chilenas mujeres pintoras: Castro, Mira, Petit, Barrios, Bru, Aldunate y Pedrosa.',
   path: '/pintoras-chilenas',
   ogImageKey: 'gente',
   imageAlt: 'Obra de Marcela Pedrosa, pintora chilena',
@@ -70,6 +70,22 @@ const faqSchema = {
         text: "Las pintoras chilenas trabajan principalmente óleo sobre tela, acrílico, acuarela, grabado y técnicas mixtas. Marcela Pedrosa se especializa en óleo sobre tela con un estilo de impresionismo figurativo.",
       },
     },
+    {
+      "@type": "Question",
+      name: "¿Quiénes son artistas chilenas mujeres pintoras?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "En esta página, artistas chilenas mujeres pintoras son Celia Castro, Aurora Mira, Magdalena Mira, Henriette Petit, Matilde Pérez, Gracia Barrios, Roser Bru, Carmen Aldunate y Marcela Pedrosa, que pinta en Concepción. Cada nombre enlaza a su perfil.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "¿Dónde ver pintoras chilenas famosas y actuales?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Las famosas de este recorrido son Castro, las hermanas Mira, Petit, Pérez, Barrios, Bru y Aldunate. De las actuales, el sitio presenta a Marcela Pedrosa en Concepción. Los perfiles con fuente están en la serie de artistas chilenas.",
+      },
+    },
   ],
 };
 
@@ -117,7 +133,7 @@ export default async function PintorasChilenasPage() {
         <div className="mx-auto max-w-4xl px-4 sm:px-6">
           <article className="prose prose-lg max-w-none">
             <h2 className="text-3xl font-semibold text-ink mb-6">
-              Las Pintoras Chilenas: Una Tradición con Voz Propia
+              Pintoras chilenas famosas y actuales
             </h2>
 
             <p className="text-ink-body leading-relaxed mb-6">
@@ -140,18 +156,69 @@ export default async function PintorasChilenasPage() {
 
             <p className="text-ink-body leading-relaxed mb-6">
               Las <strong>pintoras chilenas famosas</strong> de este recorrido
-              son Celia Castro, Aurora Mira y Magdalena Mira, y en el siglo XX
-              Henriette Petit, Matilde Pérez, Gracia Barrios, Roser Bru y Carmen
-              Aldunate. Las <strong>pintoras chilenas actuales</strong> siguen
+              son{" "}
+              <Link href="/artistas-chilenas/celia-castro" className="text-brand underline">
+                Celia Castro
+              </Link>
+              ,{" "}
+              <Link href="/artistas-chilenas/aurora-mira" className="text-brand underline">
+                Aurora Mira
+              </Link>{" "}
+              y{" "}
+              <Link href="/artistas-chilenas/magdalena-mira" className="text-brand underline">
+                Magdalena Mira
+              </Link>
+              , y en el siglo XX{" "}
+              <Link href="/artistas-chilenas/henriette-petit" className="text-brand underline">
+                Henriette Petit
+              </Link>
+              ,{" "}
+              <Link href="/artistas-chilenas/matilde-perez" className="text-brand underline">
+                Matilde Pérez
+              </Link>
+              ,{" "}
+              <Link href="/artistas-chilenas/gracia-barrios" className="text-brand underline">
+                Gracia Barrios
+              </Link>
+              ,{" "}
+              <Link href="/artistas-chilenas/roser-bru" className="text-brand underline">
+                Roser Bru
+              </Link>{" "}
+              y{" "}
+              <Link href="/artistas-chilenas/carmen-aldunate" className="text-brand underline">
+                Carmen Aldunate
+              </Link>
+              . Las <strong>pintoras chilenas actuales</strong> siguen
               en regiones: en Concepción, Marcela Pedrosa pinta fachadas y
-              bosques del Biobío. El marco más amplio, el de las{" "}
+              bosques del Biobío. Los perfiles, con la fuente de cada dato, están
+              en{" "}
+              <Link href="/artistas-chilenas" className="text-brand underline">
+                artistas chilenas
+              </Link>
+              . El recorte de Barrios, Bru, Pérez y Aldunate está en{" "}
+              <Link
+                href="/artistas-chilenas/pintoras-chilenas-contemporaneas"
+                className="text-brand underline"
+              >
+                esos cuatro perfiles
+              </Link>
+              . El marco más amplio, el de las{" "}
               <Link
                 href="/mujeres-artistas-chilenas"
                 className="text-brand underline"
               >
                 artistas chilenas, mujeres pintoras
               </Link>
-              , está en la página de mujeres artistas chilenas.
+              , está en la página de mujeres artistas chilenas. Para ver obra
+              de Marcela, entra a{" "}
+              <Link href="/cuadros" className="text-brand underline">
+                cuadros al óleo
+              </Link>{" "}
+              o a{" "}
+              <Link href="/comprar-arte-chile" className="text-brand underline">
+                comprar arte en Chile
+              </Link>
+              .
             </p>
 
             <h3 className="text-2xl font-semibold text-ink mt-10 mb-4">
@@ -478,6 +545,29 @@ export default async function PintorasChilenasPage() {
                   Principalmente óleo sobre tela, acrílico, acuarela, grabado y
                   técnicas mixtas. El óleo sobre tela sigue siendo la técnica
                   reina de la pintura chilena.
+                </p>
+              </div>
+              <div className="bg-white border border-line rounded-xl p-6">
+                <h4 className="font-semibold text-ink mb-2">
+                  ¿Quiénes son artistas chilenas mujeres pintoras?
+                </h4>
+                <p className="text-ink-body text-sm">
+                  En esta página, artistas chilenas mujeres pintoras son Celia
+                  Castro, Aurora Mira, Magdalena Mira, Henriette Petit, Matilde
+                  Pérez, Gracia Barrios, Roser Bru, Carmen Aldunate y Marcela
+                  Pedrosa, que pinta en Concepción. Cada nombre enlaza a su
+                  perfil.
+                </p>
+              </div>
+              <div className="bg-white border border-line rounded-xl p-6">
+                <h4 className="font-semibold text-ink mb-2">
+                  ¿Dónde ver pintoras chilenas famosas y actuales?
+                </h4>
+                <p className="text-ink-body text-sm">
+                  Las famosas de este recorrido son Castro, las hermanas Mira,
+                  Petit, Pérez, Barrios, Bru y Aldunate. De las actuales, el
+                  sitio presenta a Marcela Pedrosa en Concepción. Los perfiles
+                  con fuente están en la serie de artistas chilenas.
                 </p>
               </div>
             </div>

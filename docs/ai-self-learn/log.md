@@ -41,3 +41,8 @@ Formato: `YYYY-MM-DD | tema | hecho | acción/implicación`
 - SEO | Imágenes de obra en páginas no menú: alt descriptivo del archivo real, width, height y sizes | Menú, header y home sin cambios
 - SEO | Oportunidades off-page en `docs/seo-oportunidades-ronda2.md` | Competidores con precio (Kunst, Galería Chilena, Ambulante, Bascuñán, Bucarest); GBP pendiente; Artelista `mpedrosar.artelista.com` a confirmar con la clienta
 - SEO | Merge `origin/main` → `cursor/seo-ronda2-guias-e05e` (2026-10-17) | Se conservan las 6 guías de #6 y las páginas de temas y compra. Sitemap: `SITEMAP_ROUTES` + fichas `/pinturas/[slug]` + `/guias` + cada `/guias/[slug]` + rutas de `SEO_GUIDES`. Menú, nav y home idénticos a main. `/guias` no entra al menú.
+- GSC | Corte del brief 2026-10-17 (dato hasta 2026-10-15, 90d): 7 clics, 224 impresiones, CTR 3,1 %, pos 8,9. `/pintoras-chilenas` 3 clics / 157 imp / pos 7,5 | Páginas nuevas (`/guias`, `/artistas-chilenas`, `/cuadros`, fichas) desconocidas para Google
+- SEO | Lote diario: sitemap suma `/artistas-chilenas` y `/cuadros`; `lastmod` fijo en `src/lib/sitemap-lastmod.ts` | No usar `new Date()` en cada build
+- SEO | 301 `/cuadros-para-living` → `/cuadros/para-living`. Guía de living se mantiene (cómo medir) | Head de pintoras sigue en `/pintoras-chilenas`
+- SEO | Fichas: slug de motivo + 301 desde `c1`…`c15`. VisualArtwork sin precio | Lista de indexación en `docs/seo-lote-2026-10-17.md`
+- SEO | `www.mpedrosa.studio` 307 al apex | Configuración de dominio en Vercel, no de código

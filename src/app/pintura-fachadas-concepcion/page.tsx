@@ -174,6 +174,20 @@ export default async function PinturaFachadasConcepcionPage() {
                 </Link>
               </div>
             </div>
+            <p className="text-ink-body leading-relaxed mb-6">
+              Esta página cuenta la serie. Para elegir una tela y consultar, usa{" "}
+              <Link href="/cuadros/fachadas-arquitectura" className="text-brand underline">
+                cuadros de fachadas y arquitectura
+              </Link>{" "}
+              o{" "}
+              <Link href="/cuadros/paisajes-bosques-biobio" className="text-brand underline">
+                cuadros de bosques del Biobío
+              </Link>
+              . Las dos obras de bosque, solas, están en{" "}
+              <Link href="/pintura-de-bosques" className="text-brand underline">pintura de bosques</Link>.
+              Las de ciudad, en{" "}
+              <Link href="/pintura-de-ciudad" className="text-brand underline">pintura de ciudad</Link>.
+            </p>
           </article>
 
           <div className="mt-12 pt-8 border-t border-line">

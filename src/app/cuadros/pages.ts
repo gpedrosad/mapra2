@@ -292,7 +292,7 @@ export const CUADRO_PAGES: CuadroPage[] = [
     blocks: [
       {
         type: "p",
-        text: "En la galería hay dos pinturas que son bosque. El resto de las telas son figuras, retratos, animales, un bodegón o ciudad. Esta página se queda con esos dos óleos, para quien busca un cuadro de paisaje y quiere ver la obra real antes de escribir.",
+        text: `En la galería hay dos pinturas que son bosque. El resto de las telas son figuras, retratos, animales, un bodegón o ciudad. Esta página es para comprar uno de esos dos óleos. La ficha del motivo, sin el filtro de muro, está en ${link("/pintura-de-bosques", "pintura de bosques")}.`,
       },
       {
         type: "h2",
@@ -352,7 +352,7 @@ export const CUADRO_PAGES: CuadroPage[] = [
     blocks: [
       {
         type: "p",
-        text: "Quien busca un cuadro de fachadas suele querer casas, color y una ciudad con clima de sur, no un plano técnico. En la galería de Marcela Pedrosa hay dos fichas que muestran eso. Las describo por lo que se ve. El texto más largo sobre su serie urbana, escrito desde Concepción, sigue en la página de pintura de fachadas.",
+        text: `Quien busca un cuadro de fachadas suele querer casas, color y una ciudad con clima de sur, no un plano técnico. En la galería de Marcela Pedrosa hay dos fichas que muestran eso. Las describo por lo que se ve, para consultarlas. El texto más largo sobre la serie, escrito desde Concepción, sigue en ${link("/pintura-fachadas-concepcion", "pintura de fachadas y bosques")}. Las vistas de ciudad, solas, están en ${link("/pintura-de-ciudad", "pintura de ciudad")}.`,
       },
       {
         type: "h2",

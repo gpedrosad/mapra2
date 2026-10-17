@@ -439,6 +439,18 @@ export default async function CeramicaArtisticaConcepcionPage() {
               cultural de la región, conectando con tradiciones ancestrales mientras explora 
               lenguajes contemporáneos.
             </p>
+            <p className="text-ink-body leading-relaxed mb-6">
+              En escultura chilena, el perfil con fuente es el de{" "}
+              <Link href="/artistas-chilenas/lily-garafulic" className="text-brand underline">
+                Lily Garafulic
+              </Link>
+              , dentro de{" "}
+              <Link href="/artistas-chilenas" className="text-brand underline">artistas chilenas</Link>.
+              Si la consulta es por pintura y no por gres, la guía{" "}
+              <Link href="/guias/oleo-vs-acrilico" className="text-brand underline">óleo o acrílico</Link>{" "}
+              compara soportes. El índice de esas lecturas está en{" "}
+              <Link href="/guias" className="text-brand underline">guías</Link>.
+            </p>
           </article>
 
           {/* Enlaces relacionados */}

@@ -11,9 +11,9 @@ import SiteHub from "../components/seo/SiteHub";
 
 
 export const metadata: Metadata = pageMetadata({
-  title: 'Mujeres artistas chilenas | Marcela Pedrosa',
+  title: 'Mujeres artistas chilenas | Pedrosa',
   description:
-    'Mujeres artistas chilenas. Marcela Pedrosa, pintora y ceramista de Concepción, junto a otras pintoras del país.',
+    'Mujeres artistas chilenas en pintura, cerámica y arte visual. Marcela Pedrosa, de Concepción. Las pintoras tienen su propia página.',
   path: '/mujeres-artistas-chilenas',
   ogImageKey: 'gente',
   imageAlt: 'Obra de Marcela Pedrosa, mujer artista chilena',
@@ -47,7 +47,7 @@ export default async function MujeresArtistasChilenasPage() {
               Mujeres Artistas Chilenas
             </h1>
             <p className="text-xl sm:text-2xl text-ink-body mb-8 leading-relaxed">
-              Historia, Presente y Futuro del Arte Femenino en Chile
+              Pintura, cerámica y arte visual, aparte del listado de pintoras
             </p>
           </div>
 
@@ -187,7 +187,30 @@ export default async function MujeresArtistasChilenasPage() {
                 pintoras chilenas
               </Link>{" "}
               recorre a las pioneras y a quienes trabajan hoy, incluida Marcela
-              Pedrosa desde Concepción.
+              Pedrosa desde Concepción. Esta página no compite con ese listado:
+              aquí el tema es más ancho, pintura y también cerámica y arte visual.
+              Los perfiles con fuente están en{" "}
+              <Link href="/artistas-chilenas" className="text-brand underline">
+                artistas chilenas
+              </Link>
+              :{" "}
+              <Link href="/artistas-chilenas/celia-castro" className="text-brand underline">Celia Castro</Link>,{" "}
+              <Link href="/artistas-chilenas/magdalena-mira" className="text-brand underline">Magdalena Mira</Link>,{" "}
+              <Link href="/artistas-chilenas/aurora-mira" className="text-brand underline">Aurora Mira</Link>,{" "}
+              <Link href="/artistas-chilenas/henriette-petit" className="text-brand underline">Henriette Petit</Link>,{" "}
+              <Link href="/artistas-chilenas/camilo-mori" className="text-brand underline">Camilo Mori</Link>,{" "}
+              <Link href="/artistas-chilenas/lily-garafulic" className="text-brand underline">Lily Garafulic</Link>,{" "}
+              <Link href="/artistas-chilenas/matilde-perez" className="text-brand underline">Matilde Pérez</Link>,{" "}
+              <Link href="/artistas-chilenas/gracia-barrios" className="text-brand underline">Gracia Barrios</Link>,{" "}
+              <Link href="/artistas-chilenas/roser-bru" className="text-brand underline">Roser Bru</Link>,{" "}
+              <Link href="/artistas-chilenas/carmen-aldunate" className="text-brand underline">Carmen Aldunate</Link>,{" "}
+              <Link href="/artistas-chilenas/totoy-zamudio" className="text-brand underline">Totoy Zamudio</Link>{" "}
+              y{" "}
+              <Link href="/artistas-chilenas/pintoras-chilenas-contemporaneas" className="text-brand underline">
+                Barrios, Bru, Pérez y Aldunate
+              </Link>
+              . Los retratos al óleo de Marcela están en{" "}
+              <Link href="/retratos-al-oleo" className="text-brand underline">retratos al óleo</Link>.
             </p>
 
             <h3 className="text-2xl font-semibold text-ink mt-10 mb-4">

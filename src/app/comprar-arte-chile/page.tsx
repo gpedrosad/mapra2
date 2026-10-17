@@ -43,7 +43,7 @@ export const metadata: Metadata = {
     absolute: "Comprar arte original en Chile | Marcela Pedrosa",
   },
   description:
-    "Compra pintura original en Chile consultando a Marcela Pedrosa. Óleos publicados, medidas cuando existen, envío y contacto por WhatsApp o correo. Sin precio en la ficha.",
+    "Comprar arte original en Chile, por motivo: retrato, figura, bosque, ciudad. Sin precio en la ficha. Consulta por WhatsApp.",
   keywords: [
     "comprar arte chile",
     "comprar pintura original chile",
@@ -97,6 +97,21 @@ export default async function ComprarArteChilePage() {
             Marcela Pedrosa vende obra original por consulta, desde su taller en Concepción
             hacia el resto de Chile. En esta página están las pinturas publicadas hoy, agrupadas
             por lo que muestran. El precio no figura: se pide por WhatsApp o por correo.
+          </p>
+          <p className="mt-4 leading-relaxed text-ink-body">
+            Hay tres consultas distintas. Si estás en la ciudad, usa{" "}
+            <Link href="/comprar-pintura-concepcion" className="text-brand underline">
+              comprar pintura en Concepción
+            </Link>
+            . Si ya quieres un óleo y el envío dentro de Chile, la lista está en{" "}
+            <Link href="/comprar-cuadros-al-oleo-chile" className="text-brand underline">
+              comprar cuadros al óleo
+            </Link>
+            . Esta página ordena por motivo. Si partes por el muro, mira{" "}
+            <Link href="/cuadros" className="text-brand underline">
+              cuadros según el espacio
+            </Link>
+            .
           </p>
 
           <h2 className="mb-4 mt-10 text-2xl font-semibold text-ink">Qué hay publicado</h2>

@@ -48,7 +48,8 @@ export default function ArtistasChilenasIndexPage() {
         <Link href="/pintoras-chilenas" className="text-brand underline">
           pintoras chilenas
         </Link>
-        . En el siglo XIX,{" "}
+        . Esa página reúne a las famosas y a las actuales. Los perfiles de
+        abajo no la reemplazan: cada uno documenta a una persona. En el siglo XIX,{" "}
         <Link href="/artistas-chilenas/celia-castro" className="text-brand underline">
           Celia Castro
         </Link>

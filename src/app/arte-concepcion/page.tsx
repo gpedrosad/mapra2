@@ -243,6 +243,18 @@ export default async function ArteConcepcionPage() {
                 </p>
               </div>
             </div>
+            <p className="text-ink-body leading-relaxed mb-6">
+              Para elegir una tela de la ciudad, mira{" "}
+              <Link href="/pintura-de-ciudad" className="text-brand underline">pintura de ciudad</Link>{" "}
+              y{" "}
+              <Link href="/cuadros/fachadas-arquitectura" className="text-brand underline">
+                cuadros de fachadas
+              </Link>
+              . Un muro de trabajo tiene su grupo en{" "}
+              <Link href="/cuadros/para-oficina" className="text-brand underline">cuadros para oficina</Link>.
+              La compra por motivo, fuera de esta página local, está en{" "}
+              <Link href="/comprar-arte-chile" className="text-brand underline">comprar arte en Chile</Link>.
+            </p>
           </article>
 
           <div className="mt-12 pt-8 border-t border-line">
