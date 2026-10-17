@@ -299,6 +299,27 @@ export default async function TallerArteConcepcionPage() {
                 </div>
               </div>
             </div>
+            <p className="text-ink-body leading-relaxed mb-6">
+              Desde el taller se elige obra ya hecha en{" "}
+              <Link href="/cuadros" className="text-brand underline">cuadros</Link>,{" "}
+              <Link href="/cuadros/para-dormitorio" className="text-brand underline">para el dormitorio</Link>{" "}
+              o para{" "}
+              <Link href="/cuadros/regalar-pintura-original" className="text-brand underline">
+                regalar una pintura original
+              </Link>
+              . Las{" "}
+              <Link href="/guias" className="text-brand underline">guías</Link>{" "}
+              explican{" "}
+              <Link href="/guias/cuidar-y-colgar-pintura-al-oleo" className="text-brand underline">
+                cómo cuidar y colgar un óleo
+              </Link>{" "}
+              y{" "}
+              <Link href="/guias/como-encargar-una-pintura" className="text-brand underline">
+                cómo encargar
+              </Link>
+              . Los animales publicados están en{" "}
+              <Link href="/pintura-de-animales" className="text-brand underline">pintura de animales</Link>.
+            </p>
           </article>
 
           {/* Enlaces relacionados */}

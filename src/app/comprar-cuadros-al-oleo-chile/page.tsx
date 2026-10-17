@@ -80,7 +80,15 @@ export default async function ComprarCuadrosAlOleoChilePage() {
             comprar pintura en Concepción
           </Link>
           . Esta página es para quien quiere un cuadro al óleo con destino en
-          Chile.
+          Chile. Para elegir por motivo (retrato, bosque, ciudad) entra a{" "}
+          <Link href="/comprar-arte-chile" className="text-brand underline underline-offset-4">
+            comprar arte en Chile
+          </Link>
+          . Para elegir por el muro, entra a{" "}
+          <Link href="/cuadros" className="text-brand underline underline-offset-4">
+            cuadros
+          </Link>
+          .
         </p>
 
         <h2 className="text-2xl font-semibold text-ink mb-4">Envío dentro de Chile</h2>

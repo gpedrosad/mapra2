@@ -2,9 +2,9 @@ import Link from "next/link";
 import { ProfilePage, perfilMetadata } from "../ui";
 import { SITE_URL } from "@/lib/site";
 
-const TITLE = "Pintoras chilenas contemporáneas | Pedrosa";
+const TITLE = "Barrios, Bru, Pérez y Aldunate | perfiles";
 const DESCRIPTION =
-  "Pintoras chilenas contemporáneas: Barrios, Bru, Pérez y Aldunate, y Marcela Pedrosa desde su taller en Concepción.";
+  "Perfiles de Gracia Barrios, Roser Bru, Matilde Pérez y Carmen Aldunate. El listado de pintoras chilenas está en su página.";
 
 export const metadata = perfilMetadata({
   title: TITLE,
@@ -16,7 +16,7 @@ export default function PintorasContemporaneasPage() {
   return (
     <ProfilePage
       slug="pintoras-chilenas-contemporaneas"
-      h1="Pintoras chilenas contemporáneas"
+      h1="Perfiles: Barrios, Bru, Pérez y Aldunate"
       kicker="Un recorrido por pintoras con obra activa en la segunda mitad del siglo XX y en el XXI, hasta el taller de Marcela Pedrosa en Concepción."
       description={DESCRIPTION}
       person={{
@@ -35,6 +35,14 @@ export default function PintorasContemporaneasPage() {
         sameAs: [`${SITE_URL}/marcela-pedrosa`],
       }}
     >
+      <p>
+        El listado de pintoras chilenas famosas y actuales está en{" "}
+        <Link href="/pintoras-chilenas" className="text-brand underline">
+          pintoras chilenas
+        </Link>
+        . Esta página no lo reemplaza: se queda con cuatro carreras y con el
+        taller de Marcela Pedrosa en Concepción.
+      </p>
       <p>
         Pintoras chilenas contemporáneas es un nombre que la gente usa para
         preguntar quién pinta ahora, y también quién siguió pintando cuando el

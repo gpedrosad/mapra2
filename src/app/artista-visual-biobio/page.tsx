@@ -242,6 +242,24 @@ export default async function ArtistaVisualBiobioPage() {
               de vanguardia, creando un puente entre la herencia artística regional y las tendencias 
               contemporáneas del arte visual.
             </p>
+            <p className="text-ink-body leading-relaxed mb-6">
+              Los perfiles de quienes se buscan junto a ese contexto están en{" "}
+              <Link href="/artistas-chilenas" className="text-brand underline">artistas chilenas</Link>,
+              entre ellos{" "}
+              <Link href="/artistas-chilenas/camilo-mori" className="text-brand underline">Camilo Mori</Link>{" "}
+              y{" "}
+              <Link href="/artistas-chilenas/totoy-zamudio" className="text-brand underline">Totoy Zamudio</Link>.
+              La obra de Marcela por lugar:{" "}
+              <Link href="/cuadros/paisajes-bosques-biobio" className="text-brand underline">bosques del Biobío</Link>,{" "}
+              <Link href="/cuadros/fachadas-arquitectura" className="text-brand underline">fachadas</Link>,{" "}
+              <Link href="/pintura-de-bosques" className="text-brand underline">pintura de bosques</Link>{" "}
+              y{" "}
+              <Link href="/figuras-al-oleo" className="text-brand underline">figuras al óleo</Link>.
+              La guía del estilo es{" "}
+              <Link href="/guias/que-es-el-impresionismo-figurativo" className="text-brand underline">
+                qué es el impresionismo figurativo
+              </Link>.
+            </p>
           </article>
 
           {/* Enlaces relacionados */}

@@ -1,14 +1,7 @@
+import { motifForPublicId } from "@/lib/artwork-slugs";
 import { getImagePixels } from "@/lib/cloudinary";
 import { listGalleryCatalogSources } from "@/lib/managed-image-store";
 import { TITLE as OFFER_TITLE } from "@/lib/monthly-offer";
-
-/**
- * Nombre propio solo cuando el repo ya lo publica.
- * Elefante es la obra de la oferta del mes y la ranura gallery.c3 (mismo public id).
- */
-const NAMED_BY_PUBLIC_ID: Record<string, { slug: string; name: string }> = {
-  elefante_l0mpmz: { slug: "elefante", name: OFFER_TITLE },
-};
 
 export type CatalogArtwork = {
   id: string;
@@ -56,14 +49,17 @@ export async function listCatalogArtworks(): Promise<CatalogArtwork[]> {
   const items = await listGalleryCatalogSources();
 
   return items.map((item) => {
-    const named = NAMED_BY_PUBLIC_ID[item.publicId];
+    const named = motifForPublicId(item.publicId);
     const parsed = parseArtworkInfo(item.info);
     const pixels = getImagePixels(item.publicId);
-    const name = named?.name || `Pintura ${item.id}`;
+    const name =
+      item.publicId === "elefante_l0mpmz"
+        ? OFFER_TITLE
+        : named?.name || `Pintura ${item.id}`;
     const alt = named
       ? parsed.medium
-        ? `${named.name}, ${parsed.medium} de Marcela Pedrosa`
-        : `${named.name} de Marcela Pedrosa`
+        ? `${name}, ${parsed.medium} de Marcela Pedrosa`
+        : `${name} de Marcela Pedrosa`
       : item.alt?.trim() || `${name} de Marcela Pedrosa`;
 
     return {

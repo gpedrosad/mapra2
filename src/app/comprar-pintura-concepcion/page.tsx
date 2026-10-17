@@ -190,6 +190,43 @@ export default async function ComprarPinturaConcepcionPage() {
                 </Link>
               </div>
             </div>
+            <p className="text-ink-body leading-relaxed mb-6">
+              Esta página es la compra en Concepción. Para ver la obra por motivo
+              en todo Chile, entra a{" "}
+              <Link href="/comprar-arte-chile" className="text-brand underline">
+                comprar arte original en Chile
+              </Link>
+              . El catálogo de óleos con envío está en{" "}
+              <Link href="/comprar-cuadros-al-oleo-chile" className="text-brand underline">
+                comprar cuadros al óleo
+              </Link>
+              . Si ya sabes el muro, parte por{" "}
+              <Link href="/cuadros" className="text-brand underline">cuadros</Link>: hay
+              selección para el{" "}
+              <Link href="/cuadros/para-living" className="text-brand underline">living</Link>, el{" "}
+              <Link href="/cuadros/para-dormitorio" className="text-brand underline">dormitorio</Link>, los{" "}
+              <Link href="/cuadros/grandes-al-oleo" className="text-brand underline">
+                formatos con medida publicada
+              </Link>{" "}
+              y para{" "}
+              <Link href="/cuadros/regalar-pintura-original" className="text-brand underline">
+                regalar una pintura original
+              </Link>
+              . Para medir el living antes de escribir, la guía es{" "}
+              <Link href="/guias/elegir-cuadro-para-el-living" className="text-brand underline">
+                cómo elegir un cuadro para el living
+              </Link>
+              . Si la pieza no está, mira{" "}
+              <Link href="/guias/como-encargar-una-pintura" className="text-brand underline">
+                cómo encargar una pintura
+              </Link>{" "}
+              y{" "}
+              <Link href="/guias/cuanto-cuesta-un-cuadro-original-en-chile" className="text-brand underline">
+                qué define el valor de un cuadro
+              </Link>
+              . El bodegón publicado está en{" "}
+              <Link href="/bodegon-oleo" className="text-brand underline">bodegón al óleo</Link>.
+            </p>
           </article>
 
           <div className="mt-12 pt-8 border-t border-line">

@@ -24,8 +24,18 @@ export default function VisualArtworkJsonLd({
     },
   };
 
-  if (artwork.medium) schema.artMedium = artwork.medium;
-  if (artwork.info) schema.description = artwork.info;
+  if (artwork.medium) {
+    schema.artMedium = artwork.medium;
+    if (/tela/i.test(artwork.medium)) schema.artworkSurface = "tela";
+  }
+  schema.creator = {
+    "@type": "Person",
+    name: ARTIST_NAME,
+    url: `${SITE_URL}/marcela-pedrosa`,
+  };
+  if (artwork.name || artwork.info) {
+    schema.description = [artwork.name, artwork.info].filter(Boolean).join(". ");
+  }
 
   return (
     <script

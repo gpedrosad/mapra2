@@ -99,6 +99,6 @@ export const elegirCuadroLiving: Block[] = [
   },
   {
     type: "p",
-    text: "Hay [pintoras chilenas](/pintoras-chilenas) trabajando en formatos muy distintos, del estudio pequeño al óleo de muro. Ver ese arco ayuda a distinguir una obra de taller de una lámina de tienda. Si ninguna medida disponible calza con tu living, a veces es mejor conversar un formato que el muro pide que forzar una pintura hermosa en un lugar donde va a verse incómoda. El motivo se elige con calma. El tamaño, con el metro.",
+    text: "Hay [pintoras chilenas](/pintoras-chilenas) trabajando en formatos muy distintos, del estudio pequeño al óleo de muro. Ver ese arco ayuda a distinguir una obra de taller de una lámina de tienda. Si ninguna medida disponible calza con tu living, a veces es mejor conversar un formato que el muro pide que forzar una pintura hermosa en un lugar donde va a verse incómoda. El motivo se elige con calma. El tamaño, con el metro. Esta guía explica cómo medir. Las telas que Marcela ya tiene para un living están en [cuadros para el living](/cuadros/para-living), no aquí.",
   },
 ];

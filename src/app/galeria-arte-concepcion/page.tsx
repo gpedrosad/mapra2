@@ -7,6 +7,7 @@ import { getSiteImageUrl } from "@/lib/cloudinary";
 import { getManagedImageUrl } from "@/lib/managed-image-store";
 import { pageMetadata } from "@/lib/metadata";
 import Breadcrumbs from "../components/seo/Breadcrumbs";
+import CatalogFichaLinks from "../components/seo/CatalogFichaLinks";
 import SiteHub from "../components/seo/SiteHub";
 
 
@@ -177,6 +178,33 @@ export default async function GaleriaArteConcepcionPage() {
                 />
               </div>
             </div>
+            <p className="text-ink-body leading-relaxed mb-6">
+              La galería también se recorre por el uso del muro:{" "}
+              <Link href="/cuadros" className="text-brand underline">cuadros</Link>,{" "}
+              <Link href="/cuadros/para-living" className="text-brand underline">living</Link>,{" "}
+              <Link href="/cuadros/para-dormitorio" className="text-brand underline">dormitorio</Link>,{" "}
+              <Link href="/cuadros/para-oficina" className="text-brand underline">oficina</Link>{" "}
+              y{" "}
+              <Link href="/cuadros/grandes-al-oleo" className="text-brand underline">
+                formatos con medida
+              </Link>
+              . Antes de colgar, sirven{" "}
+              <Link href="/guias/elegir-cuadro-para-el-living" className="text-brand underline">
+                cómo elegir un cuadro para el living
+              </Link>{" "}
+              y{" "}
+              <Link href="/guias/cuidar-y-colgar-pintura-al-oleo" className="text-brand underline">
+                cuidar y colgar un óleo
+              </Link>
+              . Por motivo:{" "}
+              <Link href="/pintura-de-animales" className="text-brand underline">animales</Link>,{" "}
+              <Link href="/pintura-de-ciudad" className="text-brand underline">ciudad</Link>{" "}
+              y{" "}
+              <Link href="/bodegon-oleo" className="text-brand underline">bodegón</Link>.
+              La compra por tema está en{" "}
+              <Link href="/comprar-arte-chile" className="text-brand underline">comprar arte en Chile</Link>.
+            </p>
+            <CatalogFichaLinks />
           </article>
 
           <div className="mt-12 pt-8 border-t border-line">

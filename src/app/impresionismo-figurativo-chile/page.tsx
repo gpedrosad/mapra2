@@ -7,13 +7,14 @@ import { getSiteImageUrl } from "@/lib/cloudinary";
 import { getManagedImageUrl } from "@/lib/managed-image-store";
 import { pageMetadata } from "@/lib/metadata";
 import Breadcrumbs from "../components/seo/Breadcrumbs";
+import { FaqJsonLd } from "../components/seo/GuideParts";
 import SiteHub from "../components/seo/SiteHub";
 
 
 export const metadata: Metadata = pageMetadata({
-  title: 'Impresionismo figurativo | Marcela Pedrosa',
+  title: 'Impresionismo figurativo en Chile | Pedrosa',
   description:
-    'Impresionismo figurativo de Marcela Pedrosa, pintora en Concepción. Obras al óleo que unen luz y figura.',
+    'Impresionismo figurativo de Marcela Pedrosa: fachadas, bosques y figura al óleo, desde Concepción. Consulta por WhatsApp.',
   path: '/impresionismo-figurativo-chile',
   ogImageKey: 'bosque',
   imageAlt: 'Impresionismo figurativo de Marcela Pedrosa',
@@ -31,6 +32,21 @@ export const metadata: Metadata = pageMetadata({
   ],
 });
 
+const ESTILO_FAQS = [
+  {
+    q: "¿Qué llama este sitio impresionismo figurativo?",
+    a: "El estilo con el que Marcela Pedrosa pinta en Concepción: formas reconocibles, luz y color, en óleo sobre tela. En la galería se ve en fachadas, bosques y figura.",
+  },
+  {
+    q: "¿Dónde ver obras de impresionismo figurativo?",
+    a: "En las fichas de la galería y en las páginas de figuras al óleo, retratos al óleo y pintura de bosques. La guía corta está en qué es el impresionismo figurativo.",
+  },
+  {
+    q: "¿Cómo se consulta una de esas obras?",
+    a: "Por WhatsApp al +56 9 5618 9912 o por correo a contacto@marcelapedrosa.com. El precio no está en la ficha.",
+  },
+];
+
 export default async function ImpresionismoFigurativoChilePage() {
   const heroImageUrl =
     (await getManagedImageUrl("pages.impresionismo.hero")) ||
@@ -38,6 +54,7 @@ export default async function ImpresionismoFigurativoChilePage() {
 
   return (
     <main className="min-h-screen bg-[var(--background)]">
+      <FaqJsonLd faqs={ESTILO_FAQS} />
       {/* Hero Section */}
       <section className="relative py-16 sm:py-20 lg:py-24">
         <div className="mx-auto max-w-4xl px-4 sm:px-6">
@@ -374,6 +391,34 @@ export default async function ImpresionismoFigurativoChilePage() {
               La combinación de técnica tradicional, sensibilidad contemporánea e identidad regional 
               asegura que el impresionismo figurativo seguirá siendo una corriente vital en el 
               panorama artístico chileno.
+            </p>
+
+            <h2 className="text-2xl font-semibold text-ink mt-10 mb-4">
+              Impresionismo figurativo: fachadas, bosques y figura
+            </h2>
+            <div className="space-y-4 my-8">
+              {ESTILO_FAQS.map((faq) => (
+                <div key={faq.q} className="bg-white border border-line rounded-xl p-6">
+                  <h3 className="font-semibold text-ink mb-2">{faq.q}</h3>
+                  <p className="text-ink-body text-sm">{faq.a}</p>
+                </div>
+              ))}
+            </div>
+            <p className="text-ink-body leading-relaxed mb-6">
+              La guía breve está en{" "}
+              <Link href="/guias/que-es-el-impresionismo-figurativo" className="text-brand underline">
+                qué es el impresionismo figurativo
+              </Link>
+              . Las obras por motivo:{" "}
+              <Link href="/figuras-al-oleo" className="text-brand underline">figuras al óleo</Link>,{" "}
+              <Link href="/retratos-al-oleo" className="text-brand underline">retratos al óleo</Link>{" "}
+              y{" "}
+              <Link href="/pintura-de-bosques" className="text-brand underline">pintura de bosques</Link>.
+              El índice de{" "}
+              <Link href="/guias" className="text-brand underline">guías</Link>{" "}
+              y los perfiles de{" "}
+              <Link href="/artistas-chilenas" className="text-brand underline">artistas chilenas</Link>{" "}
+              siguen desde aquí.
             </p>
           </article>
 

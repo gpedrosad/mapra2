@@ -22,7 +22,6 @@ export const SITEMAP_ROUTES: SitemapRoute[] = [
   { path: "/pintura-fachadas-concepcion", changeFrequency: "monthly", priority: 0.75 },
   { path: "/comprar-pintura-concepcion", changeFrequency: "monthly", priority: 0.9 },
   { path: "/comprar-cuadros-al-oleo-chile", changeFrequency: "monthly", priority: 0.9 },
-  { path: "/cuadros-para-living", changeFrequency: "monthly", priority: 0.85 },
   { path: "/encargos-pintura", changeFrequency: "monthly", priority: 0.9 },
   { path: "/oleo-sobre-tela-chile", changeFrequency: "monthly", priority: 0.8 },
   { path: "/impresionismo-figurativo-chile", changeFrequency: "monthly", priority: 0.8 },

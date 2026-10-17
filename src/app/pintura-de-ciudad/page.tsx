@@ -114,6 +114,11 @@ export default async function PinturaDeCiudadPage() {
                 label: "Fachadas y bosques",
                 note: "La serie urbana que el sitio ya presenta",
               },
+              {
+                href: "/cuadros/fachadas-arquitectura",
+                label: "Cuadros de fachadas",
+                note: "Esas telas, para consultar medida y disponibilidad",
+              },
             ]}
           />
         </div>
