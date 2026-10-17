@@ -27,3 +27,6 @@ Formato: `YYYY-MM-DD | tema | hecho | acción/implicación`
 - GSC | `/pinturas` pos 3.9, 0 clics | Title y meta más concretos (obra, medidas, disponibilidad)
 - GSC | `/oleo-sobre-tela-chile` pos 11 y `/impresionismo-figurativo-chile` pos 17.8 | Refuerzo breve con hechos ya del sitio y enlaces desde páginas interiores
 - SEO | Home, `/ads` y `/sitelink` no se tocaron en el lote 1 | Sin contenido nuevo en la portada
+- SEO | Ronda 2: `/guias` + `/comprar-arte-chile`, `/retratos-al-oleo`, `/figuras-al-oleo`, `/pintura-de-animales`, `/pintura-de-bosques`, `/pintura-de-ciudad`, `/bodegon-oleo` | Solo pinturas publicadas; consulta WhatsApp/correo; sin precios; fuera del menú; sitemap
+- SEO | Imágenes de obra en páginas no menú: alt descriptivo del archivo real, width, height y sizes | Menú, header y home sin cambios
+- SEO | Oportunidades off-page en `docs/seo-oportunidades-ronda2.md` | Competidores con precio (Kunst, Galería Chilena, Ambulante, Bascuñán, Bucarest); GBP pendiente; Artelista `mpedrosar.artelista.com` a confirmar con la clienta

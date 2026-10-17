@@ -50,6 +50,7 @@ Actualizado: **2026-10-17**
 - Person schema `sameAs` → Instagram `mpedrosaartista` (constante en `src/lib/site.ts`; override con `NEXT_PUBLIC_INSTAGRAM_URL`)
 - Gap #1 SEO: indexar hubs (deploy + enlaces internos + Request indexing)
 - **Lote 1 (2026-10-17):** titles/metas de `/pintoras-chilenas` y `/pinturas`; enlace doble con `/mujeres-artistas-chilenas`; refuerzo e interlinking de `/oleo-sobre-tela-chile` y `/impresionismo-figurativo-chile`. Home, `/ads` y `/sitelink` sin cambios.
+- **Lote 2 (2026-10-17):** `/guias` en el sitemap y siete guías fuera del menú (compra en Chile, retrato, figuras, animales, bosques, ciudad, bodegón), solo con las 15 pinturas de `data/managed-images.json`. Alt, width, height y sizes en imágenes de obra de páginas que no son menú. Oportunidades: [`docs/seo-oportunidades-ronda2.md`](../seo-oportunidades-ronda2.md). Menú, header y home sin cambios. `pendiente:` ficha de Google Business y backlinks.
 - Gap #2: analytics (GA4/Clarity del dominio correcto)
 - Gap #3 (aprobación): diferenciar landings thin, FAQ/GEO, backlinks prensa/IG
 

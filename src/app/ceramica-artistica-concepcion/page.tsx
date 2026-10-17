@@ -1,10 +1,9 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import Link from "next/link";
 import Footer from "../components/Footer";
 import WhatsAppButton from "../components/WhatsAppButton";
-import { getOgImageUrl, getSiteImageUrl } from "@/lib/cloudinary";
-import { getManagedImageUrl } from "@/lib/managed-image-store";
+import { getOgImageUrl } from "@/lib/cloudinary";
+import { SeoManagedHero } from "../components/seo/SeoManagedHero";
 
 const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://mpedrosa.studio";
 
@@ -37,7 +36,7 @@ export const metadata: Metadata = {
         url: getOgImageUrl("elefante", BASE_URL),
         width: 1200,
         height: 630,
-        alt: "Cerámica artística de Marcela Pedrosa, Concepción",
+        alt: "Óleo de un elefante de frente, en naranjos, azules y rojos, de Marcela Pedrosa",
       },
     ],
   },
@@ -46,10 +45,7 @@ export const metadata: Metadata = {
   },
 };
 
-export default async function CeramicaArtisticaConcepcionPage() {
-  const heroImageUrl =
-    (await getManagedImageUrl("pages.ceramica.hero")) ||
-    getSiteImageUrl("elefante");
+export default function CeramicaArtisticaConcepcionPage() {
 
   return (
     <main className="min-h-screen bg-[var(--background)]">
@@ -65,16 +61,7 @@ export default async function CeramicaArtisticaConcepcionPage() {
             </p>
           </div>
 
-          {/* Imagen destacada */}
-          <div className="relative w-full h-[400px] sm:h-[500px] overflow-hidden mb-12">
-            <Image
-              src={heroImageUrl}
-              alt="Cerámica artística de Marcela Pedrosa en Concepción"
-              fill
-              className="object-cover"
-              priority
-            />
-          </div>
+          <SeoManagedHero sectionId="pages.ceramica.hero" fallbackKey="elefante" />
         </div>
       </section>
 
@@ -460,6 +447,13 @@ export default async function CeramicaArtisticaConcepcionPage() {
               Explora más
             </h3>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <Link
+                href="/guias"
+                className="block p-4 rounded-lg border border-line hover:border-brand hover:bg-surface transition-colors"
+              >
+                <span className="font-medium text-ink">Guías de obra →</span>
+                <p className="text-sm text-ink-muted mt-1">Pinturas publicadas, por tema</p>
+              </Link>
               <Link
                 href="/esculturas"
                 className="block p-4 rounded-lg border border-line hover:border-brand hover:bg-surface transition-colors"

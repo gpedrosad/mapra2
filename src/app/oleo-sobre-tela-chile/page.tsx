@@ -1,10 +1,9 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import Link from "next/link";
 import Footer from "../components/Footer";
 import WhatsAppButton from "../components/WhatsAppButton";
-import { getOgImageUrl, getSiteImageUrl } from "@/lib/cloudinary";
-import { getManagedImageUrl } from "@/lib/managed-image-store";
+import { getOgImageUrl } from "@/lib/cloudinary";
+import { SeoManagedHero } from "../components/seo/SeoManagedHero";
 
 const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://mpedrosa.studio";
 
@@ -37,7 +36,7 @@ export const metadata: Metadata = {
         url: getOgImageUrl("mujer", BASE_URL),
         width: 1200,
         height: 630,
-        alt: "Óleo sobre tela de Marcela Pedrosa, Chile",
+        alt: "Retrato al óleo de una mujer, con el rostro en azul, naranja y violeta, de Marcela Pedrosa",
       },
     ],
   },
@@ -46,10 +45,7 @@ export const metadata: Metadata = {
   },
 };
 
-export default async function OleoSobreTelaChilePage() {
-  const heroImageUrl =
-    (await getManagedImageUrl("pages.oleo.hero")) ||
-    getSiteImageUrl("mujer");
+export default function OleoSobreTelaChilePage() {
 
   return (
     <main className="min-h-screen bg-[var(--background)]">
@@ -65,16 +61,7 @@ export default async function OleoSobreTelaChilePage() {
             </p>
           </div>
 
-          {/* Imagen destacada */}
-          <div className="relative w-full h-[400px] sm:h-[500px] overflow-hidden mb-12">
-            <Image
-              src={heroImageUrl}
-              alt="Pintura al óleo sobre tela de Marcela Pedrosa, Chile"
-              fill
-              className="object-cover"
-              priority
-            />
-          </div>
+          <SeoManagedHero sectionId="pages.oleo.hero" fallbackKey="mujer" />
         </div>
       </section>
 
@@ -367,6 +354,13 @@ export default async function OleoSobreTelaChilePage() {
               Descubre más
             </h3>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <Link
+                href="/comprar-arte-chile"
+                className="block p-4 rounded-lg border border-line hover:border-brand hover:bg-surface transition-colors"
+              >
+                <span className="font-medium text-ink">Comprar arte en Chile →</span>
+                <p className="text-sm text-ink-muted mt-1">Obras publicadas y cómo consultarlas</p>
+              </Link>
               <Link
                 href="/pinturas"
                 className="block p-4 rounded-lg border border-line hover:border-brand hover:bg-surface transition-colors"

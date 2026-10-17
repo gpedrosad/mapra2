@@ -1,10 +1,9 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import Link from "next/link";
 import Footer from "../components/Footer";
 import WhatsAppButton from "../components/WhatsAppButton";
-import { getOgImageUrl, getSiteImageUrl } from "@/lib/cloudinary";
-import { getManagedImageUrl } from "@/lib/managed-image-store";
+import { getOgImageUrl } from "@/lib/cloudinary";
+import { SeoManagedHero } from "../components/seo/SeoManagedHero";
 
 const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://mpedrosa.studio";
 
@@ -36,7 +35,7 @@ export const metadata: Metadata = {
         url: getOgImageUrl("bosque", BASE_URL),
         width: 1200,
         height: 630,
-        alt: "Pintura de fachadas y bosques de Marcela Pedrosa",
+        alt: "Óleo de un bosque con troncos verticales y luz entre los árboles, de Marcela Pedrosa",
       },
     ],
   },
@@ -45,10 +44,7 @@ export const metadata: Metadata = {
   },
 };
 
-export default async function PinturaFachadasConcepcionPage() {
-  const heroImageUrl =
-    (await getManagedImageUrl("home.hero.banner")) ||
-    getSiteImageUrl("bosque");
+export default function PinturaFachadasConcepcionPage() {
 
   return (
     <main className="min-h-screen bg-[var(--background)]">
@@ -63,15 +59,7 @@ export default async function PinturaFachadasConcepcionPage() {
             </p>
           </div>
 
-          <div className="relative w-full h-[400px] sm:h-[500px] overflow-hidden mb-12">
-            <Image
-              src={heroImageUrl}
-              alt="Pintura de bosques y paisaje del Biobío por Marcela Pedrosa"
-              fill
-              className="object-cover"
-              priority
-            />
-          </div>
+          <SeoManagedHero sectionId="home.hero.banner" fallbackKey="bosque" />
         </div>
       </section>
 
@@ -195,6 +183,13 @@ export default async function PinturaFachadasConcepcionPage() {
               Relacionado
             </h3>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <Link
+                href="/pintura-de-bosques"
+                className="block p-4 rounded-lg border border-line hover:border-brand hover:bg-surface transition-colors"
+              >
+                <span className="font-medium text-ink">Pintura de bosques →</span>
+                <p className="text-sm text-ink-muted mt-1">Los dos óleos de bosque publicados</p>
+              </Link>
               <Link
                 href="/oleo-sobre-tela-chile"
                 className="block p-4 rounded-lg border border-line hover:border-brand hover:bg-surface transition-colors"

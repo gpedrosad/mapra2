@@ -1,10 +1,9 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import Link from "next/link";
 import Footer from "../components/Footer";
 import WhatsAppButton from "../components/WhatsAppButton";
-import { getOgImageUrl, getSiteImageUrl } from "@/lib/cloudinary";
-import { getManagedImageUrl } from "@/lib/managed-image-store";
+import { getOgImageUrl } from "@/lib/cloudinary";
+import { SeoManagedHero } from "../components/seo/SeoManagedHero";
 
 const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://mpedrosa.studio";
 
@@ -37,7 +36,7 @@ export const metadata: Metadata = {
         url: getOgImageUrl("gente", BASE_URL),
         width: 1200,
         height: 630,
-        alt: "Obra de Marcela Pedrosa, mujer artista chilena",
+        alt: "Óleo de un grupo de figuras de colores, sin rasgos en el rostro, de Marcela Pedrosa",
       },
     ],
   },
@@ -46,10 +45,7 @@ export const metadata: Metadata = {
   },
 };
 
-export default async function MujeresArtistasChilenasPage() {
-  const heroImageUrl =
-    (await getManagedImageUrl("pages.mujeres.hero")) ||
-    getSiteImageUrl("gente");
+export default function MujeresArtistasChilenasPage() {
 
   return (
     <main className="min-h-screen bg-[var(--background)]">
@@ -65,16 +61,7 @@ export default async function MujeresArtistasChilenasPage() {
             </p>
           </div>
 
-          {/* Imagen destacada */}
-          <div className="relative w-full h-[400px] sm:h-[500px] overflow-hidden mb-12">
-            <Image
-              src={heroImageUrl}
-              alt="Obra de Marcela Pedrosa, representante de las mujeres artistas chilenas contemporáneas"
-              fill
-              className="object-cover"
-              priority
-            />
-          </div>
+          <SeoManagedHero sectionId="pages.mujeres.hero" fallbackKey="gente" />
         </div>
       </section>
 
@@ -446,6 +433,13 @@ export default async function MujeresArtistasChilenasPage() {
               Conoce más
             </h3>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <Link
+                href="/retratos-al-oleo"
+                className="block p-4 rounded-lg border border-line hover:border-brand hover:bg-surface transition-colors"
+              >
+                <span className="font-medium text-ink">Retratos al óleo →</span>
+                <p className="text-sm text-ink-muted mt-1">Rostros publicados en la galería</p>
+              </Link>
               <Link
                 href="/pinturas"
                 className="block p-4 rounded-lg border border-line hover:border-brand hover:bg-surface transition-colors"

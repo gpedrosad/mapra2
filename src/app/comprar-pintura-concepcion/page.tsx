@@ -1,10 +1,9 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import Link from "next/link";
 import Footer from "../components/Footer";
 import WhatsAppButton from "../components/WhatsAppButton";
-import { getOgImageUrl, getSiteImageUrl } from "@/lib/cloudinary";
-import { getManagedImageUrl } from "@/lib/managed-image-store";
+import { getOgImageUrl } from "@/lib/cloudinary";
+import { SeoManagedHero } from "../components/seo/SeoManagedHero";
 
 const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://mpedrosa.studio";
 
@@ -36,7 +35,7 @@ export const metadata: Metadata = {
         url: getOgImageUrl("bosque", BASE_URL),
         width: 1200,
         height: 630,
-        alt: "Pinturas originales de Marcela Pedrosa en Concepción",
+        alt: "Óleo de un bosque con troncos verticales y luz entre los árboles, de Marcela Pedrosa",
       },
     ],
   },
@@ -45,10 +44,7 @@ export const metadata: Metadata = {
   },
 };
 
-export default async function ComprarPinturaConcepcionPage() {
-  const heroImageUrl =
-    (await getManagedImageUrl("pages.pintora.hero")) ||
-    getSiteImageUrl("bosque");
+export default function ComprarPinturaConcepcionPage() {
 
   return (
     <main className="min-h-screen bg-[var(--background)]">
@@ -63,15 +59,7 @@ export default async function ComprarPinturaConcepcionPage() {
             </p>
           </div>
 
-          <div className="relative w-full h-[400px] sm:h-[500px] overflow-hidden mb-12">
-            <Image
-              src={heroImageUrl}
-              alt="Pintura original al óleo de Marcela Pedrosa disponible en Concepción"
-              fill
-              className="object-cover"
-              priority
-            />
-          </div>
+          <SeoManagedHero sectionId="pages.pintora.hero" fallbackKey="bosque" />
         </div>
       </section>
 
@@ -203,6 +191,13 @@ export default async function ComprarPinturaConcepcionPage() {
               Relacionado
             </h3>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <Link
+                href="/comprar-arte-chile"
+                className="block p-4 rounded-lg border border-line hover:border-brand hover:bg-surface transition-colors"
+              >
+                <span className="font-medium text-ink">Comprar arte en Chile →</span>
+                <p className="text-sm text-ink-muted mt-1">La misma consulta, para todo el país</p>
+              </Link>
               <Link
                 href="/galeria-arte-concepcion"
                 className="block p-4 rounded-lg border border-line hover:border-brand hover:bg-surface transition-colors"

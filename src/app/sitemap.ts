@@ -1,4 +1,5 @@
 import { MetadataRoute } from "next";
+import { SEO_GUIDES } from "@/lib/seo-guides";
 
 const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://mpedrosa.studio";
 
@@ -120,6 +121,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "monthly",
       priority: 0.85,
     },
+    ...SEO_GUIDES.map((guide) => ({
+      url: `${BASE_URL}${guide.path}`,
+      lastModified: new Date(),
+      changeFrequency: "monthly" as const,
+      priority: guide.priority,
+    })),
     // Páginas legales y políticas
     {
       url: `${BASE_URL}/devoluciones`,

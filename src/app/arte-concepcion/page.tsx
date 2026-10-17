@@ -1,10 +1,9 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import Link from "next/link";
 import Footer from "../components/Footer";
 import WhatsAppButton from "../components/WhatsAppButton";
-import { getOgImageUrl, getSiteImageUrl } from "@/lib/cloudinary";
-import { getManagedImageUrl } from "@/lib/managed-image-store";
+import { getOgImageUrl } from "@/lib/cloudinary";
+import { SeoManagedHero } from "../components/seo/SeoManagedHero";
 
 const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://mpedrosa.studio";
 
@@ -37,7 +36,7 @@ export const metadata: Metadata = {
         url: getOgImageUrl("bosque", BASE_URL),
         width: 1200,
         height: 630,
-        alt: "Arte y pintura de Marcela Pedrosa en Concepción",
+        alt: "Óleo de un bosque con troncos verticales y luz entre los árboles, de Marcela Pedrosa",
       },
     ],
   },
@@ -77,10 +76,7 @@ const faqSchema = {
   ],
 };
 
-export default async function ArteConcepcionPage() {
-  const heroImageUrl =
-    (await getManagedImageUrl("pages.pintora.hero")) ||
-    getSiteImageUrl("bosque");
+export default function ArteConcepcionPage() {
 
   return (
     <main className="min-h-screen bg-[var(--background)]">
@@ -100,15 +96,7 @@ export default async function ArteConcepcionPage() {
             </p>
           </div>
 
-          <div className="relative w-full h-[400px] sm:h-[500px] overflow-hidden mb-12">
-            <Image
-              src={heroImageUrl}
-              alt="Pintura y arte de Marcela Pedrosa en Concepción, Chile"
-              fill
-              className="object-cover"
-              priority
-            />
-          </div>
+          <SeoManagedHero sectionId="pages.pintora.hero" fallbackKey="bosque" />
         </div>
       </section>
 
@@ -263,6 +251,13 @@ export default async function ArteConcepcionPage() {
               Más sobre pintura y arte
             </h3>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <Link
+                href="/guias"
+                className="block p-4 rounded-lg border border-line hover:border-brand hover:bg-surface transition-colors"
+              >
+                <span className="font-medium text-ink">Guías de obra →</span>
+                <p className="text-sm text-ink-muted mt-1">Estilos, temas y cómo comprar</p>
+              </Link>
               <Link
                 href="/comprar-pintura-concepcion"
                 className="block p-4 rounded-lg border border-line hover:border-brand hover:bg-surface transition-colors"
