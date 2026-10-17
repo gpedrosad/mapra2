@@ -89,8 +89,18 @@ export default async function PintoraConcepcionPage() {
             <p className="text-ink-body leading-relaxed mb-6">
               <strong>Marcela Pedrosa</strong> es una reconocida pintora en Concepción, Chile, 
               con una trayectoria consolidada en el ámbito de las artes visuales. Su trabajo se 
-              caracteriza por el uso magistral del <strong>óleo sobre tela</strong> y un estilo 
-              que fusiona el impresionismo con elementos figurativos contemporáneos.
+              caracteriza por el uso magistral del{" "}
+              <Link href="/oleo-sobre-tela-chile" className="text-brand underline">
+                óleo sobre tela
+              </Link>{" "}
+              y un estilo de{" "}
+              <Link
+                href="/impresionismo-figurativo-chile"
+                className="text-brand underline"
+              >
+                impresionismo figurativo
+              </Link>
+              .
             </p>
 
             <h3 className="text-2xl font-semibold text-ink mt-10 mb-4">

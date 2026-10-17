@@ -139,8 +139,11 @@ export default async function ImpresionismoFigurativoChilePage() {
             <p className="text-ink-body leading-relaxed mb-6">
               A lo largo del siglo XX y XXI, el <strong>impresionismo en Chile</strong> ha evolucionado, 
               fusionándose con otras corrientes y adaptándose a sensibilidades contemporáneas. Artistas 
-              actuales como Marcela Pedrosa continúan esta tradición, desarrollando un 
-              <strong> impresionismo figurativo</strong> con identidad propia.
+              actuales como Marcela Pedrosa continúan esta tradición en{" "}
+              <Link href="/oleo-sobre-tela-chile" className="text-brand underline">
+                óleo sobre tela
+              </Link>
+              , con un <strong>impresionismo figurativo</strong> de fachadas y bosques del Biobío.
             </p>
 
             <h3 className="text-2xl font-semibold text-ink mt-10 mb-4">
@@ -399,6 +402,13 @@ export default async function ImpresionismoFigurativoChilePage() {
               >
                 <span className="font-medium text-ink">Galería Impresionista →</span>
                 <p className="text-sm text-ink-muted mt-1">Obras de impresionismo figurativo</p>
+              </Link>
+              <Link
+                href="/oleo-sobre-tela-chile"
+                className="block p-4 rounded-lg border border-line hover:border-brand hover:bg-surface transition-colors"
+              >
+                <span className="font-medium text-ink">Óleo sobre tela →</span>
+                <p className="text-sm text-ink-muted mt-1">La técnica de estas pinturas</p>
               </Link>
               <Link
                 href="/prensa"

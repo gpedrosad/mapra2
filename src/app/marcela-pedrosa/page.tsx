@@ -159,7 +159,21 @@ export default async function MarcelaPedrosaPage() {
               <ul className="space-y-3 text-ink-body">
                 <li className="flex items-start">
                   <span className="text-brand mr-2">•</span>
-                  <span>Óleo sobre tela e impresionismo figurativo</span>
+                  <span>
+                    <Link
+                      href="/oleo-sobre-tela-chile"
+                      className="text-brand underline"
+                    >
+                      Óleo sobre tela
+                    </Link>{" "}
+                    e{" "}
+                    <Link
+                      href="/impresionismo-figurativo-chile"
+                      className="text-brand underline"
+                    >
+                      impresionismo figurativo
+                    </Link>
+                  </span>
                 </li>
                 <li className="flex items-start">
                   <span className="text-brand mr-2">•</span>

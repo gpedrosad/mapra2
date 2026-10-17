@@ -10,15 +10,16 @@ const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://mpedrosa.studio";
 
 export const metadata: Metadata = {
   title: {
-    absolute: "Pintoras Chilenas | Marcela Pedrosa — Pintura Chilena Contemporánea",
+    absolute: "Pintoras chilenas famosas y actuales | Marcela Pedrosa",
   },
   description:
-    "Pintoras chilenas: historia y presente de la pintura hecha por mujeres en Chile. Desde las pioneras hasta Marcela Pedrosa, pintora contemporánea de Concepción especializada en óleo sobre tela.",
+    "Pintoras chilenas famosas y actuales. Artistas chilenas, mujeres pintoras: de las pioneras a Marcela Pedrosa, en Concepción.",
   keywords: [
     "pintoras chilenas",
     "pintoras chilenas famosas",
     "pintoras de chile",
     "mujeres pintoras chilenas",
+    "artistas chilenas mujeres pintoras",
     "pintoras chilenas contemporáneas",
     "pintoras chilenas del siglo xx",
     "pintoras chilenas actuales",
@@ -29,9 +30,9 @@ export const metadata: Metadata = {
     "óleo sobre tela chile",
   ],
   openGraph: {
-    title: "Pintoras Chilenas | Marcela Pedrosa",
+    title: "Pintoras chilenas famosas y actuales | Marcela Pedrosa",
     description:
-      "Historia y presente de las pintoras chilenas. Marcela Pedrosa, pintora contemporánea de Concepción, parte de la tradición de la pintura chilena hecha por mujeres.",
+      "Pintoras chilenas famosas y actuales. Artistas chilenas, mujeres pintoras: de las pioneras a Marcela Pedrosa, en Concepción.",
     url: `${BASE_URL}/pintoras-chilenas`,
     type: "article",
     images: [
@@ -65,7 +66,7 @@ const faqSchema = {
       name: "¿Qué pintoras chilenas contemporáneas están activas hoy?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Hoy existen pintoras chilenas activas en todo el país, como Marcela Pedrosa en Concepción, Región del Biobío, especializada en óleo sobre tela e impresionismo figurativo, que vende obras originales y realiza encargos personalizados.",
+        text: "Hay pintoras chilenas actuales en todo el país. En Concepción, Región del Biobío, Marcela Pedrosa pinta óleo sobre tela e impresionismo figurativo, vende obras originales y realiza encargos personalizados.",
       },
     },
     {
@@ -148,6 +149,22 @@ export default async function PintorasChilenasPage() {
               Concepción, Región del Biobío, son herederas directas de este
               legado y lo proyectan hacia el futuro con obras originales en{" "}
               <strong>óleo sobre tela</strong>.
+            </p>
+
+            <p className="text-ink-body leading-relaxed mb-6">
+              Las <strong>pintoras chilenas famosas</strong> de este recorrido
+              son Celia Castro, Aurora Mira y Magdalena Mira, y en el siglo XX
+              Henriette Petit, Matilde Pérez, Gracia Barrios, Roser Bru y Carmen
+              Aldunate. Las <strong>pintoras chilenas actuales</strong> siguen
+              en regiones: en Concepción, Marcela Pedrosa pinta fachadas y
+              bosques del Biobío. El marco más amplio, el de las{" "}
+              <Link
+                href="/mujeres-artistas-chilenas"
+                className="text-brand underline"
+              >
+                artistas chilenas, mujeres pintoras
+              </Link>
+              , está en la página de mujeres artistas chilenas.
             </p>
 
             <h3 className="text-2xl font-semibold text-ink mt-10 mb-4">
@@ -449,9 +466,9 @@ export default async function PintorasChilenasPage() {
                   ¿Qué pintoras chilenas contemporáneas están activas hoy?
                 </h4>
                 <p className="text-ink-body text-sm">
-                  Existen pintoras activas en todo Chile. En la Región del
-                  Biobío destaca Marcela Pedrosa, especializada en óleo sobre
-                  tela e impresionismo figurativo.
+                  Hay pintoras chilenas actuales en todo el país. En la Región
+                  del Biobío, Marcela Pedrosa pinta óleo sobre tela e
+                  impresionismo figurativo.
                 </p>
               </div>
 
@@ -525,6 +542,17 @@ export default async function PintorasChilenasPage() {
                 </span>
                 <p className="text-sm text-ink-muted mt-1">
                   La técnica de la pintura chilena
+                </p>
+              </Link>
+              <Link
+                href="/impresionismo-figurativo-chile"
+                className="block p-4 rounded-lg border border-line hover:border-brand hover:bg-surface transition-colors"
+              >
+                <span className="font-medium text-ink">
+                  Impresionismo figurativo →
+                </span>
+                <p className="text-sm text-ink-muted mt-1">
+                  El estilo de Marcela Pedrosa
                 </p>
               </Link>
             </div>

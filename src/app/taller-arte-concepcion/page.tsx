@@ -88,7 +88,10 @@ export default async function TallerArteConcepcionPage() {
 
             <p className="text-ink-body leading-relaxed mb-6">
               El <strong>taller de arte de Marcela Pedrosa</strong> en Concepción es un espacio 
-              dedicado a la creación artística profesional, especializado en <strong>pintura al óleo</strong> 
+              dedicado a la creación artística profesional, especializado en{" "}
+              <Link href="/oleo-sobre-tela-chile" className="text-brand underline">
+                pintura al óleo
+              </Link>{" "}
               y cerámica artística. Ubicado en la Región del Biobío, el taller es el lugar donde 
               nacen las obras que caracterizan el estilo único de esta reconocida artista visual.
             </p>
@@ -110,7 +113,14 @@ export default async function TallerArteConcepcionPage() {
                 </h4>
                 <p className="text-ink-body text-sm leading-relaxed">
                   Técnica principal del taller. Trabajo sobre telas naturales con pigmentos de 
-                  alta calidad. Especialización en impresionismo figurativo, paisajes y fachadas 
+                  alta calidad. Especialización en{" "}
+                  <Link
+                    href="/impresionismo-figurativo-chile"
+                    className="text-brand underline"
+                  >
+                    impresionismo figurativo
+                  </Link>
+                  , paisajes y fachadas 
                   urbanas. Formatos desde pequeño hasta gran formato.
                 </p>
               </div>

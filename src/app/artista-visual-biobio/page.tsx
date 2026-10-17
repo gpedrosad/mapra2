@@ -135,9 +135,19 @@ export default async function ArtistaVisualBiobioPage() {
 
             <p className="text-ink-body leading-relaxed mb-6">
               El trabajo de Marcela como artista visual se caracteriza por un profundo conocimiento 
-              técnico del <strong>óleo sobre tela</strong>, medio que le permite explorar texturas, 
-              capas y matices cromáticos complejos. Su estilo, que ella define como 
-              <strong> impresionismo figurativo</strong>, busca transmitir emociones antes que 
+              técnico del{" "}
+              <Link href="/oleo-sobre-tela-chile" className="text-brand underline">
+                óleo sobre tela
+              </Link>
+              , medio que le permite explorar texturas, 
+              capas y matices cromáticos complejos. Su estilo, que ella define como{" "}
+              <Link
+                href="/impresionismo-figurativo-chile"
+                className="text-brand underline"
+              >
+                impresionismo figurativo
+              </Link>
+              , busca transmitir emociones antes que 
               representaciones literales.
             </p>
 

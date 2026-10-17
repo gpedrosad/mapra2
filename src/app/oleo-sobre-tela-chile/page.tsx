@@ -208,9 +208,16 @@ export default async function OleoSobreTelaChilePage() {
             </p>
 
             <p className="text-ink-body leading-relaxed mb-6">
-              En la <strong>Región del Biobío</strong>, artistas como Marcela Pedrosa continúan esta 
-              tradición, interpretando el paisaje urbano y natural de Concepción y sus alrededores 
-              con sensibilidad contemporánea.
+              En la <strong>Región del Biobío</strong>, Marcela Pedrosa continúa esta
+              tradición con más de 20 años de <strong>óleo sobre tela</strong>: fachadas y bosques
+              del Biobío, pintados en{" "}
+              <Link
+                href="/impresionismo-figurativo-chile"
+                className="text-brand underline"
+              >
+                impresionismo figurativo
+              </Link>
+              .
             </p>
 
             <div className="bg-brand text-white rounded-xl p-8 my-10 text-center">
@@ -366,6 +373,13 @@ export default async function OleoSobreTelaChilePage() {
               >
                 <span className="font-medium text-ink">Galería de Óleos →</span>
                 <p className="text-sm text-ink-muted mt-1">Obras disponibles en óleo sobre tela</p>
+              </Link>
+              <Link
+                href="/impresionismo-figurativo-chile"
+                className="block p-4 rounded-lg border border-line hover:border-brand hover:bg-surface transition-colors"
+              >
+                <span className="font-medium text-ink">Impresionismo figurativo →</span>
+                <p className="text-sm text-ink-muted mt-1">El estilo de las obras al óleo</p>
               </Link>
               <Link
                 href="/contacto"
