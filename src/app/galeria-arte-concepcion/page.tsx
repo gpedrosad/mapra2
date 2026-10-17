@@ -1,19 +1,22 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import Footer from "../components/Footer";
 import WhatsAppButton from "../components/WhatsAppButton";
-import { getOgImageUrl } from "@/lib/cloudinary";
-import { SeoManagedHero } from "../components/seo/SeoManagedHero";
+import { getSiteImageUrl } from "@/lib/cloudinary";
+import { getManagedImageUrl } from "@/lib/managed-image-store";
+import { pageMetadata } from "@/lib/metadata";
+import Breadcrumbs from "../components/seo/Breadcrumbs";
+import SiteHub from "../components/seo/SiteHub";
 
-const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://mpedrosa.studio";
 
-export const metadata: Metadata = {
-  title: {
-    absolute:
-      "Galería de Arte en Concepción | Pinturas Marcela Pedrosa",
-  },
+export const metadata: Metadata = pageMetadata({
+  title: 'Galería de arte en Concepción | Marcela Pedrosa',
   description:
-    "Galería de arte en Concepción: pinturas al óleo y obra contemporánea de Marcela Pedrosa. Visita online la selección de obras originales del Biobío.",
+    'Galería de arte en Concepción: pinturas al óleo y obra de Marcela Pedrosa. Selección de originales del Biobío.',
+  path: '/galeria-arte-concepcion',
+  ogImageKey: 'bosque',
+  imageAlt: 'Galería de arte de Marcela Pedrosa en Concepción',
   keywords: [
     "galería arte concepción",
     "galería de arte concepción",
@@ -23,32 +26,18 @@ export const metadata: Metadata = {
     "galería óleo chile",
     "marcela pedrosa galería",
   ],
-  openGraph: {
-    title: "Galería de Arte en Concepción | Marcela Pedrosa",
-    description:
-      "Selección de pinturas originales en óleo. Arte contemporáneo desde Concepción.",
-    url: `${BASE_URL}/galeria-arte-concepcion`,
-    type: "website",
-    images: [
-      {
-        url: getOgImageUrl("bosque", BASE_URL),
-        width: 1200,
-        height: 630,
-        alt: "Óleo de un bosque con troncos verticales y luz entre los árboles, de Marcela Pedrosa",
-      },
-    ],
-  },
-  alternates: {
-    canonical: `${BASE_URL}/galeria-arte-concepcion`,
-  },
-};
+});
 
-export default function GaleriaArteConcepcionPage() {
+export default async function GaleriaArteConcepcionPage() {
+  const heroImageUrl =
+    (await getManagedImageUrl("pages.pintora.hero")) ||
+    getSiteImageUrl("bosque");
 
   return (
     <main className="min-h-screen bg-[var(--background)]">
       <section className="relative py-16 sm:py-20 lg:py-24">
         <div className="mx-auto max-w-4xl px-4 sm:px-6">
+          <Breadcrumbs items={[{ name: "Galería de arte", path: "/galeria-arte-concepcion" }]} />
           <div className="text-center">
             <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-medium tracking-tight text-ink mb-6">
               Galería de Arte en Concepción
@@ -58,7 +47,16 @@ export default function GaleriaArteConcepcionPage() {
             </p>
           </div>
 
-          <SeoManagedHero sectionId="pages.pintora.hero" fallbackKey="bosque" />
+          <div className="relative w-full h-[400px] sm:h-[500px] overflow-hidden mb-12">
+            <Image
+              src={heroImageUrl}
+              alt="Galería de pintura y arte de Marcela Pedrosa en Concepción"
+              fill
+              className="object-cover"
+              priority
+              sizes="(max-width: 896px) 100vw, 896px"
+            />
+          </div>
         </div>
       </section>
 
@@ -186,13 +184,6 @@ export default function GaleriaArteConcepcionPage() {
               Relacionado
             </h3>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                            <Link
-                href="/guias"
-                className="block p-4 rounded-lg border border-line hover:border-brand hover:bg-surface transition-colors"
-              >
-                <span className="font-medium text-ink">Guías de obra →</span>
-                <p className="text-sm text-ink-muted mt-1">Retratos, bosques, ciudad y más</p>
-              </Link>
               <Link
                 href="/arte-concepcion"
                 className="block p-4 rounded-lg border border-line hover:border-brand hover:bg-surface transition-colors"
@@ -228,6 +219,7 @@ export default function GaleriaArteConcepcionPage() {
         </div>
       </section>
 
+      <SiteHub />
       <Footer email="contacto@marcelapedrosa.com" />
     </main>
   );

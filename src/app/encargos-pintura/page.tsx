@@ -1,19 +1,25 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import Footer from "../components/Footer";
 import WhatsAppButton from "../components/WhatsAppButton";
-import { getOgImageUrl } from "@/lib/cloudinary";
-import { SeoManagedHero } from "../components/seo/SeoManagedHero";
+import { getSiteImageUrl } from "@/lib/cloudinary";
+import { getManagedImageUrl } from "@/lib/managed-image-store";
+import { pageMetadata } from "@/lib/metadata";
+import ArtworkCards from "../components/seo/ArtworkCards";
+import Breadcrumbs from "../components/seo/Breadcrumbs";
+import SiteHub from "../components/seo/SiteHub";
+import { listCatalogArtworks } from "@/lib/artworks";
+import { CONTACT_EMAIL } from "@/lib/site";
 
-const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://mpedrosa.studio";
 
-export const metadata: Metadata = {
-  title: {
-    absolute:
-      "Encargos de Pintura | Óleo a Medida — Marcela Pedrosa Concepción",
-  },
+export const metadata: Metadata = pageMetadata({
+  title: 'Encargar una pintura | Marcela Pedrosa',
   description:
-    "Encarga una pintura al óleo a medida con Marcela Pedrosa en Concepción. Retratos, fachadas, bosques y formatos personalizados. Arte original desde el Biobío.",
+    'Encarga una pintura al óleo a medida con Marcela Pedrosa, desde su taller en Concepción. Consulta por WhatsApp o correo.',
+  path: '/encargos-pintura',
+  ogImageKey: 'gente',
+  imageAlt: 'Encargo de pintura al óleo de Marcela Pedrosa',
   keywords: [
     "encargos pintura",
     "encargar pintura concepción",
@@ -24,32 +30,19 @@ export const metadata: Metadata = {
     "marcela pedrosa encargos",
     "pintura personalizada biobío",
   ],
-  openGraph: {
-    title: "Encargos de Pintura | Marcela Pedrosa",
-    description:
-      "Pintura al óleo a medida desde Concepción: encargos personalizados, formatos y temas a consultar.",
-    url: `${BASE_URL}/encargos-pintura`,
-    type: "website",
-    images: [
-      {
-        url: getOgImageUrl("gente", BASE_URL),
-        width: 1200,
-        height: 630,
-        alt: "Óleo de un grupo de figuras de colores, sin rasgos en el rostro, de Marcela Pedrosa",
-      },
-    ],
-  },
-  alternates: {
-    canonical: `${BASE_URL}/encargos-pintura`,
-  },
-};
+});
 
-export default function EncargosPinturaPage() {
+export default async function EncargosPinturaPage() {
+  const heroImageUrl =
+    (await getManagedImageUrl("pages.artista-visual.hero")) ||
+    getSiteImageUrl("gente");
+  const works = await listCatalogArtworks();
 
   return (
     <main className="min-h-screen bg-[var(--background)]">
       <section className="relative py-16 sm:py-20 lg:py-24">
         <div className="mx-auto max-w-4xl px-4 sm:px-6">
+          <Breadcrumbs items={[{ name: "Encargar una pintura", path: "/encargos-pintura" }]} />
           <div className="text-center">
             <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-medium tracking-tight text-ink mb-6">
               Encargos de Pintura
@@ -59,7 +52,16 @@ export default function EncargosPinturaPage() {
             </p>
           </div>
 
-          <SeoManagedHero sectionId="pages.artista-visual.hero" fallbackKey="gente" />
+          <div className="relative w-full h-[400px] sm:h-[500px] overflow-hidden mb-12">
+            <Image
+              src={heroImageUrl}
+              alt="Pintura al óleo por encargo de Marcela Pedrosa en Concepción"
+              fill
+              className="object-cover"
+              priority
+              sizes="(max-width: 896px) 100vw, 896px"
+            />
+          </div>
         </div>
       </section>
 
@@ -150,12 +152,22 @@ export default function EncargosPinturaPage() {
               .
             </p>
 
+            <h3 className="text-2xl font-semibold text-ink mt-10 mb-4">
+              Obras del taller, para ver formato
+            </h3>
+            <p className="text-ink-body leading-relaxed mb-6">
+              Estas pinturas ya están en la galería. Sirven para ver técnica y,
+              cuando la ficha la trae, la medida. No son encargos de clientes:
+              son obras publicadas en el sitio.
+            </p>
+            <ArtworkCards works={works.filter((work) => work.measure)} />
+
             <div className="bg-brand text-white rounded-xl p-8 my-10 text-center">
               <h3 className="text-2xl font-semibold mb-4">
                 ¿Quieres encargar una pintura?
               </h3>
               <p className="mb-6 text-white/90">
-                Cuéntanos formato, tema y plazo tentativo
+                Cuéntanos formato, tema y plazo tentativo por WhatsApp o por correo.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
                 <WhatsAppButton
@@ -164,12 +176,12 @@ export default function EncargosPinturaPage() {
                   label="Solicitar encargo"
                   size="lg"
                 />
-                <Link
-                  href="/oleo-sobre-tela-chile"
+                <a
+                  href={`mailto:${CONTACT_EMAIL}`}
                   className="inline-block bg-white text-brand px-6 py-3 rounded-xl font-medium hover:bg-cream transition-colors"
                 >
-                  Sobre la técnica
-                </Link>
+                  {CONTACT_EMAIL}
+                </a>
               </div>
             </div>
           </article>
@@ -179,13 +191,6 @@ export default function EncargosPinturaPage() {
               Relacionado
             </h3>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                            <Link
-                href="/guias"
-                className="block p-4 rounded-lg border border-line hover:border-brand hover:bg-surface transition-colors"
-              >
-                <span className="font-medium text-ink">Guías de obra →</span>
-                <p className="text-sm text-ink-muted mt-1">Temas que ya están pintados</p>
-              </Link>
               <Link
                 href="/pintura-fachadas-concepcion"
                 className="block p-4 rounded-lg border border-line hover:border-brand hover:bg-surface transition-colors"
@@ -218,11 +223,20 @@ export default function EncargosPinturaPage() {
                   Tiempos de entrega →
                 </span>
               </Link>
+              <Link
+                href="/oleo-sobre-tela-chile"
+                className="block p-4 rounded-lg border border-line hover:border-brand hover:bg-surface transition-colors"
+              >
+                <span className="font-medium text-ink">
+                  Óleo sobre tela →
+                </span>
+              </Link>
             </div>
           </div>
         </div>
       </section>
 
+      <SiteHub />
       <Footer email="contacto@marcelapedrosa.com" />
     </main>
   );

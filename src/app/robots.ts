@@ -1,36 +1,27 @@
 import { MetadataRoute } from "next";
+import { absoluteUrl } from "@/lib/site";
 
-const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://mpedrosa.studio";
+const PRIVATE_PATHS = ["/api/", "/imagenes"];
+
+function publicRules(userAgent: string) {
+  return {
+    userAgent,
+    allow: "/",
+    disallow: PRIVATE_PATHS,
+  };
+}
 
 export default function robots(): MetadataRoute.Robots {
   return {
     rules: [
-      {
-        userAgent: "*",
-        allow: "/",
-        disallow: ["/api/", "/imagenes"],
-      },
-      {
-        userAgent: "GPTBot",
-        allow: "/",
-      },
-      {
-        userAgent: "ChatGPT-User",
-        allow: "/",
-      },
-      {
-        userAgent: "PerplexityBot",
-        allow: "/",
-      },
-      {
-        userAgent: "ClaudeBot",
-        allow: "/",
-      },
-      {
-        userAgent: "Google-Extended",
-        allow: "/",
-      },
+      publicRules("*"),
+      publicRules("GPTBot"),
+      publicRules("ChatGPT-User"),
+      publicRules("OAI-SearchBot"),
+      publicRules("PerplexityBot"),
+      publicRules("ClaudeBot"),
+      publicRules("Google-Extended"),
     ],
-    sitemap: `${BASE_URL}/sitemap.xml`,
+    sitemap: absoluteUrl("/sitemap.xml"),
   };
 }

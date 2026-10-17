@@ -1,18 +1,22 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import Footer from "../components/Footer";
 import WhatsAppButton from "../components/WhatsAppButton";
-import { getOgImageUrl } from "@/lib/cloudinary";
-import { SeoManagedHero } from "../components/seo/SeoManagedHero";
+import { getSiteImageUrl } from "@/lib/cloudinary";
+import { getManagedImageUrl } from "@/lib/managed-image-store";
+import { pageMetadata } from "@/lib/metadata";
+import Breadcrumbs from "../components/seo/Breadcrumbs";
+import SiteHub from "../components/seo/SiteHub";
 
-const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://mpedrosa.studio";
 
-export const metadata: Metadata = {
-  title: {
-    absolute: "Impresionismo Figurativo Chile | Marcela Pedrosa - Arte Impresionista Contemporáneo",
-  },
+export const metadata: Metadata = pageMetadata({
+  title: 'Impresionismo figurativo | Marcela Pedrosa',
   description:
-    "Impresionismo figurativo en Chile. Marcela Pedrosa, artista especializada en pintura impresionista figurativa. Obras al óleo que fusionan impresionismo y figuración desde Concepción.",
+    'Impresionismo figurativo de Marcela Pedrosa, pintora en Concepción. Obras al óleo que unen luz y figura.',
+  path: '/impresionismo-figurativo-chile',
+  ogImageKey: 'bosque',
+  imageAlt: 'Impresionismo figurativo de Marcela Pedrosa',
   keywords: [
     "impresionismo figurativo chile",
     "impresionismo chile",
@@ -25,33 +29,19 @@ export const metadata: Metadata = {
     "impresionismo concepción",
     "arte figurativo chile",
   ],
-  openGraph: {
-    title: "Impresionismo Figurativo en Chile - Marcela Pedrosa",
-    description:
-      "Arte impresionista figurativo contemporáneo. Obras al óleo que capturan luz, emoción y forma desde Concepción, Chile.",
-    url: `${BASE_URL}/impresionismo-figurativo-chile`,
-    type: "website",
-    images: [
-      {
-        url: getOgImageUrl("bosque", BASE_URL),
-        width: 1200,
-        height: 630,
-        alt: "Óleo de un bosque con troncos verticales y luz entre los árboles, de Marcela Pedrosa",
-      },
-    ],
-  },
-  alternates: {
-    canonical: `${BASE_URL}/impresionismo-figurativo-chile`,
-  },
-};
+});
 
-export default function ImpresionismoFigurativoChilePage() {
+export default async function ImpresionismoFigurativoChilePage() {
+  const heroImageUrl =
+    (await getManagedImageUrl("pages.impresionismo.hero")) ||
+    getSiteImageUrl("bosque");
 
   return (
     <main className="min-h-screen bg-[var(--background)]">
       {/* Hero Section */}
       <section className="relative py-16 sm:py-20 lg:py-24">
         <div className="mx-auto max-w-4xl px-4 sm:px-6">
+          <Breadcrumbs items={[{ name: "Impresionismo figurativo", path: "/impresionismo-figurativo-chile" }]} />
           <div className="text-center">
             <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-medium tracking-tight text-ink mb-6">
               Impresionismo Figurativo en Chile
@@ -61,7 +51,17 @@ export default function ImpresionismoFigurativoChilePage() {
             </p>
           </div>
 
-          <SeoManagedHero sectionId="pages.impresionismo.hero" fallbackKey="bosque" />
+          {/* Imagen destacada */}
+          <div className="relative w-full h-[400px] sm:h-[500px] overflow-hidden mb-12">
+            <Image
+              src={heroImageUrl}
+              alt="Ejemplo de impresionismo figurativo de Marcela Pedrosa, Chile"
+              fill
+              className="object-cover"
+              priority
+              sizes="(max-width: 896px) 100vw, 896px"
+            />
+          </div>
         </div>
       </section>
 
@@ -383,13 +383,6 @@ export default function ImpresionismoFigurativoChilePage() {
               Explora más
             </h3>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                            <Link
-                href="/pintura-de-bosques"
-                className="block p-4 rounded-lg border border-line hover:border-brand hover:bg-surface transition-colors"
-              >
-                <span className="font-medium text-ink">Pintura de bosques →</span>
-                <p className="text-sm text-ink-muted mt-1">Los dos óleos de bosque de la galería</p>
-              </Link>
               <Link
                 href="/pinturas"
                 className="block p-4 rounded-lg border border-line hover:border-brand hover:bg-surface transition-colors"
@@ -416,6 +409,7 @@ export default function ImpresionismoFigurativoChilePage() {
         </div>
       </section>
 
+      <SiteHub />
       <Footer email="contacto@marcelapedrosa.com" />
     </main>
   );

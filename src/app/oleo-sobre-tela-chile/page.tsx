@@ -1,18 +1,22 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import Footer from "../components/Footer";
 import WhatsAppButton from "../components/WhatsAppButton";
-import { getOgImageUrl } from "@/lib/cloudinary";
-import { SeoManagedHero } from "../components/seo/SeoManagedHero";
+import { getSiteImageUrl } from "@/lib/cloudinary";
+import { getManagedImageUrl } from "@/lib/managed-image-store";
+import { pageMetadata } from "@/lib/metadata";
+import Breadcrumbs from "../components/seo/Breadcrumbs";
+import SiteHub from "../components/seo/SiteHub";
 
-const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://mpedrosa.studio";
 
-export const metadata: Metadata = {
-  title: {
-    absolute: "Óleo sobre Tela Chile | Marcela Pedrosa - Pintura al Óleo Profesional",
-  },
+export const metadata: Metadata = pageMetadata({
+  title: 'Óleo sobre tela en Chile | Marcela Pedrosa',
   description:
-    "Óleo sobre tela en Chile por Marcela Pedrosa. Técnica tradicional de pintura al óleo, obras originales de alta calidad. Artista especializada en impresionismo figurativo desde Concepción.",
+    'Óleo sobre tela de Marcela Pedrosa, desde Concepción. Pintura original e impresionismo figurativo en Chile.',
+  path: '/oleo-sobre-tela-chile',
+  ogImageKey: 'mujer',
+  imageAlt: 'Pintura al óleo sobre tela de Marcela Pedrosa',
   keywords: [
     "óleo sobre tela chile",
     "pintura al óleo chile",
@@ -25,33 +29,19 @@ export const metadata: Metadata = {
     "óleo sobre lienzo chile",
     "marcela pedrosa óleo",
   ],
-  openGraph: {
-    title: "Óleo sobre Tela en Chile - Marcela Pedrosa",
-    description:
-      "Pintura al óleo profesional sobre tela. Técnica tradicional, obras originales de alta calidad desde Concepción, Chile.",
-    url: `${BASE_URL}/oleo-sobre-tela-chile`,
-    type: "website",
-    images: [
-      {
-        url: getOgImageUrl("mujer", BASE_URL),
-        width: 1200,
-        height: 630,
-        alt: "Retrato al óleo de una mujer, con el rostro en azul, naranja y violeta, de Marcela Pedrosa",
-      },
-    ],
-  },
-  alternates: {
-    canonical: `${BASE_URL}/oleo-sobre-tela-chile`,
-  },
-};
+});
 
-export default function OleoSobreTelaChilePage() {
+export default async function OleoSobreTelaChilePage() {
+  const heroImageUrl =
+    (await getManagedImageUrl("pages.oleo.hero")) ||
+    getSiteImageUrl("mujer");
 
   return (
     <main className="min-h-screen bg-[var(--background)]">
       {/* Hero Section */}
       <section className="relative py-16 sm:py-20 lg:py-24">
         <div className="mx-auto max-w-4xl px-4 sm:px-6">
+          <Breadcrumbs items={[{ name: "Óleo sobre tela", path: "/oleo-sobre-tela-chile" }]} />
           <div className="text-center">
             <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-medium tracking-tight text-ink mb-6">
               Óleo sobre Tela en Chile
@@ -61,7 +51,17 @@ export default function OleoSobreTelaChilePage() {
             </p>
           </div>
 
-          <SeoManagedHero sectionId="pages.oleo.hero" fallbackKey="mujer" />
+          {/* Imagen destacada */}
+          <div className="relative w-full h-[400px] sm:h-[500px] overflow-hidden mb-12">
+            <Image
+              src={heroImageUrl}
+              alt="Pintura al óleo sobre tela de Marcela Pedrosa, Chile"
+              fill
+              className="object-cover"
+              priority
+              sizes="(max-width: 896px) 100vw, 896px"
+            />
+          </div>
         </div>
       </section>
 
@@ -354,13 +354,6 @@ export default function OleoSobreTelaChilePage() {
               Descubre más
             </h3>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                            <Link
-                href="/comprar-arte-chile"
-                className="block p-4 rounded-lg border border-line hover:border-brand hover:bg-surface transition-colors"
-              >
-                <span className="font-medium text-ink">Comprar arte en Chile →</span>
-                <p className="text-sm text-ink-muted mt-1">Obras publicadas y cómo consultarlas</p>
-              </Link>
               <Link
                 href="/pinturas"
                 className="block p-4 rounded-lg border border-line hover:border-brand hover:bg-surface transition-colors"
@@ -387,6 +380,7 @@ export default function OleoSobreTelaChilePage() {
         </div>
       </section>
 
+      <SiteHub />
       <Footer email="contacto@marcelapedrosa.com" />
     </main>
   );

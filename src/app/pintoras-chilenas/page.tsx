@@ -1,18 +1,22 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import Footer from "../components/Footer";
 import WhatsAppButton from "../components/WhatsAppButton";
-import { getOgImageUrl } from "@/lib/cloudinary";
-import { SeoManagedHero } from "../components/seo/SeoManagedHero";
+import { getSiteImageUrl } from "@/lib/cloudinary";
+import { getManagedImageUrl } from "@/lib/managed-image-store";
+import { pageMetadata } from "@/lib/metadata";
+import Breadcrumbs from "../components/seo/Breadcrumbs";
+import SiteHub from "../components/seo/SiteHub";
 
-const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://mpedrosa.studio";
 
-export const metadata: Metadata = {
-  title: {
-    absolute: "Pintoras chilenas famosas y actuales | Marcela Pedrosa",
-  },
+export const metadata: Metadata = pageMetadata({
+  title: 'Pintoras chilenas famosas y actuales | Marcela Pedrosa',
   description:
-    "Pintoras chilenas famosas y actuales. Artistas chilenas, mujeres pintoras: de las pioneras a Marcela Pedrosa, en Concepción.",
+    'Pintoras chilenas famosas y actuales. Artistas chilenas, mujeres pintoras: de las pioneras a Marcela Pedrosa, en Concepción.',
+  path: '/pintoras-chilenas',
+  ogImageKey: 'gente',
+  imageAlt: 'Obra de Marcela Pedrosa, pintora chilena',
   keywords: [
     "pintoras chilenas",
     "pintoras chilenas famosas",
@@ -28,25 +32,7 @@ export const metadata: Metadata = {
     "pintora concepción",
     "óleo sobre tela chile",
   ],
-  openGraph: {
-    title: "Pintoras chilenas famosas y actuales | Marcela Pedrosa",
-    description:
-      "Pintoras chilenas famosas y actuales. Artistas chilenas, mujeres pintoras: de las pioneras a Marcela Pedrosa, en Concepción.",
-    url: `${BASE_URL}/pintoras-chilenas`,
-    type: "article",
-    images: [
-      {
-        url: getOgImageUrl("gente", BASE_URL),
-        width: 1200,
-        height: 630,
-        alt: "Óleo de un grupo de figuras de colores, sin rasgos en el rostro, de Marcela Pedrosa",
-      },
-    ],
-  },
-  alternates: {
-    canonical: `${BASE_URL}/pintoras-chilenas`,
-  },
-};
+});
 
 const faqSchema = {
   "@context": "https://schema.org",
@@ -87,7 +73,10 @@ const faqSchema = {
   ],
 };
 
-export default function PintorasChilenasPage() {
+export default async function PintorasChilenasPage() {
+  const heroImageUrl =
+    (await getManagedImageUrl("pages.pintoras.hero")) ||
+    getSiteImageUrl("gente");
 
   return (
     <main className="min-h-screen bg-[var(--background)]">
@@ -99,6 +88,7 @@ export default function PintorasChilenasPage() {
       {/* Hero Section */}
       <section className="relative py-16 sm:py-20 lg:py-24">
         <div className="mx-auto max-w-4xl px-4 sm:px-6">
+          <Breadcrumbs items={[{ name: "Pintoras chilenas", path: "/pintoras-chilenas" }]} />
           <div className="text-center">
             <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-medium tracking-tight text-ink mb-6">
               Pintoras Chilenas
@@ -108,7 +98,17 @@ export default function PintorasChilenasPage() {
             </p>
           </div>
 
-          <SeoManagedHero sectionId="pages.pintoras.hero" fallbackKey="gente" />
+          {/* Imagen destacada */}
+          <div className="relative w-full h-[400px] sm:h-[500px] overflow-hidden mb-12">
+            <Image
+              src={heroImageUrl}
+              alt="Obra de Marcela Pedrosa, pintora chilena contemporánea de Concepción"
+              fill
+              className="object-cover"
+              priority
+              sizes="(max-width: 896px) 100vw, 896px"
+            />
+          </div>
         </div>
       </section>
 
@@ -487,13 +487,6 @@ export default function PintorasChilenasPage() {
           <div className="mt-12 pt-8 border-t border-line">
             <h3 className="text-xl font-semibold text-ink mb-4">Conoce más</h3>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                            <Link
-                href="/guias"
-                className="block p-4 rounded-lg border border-line hover:border-brand hover:bg-surface transition-colors"
-              >
-                <span className="font-medium text-ink">Guías de obra →</span>
-                <p className="text-sm text-ink-muted mt-1">Temas y estilos con las pinturas reales</p>
-              </Link>
               <Link
                 href="/pinturas"
                 className="block p-4 rounded-lg border border-line hover:border-brand hover:bg-surface transition-colors"
@@ -554,6 +547,7 @@ export default function PintorasChilenasPage() {
         </div>
       </section>
 
+      <SiteHub />
       <Footer email="contacto@marcelapedrosa.com" />
     </main>
   );

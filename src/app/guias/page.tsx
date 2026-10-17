@@ -1,155 +1,208 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import Link from "next/link";
 import Footer from "../components/Footer";
-import { getOgImageUrl } from "@/lib/cloudinary";
-import { listPaintingsByTheme } from "@/lib/seo-artworks";
 import { SEO_GUIDES } from "@/lib/seo-guides";
+import { SITE_URL } from "@/lib/site";
+import { GUIDES } from "./lib/guides";
 
-const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://mpedrosa.studio";
+const THEME_GUIDES = SEO_GUIDES.filter((guide) => guide.path !== "/guias");
 
-const GROUPS = ["Compra", "Estilos", "Temas"] as const;
+const TITLE = "Guías para elegir y cuidar pintura";
+const DESCRIPTION =
+  "Guías para elegir un cuadro, comparar óleo y acrílico, cuidar una obra y encargar pintura original en Chile.";
+const CANONICAL = `${SITE_URL}/guias`;
 
 export const metadata: Metadata = {
-  title: {
-    absolute: "Guías para elegir obra | Marcela Pedrosa",
-  },
-  description:
-    "Guías para elegir pintura original de Marcela Pedrosa: retratos, figuras, animales, bosques, ciudad, bodegón y cómo comprar arte en Chile.",
-  alternates: { canonical: `${BASE_URL}/guias` },
+  title: { absolute: TITLE },
+  description: DESCRIPTION,
+  alternates: { canonical: CANONICAL },
   openGraph: {
-    title: "Guías para elegir obra | Marcela Pedrosa",
-    description:
-      "Estilos, temas y compra de obra original, con las pinturas publicadas en la galería.",
-    url: `${BASE_URL}/guias`,
+    title: TITLE,
+    description: DESCRIPTION,
+    url: CANONICAL,
     type: "website",
-    images: [
-      {
-        url: getOgImageUrl("bosque", BASE_URL),
-        width: 1200,
-        height: 630,
-        alt: "Óleo de un bosque con troncos verticales y luz entre los árboles, de Marcela Pedrosa",
-      },
+    locale: "es_CL",
+  },
+};
+
+const breadcrumb = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    {
+      "@type": "ListItem",
+      position: 1,
+      name: "Inicio",
+      item: SITE_URL,
+    },
+    {
+      "@type": "ListItem",
+      position: 2,
+      name: "Guías",
+      item: CANONICAL,
+    },
+  ],
+};
+
+const collection = {
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  name: TITLE,
+  description: DESCRIPTION,
+  url: CANONICAL,
+  inLanguage: "es-CL",
+  isPartOf: {
+    "@type": "WebSite",
+    name: "Marcela Pedrosa",
+    url: SITE_URL,
+  },
+  mainEntity: {
+    "@type": "ItemList",
+    itemListElement: [
+      ...GUIDES.map((guide, index) => ({
+        "@type": "ListItem",
+        position: index + 1,
+        name: guide.title,
+        url: `${SITE_URL}/guias/${guide.slug}`,
+        description: guide.description,
+      })),
+      ...THEME_GUIDES.map((guide, index) => ({
+        "@type": "ListItem",
+        position: GUIDES.length + index + 1,
+        name: guide.title,
+        url: `${SITE_URL}${guide.path}`,
+        description: guide.summary,
+      })),
     ],
   },
 };
 
-const THEME_BY_PATH = {
-  "/retratos-al-oleo": "retrato",
-  "/figuras-al-oleo": "figura",
-  "/pintura-de-animales": "animal",
-  "/pintura-de-bosques": "bosque",
-  "/pintura-de-ciudad": "ciudad",
-  "/bodegon-oleo": "bodegon",
-} as const;
-
-export default async function GuiasPage() {
-  const spokes = SEO_GUIDES.filter((guide) => guide.path !== "/guias");
-  const previews = await Promise.all(
-    spokes.map(async (guide) => {
-      const theme = THEME_BY_PATH[guide.path as keyof typeof THEME_BY_PATH];
-      if (!theme) return { path: guide.path, works: [] };
-      const works = await listPaintingsByTheme(theme);
-      return { path: guide.path, works: works.slice(0, 1) };
-    })
-  );
-  const previewByPath = new Map(previews.map((preview) => [preview.path, preview.works]));
-
+export default function GuiasIndexPage() {
   return (
-    <main className="min-h-screen bg-[var(--background)]">
-      <section className="py-16 sm:py-20">
-        <div className="mx-auto max-w-4xl px-4 sm:px-6">
-          <h1 className="mb-6 font-display text-4xl font-medium tracking-tight text-ink sm:text-5xl">
-            Guías para elegir obra
-          </h1>
-          <p className="mb-8 text-xl leading-relaxed text-ink-body">
-            Estas páginas muestran solo pinturas que ya están en la galería de Marcela Pedrosa.
-            El precio no está publicado: se consulta por WhatsApp o por correo.
-          </p>
+    <main className="min-h-screen bg-cream">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(collection) }}
+      />
+      <div className="mx-auto max-w-3xl px-4 sm:px-6 py-10 sm:py-14">
+        <nav aria-label="Breadcrumb" className="mb-8">
+          <ol className="flex flex-wrap items-center gap-x-2 gap-y-1 text-sm text-ink-muted">
+            <li>
+              <Link href="/" className="hover:text-brand transition-colors">
+                Inicio
+              </Link>
+            </li>
+            <li className="text-ink-faint" aria-hidden>
+              /
+            </li>
+            <li className="text-ink font-medium">Guías</li>
+          </ol>
+        </nav>
 
-          {GROUPS.map((group) => (
-            <section key={group} className="mt-12">
-              <h2 className="mb-4 text-2xl font-semibold text-ink">{group}</h2>
-              <ul className="grid list-none grid-cols-1 gap-6 p-0">
-                {spokes
-                  .filter((guide) => guide.group === group)
-                  .map((guide) => {
-                    const preview = previewByPath.get(guide.path) ?? [];
-                      const sample = preview[0];
-                      return (
-                        <li key={guide.path} className="border border-line bg-white">
-                          <Link href={guide.path} className="block hover:bg-surface">
-                            {sample ? (
-                              <Image
-                                src={sample.src}
-                                alt={sample.alt}
-                                width={sample.width}
-                                height={sample.height}
-                                sizes="(min-width: 896px) 896px, 100vw"
-                                className="h-auto max-h-80 w-full object-cover"
-                              />
-                            ) : null}
-                            <span className="block p-4 sm:p-6">
-                              <span className="text-lg font-medium text-ink">{guide.title} →</span>
-                              <p className="mt-2 text-ink-body">{guide.summary}</p>
-                            </span>
-                          </Link>
-                        </li>
-                      );
-                  })}
-              </ul>
-            </section>
+        <p className="text-[11px] uppercase tracking-[0.22em] text-ink-subtle mb-3">
+          Taller
+        </p>
+        <h1 className="font-display text-3xl sm:text-5xl font-medium tracking-tight text-ink">
+          {TITLE}
+        </h1>
+        <p className="mt-6 text-xl text-ink leading-relaxed text-pretty">
+          Seis textos para decidir con calma: el cuadro del living, la diferencia
+          entre óleo y acrílico, el cuidado de una tela, el impresionismo
+          figurativo, el encargo y los factores que mueven el valor de un original
+          en Chile.
+        </p>
+        <p className="mt-4 text-[1.05rem] text-ink-body leading-relaxed">
+          Si quieres mirar obra antes de leer, parte por las{" "}
+          <Link href="/pinturas" className="text-brand underline underline-offset-4">
+            pinturas
+          </Link>
+          , el{" "}
+          <Link
+            href="/oleo-sobre-tela-chile"
+            className="text-brand underline underline-offset-4"
+          >
+            óleo sobre tela
+          </Link>
+          , el{" "}
+          <Link
+            href="/impresionismo-figurativo-chile"
+            className="text-brand underline underline-offset-4"
+          >
+            impresionismo figurativo
+          </Link>{" "}
+          y las{" "}
+          <Link
+            href="/pintoras-chilenas"
+            className="text-brand underline underline-offset-4"
+          >
+            pintoras chilenas
+          </Link>
+          .
+        </p>
+        <p className="mt-4 text-[1.05rem] text-ink-body leading-relaxed">
+          Son guías de oficio. El monto de una obra de Marcela Pedrosa, pintora en
+          Concepción, se consulta por WhatsApp, por{" "}
+          <a
+            href="mailto:contacto@marcelapedrosa.com"
+            className="text-brand underline underline-offset-4"
+          >
+            contacto@marcelapedrosa.com
+          </a>{" "}
+          o en el{" "}
+          <Link href="/contacto" className="text-brand underline underline-offset-4">
+            formulario de contacto
+          </Link>
+          .
+        </p>
+
+        <ul className="mt-10 space-y-4">
+          {GUIDES.map((guide) => (
+            <li key={guide.slug}>
+              <Link
+                href={`/guias/${guide.slug}`}
+                className="block rounded-xl border border-line bg-surface px-5 py-4 hover:border-brand transition-colors"
+              >
+                <span className="block font-display text-xl text-ink">
+                  {guide.title}
+                </span>
+                <span className="mt-2 block text-ink-body leading-relaxed">
+                  {guide.description}
+                </span>
+              </Link>
+            </li>
           ))}
+        </ul>
 
-          <section className="mt-12 border-t border-line pt-8">
-            <h2 className="mb-4 text-2xl font-semibold text-ink">Otras páginas de obra</h2>
-            <ul className="grid list-none grid-cols-1 gap-4 p-0 sm:grid-cols-2">
-              {[
-                {
-                  href: "/oleo-sobre-tela-chile",
-                  label: "Óleo sobre tela",
-                  note: "La técnica de las pinturas publicadas",
-                },
-                {
-                  href: "/impresionismo-figurativo-chile",
-                  label: "Impresionismo figurativo",
-                  note: "El estilo que la artista describe en el sitio",
-                },
-                {
-                  href: "/pintura-fachadas-concepcion",
-                  label: "Fachadas y bosques",
-                  note: "La serie que el sitio ya presenta junta",
-                },
-                {
-                  href: "/comprar-pintura-concepcion",
-                  label: "Comprar en Concepción",
-                  note: "La misma consulta, con foco en la ciudad",
-                },
-                {
-                  href: "/encargos-pintura",
-                  label: "Encargos",
-                  note: "Si la obra que buscas no está en la galería",
-                },
-                {
-                  href: "/pinturas",
-                  label: "Todas las pinturas",
-                  note: "Galería completa, con las medidas de cada ficha",
-                },
-              ].map((link) => (
-                <li key={link.href}>
-                  <Link
-                    href={link.href}
-                    className="block rounded-lg border border-line p-4 transition-colors hover:border-brand hover:bg-surface"
-                  >
-                    <span className="font-medium text-ink">{link.label} →</span>
-                    <p className="mt-1 text-sm text-ink-muted">{link.note}</p>
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </section>
-        </div>
-      </section>
+        <h2 className="mt-14 font-display text-2xl sm:text-3xl font-medium tracking-tight text-ink">
+          Obra publicada: temas y compra
+        </h2>
+        <p className="mt-4 text-[1.05rem] text-ink-body leading-relaxed">
+          Páginas armadas solo con las pinturas que ya están en el sitio: cómo
+          consultar una obra en Chile y los temas que hay ahora (retrato, figura,
+          animales, bosque, ciudad y bodegón).
+        </p>
+        <ul className="mt-6 space-y-4">
+          {THEME_GUIDES.map((guide) => (
+            <li key={guide.path}>
+              <Link
+                href={guide.path}
+                className="block rounded-xl border border-line bg-surface px-5 py-4 hover:border-brand transition-colors"
+              >
+                <span className="block font-display text-xl text-ink">
+                  {guide.title}
+                </span>
+                <span className="mt-2 block text-ink-body leading-relaxed">
+                  {guide.summary}
+                </span>
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </div>
       <Footer email="contacto@marcelapedrosa.com" />
     </main>
   );

@@ -1,18 +1,22 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import Footer from "../components/Footer";
 import WhatsAppButton from "../components/WhatsAppButton";
-import { getOgImageUrl } from "@/lib/cloudinary";
-import { SeoManagedHero } from "../components/seo/SeoManagedHero";
+import { getSiteImageUrl } from "@/lib/cloudinary";
+import { getManagedImageUrl } from "@/lib/managed-image-store";
+import { pageMetadata } from "@/lib/metadata";
+import Breadcrumbs from "../components/seo/Breadcrumbs";
+import SiteHub from "../components/seo/SiteHub";
 
-const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://mpedrosa.studio";
 
-export const metadata: Metadata = {
-  title: {
-    absolute: "Cerámica Artística Concepción | Marcela Pedrosa - Cerámica en Gres",
-  },
+export const metadata: Metadata = pageMetadata({
+  title: 'Cerámica artística en Concepción | Marcela Pedrosa',
   description:
-    "Cerámica artística en Concepción. Marcela Pedrosa, ceramista especializada en gres de alta temperatura. Piezas únicas decorativas y escultóricas desde la Región del Biobío.",
+    'Cerámica artística en gres de Marcela Pedrosa, desde Concepción. Piezas decorativas y escultóricas del Biobío.',
+  path: '/ceramica-artistica-concepcion',
+  ogImageKey: 'elefante',
+  imageAlt: 'Cerámica artística de Marcela Pedrosa en Concepción',
   keywords: [
     "cerámica artística concepción",
     "cerámica concepción",
@@ -25,33 +29,19 @@ export const metadata: Metadata = {
     "cerámica decorativa concepción",
     "cerámica contemporánea chile",
   ],
-  openGraph: {
-    title: "Cerámica Artística en Concepción - Marcela Pedrosa",
-    description:
-      "Cerámica artística en gres de alta temperatura. Piezas únicas decorativas y escultóricas desde Concepción, Chile.",
-    url: `${BASE_URL}/ceramica-artistica-concepcion`,
-    type: "website",
-    images: [
-      {
-        url: getOgImageUrl("elefante", BASE_URL),
-        width: 1200,
-        height: 630,
-        alt: "Óleo de un elefante de frente, en naranjos, azules y rojos, de Marcela Pedrosa",
-      },
-    ],
-  },
-  alternates: {
-    canonical: `${BASE_URL}/ceramica-artistica-concepcion`,
-  },
-};
+});
 
-export default function CeramicaArtisticaConcepcionPage() {
+export default async function CeramicaArtisticaConcepcionPage() {
+  const heroImageUrl =
+    (await getManagedImageUrl("pages.ceramica.hero")) ||
+    getSiteImageUrl("elefante");
 
   return (
     <main className="min-h-screen bg-[var(--background)]">
       {/* Hero Section */}
       <section className="relative py-16 sm:py-20 lg:py-24">
         <div className="mx-auto max-w-4xl px-4 sm:px-6">
+          <Breadcrumbs items={[{ name: "Cerámica artística", path: "/ceramica-artistica-concepcion" }]} />
           <div className="text-center">
             <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-medium tracking-tight text-ink mb-6">
               Cerámica Artística en Concepción
@@ -61,7 +51,17 @@ export default function CeramicaArtisticaConcepcionPage() {
             </p>
           </div>
 
-          <SeoManagedHero sectionId="pages.ceramica.hero" fallbackKey="elefante" />
+          {/* Imagen destacada */}
+          <div className="relative w-full h-[400px] sm:h-[500px] overflow-hidden mb-12">
+            <Image
+              src={heroImageUrl}
+              alt="Cerámica artística de Marcela Pedrosa en Concepción"
+              fill
+              className="object-cover"
+              priority
+              sizes="(max-width: 896px) 100vw, 896px"
+            />
+          </div>
         </div>
       </section>
 
@@ -447,13 +447,6 @@ export default function CeramicaArtisticaConcepcionPage() {
               Explora más
             </h3>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                            <Link
-                href="/guias"
-                className="block p-4 rounded-lg border border-line hover:border-brand hover:bg-surface transition-colors"
-              >
-                <span className="font-medium text-ink">Guías de obra →</span>
-                <p className="text-sm text-ink-muted mt-1">Pinturas publicadas, por tema</p>
-              </Link>
               <Link
                 href="/esculturas"
                 className="block p-4 rounded-lg border border-line hover:border-brand hover:bg-surface transition-colors"
@@ -473,6 +466,7 @@ export default function CeramicaArtisticaConcepcionPage() {
         </div>
       </section>
 
+      <SiteHub />
       <Footer email="contacto@marcelapedrosa.com" />
     </main>
   );

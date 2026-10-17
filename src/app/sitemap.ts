@@ -1,150 +1,44 @@
 import { MetadataRoute } from "next";
+import { listCatalogArtworks } from "@/lib/artworks";
 import { SEO_GUIDES } from "@/lib/seo-guides";
+import { SITEMAP_ROUTES } from "@/lib/seo-routes";
+import { absoluteUrl } from "@/lib/site";
+import { GUIDES } from "./guias/lib/guides";
 
-const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://mpedrosa.studio";
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
+  const works = await listCatalogArtworks();
+  const now = new Date();
+  const known = new Set(SITEMAP_ROUTES.map((route) => route.path));
 
-export default function sitemap(): MetadataRoute.Sitemap {
-  return [
-    {
-      url: BASE_URL,
-      lastModified: new Date(),
-      changeFrequency: "weekly",
-      priority: 1.0,
-    },
-    {
-      url: `${BASE_URL}/pinturas`,
-      lastModified: new Date(),
-      changeFrequency: "weekly",
-      priority: 0.8,
-    },
-    {
-      url: `${BASE_URL}/esculturas`,
-      lastModified: new Date(),
-      changeFrequency: "weekly",
-      priority: 0.8,
-    },
-    {
-      url: `${BASE_URL}/prensa`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.7,
-    },
-    {
-      url: `${BASE_URL}/contacto`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.6,
-    },
-    // Páginas SEO - Keywords locales
-    {
-      url: `${BASE_URL}/pintora-concepcion`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.9,
-    },
-    {
-      url: `${BASE_URL}/arte-concepcion`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.9,
-    },
-    {
-      url: `${BASE_URL}/artista-visual-biobio`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.9,
-    },
-    {
-      url: `${BASE_URL}/taller-arte-concepcion`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.9,
-    },
-    {
-      url: `${BASE_URL}/comprar-pintura-concepcion`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.9,
-    },
-    {
-      url: `${BASE_URL}/encargos-pintura`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.9,
-    },
-    {
-      url: `${BASE_URL}/marcela-pedrosa`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.95,
-    },
-    {
-      url: `${BASE_URL}/galeria-arte-concepcion`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.9,
-    },
-    {
-      url: `${BASE_URL}/pintura-fachadas-concepcion`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.85,
-    },
-    // Páginas SEO - Keywords de nicho
-    {
-      url: `${BASE_URL}/oleo-sobre-tela-chile`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.85,
-    },
-    {
-      url: `${BASE_URL}/impresionismo-figurativo-chile`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.85,
-    },
-    {
-      url: `${BASE_URL}/mujeres-artistas-chilenas`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.85,
-    },
-    {
-      url: `${BASE_URL}/pintoras-chilenas`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.9,
-    },
-    {
-      url: `${BASE_URL}/ceramica-artistica-concepcion`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.85,
-    },
-    ...SEO_GUIDES.map((guide) => ({
-      url: `${BASE_URL}${guide.path}`,
-      lastModified: new Date(),
+  const extraRoutes = [
+    { path: "/guias", changeFrequency: "monthly" as const, priority: 0.8 },
+    ...GUIDES.map((guide) => ({
+      path: `/guias/${guide.slug}`,
+      changeFrequency: "monthly" as const,
+      priority: 0.75,
+    })),
+    ...SEO_GUIDES.filter((guide) => guide.path !== "/guias").map((guide) => ({
+      path: guide.path,
       changeFrequency: "monthly" as const,
       priority: guide.priority,
     })),
-    // Páginas legales y políticas
-    {
-      url: `${BASE_URL}/devoluciones`,
-      lastModified: new Date(),
-      changeFrequency: "yearly",
-      priority: 0.3,
-    },
-    {
-      url: `${BASE_URL}/tiempos-de-entrega`,
-      lastModified: new Date(),
-      changeFrequency: "yearly",
-      priority: 0.3,
-    },
-    {
-      url: `${BASE_URL}/privacidad`,
-      lastModified: new Date(),
-      changeFrequency: "yearly",
-      priority: 0.2,
-    },
-  ];
+  ].filter((route) => !known.has(route.path));
+
+  const staticRoutes: MetadataRoute.Sitemap = [...SITEMAP_ROUTES, ...extraRoutes].map(
+    (route) => ({
+      url: route.path === "/" ? absoluteUrl("/") : absoluteUrl(route.path),
+      lastModified: now,
+      changeFrequency: route.changeFrequency,
+      priority: route.priority,
+    }),
+  );
+
+  const artworkRoutes: MetadataRoute.Sitemap = works.map((work) => ({
+    url: absoluteUrl(`/pinturas/${work.slug}`),
+    lastModified: now,
+    changeFrequency: "monthly",
+    priority: 0.7,
+  }));
+
+  return [...staticRoutes, ...artworkRoutes];
 }
