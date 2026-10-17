@@ -50,6 +50,8 @@ Actualizado: **2026-10-17**
 - Person schema `sameAs` → Instagram `mpedrosaartista` (constante en `src/lib/site.ts`; override con `NEXT_PUBLIC_INSTAGRAM_URL`)
 - Gap #1 SEO: indexar hubs (deploy + enlaces internos + Request indexing)
 - **Lote 1 (2026-10-17):** titles/metas de `/pintoras-chilenas` y `/pinturas`; enlace doble con `/mujeres-artistas-chilenas`; refuerzo e interlinking de `/oleo-sobre-tela-chile` y `/impresionismo-figurativo-chile`. Home, `/ads` y `/sitelink` sin cambios.
+- **Lote 2 (2026-10-17):** fundación SEO en páginas que no están en el menú. Titles ≤60 y metas ≤155, canonical, Open Graph y Twitter en esas páginas; sitemap con fichas; robots también bloquea `/api/` y `/imagenes` a bots de IA. Schema nuevo: VisualArtwork por obra real (nombre, imagen, medio y medidas solo si están en el catálogo; sin precio ni reseñas). Person/VisualArtist del layout no se tocó. Fichas en `/pinturas/[slug]`. Intención de compra: `/comprar-cuadros-al-oleo-chile` y `/cuadros-para-living`. Redirects `/pinturas-originales` y `/pinturas-originales-a-la-venta` → `/pinturas` (la página del menú no cambia). «Encargar una pintura» queda en `/encargos-pintura` (redirect `/encargar-una-pintura`). `/ads` y `/sitelink` no se tocaron.
+- **Menú (2026-10-17):** las páginas del `NAV_ITEMS` quedan idénticas a `main`, incluidos metadatos y schema. El lote 2 solo toca páginas interiores que no están en el menú y páginas nuevas. Hub «Explorar el sitio» solo ahí. Footer y menú sin cambios.
 - Gap #2: analytics (GA4/Clarity del dominio correcto)
 - Gap #3 (aprobación): diferenciar landings thin, FAQ/GEO, backlinks prensa/IG
 

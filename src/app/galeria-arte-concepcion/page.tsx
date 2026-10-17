@@ -3,18 +3,20 @@ import Image from "next/image";
 import Link from "next/link";
 import Footer from "../components/Footer";
 import WhatsAppButton from "../components/WhatsAppButton";
-import { getOgImageUrl, getSiteImageUrl } from "@/lib/cloudinary";
+import { getSiteImageUrl } from "@/lib/cloudinary";
 import { getManagedImageUrl } from "@/lib/managed-image-store";
+import { pageMetadata } from "@/lib/metadata";
+import Breadcrumbs from "../components/seo/Breadcrumbs";
+import SiteHub from "../components/seo/SiteHub";
 
-const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://mpedrosa.studio";
 
-export const metadata: Metadata = {
-  title: {
-    absolute:
-      "Galería de Arte en Concepción | Pinturas Marcela Pedrosa",
-  },
+export const metadata: Metadata = pageMetadata({
+  title: 'Galería de arte en Concepción | Marcela Pedrosa',
   description:
-    "Galería de arte en Concepción: pinturas al óleo y obra contemporánea de Marcela Pedrosa. Visita online la selección de obras originales del Biobío.",
+    'Galería de arte en Concepción: pinturas al óleo y obra de Marcela Pedrosa. Selección de originales del Biobío.',
+  path: '/galeria-arte-concepcion',
+  ogImageKey: 'bosque',
+  imageAlt: 'Galería de arte de Marcela Pedrosa en Concepción',
   keywords: [
     "galería arte concepción",
     "galería de arte concepción",
@@ -24,25 +26,7 @@ export const metadata: Metadata = {
     "galería óleo chile",
     "marcela pedrosa galería",
   ],
-  openGraph: {
-    title: "Galería de Arte en Concepción | Marcela Pedrosa",
-    description:
-      "Selección de pinturas originales en óleo. Arte contemporáneo desde Concepción.",
-    url: `${BASE_URL}/galeria-arte-concepcion`,
-    type: "website",
-    images: [
-      {
-        url: getOgImageUrl("bosque", BASE_URL),
-        width: 1200,
-        height: 630,
-        alt: "Galería de arte de Marcela Pedrosa en Concepción",
-      },
-    ],
-  },
-  alternates: {
-    canonical: `${BASE_URL}/galeria-arte-concepcion`,
-  },
-};
+});
 
 export default async function GaleriaArteConcepcionPage() {
   const heroImageUrl =
@@ -53,6 +37,7 @@ export default async function GaleriaArteConcepcionPage() {
     <main className="min-h-screen bg-[var(--background)]">
       <section className="relative py-16 sm:py-20 lg:py-24">
         <div className="mx-auto max-w-4xl px-4 sm:px-6">
+          <Breadcrumbs items={[{ name: "Galería de arte", path: "/galeria-arte-concepcion" }]} />
           <div className="text-center">
             <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-medium tracking-tight text-ink mb-6">
               Galería de Arte en Concepción
@@ -69,6 +54,7 @@ export default async function GaleriaArteConcepcionPage() {
               fill
               className="object-cover"
               priority
+              sizes="(max-width: 896px) 100vw, 896px"
             />
           </div>
         </div>
@@ -233,6 +219,7 @@ export default async function GaleriaArteConcepcionPage() {
         </div>
       </section>
 
+      <SiteHub />
       <Footer email="contacto@marcelapedrosa.com" />
     </main>
   );

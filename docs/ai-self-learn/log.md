@@ -27,3 +27,9 @@ Formato: `YYYY-MM-DD | tema | hecho | acción/implicación`
 - GSC | `/pinturas` pos 3.9, 0 clics | Title y meta más concretos (obra, medidas, disponibilidad)
 - GSC | `/oleo-sobre-tela-chile` pos 11 y `/impresionismo-figurativo-chile` pos 17.8 | Refuerzo breve con hechos ya del sitio y enlaces desde páginas interiores
 - SEO | Home, `/ads` y `/sitelink` no se tocaron en el lote 1 | Sin contenido nuevo en la portada
+- SEO | Lote 2: fichas `/pinturas/c1`…`c15` y `/pinturas/elefante` (c3 es Elefante, mismo public id que la oferta del mes). Sin precio en la ficha | Elefante ya tiene precio solo en la oferta del inicio
+- SEO | Intención nueva: `/comprar-cuadros-al-oleo-chile` (envío nacional, plazos de `/tiempos-de-entrega`) y `/cuadros-para-living` (solo obras con medidas en el catálogo) | No se inventan clientes ni unidad de medida
+- SEO | Merge: pinturas originales → `/pinturas`; encargar → `/encargos-pintura`. Redirects permanentes desde `/pinturas-originales`, `/pinturas-originales-a-la-venta` y `/encargar-una-pintura` | Evita canibalizar `/comprar-pintura-concepcion`
+- SEO | No hay Organization/LocalBusiness: el repo tiene persona, comuna, teléfono y correo, sin razón social ni calle | Se mantiene Person + VisualArtist
+- SEO | Home del lote 2: solo title/description/canonical/OG/Twitter. Sin contenido visible nuevo | `/ads` y `/sitelink` no existen en el repo y no se crearon
+- SEO | Regla estricta de la dueña (2026-10-17): no modificar ninguna página del menú (`NAV_ITEMS`), ni contenido, ni enlaces, ni layout, ni metadatos. Esos archivos quedan como en `main`: `/`, `/pinturas`, `/esculturas`, `/marcela-pedrosa`, `/pintora-concepcion`, `/prensa`, `/tiempos-de-entrega`, `/privacidad`, `/devoluciones`, `/contacto`. También `layout.tsx`, `ArtCard` y `Prensa`, porque cambian esas páginas | El hub y las fichas viven solo en páginas que no están en el menú

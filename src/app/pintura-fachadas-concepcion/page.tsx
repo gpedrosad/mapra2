@@ -3,18 +3,20 @@ import Image from "next/image";
 import Link from "next/link";
 import Footer from "../components/Footer";
 import WhatsAppButton from "../components/WhatsAppButton";
-import { getOgImageUrl, getSiteImageUrl } from "@/lib/cloudinary";
+import { getSiteImageUrl } from "@/lib/cloudinary";
 import { getManagedImageUrl } from "@/lib/managed-image-store";
+import { pageMetadata } from "@/lib/metadata";
+import Breadcrumbs from "../components/seo/Breadcrumbs";
+import SiteHub from "../components/seo/SiteHub";
 
-const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://mpedrosa.studio";
 
-export const metadata: Metadata = {
-  title: {
-    absolute:
-      "Pintura de Fachadas y Bosques | Marcela Pedrosa Concepción",
-  },
+export const metadata: Metadata = pageMetadata({
+  title: 'Fachadas y bosques | Marcela Pedrosa',
   description:
-    "Pintura de fachadas urbanas y bosques del Biobío por Marcela Pedrosa. Óleo e impresionismo figurativo desde Concepción, Chile.",
+    'Pintura de fachadas urbanas y bosques del Biobío por Marcela Pedrosa. Óleo e impresionismo figurativo desde Concepción.',
+  path: '/pintura-fachadas-concepcion',
+  ogImageKey: 'bosque',
+  imageAlt: 'Pintura de fachadas y bosques de Marcela Pedrosa',
   keywords: [
     "pintura fachadas concepción",
     "fachadas concepción arte",
@@ -25,25 +27,7 @@ export const metadata: Metadata = {
     "marcela pedrosa fachadas",
     "pintura paisaje sur chile",
   ],
-  openGraph: {
-    title: "Pintura de Fachadas y Bosques | Marcela Pedrosa",
-    description:
-      "Series de fachadas urbanas y bosques en óleo. Arte con identidad de Concepción y el Biobío.",
-    url: `${BASE_URL}/pintura-fachadas-concepcion`,
-    type: "website",
-    images: [
-      {
-        url: getOgImageUrl("bosque", BASE_URL),
-        width: 1200,
-        height: 630,
-        alt: "Pintura de fachadas y bosques de Marcela Pedrosa",
-      },
-    ],
-  },
-  alternates: {
-    canonical: `${BASE_URL}/pintura-fachadas-concepcion`,
-  },
-};
+});
 
 export default async function PinturaFachadasConcepcionPage() {
   const heroImageUrl =
@@ -54,6 +38,7 @@ export default async function PinturaFachadasConcepcionPage() {
     <main className="min-h-screen bg-[var(--background)]">
       <section className="relative py-16 sm:py-20 lg:py-24">
         <div className="mx-auto max-w-4xl px-4 sm:px-6">
+          <Breadcrumbs items={[{ name: "Fachadas y bosques", path: "/pintura-fachadas-concepcion" }]} />
           <div className="text-center">
             <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-medium tracking-tight text-ink mb-6">
               Pintura de Fachadas y Bosques
@@ -70,6 +55,7 @@ export default async function PinturaFachadasConcepcionPage() {
               fill
               className="object-cover"
               priority
+              sizes="(max-width: 896px) 100vw, 896px"
             />
           </div>
         </div>
@@ -232,6 +218,7 @@ export default async function PinturaFachadasConcepcionPage() {
         </div>
       </section>
 
+      <SiteHub />
       <Footer email="contacto@marcelapedrosa.com" />
     </main>
   );
