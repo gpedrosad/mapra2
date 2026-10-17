@@ -1,41 +1,34 @@
 import { ArtGallery } from "../components/ArtCard";
 import type { Artwork } from "../components/ArtCard";
 import Footer from "../components/Footer";
-import { getImagePixels } from "@/lib/cloudinary";
 import { listGresArtworks } from "@/lib/managed-image-store";
-import { pageMetadata } from "@/lib/metadata";
-import Breadcrumbs from "../components/seo/Breadcrumbs";
-import type { Metadata } from "next";
 
+const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://mpedrosa.studio";
 
-export const metadata: Metadata = pageMetadata({
-  title: 'Cerámica gres | Marcela Pedrosa en Concepción',
+export const metadata = {
+  title: {
+    absolute: "Cerámica Gres | Marcela Pedrosa — Arte en Concepción",
+  },
   description:
-    'Piezas en cerámica gres de alta temperatura de Marcela Pedrosa, artista en Concepción.',
-  path: '/esculturas',
-  ogImageKey: 'elefante',
-  imageAlt: 'Cerámica gres de Marcela Pedrosa',
-});
+    "Piezas en cerámica gres de alta temperatura. Marcela Pedrosa, artista en Concepción.",
+  openGraph: {
+    title: "Cerámica Gres | Marcela Pedrosa",
+    description:
+      "Selección de piezas en gres. Objetos decorativos y escultóricos desde Concepción, Chile.",
+    url: `${BASE_URL}/esculturas`,
+    type: "website" as const,
+  },
+  alternates: {
+    canonical: `${BASE_URL}/esculturas`,
+  },
+};
 
 export default async function EsculturasPage() {
-  const records = await listGresArtworks();
-  const items: Artwork[] = records.map((item) => {
-    const pixels = getImagePixels(item.publicId);
-    return {
-      id: item.id,
-      imageUrl: item.imageUrl,
-      info: item.info,
-      title: item.alt || item.title,
-      width: pixels?.width,
-      height: pixels?.height,
-    };
-  });
+  const items: Artwork[] = await listGresArtworks();
 
   return (
     <main className="min-h-screen bg-[var(--background)]">
       <section className="mx-auto w-full max-w-6xl px-4 py-10 sm:px-6 sm:py-12">
-        <Breadcrumbs items={[{ name: "Cerámica gres", path: "/esculturas" }]} />
-          
         <header className="mb-8 sm:mb-10">
           <h1 className="text-3xl font-semibold tracking-tight text-[#0F3B2E] sm:text-4xl">
             Cerámica gres

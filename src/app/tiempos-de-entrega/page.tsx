@@ -1,24 +1,33 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Footer from "../components/Footer";
-import { pageMetadata } from "@/lib/metadata";
-import Breadcrumbs from "../components/seo/Breadcrumbs";
 
-export const metadata: Metadata = pageMetadata({
-  title: 'Tiempos de entrega | Marcela Pedrosa',
-  description:
-    'Plazos de entrega de obras originales y cerámica gres en el Biobío, otras regiones y al extranjero.',
-  path: '/tiempos-de-entrega',
-  ogImageKey: 'bosque',
-  imageAlt: 'Tiempos de entrega de obras de Marcela Pedrosa',
-});
+const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://mpedrosa.studio";
+
+export const metadata: Metadata = {
+  title: "Tiempos de Entrega — Marcela Pedrosa",
+  description: "Plazos de entrega de obras originales y cerámica gres.",
+  alternates: {
+    canonical: `${BASE_URL}/tiempos-de-entrega`,
+  },
+};
 
 export default function TiemposEntregaPage() {
   return (
     <main className="min-h-screen bg-cream">
       <div className="mx-auto max-w-3xl px-4 sm:px-6 py-10 sm:py-14">
-        <Breadcrumbs items={[{ name: "Tiempos de entrega", path: "/tiempos-de-entrega" }]} />
-          
+        <nav className="mb-6" aria-label="Breadcrumb">
+          <ol className="flex items-center space-x-2 text-sm text-ink-muted">
+            <li>
+              <Link href="/" className="hover:text-brand transition-colors">
+                Inicio
+              </Link>
+            </li>
+            <li className="text-ink-faint">/</li>
+            <li className="text-ink font-medium">Tiempos de Entrega</li>
+          </ol>
+        </nav>
+
         <h1 className="font-display text-3xl sm:text-4xl font-medium tracking-tight text-ink mb-8">
           Tiempos de Entrega
         </h1>

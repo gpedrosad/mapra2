@@ -2,7 +2,6 @@
 "use client";
 
 import React from "react";
-import Image from "next/image";
 import { motion } from "framer-motion";
 import { useLanguage } from "./LanguageContext";
 import { getSiteImageUrl } from "@/lib/cloudinary";
@@ -81,15 +80,18 @@ export default function Prensa({ item = defaultItem, className = "" }: Props) {
       <div className="lg:grid lg:grid-cols-12 lg:gap-0">
         {/* Imagen (en desktop queda a la izquierda) */}
         <figure className="relative lg:col-span-7 bg-transparent">
-          <div className="relative w-full" style={{ aspectRatio: "2552 / 3040" }}>
-            <Image
-              src={item.imageUrl}
-              alt={t("pr_alt", { name: "Marcela Pedrosa" })}
-              fill
-              sizes="(max-width: 1024px) 100vw, 58vw"
-              className="object-contain p-0 lg:p-8"
-            />
-          </div>
+          <img
+            src={item.imageUrl}
+            alt={t("pr_alt", { name: "Marcela Pedrosa" })}
+            className={[
+              "block w-full h-auto",
+              "lg:h-full lg:object-contain lg:p-8",
+              "transition-transform duration-300",
+              "group-hover:scale-[1.01]",
+            ].join(" ")}
+            loading="lazy"
+            decoding="async"
+          />
         </figure>
 
         {/* Texto (en desktop a la derecha, estilo editorial) */}

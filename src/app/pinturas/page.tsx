@@ -1,60 +1,67 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import { ArtGallery } from "../components/ArtCard";
 import type { Artwork } from "../components/ArtCard";
 import Footer from "../components/Footer";
-import Breadcrumbs from "../components/seo/Breadcrumbs";
 import ItemListJsonLd from "../components/seo/ItemListJsonLd";
-import { listCatalogArtworks } from "@/lib/artworks";
-import { pageMetadata } from "@/lib/metadata";
-import { absoluteUrl, CONTACT_EMAIL, SITE_URL } from "@/lib/site";
+import { listGalleryArtworks } from "@/lib/managed-image-store";
+import { getOgImageUrl } from "@/lib/cloudinary";
+import Link from "next/link";
 
-const PATH = "/pinturas";
+const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://mpedrosa.studio";
 
-export const metadata: Metadata = pageMetadata({
-  title: "Pinturas originales al óleo | Marcela Pedrosa",
+export const metadata: Metadata = {
+  title: {
+    absolute: "Pinturas originales al óleo | Marcela Pedrosa",
+  },
   description:
-    "Pinturas originales a la venta de Marcela Pedrosa en Concepción. Óleo sobre tela, medidas de cada obra y consulta por WhatsApp o correo.",
-  path: PATH,
-  imageAlt: "Pinturas originales al óleo de Marcela Pedrosa",
+    "Pinturas originales al óleo de Marcela Pedrosa en Concepción. Mira cada obra, sus medidas y consulta disponibilidad.",
   keywords: [
-    "pinturas originales a la venta",
     "pinturas Marcela Pedrosa",
+    "pintura Concepción",
     "óleo sobre tela",
     "obras de arte Concepción",
+    "galería pintura Chile",
+    "arte Concepción",
   ],
-});
+  openGraph: {
+    title: "Pinturas originales al óleo | Marcela Pedrosa",
+    description:
+      "Pinturas originales al óleo de Marcela Pedrosa en Concepción. Mira cada obra, sus medidas y consulta disponibilidad.",
+    url: `${BASE_URL}/pinturas`,
+    type: "website",
+    images: [
+      {
+        url: getOgImageUrl("bosque", BASE_URL),
+        width: 1200,
+        height: 630,
+        alt: "Pinturas de Marcela Pedrosa en Concepción",
+      },
+    ],
+  },
+  alternates: {
+    canonical: `${BASE_URL}/pinturas`,
+  },
+};
 
 export default async function PinturasPage() {
-  const works = await listCatalogArtworks();
-  const items: Artwork[] = works.map((work) => ({
-    id: work.id,
-    imageUrl: work.imageUrl,
-    info: work.info,
-    title: work.alt,
-    width: work.pixelWidth,
-    height: work.pixelHeight,
-  }));
-
+  const items: Artwork[] = await listGalleryArtworks();
   return (
     <main className="min-h-screen bg-[var(--background)]">
       <ItemListJsonLd
-        listName="Pinturas originales de Marcela Pedrosa"
-        listUrl={`${SITE_URL}${PATH}`}
-        items={works.map((work) => ({
-          name: work.name,
-          imageUrl: absoluteUrl(work.imageUrl),
-          url: `${SITE_URL}/pinturas/${work.slug}`,
-          description: work.info,
-          artMedium: work.medium,
+        listName="Pinturas de Marcela Pedrosa"
+        listUrl={`${BASE_URL}/pinturas`}
+        items={items.map((item) => ({
+          name: item.title?.trim() || `Obra ${item.id}`,
+          imageUrl: item.imageUrl,
+          url: `${BASE_URL}/pinturas`,
+          description: item.info,
         }))}
       />
 
       <section className="mx-auto w-full max-w-6xl px-4 sm:px-6 py-10 sm:py-12">
-        <Breadcrumbs items={[{ name: "Pinturas", path: PATH }]} />
         <header className="mb-8 sm:mb-10">
           <h1 className="text-3xl sm:text-4xl font-semibold tracking-tight text-[#0F3B2E]">
-            Pinturas originales a la venta
+            Pinturas
           </h1>
           <p className="mt-2 max-w-2xl text-sm sm:text-base text-zinc-700 leading-relaxed">
             Selección de obras originales en óleo. Pintura y arte de Marcela Pedrosa
@@ -95,7 +102,7 @@ export default async function PinturasPage() {
         <ArtGallery items={items} lastOnWideId="c3" />
       </section>
 
-      <Footer email={CONTACT_EMAIL} />
+      <Footer email="contacto@marcelapedrosa.com" />
     </main>
   );
 }

@@ -3,19 +3,17 @@ import Image from "next/image";
 import Link from "next/link";
 import Footer from "../components/Footer";
 import WhatsAppButton from "../components/WhatsAppButton";
-import { getAbsoluteSiteImageUrl, getSiteImageUrl } from "@/lib/cloudinary";
+import { getAbsoluteSiteImageUrl, getOgImageUrl, getSiteImageUrl } from "@/lib/cloudinary";
 import { getManagedImageUrl } from "@/lib/managed-image-store";
-import { pageMetadata } from "@/lib/metadata";
-import Breadcrumbs from "../components/seo/Breadcrumbs";
+
 const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://mpedrosa.studio";
 
-export const metadata: Metadata = pageMetadata({
-  title: 'Marcela Pedrosa | Pintora en Concepción',
+export const metadata: Metadata = {
+  title: {
+    absolute: "Marcela Pedrosa | Pintora y Artista Visual en Concepción",
+  },
   description:
-    'Marcela Pedrosa, pintora y artista visual de Concepción. Óleo sobre tela, impresionismo figurativo y taller en el Biobío.',
-  path: '/marcela-pedrosa',
-  ogImageKey: 'MarcelaPedrosa',
-  imageAlt: 'Marcela Pedrosa, pintora en Concepción',
+    "Biografía y trayectoria de Marcela Pedrosa, pintora y artista visual de Concepción. Óleo sobre tela, impresionismo figurativo, cerámica y taller en el Biobío.",
   keywords: [
     "Marcela Pedrosa",
     "Marcela Pedrosa pintora",
@@ -25,7 +23,25 @@ export const metadata: Metadata = pageMetadata({
     "artista visual penquista",
     "pintora Biobío",
   ],
-});
+  openGraph: {
+    title: "Marcela Pedrosa | Pintora en Concepción",
+    description:
+      "Artista visual chilena especializada en óleo e impresionismo figurativo. Trayectoria, obras y taller en Concepción.",
+    url: `${BASE_URL}/marcela-pedrosa`,
+    type: "profile",
+    images: [
+      {
+        url: getOgImageUrl("MarcelaPedrosa", BASE_URL),
+        width: 1200,
+        height: 630,
+        alt: "Marcela Pedrosa, pintora y artista visual en Concepción",
+      },
+    ],
+  },
+  alternates: {
+    canonical: `${BASE_URL}/marcela-pedrosa`,
+  },
+};
 
 const personSchema = {
   "@context": "https://schema.org",
@@ -73,7 +89,6 @@ export default async function MarcelaPedrosaPage() {
 
       <section className="relative py-16 sm:py-20 lg:py-24">
         <div className="mx-auto max-w-4xl px-4 sm:px-6">
-          <Breadcrumbs items={[{ name: "Marcela Pedrosa", path: "/marcela-pedrosa" }]} />
           <div className="text-center">
             <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-medium tracking-tight text-ink mb-6">
               Marcela Pedrosa
@@ -90,7 +105,6 @@ export default async function MarcelaPedrosaPage() {
               fill
               className="object-cover"
               priority
-              sizes="(max-width: 896px) 100vw, 896px"
             />
           </div>
         </div>

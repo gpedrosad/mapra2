@@ -14,17 +14,16 @@ import {
   PRICE_LIST,
   PRICE_SALE,
 } from "@/lib/monthly-offer";
-import { pageMetadata } from "@/lib/metadata";
-import { absoluteUrl, INSTAGRAM_URL, SITE_URL } from "@/lib/site";
+import { INSTAGRAM_URL, SITE_URL } from "@/lib/site";
 
-/** Solo metadatos: la portada no cambia de contenido visible. */
-export const metadata: Metadata = pageMetadata({
-  title: "Marcela Pedrosa | Pintura y Arte en Concepción",
-  description:
-    "Marcela Pedrosa, pintora en Concepción, Chile. Óleo sobre tela, arte contemporáneo e impresionismo figurativo. Obras originales desde el Biobío.",
-  path: "/",
-  imageAlt: "Pintura de Marcela Pedrosa, artista en Concepción",
-});
+const BASE_URL = SITE_URL;
+
+/** Solo canonical: el título/descripción SEO vienen del layout (sin cambiar la UI). */
+export const metadata: Metadata = {
+  alternates: {
+    canonical: BASE_URL,
+  },
+};
 
 export default async function Home() {
   const imageUrls = await getManagedImageUrls([
@@ -45,10 +44,10 @@ export default async function Home() {
       <ProductJsonLd
         name={TITLE}
         description={INFO}
-        imageUrl={absoluteUrl(offerImage)}
+        imageUrl={offerImage}
         price={offerPrice}
         priceCurrency={CURRENCY}
-        url={`${SITE_URL}/#ofertames`}
+        url={`${BASE_URL}/#ofertames`}
         availability="https://schema.org/InStock"
       />
 

@@ -1,24 +1,33 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Footer from "../components/Footer";
-import { pageMetadata } from "@/lib/metadata";
-import Breadcrumbs from "../components/seo/Breadcrumbs";
 
-export const metadata: Metadata = pageMetadata({
-  title: 'Privacidad | Marcela Pedrosa',
-  description:
-    'Cómo se recopila, usa y protege la información en el sitio de Marcela Pedrosa.',
-  path: '/privacidad',
-  ogImageKey: 'bosque',
-  imageAlt: 'Política de privacidad de Marcela Pedrosa',
-});
+const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://mpedrosa.studio";
+
+export const metadata: Metadata = {
+  title: "Política de Privacidad — Marcela Pedrosa",
+  description: "Cómo recopilamos, utilizamos y protegemos su información en mpedrosa.studio.",
+  alternates: {
+    canonical: `${BASE_URL}/privacidad`,
+  },
+};
 
 export default function PrivacidadPage() {
   return (
     <main className="min-h-screen bg-cream">
       <div className="mx-auto max-w-3xl px-4 sm:px-6 py-10 sm:py-14">
-        <Breadcrumbs items={[{ name: "Privacidad", path: "/privacidad" }]} />
-          
+        <nav className="mb-6" aria-label="Breadcrumb">
+          <ol className="flex items-center space-x-2 text-sm text-ink-muted">
+            <li>
+              <Link href="/" className="hover:text-brand transition-colors">
+                Inicio
+              </Link>
+            </li>
+            <li className="text-ink-faint">/</li>
+            <li className="text-ink font-medium">Política de Privacidad</li>
+          </ol>
+        </nav>
+
         <h1 className="font-display text-3xl sm:text-4xl font-medium tracking-tight text-ink mb-8">
           Política de Privacidad – Marcela Pedrosa
         </h1>

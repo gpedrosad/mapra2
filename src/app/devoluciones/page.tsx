@@ -1,24 +1,33 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Footer from "../components/Footer";
-import { pageMetadata } from "@/lib/metadata";
-import Breadcrumbs from "../components/seo/Breadcrumbs";
 
-export const metadata: Metadata = pageMetadata({
-  title: 'Devoluciones | Marcela Pedrosa',
-  description:
-    'Cambios y devoluciones de obras de Marcela Pedrosa según la normativa aplicable del SERNAC.',
-  path: '/devoluciones',
-  ogImageKey: 'bosque',
-  imageAlt: 'Política de devolución de Marcela Pedrosa',
-});
+const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://mpedrosa.studio";
+
+export const metadata: Metadata = {
+  title: "Política de Devolución — Marcela Pedrosa",
+  description: "Cambios y devoluciones según normativa aplicable.",
+  alternates: {
+    canonical: `${BASE_URL}/devoluciones`,
+  },
+};
 
 export default function DevolucionesPage() {
   return (
     <main className="min-h-screen bg-cream">
       <div className="mx-auto max-w-3xl px-4 sm:px-6 py-10 sm:py-14">
-        <Breadcrumbs items={[{ name: "Devoluciones", path: "/devoluciones" }]} />
-          
+        <nav className="mb-6" aria-label="Breadcrumb">
+          <ol className="flex items-center space-x-2 text-sm text-ink-muted">
+            <li>
+              <Link href="/" className="hover:text-brand transition-colors">
+                Inicio
+              </Link>
+            </li>
+            <li className="text-ink-faint">/</li>
+            <li className="text-ink font-medium">Política de Devolución</li>
+          </ol>
+        </nav>
+
         <h1 className="font-display text-3xl sm:text-4xl font-medium tracking-tight text-ink mb-8">
           Política de Devolución – Marcela Pedrosa
         </h1>

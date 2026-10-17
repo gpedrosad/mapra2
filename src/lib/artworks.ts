@@ -1,5 +1,5 @@
 import { getImagePixels } from "@/lib/cloudinary";
-import { listGalleryArtworks } from "@/lib/managed-image-store";
+import { listGalleryCatalogSources } from "@/lib/managed-image-store";
 import { TITLE as OFFER_TITLE } from "@/lib/monthly-offer";
 
 /**
@@ -53,7 +53,7 @@ function slugFromId(id: string) {
 }
 
 export async function listCatalogArtworks(): Promise<CatalogArtwork[]> {
-  const items = await listGalleryArtworks();
+  const items = await listGalleryCatalogSources();
 
   return items.map((item) => {
     const named = NAMED_BY_PUBLIC_ID[item.publicId];
