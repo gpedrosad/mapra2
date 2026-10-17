@@ -83,8 +83,18 @@ export default async function GaleriaArteConcepcionPage() {
 
             <p className="text-ink-body leading-relaxed mb-6">
               Esta <strong>galería de arte en Concepción</strong> reúne la obra
-              pictórica de <strong>Marcela Pedrosa</strong>: óleo sobre tela,
-              impresionismo figurativo y piezas con identidad del Biobío. Es el
+              pictórica de <strong>Marcela Pedrosa</strong>:{" "}
+              <Link href="/oleo-sobre-tela-chile" className="text-brand underline">
+                óleo sobre tela
+              </Link>
+              ,{" "}
+              <Link
+                href="/impresionismo-figurativo-chile"
+                className="text-brand underline"
+              >
+                impresionismo figurativo
+              </Link>{" "}
+              y piezas con identidad del Biobío. Es el
               punto de partida para explorar formatos, temas y disponibilidad
               antes de comprar o encargar.
             </p>

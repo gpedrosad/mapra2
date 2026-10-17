@@ -11,10 +11,10 @@ const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://mpedrosa.studio";
 
 export const metadata: Metadata = {
   title: {
-    absolute: "Pinturas | Marcela Pedrosa — Arte y Óleo en Concepción",
+    absolute: "Pinturas originales al óleo | Marcela Pedrosa",
   },
   description:
-    "Galería de pinturas originales de Marcela Pedrosa. Óleo sobre tela e impresionismo figurativo desde Concepción, Chile. Obras de arte disponibles.",
+    "Pinturas originales al óleo de Marcela Pedrosa en Concepción. Mira cada obra, sus medidas y consulta disponibilidad.",
   keywords: [
     "pinturas Marcela Pedrosa",
     "pintura Concepción",
@@ -24,9 +24,9 @@ export const metadata: Metadata = {
     "arte Concepción",
   ],
   openGraph: {
-    title: "Pinturas | Marcela Pedrosa — Arte en Concepción",
+    title: "Pinturas originales al óleo | Marcela Pedrosa",
     description:
-      "Obras originales en óleo sobre tela. Pintura y arte contemporáneo desde Concepción.",
+      "Pinturas originales al óleo de Marcela Pedrosa en Concepción. Mira cada obra, sus medidas y consulta disponibilidad.",
     url: `${BASE_URL}/pinturas`,
     type: "website",
     images: [

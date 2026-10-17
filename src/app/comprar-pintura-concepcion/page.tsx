@@ -84,8 +84,18 @@ export default async function ComprarPinturaConcepcionPage() {
 
             <p className="text-ink-body leading-relaxed mb-6">
               Si buscas <strong>comprar pintura en Concepción</strong>, Marcela
-              Pedrosa ofrece <strong>obras originales en óleo sobre tela</strong>:
-              piezas únicas de impresionismo figurativo, pensadas para hogares,
+              Pedrosa ofrece{" "}
+              <Link href="/oleo-sobre-tela-chile" className="text-brand underline">
+                obras originales en óleo sobre tela
+              </Link>
+              : piezas únicas de{" "}
+              <Link
+                href="/impresionismo-figurativo-chile"
+                className="text-brand underline"
+              >
+                impresionismo figurativo
+              </Link>
+              , pensadas para hogares,
               oficinas y colecciones. Cada pintura se realiza a mano en su taller
               del Biobío.
             </p>

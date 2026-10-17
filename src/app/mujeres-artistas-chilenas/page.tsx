@@ -194,14 +194,33 @@ export default async function MujeresArtistasChilenasPage() {
               galerías, venden su trabajo y contribuyen al desarrollo cultural de sus regiones.
             </p>
 
+            <p className="text-ink-body leading-relaxed mb-6">
+              En pintura, el hilo de las{" "}
+              <Link href="/pintoras-chilenas" className="text-brand underline">
+                pintoras chilenas
+              </Link>{" "}
+              recorre a las pioneras y a quienes trabajan hoy, incluida Marcela
+              Pedrosa desde Concepción.
+            </p>
+
             <h3 className="text-2xl font-semibold text-ink mt-10 mb-4">
               Marcela Pedrosa: Artista Visual de Concepción
             </h3>
 
             <p className="text-ink-body leading-relaxed mb-6">
               <strong>Marcela Pedrosa</strong> es una pintora y ceramista de Concepción, Región del 
-              Biobío, especializada en <strong>óleo sobre tela</strong> e <strong>impresionismo 
-              figurativo</strong>. Su trabajo se inscribe en la tradición de mujeres artistas 
+              Biobío, especializada en{" "}
+              <Link href="/oleo-sobre-tela-chile" className="text-brand underline">
+                óleo sobre tela
+              </Link>{" "}
+              e{" "}
+              <Link
+                href="/impresionismo-figurativo-chile"
+                className="text-brand underline"
+              >
+                impresionismo figurativo
+              </Link>
+              . Su trabajo se inscribe en la tradición de mujeres artistas 
               chilenas que han desarrollado lenguajes visuales personales y han contribuido al 
               arte regional.
             </p>
@@ -433,6 +452,13 @@ export default async function MujeresArtistasChilenasPage() {
               >
                 <span className="font-medium text-ink">Obras de Marcela Pedrosa →</span>
                 <p className="text-sm text-ink-muted mt-1">Galería completa de pinturas</p>
+              </Link>
+              <Link
+                href="/pintoras-chilenas"
+                className="block p-4 rounded-lg border border-line hover:border-brand hover:bg-surface transition-colors"
+              >
+                <span className="font-medium text-ink">Pintoras chilenas →</span>
+                <p className="text-sm text-ink-muted mt-1">Famosas, actuales y la pintura hecha por mujeres</p>
               </Link>
               <Link
                 href="/prensa"

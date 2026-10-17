@@ -142,8 +142,11 @@ export default async function ArteConcepcionPage() {
             </h3>
 
             <p className="text-ink-body leading-relaxed mb-6">
-              Su especialidad es la <strong>pintura al óleo sobre tela</strong>, con
-              capas, veladuras y pincelada suelta. Cada pieza es original y hecha a
+              Su especialidad es la{" "}
+              <Link href="/oleo-sobre-tela-chile" className="text-brand underline">
+                pintura al óleo sobre tela
+              </Link>
+              , con capas, veladuras y pincelada suelta. Cada pieza es original y hecha a
               mano, pensada para acompañar hogares, oficinas y colecciones que buscan
               arte con carácter en Concepción y el resto del país.
             </p>
@@ -159,8 +162,14 @@ export default async function ArteConcepcionPage() {
                 <li className="flex items-start">
                   <span className="text-brand mr-2">•</span>
                   <span>
-                    <strong>Arte contemporáneo:</strong> impresionismo figurativo con
-                    identidad local
+                    <strong>Arte contemporáneo:</strong>{" "}
+                    <Link
+                      href="/impresionismo-figurativo-chile"
+                      className="text-brand underline"
+                    >
+                      impresionismo figurativo
+                    </Link>{" "}
+                    con identidad local
                   </span>
                 </li>
                 <li className="flex items-start">
