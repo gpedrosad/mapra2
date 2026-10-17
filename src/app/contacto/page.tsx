@@ -3,8 +3,6 @@ import ContactForm from "../components/ContactForm";
 import Footer from "../components/Footer";
 import { pageMetadata } from "@/lib/metadata";
 import Breadcrumbs from "../components/seo/Breadcrumbs";
-import SiteHub from "../components/seo/SiteHub";
-
 
 export const metadata: Metadata = pageMetadata({
   title: 'Contacto | Marcela Pedrosa en Concepción',
@@ -26,7 +24,6 @@ export default function ContactoPage() {
         </p>
         <ContactForm />
       </section>
-      <SiteHub />
       <Footer email="contacto@marcelapedrosa.com" />
     </main>
   );

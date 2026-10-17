@@ -7,8 +7,6 @@ import { getAbsoluteSiteImageUrl, getSiteImageUrl } from "@/lib/cloudinary";
 import { getManagedImageUrl } from "@/lib/managed-image-store";
 import { pageMetadata } from "@/lib/metadata";
 import Breadcrumbs from "../components/seo/Breadcrumbs";
-import SiteHub from "../components/seo/SiteHub";
-
 const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://mpedrosa.studio";
 
 export const metadata: Metadata = pageMetadata({
@@ -242,7 +240,6 @@ export default async function MarcelaPedrosaPage() {
         </div>
       </section>
 
-      <SiteHub />
       <Footer email="contacto@marcelapedrosa.com" />
     </main>
   );

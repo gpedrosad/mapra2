@@ -3,8 +3,6 @@ import Link from "next/link";
 import Footer from "../components/Footer";
 import { pageMetadata } from "@/lib/metadata";
 import Breadcrumbs from "../components/seo/Breadcrumbs";
-import SiteHub from "../components/seo/SiteHub";
-
 
 export const metadata: Metadata = pageMetadata({
   title: 'Devoluciones | Marcela Pedrosa',
@@ -104,7 +102,6 @@ export default function DevolucionesPage() {
           <p className="text-sm text-ink-subtle">Última actualización: 28-09-2025</p>
         </div>
       </div>
-      <SiteHub />
       <Footer email="contacto@marcelapedrosa.com" />
     </main>
   );

@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { ArtGallery } from "../components/ArtCard";
 import type { Artwork } from "../components/ArtCard";
 import Footer from "../components/Footer";
@@ -6,7 +5,6 @@ import { getImagePixels } from "@/lib/cloudinary";
 import { listGresArtworks } from "@/lib/managed-image-store";
 import { pageMetadata } from "@/lib/metadata";
 import Breadcrumbs from "../components/seo/Breadcrumbs";
-import SiteHub from "../components/seo/SiteHub";
 import type { Metadata } from "next";
 
 
@@ -46,11 +44,6 @@ export default async function EsculturasPage() {
             Piezas en gres de alta temperatura. Toca o haz clic en una imagen para
             verla en grande; debajo encontrarás la descripción de cada pieza.
           </p>
-          <p className="mt-3 text-sm text-zinc-600">
-            <Link href="/ceramica-artistica-concepcion" className="underline-offset-4 hover:underline text-[#0F3B2E]">
-              Cerámica artística en Concepción
-            </Link>
-          </p>
         </header>
 
         {items.length > 0 ? (
@@ -63,7 +56,6 @@ export default async function EsculturasPage() {
         )}
       </section>
 
-      <SiteHub />
       <Footer email="contacto@marcelapedrosa.com" />
     </main>
   );

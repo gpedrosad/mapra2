@@ -4,8 +4,6 @@ import Footer from "../components/Footer";
 import { getManagedImageUrl } from "@/lib/managed-image-store";
 import { pageMetadata } from "@/lib/metadata";
 import Breadcrumbs from "../components/seo/Breadcrumbs";
-import SiteHub from "../components/seo/SiteHub";
-
 
 export const metadata: Metadata = pageMetadata({
   title: 'Prensa | Marcela Pedrosa, pintora',
@@ -48,7 +46,6 @@ export default async function PrensaPage() {
         </div>
       </section>
 
-      <SiteHub />
       <Footer email="contacto@marcelapedrosa.com" />
     </main>
   );

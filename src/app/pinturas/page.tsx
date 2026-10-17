@@ -4,9 +4,7 @@ import { ArtGallery } from "../components/ArtCard";
 import type { Artwork } from "../components/ArtCard";
 import Footer from "../components/Footer";
 import Breadcrumbs from "../components/seo/Breadcrumbs";
-import InquiryCta from "../components/seo/InquiryCta";
 import ItemListJsonLd from "../components/seo/ItemListJsonLd";
-import SiteHub from "../components/seo/SiteHub";
 import { listCatalogArtworks } from "@/lib/artworks";
 import { pageMetadata } from "@/lib/metadata";
 import { absoluteUrl, CONTACT_EMAIL, SITE_URL } from "@/lib/site";
@@ -34,7 +32,6 @@ export default async function PinturasPage() {
     imageUrl: work.imageUrl,
     info: work.info,
     title: work.alt,
-    href: `/pinturas/${work.slug}`,
     width: work.pixelWidth,
     height: work.pixelHeight,
   }));
@@ -60,44 +57,44 @@ export default async function PinturasPage() {
             Pinturas originales a la venta
           </h1>
           <p className="mt-2 max-w-2xl text-sm sm:text-base text-zinc-700 leading-relaxed">
-            Selección de obras originales en óleo de Marcela Pedrosa, desde
-            Concepción. Cada imagen abre la ficha con la técnica y, si está
-            publicada, las medidas. La disponibilidad se consulta por WhatsApp o
-            por correo.
+            Selección de obras originales en óleo. Pintura y arte de Marcela Pedrosa
+            desde Concepción. Haz clic (o toca) una imagen para verla con calma y
+            revisa las medidas debajo de cada pieza.
           </p>
           <p className="mt-3 text-sm text-zinc-600">
-            <Link href="/comprar-cuadros-al-oleo-chile" className="underline-offset-4 hover:underline text-[#0F3B2E]">
-              Cuadros al óleo en Chile
+            <Link
+              href="/galeria-arte-concepcion"
+              className="underline-offset-4 hover:underline text-[#0F3B2E]"
+            >
+              Galería de arte
             </Link>
             {" · "}
-            <Link href="/comprar-pintura-concepcion" className="underline-offset-4 hover:underline text-[#0F3B2E]">
-              Comprar en Concepción
+            <Link
+              href="/comprar-pintura-concepcion"
+              className="underline-offset-4 hover:underline text-[#0F3B2E]"
+            >
+              Comprar pintura
             </Link>
             {" · "}
-            <Link href="/cuadros-para-living" className="underline-offset-4 hover:underline text-[#0F3B2E]">
-              Cuadros para living
+            <Link
+              href="/encargos-pintura"
+              className="underline-offset-4 hover:underline text-[#0F3B2E]"
+            >
+              Encargos
             </Link>
             {" · "}
-            <Link href="/encargos-pintura" className="underline-offset-4 hover:underline text-[#0F3B2E]">
-              Encargar una pintura
-            </Link>
-            {" · "}
-            <Link href="/oleo-sobre-tela-chile" className="underline-offset-4 hover:underline text-[#0F3B2E]">
-              Óleo sobre tela
+            <Link
+              href="/marcela-pedrosa"
+              className="underline-offset-4 hover:underline text-[#0F3B2E]"
+            >
+              Marcela Pedrosa
             </Link>
           </p>
         </header>
 
         <ArtGallery items={items} lastOnWideId="c3" />
-
-        <InquiryCta
-          heading="Consultar una pintura original"
-          text="Escribe por WhatsApp o por correo e indica la obra que viste en la galería."
-          whatsappText="Hola Marcela, vi las pinturas originales y quiero consultar disponibilidad."
-        />
       </section>
 
-      <SiteHub />
       <Footer email={CONTACT_EMAIL} />
     </main>
   );
