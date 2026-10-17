@@ -3,18 +3,20 @@ import Image from "next/image";
 import Link from "next/link";
 import Footer from "../components/Footer";
 import WhatsAppButton from "../components/WhatsAppButton";
-import { getOgImageUrl, getSiteImageUrl } from "@/lib/cloudinary";
+import { getSiteImageUrl } from "@/lib/cloudinary";
 import { getManagedImageUrl } from "@/lib/managed-image-store";
+import { pageMetadata } from "@/lib/metadata";
+import Breadcrumbs from "../components/seo/Breadcrumbs";
+import SiteHub from "../components/seo/SiteHub";
 
-const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://mpedrosa.studio";
 
-export const metadata: Metadata = {
-  title: {
-    absolute:
-      "Comprar Pintura en Concepción | Obras Originales Marcela Pedrosa",
-  },
+export const metadata: Metadata = pageMetadata({
+  title: 'Comprar pintura en Concepción | Marcela Pedrosa',
   description:
-    "Compra pintura original en Concepción. Óleo sobre tela de Marcela Pedrosa: obras disponibles, encargos y envíos en Chile. Arte contemporáneo desde el Biobío.",
+    'Compra pintura original en Concepción. Óleo sobre tela de Marcela Pedrosa, encargos y envíos dentro de Chile.',
+  path: '/comprar-pintura-concepcion',
+  ogImageKey: 'bosque',
+  imageAlt: 'Pinturas originales de Marcela Pedrosa en Concepción',
   keywords: [
     "comprar pintura concepción",
     "pinturas originales concepción",
@@ -25,25 +27,7 @@ export const metadata: Metadata = {
     "marcela pedrosa comprar",
     "pintura original chile",
   ],
-  openGraph: {
-    title: "Comprar Pintura en Concepción | Marcela Pedrosa",
-    description:
-      "Obras originales en óleo sobre tela. Compra pintura y arte contemporáneo desde Concepción.",
-    url: `${BASE_URL}/comprar-pintura-concepcion`,
-    type: "website",
-    images: [
-      {
-        url: getOgImageUrl("bosque", BASE_URL),
-        width: 1200,
-        height: 630,
-        alt: "Pinturas originales de Marcela Pedrosa en Concepción",
-      },
-    ],
-  },
-  alternates: {
-    canonical: `${BASE_URL}/comprar-pintura-concepcion`,
-  },
-};
+});
 
 export default async function ComprarPinturaConcepcionPage() {
   const heroImageUrl =
@@ -54,6 +38,7 @@ export default async function ComprarPinturaConcepcionPage() {
     <main className="min-h-screen bg-[var(--background)]">
       <section className="relative py-16 sm:py-20 lg:py-24">
         <div className="mx-auto max-w-4xl px-4 sm:px-6">
+          <Breadcrumbs items={[{ name: "Comprar en Concepción", path: "/comprar-pintura-concepcion" }]} />
           <div className="text-center">
             <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-medium tracking-tight text-ink mb-6">
               Comprar Pintura en Concepción
@@ -70,6 +55,7 @@ export default async function ComprarPinturaConcepcionPage() {
               fill
               className="object-cover"
               priority
+              sizes="(max-width: 896px) 100vw, 896px"
             />
           </div>
         </div>
@@ -83,7 +69,15 @@ export default async function ComprarPinturaConcepcionPage() {
             </h2>
 
             <p className="text-ink-body leading-relaxed mb-6">
-              Si buscas <strong>comprar pintura en Concepción</strong>, Marcela
+              Si buscas <strong>comprar pintura en Concepción</strong>, esta página
+              es la de la ciudad. Para envío al resto del país está{" "}
+              <Link
+                href="/comprar-cuadros-al-oleo-chile"
+                className="text-brand underline"
+              >
+                comprar cuadros al óleo en Chile
+              </Link>
+              . Marcela
               Pedrosa ofrece{" "}
               <Link href="/oleo-sobre-tela-chile" className="text-brand underline">
                 obras originales en óleo sobre tela
@@ -240,6 +234,7 @@ export default async function ComprarPinturaConcepcionPage() {
         </div>
       </section>
 
+      <SiteHub />
       <Footer email="contacto@marcelapedrosa.com" />
     </main>
   );

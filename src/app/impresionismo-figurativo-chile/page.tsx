@@ -3,17 +3,20 @@ import Image from "next/image";
 import Link from "next/link";
 import Footer from "../components/Footer";
 import WhatsAppButton from "../components/WhatsAppButton";
-import { getOgImageUrl, getSiteImageUrl } from "@/lib/cloudinary";
+import { getSiteImageUrl } from "@/lib/cloudinary";
 import { getManagedImageUrl } from "@/lib/managed-image-store";
+import { pageMetadata } from "@/lib/metadata";
+import Breadcrumbs from "../components/seo/Breadcrumbs";
+import SiteHub from "../components/seo/SiteHub";
 
-const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://mpedrosa.studio";
 
-export const metadata: Metadata = {
-  title: {
-    absolute: "Impresionismo Figurativo Chile | Marcela Pedrosa - Arte Impresionista Contemporáneo",
-  },
+export const metadata: Metadata = pageMetadata({
+  title: 'Impresionismo figurativo | Marcela Pedrosa',
   description:
-    "Impresionismo figurativo en Chile. Marcela Pedrosa, artista especializada en pintura impresionista figurativa. Obras al óleo que fusionan impresionismo y figuración desde Concepción.",
+    'Impresionismo figurativo de Marcela Pedrosa, pintora en Concepción. Obras al óleo que unen luz y figura.',
+  path: '/impresionismo-figurativo-chile',
+  ogImageKey: 'bosque',
+  imageAlt: 'Impresionismo figurativo de Marcela Pedrosa',
   keywords: [
     "impresionismo figurativo chile",
     "impresionismo chile",
@@ -26,25 +29,7 @@ export const metadata: Metadata = {
     "impresionismo concepción",
     "arte figurativo chile",
   ],
-  openGraph: {
-    title: "Impresionismo Figurativo en Chile - Marcela Pedrosa",
-    description:
-      "Arte impresionista figurativo contemporáneo. Obras al óleo que capturan luz, emoción y forma desde Concepción, Chile.",
-    url: `${BASE_URL}/impresionismo-figurativo-chile`,
-    type: "website",
-    images: [
-      {
-        url: getOgImageUrl("bosque", BASE_URL),
-        width: 1200,
-        height: 630,
-        alt: "Impresionismo figurativo de Marcela Pedrosa, Chile",
-      },
-    ],
-  },
-  alternates: {
-    canonical: `${BASE_URL}/impresionismo-figurativo-chile`,
-  },
-};
+});
 
 export default async function ImpresionismoFigurativoChilePage() {
   const heroImageUrl =
@@ -56,6 +41,7 @@ export default async function ImpresionismoFigurativoChilePage() {
       {/* Hero Section */}
       <section className="relative py-16 sm:py-20 lg:py-24">
         <div className="mx-auto max-w-4xl px-4 sm:px-6">
+          <Breadcrumbs items={[{ name: "Impresionismo figurativo", path: "/impresionismo-figurativo-chile" }]} />
           <div className="text-center">
             <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-medium tracking-tight text-ink mb-6">
               Impresionismo Figurativo en Chile
@@ -73,6 +59,7 @@ export default async function ImpresionismoFigurativoChilePage() {
               fill
               className="object-cover"
               priority
+              sizes="(max-width: 896px) 100vw, 896px"
             />
           </div>
         </div>
@@ -422,6 +409,7 @@ export default async function ImpresionismoFigurativoChilePage() {
         </div>
       </section>
 
+      <SiteHub />
       <Footer email="contacto@marcelapedrosa.com" />
     </main>
   );

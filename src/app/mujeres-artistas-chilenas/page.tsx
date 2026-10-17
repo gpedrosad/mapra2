@@ -3,17 +3,20 @@ import Image from "next/image";
 import Link from "next/link";
 import Footer from "../components/Footer";
 import WhatsAppButton from "../components/WhatsAppButton";
-import { getOgImageUrl, getSiteImageUrl } from "@/lib/cloudinary";
+import { getSiteImageUrl } from "@/lib/cloudinary";
 import { getManagedImageUrl } from "@/lib/managed-image-store";
+import { pageMetadata } from "@/lib/metadata";
+import Breadcrumbs from "../components/seo/Breadcrumbs";
+import SiteHub from "../components/seo/SiteHub";
 
-const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://mpedrosa.studio";
 
-export const metadata: Metadata = {
-  title: {
-    absolute: "Mujeres Artistas Chilenas | Marcela Pedrosa - Arte Femenino en Chile",
-  },
+export const metadata: Metadata = pageMetadata({
+  title: 'Mujeres artistas chilenas | Marcela Pedrosa',
   description:
-    "Mujeres artistas chilenas contemporáneas. Marcela Pedrosa, pintora y ceramista de Concepción. Historia y presente del arte femenino en Chile, desde pioneras hasta artistas actuales.",
+    'Mujeres artistas chilenas. Marcela Pedrosa, pintora y ceramista de Concepción, junto a otras pintoras del país.',
+  path: '/mujeres-artistas-chilenas',
+  ogImageKey: 'gente',
+  imageAlt: 'Obra de Marcela Pedrosa, mujer artista chilena',
   keywords: [
     "mujeres artistas chilenas",
     "artistas mujeres chile",
@@ -26,25 +29,7 @@ export const metadata: Metadata = {
     "arte femenino concepción",
     "mujeres arte biobío",
   ],
-  openGraph: {
-    title: "Mujeres Artistas Chilenas - Marcela Pedrosa",
-    description:
-      "El arte femenino en Chile. Marcela Pedrosa, pintora contemporánea de Concepción, parte de la tradición de mujeres artistas chilenas.",
-    url: `${BASE_URL}/mujeres-artistas-chilenas`,
-    type: "article",
-    images: [
-      {
-        url: getOgImageUrl("gente", BASE_URL),
-        width: 1200,
-        height: 630,
-        alt: "Obra de Marcela Pedrosa, mujer artista chilena",
-      },
-    ],
-  },
-  alternates: {
-    canonical: `${BASE_URL}/mujeres-artistas-chilenas`,
-  },
-};
+});
 
 export default async function MujeresArtistasChilenasPage() {
   const heroImageUrl =
@@ -56,6 +41,7 @@ export default async function MujeresArtistasChilenasPage() {
       {/* Hero Section */}
       <section className="relative py-16 sm:py-20 lg:py-24">
         <div className="mx-auto max-w-4xl px-4 sm:px-6">
+          <Breadcrumbs items={[{ name: "Mujeres artistas chilenas", path: "/mujeres-artistas-chilenas" }]} />
           <div className="text-center">
             <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-medium tracking-tight text-ink mb-6">
               Mujeres Artistas Chilenas
@@ -73,6 +59,7 @@ export default async function MujeresArtistasChilenasPage() {
               fill
               className="object-cover"
               priority
+              sizes="(max-width: 896px) 100vw, 896px"
             />
           </div>
         </div>
@@ -472,6 +459,7 @@ export default async function MujeresArtistasChilenasPage() {
         </div>
       </section>
 
+      <SiteHub />
       <Footer email="contacto@marcelapedrosa.com" />
     </main>
   );

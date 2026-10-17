@@ -3,17 +3,20 @@ import Image from "next/image";
 import Link from "next/link";
 import Footer from "../components/Footer";
 import WhatsAppButton from "../components/WhatsAppButton";
-import { getOgImageUrl, getSiteImageUrl } from "@/lib/cloudinary";
+import { getSiteImageUrl } from "@/lib/cloudinary";
 import { getManagedImageUrl } from "@/lib/managed-image-store";
+import { pageMetadata } from "@/lib/metadata";
+import Breadcrumbs from "../components/seo/Breadcrumbs";
+import SiteHub from "../components/seo/SiteHub";
 
-const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://mpedrosa.studio";
 
-export const metadata: Metadata = {
-  title: {
-    absolute: "Arte en Concepción | Marcela Pedrosa — Pintura y Arte Contemporáneo",
-  },
+export const metadata: Metadata = pageMetadata({
+  title: 'Arte en Concepción | Marcela Pedrosa',
   description:
-    "Arte en Concepción con Marcela Pedrosa: pintura al óleo, arte contemporáneo e impresionismo figurativo. Obras originales y taller artístico en el Biobío, Chile.",
+    'Arte en Concepción: pintura al óleo e impresionismo figurativo de Marcela Pedrosa. Obras originales y taller en el Biobío.',
+  path: '/arte-concepcion',
+  ogImageKey: 'bosque',
+  imageAlt: 'Arte y pintura de Marcela Pedrosa en Concepción',
   keywords: [
     "arte concepción",
     "arte en concepción",
@@ -26,25 +29,7 @@ export const metadata: Metadata = {
     "marcela pedrosa arte",
     "arte biobío",
   ],
-  openGraph: {
-    title: "Arte en Concepción | Marcela Pedrosa",
-    description:
-      "Pintura y arte contemporáneo en Concepción. Obras originales de Marcela Pedrosa, artista visual del Biobío.",
-    url: `${BASE_URL}/arte-concepcion`,
-    type: "website",
-    images: [
-      {
-        url: getOgImageUrl("bosque", BASE_URL),
-        width: 1200,
-        height: 630,
-        alt: "Arte y pintura de Marcela Pedrosa en Concepción",
-      },
-    ],
-  },
-  alternates: {
-    canonical: `${BASE_URL}/arte-concepcion`,
-  },
-};
+});
 
 const faqSchema = {
   "@context": "https://schema.org",
@@ -91,6 +76,7 @@ export default async function ArteConcepcionPage() {
 
       <section className="relative py-16 sm:py-20 lg:py-24">
         <div className="mx-auto max-w-4xl px-4 sm:px-6">
+          <Breadcrumbs items={[{ name: "Arte en Concepción", path: "/arte-concepcion" }]} />
           <div className="text-center">
             <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-medium tracking-tight text-ink mb-6">
               Arte en Concepción
@@ -107,6 +93,7 @@ export default async function ArteConcepcionPage() {
               fill
               className="object-cover"
               priority
+              sizes="(max-width: 896px) 100vw, 896px"
             />
           </div>
         </div>
@@ -312,6 +299,7 @@ export default async function ArteConcepcionPage() {
         </div>
       </section>
 
+      <SiteHub />
       <Footer email="contacto@marcelapedrosa.com" />
     </main>
   );

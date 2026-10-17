@@ -1,7 +1,7 @@
 import { mkdir, readFile, writeFile } from "fs/promises";
 import path from "path";
 import { revalidatePath, unstable_noStore as noStore } from "next/cache";
-import { buildCloudinaryImageUrl } from "./cloudinary";
+import { buildCloudinaryImageUrl, resolveManagedImageUrl } from "./cloudinary";
 import {
   getManagedImageSectionDefinition,
   MANAGED_IMAGE_SECTIONS,
@@ -457,6 +457,31 @@ export async function listGalleryArtworks() {
       imageUrl: buildCloudinaryImageUrl(section.publicId),
       info: section.info || "óleo sobre tela",
       title: section.alt,
+    }))
+    .filter((item) => item.imageUrl.trim() !== "");
+}
+
+/**
+ * Catálogo para fichas SEO. Las páginas del menú siguen usando
+ * `listGalleryArtworks`, que no cambia.
+ */
+export async function listGalleryCatalogSources() {
+  noStore();
+  const data = await readData();
+  const fixedGallery = getFixedGalleryDefinitions()
+    .filter((definition) => Boolean(data.sections[definition.id]?.publicId?.trim()))
+    .map((definition) => hydrateSection(definition, data.sections[definition.id]));
+  const extraGallery = data.galleryExtras
+    .filter((item) => Boolean(item.publicId.trim()))
+    .map(hydrateGalleryExtra);
+
+  return [...fixedGallery, ...extraGallery]
+    .map((section) => ({
+      id: section.id.replace("gallery.", ""),
+      publicId: section.publicId,
+      alt: section.alt,
+      info: section.info || "óleo sobre tela",
+      imageUrl: resolveManagedImageUrl(section.publicId),
     }))
     .filter((item) => item.imageUrl.trim() !== "");
 }

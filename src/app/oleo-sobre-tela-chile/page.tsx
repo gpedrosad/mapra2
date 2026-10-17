@@ -3,17 +3,20 @@ import Image from "next/image";
 import Link from "next/link";
 import Footer from "../components/Footer";
 import WhatsAppButton from "../components/WhatsAppButton";
-import { getOgImageUrl, getSiteImageUrl } from "@/lib/cloudinary";
+import { getSiteImageUrl } from "@/lib/cloudinary";
 import { getManagedImageUrl } from "@/lib/managed-image-store";
+import { pageMetadata } from "@/lib/metadata";
+import Breadcrumbs from "../components/seo/Breadcrumbs";
+import SiteHub from "../components/seo/SiteHub";
 
-const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://mpedrosa.studio";
 
-export const metadata: Metadata = {
-  title: {
-    absolute: "Óleo sobre Tela Chile | Marcela Pedrosa - Pintura al Óleo Profesional",
-  },
+export const metadata: Metadata = pageMetadata({
+  title: 'Óleo sobre tela en Chile | Marcela Pedrosa',
   description:
-    "Óleo sobre tela en Chile por Marcela Pedrosa. Técnica tradicional de pintura al óleo, obras originales de alta calidad. Artista especializada en impresionismo figurativo desde Concepción.",
+    'Óleo sobre tela de Marcela Pedrosa, desde Concepción. Pintura original e impresionismo figurativo en Chile.',
+  path: '/oleo-sobre-tela-chile',
+  ogImageKey: 'mujer',
+  imageAlt: 'Pintura al óleo sobre tela de Marcela Pedrosa',
   keywords: [
     "óleo sobre tela chile",
     "pintura al óleo chile",
@@ -26,25 +29,7 @@ export const metadata: Metadata = {
     "óleo sobre lienzo chile",
     "marcela pedrosa óleo",
   ],
-  openGraph: {
-    title: "Óleo sobre Tela en Chile - Marcela Pedrosa",
-    description:
-      "Pintura al óleo profesional sobre tela. Técnica tradicional, obras originales de alta calidad desde Concepción, Chile.",
-    url: `${BASE_URL}/oleo-sobre-tela-chile`,
-    type: "website",
-    images: [
-      {
-        url: getOgImageUrl("mujer", BASE_URL),
-        width: 1200,
-        height: 630,
-        alt: "Óleo sobre tela de Marcela Pedrosa, Chile",
-      },
-    ],
-  },
-  alternates: {
-    canonical: `${BASE_URL}/oleo-sobre-tela-chile`,
-  },
-};
+});
 
 export default async function OleoSobreTelaChilePage() {
   const heroImageUrl =
@@ -56,6 +41,7 @@ export default async function OleoSobreTelaChilePage() {
       {/* Hero Section */}
       <section className="relative py-16 sm:py-20 lg:py-24">
         <div className="mx-auto max-w-4xl px-4 sm:px-6">
+          <Breadcrumbs items={[{ name: "Óleo sobre tela", path: "/oleo-sobre-tela-chile" }]} />
           <div className="text-center">
             <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-medium tracking-tight text-ink mb-6">
               Óleo sobre Tela en Chile
@@ -73,6 +59,7 @@ export default async function OleoSobreTelaChilePage() {
               fill
               className="object-cover"
               priority
+              sizes="(max-width: 896px) 100vw, 896px"
             />
           </div>
         </div>
@@ -393,6 +380,7 @@ export default async function OleoSobreTelaChilePage() {
         </div>
       </section>
 
+      <SiteHub />
       <Footer email="contacto@marcelapedrosa.com" />
     </main>
   );
