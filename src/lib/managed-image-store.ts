@@ -1,7 +1,7 @@
 import { mkdir, readFile, writeFile } from "fs/promises";
 import path from "path";
 import { revalidatePath, unstable_noStore as noStore } from "next/cache";
-import { buildCloudinaryImageUrl } from "./cloudinary";
+import { resolveManagedImageUrl } from "./cloudinary";
 import {
   getManagedImageSectionDefinition,
   MANAGED_IMAGE_SECTIONS,
@@ -282,7 +282,7 @@ function hydrateSection(
     publicId,
     alt,
     info,
-    previewUrl: buildCloudinaryImageUrl(publicId),
+    previewUrl: resolveManagedImageUrl(publicId),
   };
 }
 
@@ -327,7 +327,7 @@ function hydrateGalleryExtra(
     publicId: record.publicId,
     alt: record.alt,
     info: record.info,
-    previewUrl: buildCloudinaryImageUrl(record.publicId),
+    previewUrl: resolveManagedImageUrl(record.publicId),
     isExtra: true,
   };
 }
@@ -346,7 +346,7 @@ function hydrateGresExtra(
     publicId: record.publicId,
     alt: record.alt,
     info: record.info,
-    previewUrl: buildCloudinaryImageUrl(record.publicId),
+    previewUrl: resolveManagedImageUrl(record.publicId),
     isExtra: true,
   };
 }
@@ -422,7 +422,7 @@ export async function getManagedImageUrl(
     return "";
   }
 
-  return buildCloudinaryImageUrl(section.publicId, transformation);
+  return resolveManagedImageUrl(section.publicId, transformation);
 }
 
 export async function getManagedImageUrls(
@@ -436,7 +436,10 @@ export async function getManagedImageUrls(
   return Object.fromEntries(
     ids.map((id) => [
       id,
-      buildCloudinaryImageUrl(sectionMap.get(id)?.publicId || "", transformation),
+      resolveManagedImageUrl(
+        sectionMap.get(id)?.publicId || "",
+        transformation
+      ),
     ])
   );
 }
@@ -453,10 +456,12 @@ export async function listGalleryArtworks() {
 
   return [...fixedGallery, ...extraGallery]
     .map((section) => ({
-      id: section.id.replace("gallery.", ""),
-      imageUrl: buildCloudinaryImageUrl(section.publicId),
+      id: section.id.replace(/^gallery\./, ""),
+      publicId: section.publicId,
+      imageUrl: resolveManagedImageUrl(section.publicId),
       info: section.info || "óleo sobre tela",
       title: section.alt,
+      alt: section.alt,
     }))
     .filter((item) => item.imageUrl.trim() !== "");
 }
@@ -473,10 +478,12 @@ export async function listGresArtworks() {
 
   return [...fixedGres, ...extraGres]
     .map((section) => ({
-      id: section.id.replace("gres.", ""),
-      imageUrl: buildCloudinaryImageUrl(section.publicId),
+      id: section.id.replace(/^gres\./, ""),
+      publicId: section.publicId,
+      imageUrl: resolveManagedImageUrl(section.publicId),
       info: section.info || "cerámica gres",
       title: section.alt,
+      alt: section.alt,
     }))
     .filter((item) => item.imageUrl.trim() !== "");
 }

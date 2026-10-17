@@ -3,17 +3,20 @@ import Image from "next/image";
 import Link from "next/link";
 import Footer from "../components/Footer";
 import WhatsAppButton from "../components/WhatsAppButton";
-import { getOgImageUrl, getSiteImageUrl } from "@/lib/cloudinary";
+import { getSiteImageUrl } from "@/lib/cloudinary";
 import { getManagedImageUrl } from "@/lib/managed-image-store";
+import { pageMetadata } from "@/lib/metadata";
+import Breadcrumbs from "../components/seo/Breadcrumbs";
+import SiteHub from "../components/seo/SiteHub";
 
-const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://mpedrosa.studio";
 
-export const metadata: Metadata = {
-  title: {
-    absolute: "Pintora en Concepción | Marcela Pedrosa - Artista Visual Penquista",
-  },
+export const metadata: Metadata = pageMetadata({
+  title: 'Pintora en Concepción | Marcela Pedrosa',
   description:
-    "Marcela Pedrosa, pintora profesional en Concepción, Chile. Especializada en óleo sobre tela, impresionismo figurativo. Taller de arte en Concepción, Región del Biobío. Obras originales disponibles.",
+    'Marcela Pedrosa, pintora en Concepción. Óleo sobre tela e impresionismo figurativo, con taller en el Biobío.',
+  path: '/pintora-concepcion',
+  ogImageKey: 'bosque',
+  imageAlt: 'Obra de Marcela Pedrosa, pintora en Concepción',
   keywords: [
     "pintora concepción",
     "pintora penquista",
@@ -26,25 +29,7 @@ export const metadata: Metadata = {
     "arte concepción chile",
     "marcela pedrosa",
   ],
-  openGraph: {
-    title: "Marcela Pedrosa - Pintora en Concepción, Chile",
-    description:
-      "Pintora profesional en Concepción especializada en óleo sobre tela e impresionismo figurativo. Taller de arte en la Región del Biobío.",
-    url: `${BASE_URL}/pintora-concepcion`,
-    type: "profile",
-    images: [
-      {
-        url: getOgImageUrl("bosque", BASE_URL),
-        width: 1200,
-        height: 630,
-        alt: "Obra de Marcela Pedrosa, pintora en Concepción",
-      },
-    ],
-  },
-  alternates: {
-    canonical: `${BASE_URL}/pintora-concepcion`,
-  },
-};
+});
 
 export default async function PintoraConcepcionPage() {
   const heroImageUrl =
@@ -56,6 +41,7 @@ export default async function PintoraConcepcionPage() {
       {/* Hero Section */}
       <section className="relative py-16 sm:py-20 lg:py-24">
         <div className="mx-auto max-w-4xl px-4 sm:px-6">
+          <Breadcrumbs items={[{ name: "Pintora en Concepción", path: "/pintora-concepcion" }]} />
           <div className="text-center">
             <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-medium tracking-tight text-ink mb-6">
               Pintora en Concepción
@@ -73,6 +59,7 @@ export default async function PintoraConcepcionPage() {
               fill
               className="object-cover"
               priority
+              sizes="(max-width: 896px) 100vw, 896px"
             />
           </div>
         </div>
@@ -246,6 +233,7 @@ export default async function PintoraConcepcionPage() {
         </div>
       </section>
 
+      <SiteHub />
       <Footer email="contacto@marcelapedrosa.com" />
     </main>
   );

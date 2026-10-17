@@ -1,6 +1,8 @@
 "use client";
 
 import React, { useEffect, useMemo, useState } from "react";
+import Image from "next/image";
+import Link from "next/link";
 import { motion } from "framer-motion";
 import { useLanguage } from "./LanguageContext";
 import { getSiteImageUrl } from "@/lib/cloudinary";
@@ -10,6 +12,9 @@ export type Artwork = {
   imageUrl: string;
   info: string; // ej: "110x110 óleo sobre tela"
   title?: string;
+  href?: string;
+  width?: number;
+  height?: number;
 };
 
 type GalleryProps = {
@@ -138,21 +143,41 @@ export function ArtGallery({
               type="button"
               onClick={() => setActiveIndex(idx)}
               className="relative block w-full bg-transparent text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#960018]/50"
-              aria-label={t("gal_alt")}
+              aria-label={item.title?.trim() || t("gal_alt")}
             >
-              <img
-                src={item.imageUrl}
-                alt={item.title?.trim() || t("gal_alt")}
-                className="block w-full h-auto cursor-zoom-in"
-                loading="lazy"
-                decoding="async"
-              />
+              {item.width && item.height ? (
+                <Image
+                  src={item.imageUrl}
+                  alt={item.title?.trim() || t("gal_alt")}
+                  width={item.width}
+                  height={item.height}
+                  sizes="(max-width: 640px) 100vw, (max-width: 1536px) 50vw, 33vw"
+                  className="block w-full h-auto cursor-zoom-in"
+                />
+              ) : (
+                // eslint-disable-next-line @next/next/no-img-element
+                <img
+                  src={item.imageUrl}
+                  alt={item.title?.trim() || t("gal_alt")}
+                  className="block w-full h-auto cursor-zoom-in"
+                  loading="lazy"
+                  decoding="async"
+                />
+              )}
             </button>
 
             <div className="p-4">
               <p className="text-sm sm:text-base text-zinc-700 dark:text-zinc-300">
                 {translateInfo(item.info, (k) => t(k))}
               </p>
+              {item.href && (
+                <Link
+                  href={item.href}
+                  className="mt-2 inline-block text-sm font-medium text-[#960018] underline-offset-4 hover:underline"
+                >
+                  Ver ficha
+                </Link>
+              )}
             </div>
           </motion.article>
         ))}
@@ -172,12 +197,24 @@ export function ArtGallery({
         >
           <div className="absolute inset-0 p-4 sm:p-6 flex items-center justify-center">
             <div className="relative w-full max-w-5xl">
-              <img
-                src={activeItem.imageUrl}
-                alt={activeAlt}
-                className="mx-auto max-h-[82vh] w-auto max-w-full object-contain shadow-2xl"
-                decoding="async"
-              />
+              {activeItem.width && activeItem.height ? (
+                <Image
+                  src={activeItem.imageUrl}
+                  alt={activeAlt}
+                  width={activeItem.width}
+                  height={activeItem.height}
+                  sizes="90vw"
+                  className="mx-auto max-h-[82vh] w-auto max-w-full object-contain shadow-2xl"
+                />
+              ) : (
+                // eslint-disable-next-line @next/next/no-img-element
+                <img
+                  src={activeItem.imageUrl}
+                  alt={activeAlt}
+                  className="mx-auto max-h-[82vh] w-auto max-w-full object-contain shadow-2xl"
+                  decoding="async"
+                />
+              )}
 
               {/* Controles */}
               <button

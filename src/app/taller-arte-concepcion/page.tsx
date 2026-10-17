@@ -3,17 +3,20 @@ import Image from "next/image";
 import Link from "next/link";
 import Footer from "../components/Footer";
 import WhatsAppButton from "../components/WhatsAppButton";
-import { getOgImageUrl, getSiteImageUrl } from "@/lib/cloudinary";
+import { getSiteImageUrl } from "@/lib/cloudinary";
 import { getManagedImageUrl } from "@/lib/managed-image-store";
+import { pageMetadata } from "@/lib/metadata";
+import Breadcrumbs from "../components/seo/Breadcrumbs";
+import SiteHub from "../components/seo/SiteHub";
 
-const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://mpedrosa.studio";
 
-export const metadata: Metadata = {
-  title: {
-    absolute: "Taller de Arte en Concepción | Marcela Pedrosa - Pintura al Óleo y Cerámica",
-  },
+export const metadata: Metadata = pageMetadata({
+  title: 'Taller de arte en Concepción | Marcela Pedrosa',
   description:
-    "Taller de arte en Concepción dirigido por Marcela Pedrosa. Especializado en pintura al óleo, técnicas de impresionismo y cerámica artística. Ubicado en la Región del Biobío, Chile.",
+    'Taller de arte en Concepción de Marcela Pedrosa. Pintura al óleo, impresionismo figurativo y cerámica en el Biobío.',
+  path: '/taller-arte-concepcion',
+  ogImageKey: 'elefante',
+  imageAlt: 'Obra del taller de arte de Marcela Pedrosa en Concepción',
   keywords: [
     "taller de arte concepción",
     "taller de pintura concepción",
@@ -26,25 +29,7 @@ export const metadata: Metadata = {
     "arte concepción",
     "pintura al óleo concepción",
   ],
-  openGraph: {
-    title: "Taller de Arte en Concepción - Marcela Pedrosa",
-    description:
-      "Taller especializado en pintura al óleo e impresionismo. Ubicado en Concepción, Región del Biobío.",
-    url: `${BASE_URL}/taller-arte-concepcion`,
-    type: "website",
-    images: [
-      {
-        url: getOgImageUrl("bosque", BASE_URL),
-        width: 1200,
-        height: 630,
-        alt: "Taller de arte de Marcela Pedrosa en Concepción",
-      },
-    ],
-  },
-  alternates: {
-    canonical: `${BASE_URL}/taller-arte-concepcion`,
-  },
-};
+});
 
 export default async function TallerArteConcepcionPage() {
   const heroImageUrl =
@@ -56,6 +41,7 @@ export default async function TallerArteConcepcionPage() {
       {/* Hero Section */}
       <section className="relative py-16 sm:py-20 lg:py-24">
         <div className="mx-auto max-w-4xl px-4 sm:px-6">
+          <Breadcrumbs items={[{ name: "Taller de arte", path: "/taller-arte-concepcion" }]} />
           <div className="text-center">
             <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-medium tracking-tight text-ink mb-6">
               Taller de Arte en Concepción
@@ -73,6 +59,7 @@ export default async function TallerArteConcepcionPage() {
               fill
               className="object-cover"
               priority
+              sizes="(max-width: 896px) 100vw, 896px"
             />
           </div>
         </div>
@@ -339,6 +326,7 @@ export default async function TallerArteConcepcionPage() {
         </div>
       </section>
 
+      <SiteHub />
       <Footer email="contacto@marcelapedrosa.com" />
     </main>
   );

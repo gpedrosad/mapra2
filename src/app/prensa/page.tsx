@@ -2,25 +2,19 @@ import type { Metadata } from "next";
 import Prensa from "../components/Prensa";
 import Footer from "../components/Footer";
 import { getManagedImageUrl } from "@/lib/managed-image-store";
+import { pageMetadata } from "@/lib/metadata";
+import Breadcrumbs from "../components/seo/Breadcrumbs";
+import SiteHub from "../components/seo/SiteHub";
 
-const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://mpedrosa.studio";
 
-export const metadata: Metadata = {
-  title: {
-    absolute: "Prensa | Marcela Pedrosa — Pintura y Arte en Concepción",
-  },
+export const metadata: Metadata = pageMetadata({
+  title: 'Prensa | Marcela Pedrosa, pintora',
   description:
-    "Prensa, entrevistas y exposiciones de Marcela Pedrosa, pintora y artista visual en Concepción. Cobertura de su trayectoria en arte y pintura.",
-  alternates: {
-    canonical: `${BASE_URL}/prensa`,
-  },
-  openGraph: {
-    title: "Prensa | Marcela Pedrosa",
-    description:
-      "Recortes, entrevistas y menciones sobre la pintura y el arte de Marcela Pedrosa en Concepción.",
-    url: `${BASE_URL}/prensa`,
-  },
-};
+    'Prensa y menciones de Marcela Pedrosa, pintora y artista visual en Concepción.',
+  path: '/prensa',
+  ogImageKey: 'prensa',
+  imageAlt: 'Recorte de prensa de Marcela Pedrosa',
+});
 
 export default async function PrensaPage() {
   const pressImageUrl = await getManagedImageUrl("press.feature.image");
@@ -28,6 +22,8 @@ export default async function PrensaPage() {
   return (
     <main className="min-h-screen bg-transparent">
       <section className="mx-auto max-w-6xl px-4 sm:px-6 py-10 sm:py-14">
+        <Breadcrumbs items={[{ name: "Prensa", path: "/prensa" }]} />
+          
         <header className="mb-6 sm:mb-10">
           <h1 className="text-3xl sm:text-4xl font-semibold tracking-tight text-zinc-900">
             Prensa
@@ -52,6 +48,7 @@ export default async function PrensaPage() {
         </div>
       </section>
 
+      <SiteHub />
       <Footer email="contacto@marcelapedrosa.com" />
     </main>
   );

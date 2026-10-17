@@ -3,17 +3,20 @@ import Image from "next/image";
 import Link from "next/link";
 import Footer from "../components/Footer";
 import WhatsAppButton from "../components/WhatsAppButton";
-import { getOgImageUrl, getSiteImageUrl } from "@/lib/cloudinary";
+import { getSiteImageUrl } from "@/lib/cloudinary";
 import { getManagedImageUrl } from "@/lib/managed-image-store";
+import { pageMetadata } from "@/lib/metadata";
+import Breadcrumbs from "../components/seo/Breadcrumbs";
+import SiteHub from "../components/seo/SiteHub";
 
-const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://mpedrosa.studio";
 
-export const metadata: Metadata = {
-  title: {
-    absolute: "Pintoras chilenas famosas y actuales | Marcela Pedrosa",
-  },
+export const metadata: Metadata = pageMetadata({
+  title: 'Pintoras chilenas famosas y actuales | Marcela Pedrosa',
   description:
-    "Pintoras chilenas famosas y actuales. Artistas chilenas, mujeres pintoras: de las pioneras a Marcela Pedrosa, en Concepción.",
+    'Pintoras chilenas famosas y actuales. Artistas chilenas, mujeres pintoras: de las pioneras a Marcela Pedrosa, en Concepción.',
+  path: '/pintoras-chilenas',
+  ogImageKey: 'gente',
+  imageAlt: 'Obra de Marcela Pedrosa, pintora chilena',
   keywords: [
     "pintoras chilenas",
     "pintoras chilenas famosas",
@@ -29,25 +32,7 @@ export const metadata: Metadata = {
     "pintora concepción",
     "óleo sobre tela chile",
   ],
-  openGraph: {
-    title: "Pintoras chilenas famosas y actuales | Marcela Pedrosa",
-    description:
-      "Pintoras chilenas famosas y actuales. Artistas chilenas, mujeres pintoras: de las pioneras a Marcela Pedrosa, en Concepción.",
-    url: `${BASE_URL}/pintoras-chilenas`,
-    type: "article",
-    images: [
-      {
-        url: getOgImageUrl("gente", BASE_URL),
-        width: 1200,
-        height: 630,
-        alt: "Obra de Marcela Pedrosa, pintora chilena contemporánea",
-      },
-    ],
-  },
-  alternates: {
-    canonical: `${BASE_URL}/pintoras-chilenas`,
-  },
-};
+});
 
 const faqSchema = {
   "@context": "https://schema.org",
@@ -103,6 +88,7 @@ export default async function PintorasChilenasPage() {
       {/* Hero Section */}
       <section className="relative py-16 sm:py-20 lg:py-24">
         <div className="mx-auto max-w-4xl px-4 sm:px-6">
+          <Breadcrumbs items={[{ name: "Pintoras chilenas", path: "/pintoras-chilenas" }]} />
           <div className="text-center">
             <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-medium tracking-tight text-ink mb-6">
               Pintoras Chilenas
@@ -120,6 +106,7 @@ export default async function PintorasChilenasPage() {
               fill
               className="object-cover"
               priority
+              sizes="(max-width: 896px) 100vw, 896px"
             />
           </div>
         </div>
@@ -560,6 +547,7 @@ export default async function PintorasChilenasPage() {
         </div>
       </section>
 
+      <SiteHub />
       <Footer email="contacto@marcelapedrosa.com" />
     </main>
   );

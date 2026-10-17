@@ -5,6 +5,7 @@ export type ItemListJsonLdItem = {
   imageUrl: string;
   url?: string;
   description?: string;
+  artMedium?: string;
 };
 
 export type ItemListJsonLdProps = {
@@ -36,6 +37,7 @@ export default function ItemListJsonLd({
 
       if (item.url) artwork.url = item.url;
       if (item.description) artwork.description = item.description;
+      if (item.artMedium) artwork.artMedium = item.artMedium;
 
       return {
         "@type": "ListItem",

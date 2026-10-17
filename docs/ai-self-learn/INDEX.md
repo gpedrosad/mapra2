@@ -50,6 +50,7 @@ Actualizado: **2026-10-17**
 - Person schema `sameAs` → Instagram `mpedrosaartista` (constante en `src/lib/site.ts`; override con `NEXT_PUBLIC_INSTAGRAM_URL`)
 - Gap #1 SEO: indexar hubs (deploy + enlaces internos + Request indexing)
 - **Lote 1 (2026-10-17):** titles/metas de `/pintoras-chilenas` y `/pinturas`; enlace doble con `/mujeres-artistas-chilenas`; refuerzo e interlinking de `/oleo-sobre-tela-chile` y `/impresionismo-figurativo-chile`. Home, `/ads` y `/sitelink` sin cambios.
+- **Lote 2 (2026-10-17):** fundación SEO. Titles ≤60 y metas ≤155; canonical, Open Graph y Twitter en cada página; sitemap con fichas; robots también bloquea `/api/` y `/imagenes` a bots de IA. Schema: Person/VisualArtist en el layout (sin Organization: no hay razón social ni dirección de calle). VisualArtwork por obra real (nombre, imagen, medio y medidas solo si están en el catálogo; sin precio ni reseñas). Fichas en `/pinturas/[slug]`. Intención de compra: `/comprar-cuadros-al-oleo-chile` y `/cuadros-para-living`. «Pinturas originales a la venta» queda en `/pinturas` (redirects `/pinturas-originales` y `/pinturas-originales-a-la-venta`). «Encargar una pintura» queda en `/encargos-pintura` (redirect `/encargar-una-pintura`). Hub «Explorar el sitio» en páginas interiores, no en la home. Home: solo metadata. `/ads` y `/sitelink` no se tocaron.
 - Gap #2: analytics (GA4/Clarity del dominio correcto)
 - Gap #3 (aprobación): diferenciar landings thin, FAQ/GEO, backlinks prensa/IG
 

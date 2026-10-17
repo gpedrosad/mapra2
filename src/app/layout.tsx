@@ -34,7 +34,7 @@ export const metadata: Metadata = {
     template: `%s | ${ARTIST_NAME}`,
   },
   description:
-    "Marcela Pedrosa, pintora y artista visual en Concepción, Chile. Pintura al óleo, arte contemporáneo e impresionismo figurativo. Obras originales y taller en el Biobío.",
+    "Marcela Pedrosa, pintora en Concepción, Chile. Óleo sobre tela, arte contemporáneo e impresionismo figurativo. Obras originales desde el Biobío.",
   keywords: [
     "Marcela Pedrosa",
     "pintura Concepción",

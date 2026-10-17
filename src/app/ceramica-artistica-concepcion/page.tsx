@@ -3,17 +3,20 @@ import Image from "next/image";
 import Link from "next/link";
 import Footer from "../components/Footer";
 import WhatsAppButton from "../components/WhatsAppButton";
-import { getOgImageUrl, getSiteImageUrl } from "@/lib/cloudinary";
+import { getSiteImageUrl } from "@/lib/cloudinary";
 import { getManagedImageUrl } from "@/lib/managed-image-store";
+import { pageMetadata } from "@/lib/metadata";
+import Breadcrumbs from "../components/seo/Breadcrumbs";
+import SiteHub from "../components/seo/SiteHub";
 
-const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://mpedrosa.studio";
 
-export const metadata: Metadata = {
-  title: {
-    absolute: "Cerámica Artística Concepción | Marcela Pedrosa - Cerámica en Gres",
-  },
+export const metadata: Metadata = pageMetadata({
+  title: 'Cerámica artística en Concepción | Marcela Pedrosa',
   description:
-    "Cerámica artística en Concepción. Marcela Pedrosa, ceramista especializada en gres de alta temperatura. Piezas únicas decorativas y escultóricas desde la Región del Biobío.",
+    'Cerámica artística en gres de Marcela Pedrosa, desde Concepción. Piezas decorativas y escultóricas del Biobío.',
+  path: '/ceramica-artistica-concepcion',
+  ogImageKey: 'elefante',
+  imageAlt: 'Cerámica artística de Marcela Pedrosa en Concepción',
   keywords: [
     "cerámica artística concepción",
     "cerámica concepción",
@@ -26,25 +29,7 @@ export const metadata: Metadata = {
     "cerámica decorativa concepción",
     "cerámica contemporánea chile",
   ],
-  openGraph: {
-    title: "Cerámica Artística en Concepción - Marcela Pedrosa",
-    description:
-      "Cerámica artística en gres de alta temperatura. Piezas únicas decorativas y escultóricas desde Concepción, Chile.",
-    url: `${BASE_URL}/ceramica-artistica-concepcion`,
-    type: "website",
-    images: [
-      {
-        url: getOgImageUrl("elefante", BASE_URL),
-        width: 1200,
-        height: 630,
-        alt: "Cerámica artística de Marcela Pedrosa, Concepción",
-      },
-    ],
-  },
-  alternates: {
-    canonical: `${BASE_URL}/ceramica-artistica-concepcion`,
-  },
-};
+});
 
 export default async function CeramicaArtisticaConcepcionPage() {
   const heroImageUrl =
@@ -56,6 +41,7 @@ export default async function CeramicaArtisticaConcepcionPage() {
       {/* Hero Section */}
       <section className="relative py-16 sm:py-20 lg:py-24">
         <div className="mx-auto max-w-4xl px-4 sm:px-6">
+          <Breadcrumbs items={[{ name: "Cerámica artística", path: "/ceramica-artistica-concepcion" }]} />
           <div className="text-center">
             <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-medium tracking-tight text-ink mb-6">
               Cerámica Artística en Concepción
@@ -73,6 +59,7 @@ export default async function CeramicaArtisticaConcepcionPage() {
               fill
               className="object-cover"
               priority
+              sizes="(max-width: 896px) 100vw, 896px"
             />
           </div>
         </div>
@@ -479,6 +466,7 @@ export default async function CeramicaArtisticaConcepcionPage() {
         </div>
       </section>
 
+      <SiteHub />
       <Footer email="contacto@marcelapedrosa.com" />
     </main>
   );
