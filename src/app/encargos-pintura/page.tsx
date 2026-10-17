@@ -223,6 +223,14 @@ export default async function EncargosPinturaPage() {
                   Tiempos de entrega →
                 </span>
               </Link>
+              <Link
+                href="/oleo-sobre-tela-chile"
+                className="block p-4 rounded-lg border border-line hover:border-brand hover:bg-surface transition-colors"
+              >
+                <span className="font-medium text-ink">
+                  Óleo sobre tela →
+                </span>
+              </Link>
             </div>
           </div>
         </div>
