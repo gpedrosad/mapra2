@@ -50,6 +50,7 @@ Actualizado: **2026-10-17**
 - Person schema `sameAs` → Instagram `mpedrosaartista` (constante en `src/lib/site.ts`; override con `NEXT_PUBLIC_INSTAGRAM_URL`)
 - Gap #1 SEO: indexar hubs (deploy + enlaces internos + Request indexing)
 - **Lote 1 (2026-10-17):** titles/metas de `/pintoras-chilenas` y `/pinturas`; enlace doble con `/mujeres-artistas-chilenas`; refuerzo e interlinking de `/oleo-sobre-tela-chile` y `/impresionismo-figurativo-chile`. Home, `/ads` y `/sitelink` sin cambios.
+- **Lote guías (2026-10-17):** 6 guías nuevas solo en `src/app/guias/` (living, óleo vs acrílico, cuidar/colgar óleo, impresionismo figurativo, encargar, factores de precio sin cifras). Cada una enlaza `/pinturas`, `/oleo-sobre-tela-chile`, `/impresionismo-figurativo-chile`, `/pintoras-chilenas`. Contacto existente: `contacto@marcelapedrosa.com` y `+56 9 5618 9912`. `pendiente:` sumar `/guias` al sitemap y al footer (no se tocaron: otro lote en paralelo).
 - Gap #2: analytics (GA4/Clarity del dominio correcto)
 - Gap #3 (aprobación): diferenciar landings thin, FAQ/GEO, backlinks prensa/IG
 

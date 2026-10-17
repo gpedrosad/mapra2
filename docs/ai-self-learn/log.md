@@ -27,3 +27,4 @@ Formato: `YYYY-MM-DD | tema | hecho | acción/implicación`
 - GSC | `/pinturas` pos 3.9, 0 clics | Title y meta más concretos (obra, medidas, disponibilidad)
 - GSC | `/oleo-sobre-tela-chile` pos 11 y `/impresionismo-figurativo-chile` pos 17.8 | Refuerzo breve con hechos ya del sitio y enlaces desde páginas interiores
 - SEO | Home, `/ads` y `/sitelink` no se tocaron en el lote 1 | Sin contenido nuevo en la portada
+- SEO | Lote guías: `/guias` + 6 artículos (living, óleo vs acrílico, cuidado del óleo, impresionismo figurativo, encargos, factores de precio sin cifras) | Archivos nuevos bajo `src/app/guias/`. Sitemap y footer sin cambios a propósito. `pendiente:` enlazar el índice cuando no choque con el lote técnico
