@@ -28,3 +28,4 @@ Formato: `YYYY-MM-DD | tema | hecho | acción/implicación`
 - GSC | `/oleo-sobre-tela-chile` pos 11 y `/impresionismo-figurativo-chile` pos 17.8 | Refuerzo breve con hechos ya del sitio y enlaces desde páginas interiores
 - SEO | Home, `/ads` y `/sitelink` no se tocaron en el lote 1 | Sin contenido nuevo en la portada
 - SEO | Lote guías: `/guias` + 6 artículos (living, óleo vs acrílico, cuidado del óleo, impresionismo figurativo, encargos, factores de precio sin cifras) | Archivos nuevos bajo `src/app/guias/`. Sitemap y footer sin cambios a propósito. `pendiente:` enlazar el índice cuando no choque con el lote técnico
+- SEO | Decisión de la dueña (2026-10-17): `/guias` no va al menú, al header ni a la nav, y las páginas del menú no enlazan a las guías | Anula el pendiente de enlazar el índice desde footer o menú. Los enlaces guía ↔ páginas SEO interiores se mantienen.
