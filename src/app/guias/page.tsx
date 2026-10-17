@@ -1,8 +1,11 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Footer from "../components/Footer";
+import { SEO_GUIDES } from "@/lib/seo-guides";
 import { SITE_URL } from "@/lib/site";
 import { GUIDES } from "./lib/guides";
+
+const THEME_GUIDES = SEO_GUIDES.filter((guide) => guide.path !== "/guias");
 
 const TITLE = "Guías para elegir y cuidar pintura";
 const DESCRIPTION =
@@ -55,13 +58,22 @@ const collection = {
   },
   mainEntity: {
     "@type": "ItemList",
-    itemListElement: GUIDES.map((guide, index) => ({
-      "@type": "ListItem",
-      position: index + 1,
-      name: guide.title,
-      url: `${SITE_URL}/guias/${guide.slug}`,
-      description: guide.description,
-    })),
+    itemListElement: [
+      ...GUIDES.map((guide, index) => ({
+        "@type": "ListItem",
+        position: index + 1,
+        name: guide.title,
+        url: `${SITE_URL}/guias/${guide.slug}`,
+        description: guide.description,
+      })),
+      ...THEME_GUIDES.map((guide, index) => ({
+        "@type": "ListItem",
+        position: GUIDES.length + index + 1,
+        name: guide.title,
+        url: `${SITE_URL}${guide.path}`,
+        description: guide.summary,
+      })),
+    ],
   },
 };
 
@@ -159,6 +171,32 @@ export default function GuiasIndexPage() {
                 </span>
                 <span className="mt-2 block text-ink-body leading-relaxed">
                   {guide.description}
+                </span>
+              </Link>
+            </li>
+          ))}
+        </ul>
+
+        <h2 className="mt-14 font-display text-2xl sm:text-3xl font-medium tracking-tight text-ink">
+          Obra publicada: temas y compra
+        </h2>
+        <p className="mt-4 text-[1.05rem] text-ink-body leading-relaxed">
+          Páginas armadas solo con las pinturas que ya están en el sitio: cómo
+          consultar una obra en Chile y los temas que hay ahora (retrato, figura,
+          animales, bosque, ciudad y bodegón).
+        </p>
+        <ul className="mt-6 space-y-4">
+          {THEME_GUIDES.map((guide) => (
+            <li key={guide.path}>
+              <Link
+                href={guide.path}
+                className="block rounded-xl border border-line bg-surface px-5 py-4 hover:border-brand transition-colors"
+              >
+                <span className="block font-display text-xl text-ink">
+                  {guide.title}
+                </span>
+                <span className="mt-2 block text-ink-body leading-relaxed">
+                  {guide.summary}
                 </span>
               </Link>
             </li>
