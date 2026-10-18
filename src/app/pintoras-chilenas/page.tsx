@@ -7,13 +7,14 @@ import { getSiteImageUrl } from "@/lib/cloudinary";
 import { getManagedImageUrl } from "@/lib/managed-image-store";
 import { pageMetadata } from "@/lib/metadata";
 import Breadcrumbs from "../components/seo/Breadcrumbs";
+import CatalogFichaLinks from "../components/seo/CatalogFichaLinks";
 import SiteHub from "../components/seo/SiteHub";
 
 
 export const metadata: Metadata = pageMetadata({
   title: 'Pintoras chilenas famosas y actuales | Pedrosa',
   description:
-    'Pintoras chilenas famosas y actuales, y artistas chilenas mujeres pintoras: Castro, Mira, Petit, Barrios, Bru, Aldunate y Pedrosa.',
+    'Pintoras chilenas famosas y actuales: Castro, Mira, Petit, Barrios, Bru, Aldunate y Pedrosa en Concepción.',
   path: '/pintoras-chilenas',
   ogImageKey: 'gente',
   imageAlt: 'Obra de Marcela Pedrosa, pintora chilena',
@@ -107,7 +108,7 @@ export default async function PintorasChilenasPage() {
           <Breadcrumbs items={[{ name: "Pintoras chilenas", path: "/pintoras-chilenas" }]} />
           <div className="text-center">
             <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-medium tracking-tight text-ink mb-6">
-              Pintoras Chilenas
+              Pintoras chilenas famosas y actuales
             </h1>
             <p className="text-xl sm:text-2xl text-ink-body mb-8 leading-relaxed">
               Historia y presente de la pintura chilena hecha por mujeres
@@ -218,8 +219,13 @@ export default async function PintorasChilenasPage() {
               <Link href="/comprar-arte-chile" className="text-brand underline">
                 comprar arte en Chile
               </Link>
+              . Para medir el muro o encargar, el índice está en{" "}
+              <Link href="/guias" className="text-brand underline">
+                guías
+              </Link>
               .
             </p>
+            <CatalogFichaLinks />
 
             <h3 className="text-2xl font-semibold text-ink mt-10 mb-4">
               Pioneras: Las Primeras Pintoras de Chile

@@ -7,13 +7,14 @@ import { getSiteImageUrl } from "@/lib/cloudinary";
 import { getManagedImageUrl } from "@/lib/managed-image-store";
 import { pageMetadata } from "@/lib/metadata";
 import Breadcrumbs from "../components/seo/Breadcrumbs";
+import CatalogFichaLinks from "../components/seo/CatalogFichaLinks";
 import SiteHub from "../components/seo/SiteHub";
 
 
 export const metadata: Metadata = pageMetadata({
-  title: 'Mujeres artistas chilenas | Pedrosa',
+  title: 'Mujeres artistas chilenas | gres y pintura',
   description:
-    'Mujeres artistas chilenas en pintura, cerámica y arte visual. Marcela Pedrosa, de Concepción. Las pintoras tienen su propia página.',
+    'Mujeres artistas chilenas en pintura, gres y arte visual. El listado de pintoras está en otra página. Pedrosa, Concepción.',
   path: '/mujeres-artistas-chilenas',
   ogImageKey: 'gente',
   imageAlt: 'Obra de Marcela Pedrosa, mujer artista chilena',
@@ -211,7 +212,15 @@ export default async function MujeresArtistasChilenasPage() {
               </Link>
               . Los retratos al óleo de Marcela están en{" "}
               <Link href="/retratos-al-oleo" className="text-brand underline">retratos al óleo</Link>.
+              Para elegir una tela de Marcela, mira{" "}
+              <Link href="/cuadros" className="text-brand underline">cuadros</Link>,{" "}
+              <Link href="/comprar-arte-chile" className="text-brand underline">
+                comprar arte en Chile
+              </Link>{" "}
+              y las{" "}
+              <Link href="/guias" className="text-brand underline">guías</Link>.
             </p>
+            <CatalogFichaLinks />
 
             <h3 className="text-2xl font-semibold text-ink mt-10 mb-4">
               Marcela Pedrosa: Artista Visual de Concepción

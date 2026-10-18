@@ -7,14 +7,15 @@ import { getSiteImageUrl } from "@/lib/cloudinary";
 import { getManagedImageUrl } from "@/lib/managed-image-store";
 import { pageMetadata } from "@/lib/metadata";
 import Breadcrumbs from "../components/seo/Breadcrumbs";
+import CatalogFichaLinks from "../components/seo/CatalogFichaLinks";
 import { FaqJsonLd } from "../components/seo/GuideParts";
 import SiteHub from "../components/seo/SiteHub";
 
 
 export const metadata: Metadata = pageMetadata({
-  title: 'Impresionismo figurativo en Chile | Pedrosa',
+  title: 'Impresionismo figurativo actual | Pedrosa',
   description:
-    'Impresionismo figurativo de Marcela Pedrosa: fachadas, bosques y figura al óleo, desde Concepción. Consulta por WhatsApp.',
+    'Impresionismo figurativo actual de Marcela Pedrosa: fachadas, bosques y figura al óleo, en Concepción.',
   path: '/impresionismo-figurativo-chile',
   ogImageKey: 'bosque',
   imageAlt: 'Impresionismo figurativo de Marcela Pedrosa',
@@ -61,7 +62,7 @@ export default async function ImpresionismoFigurativoChilePage() {
           <Breadcrumbs items={[{ name: "Impresionismo figurativo", path: "/impresionismo-figurativo-chile" }]} />
           <div className="text-center">
             <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-medium tracking-tight text-ink mb-6">
-              Impresionismo Figurativo en Chile
+              Impresionismo figurativo actual en Chile
             </h1>
             <p className="text-xl sm:text-2xl text-ink-body mb-8 leading-relaxed">
               Luz, Emoción y Forma en la Pintura Contemporánea
@@ -91,9 +92,9 @@ export default async function ImpresionismoFigurativoChilePage() {
             </h2>
 
             <p className="text-ink-body leading-relaxed mb-6">
-              El <strong>impresionismo figurativo</strong> es un estilo pictórico que fusiona dos 
-              tradiciones artísticas: la captura de la luz y la atmósfera propia del impresionismo 
-              clásico, con la representación reconocible de figuras, personas y objetos del arte figurativo.
+              El <strong>impresionismo figurativo</strong> actual, en este sitio, es el modo en que
+              Marcela Pedrosa pinta hoy en Concepción: formas reconocibles, luz y color, en óleo sobre tela.
+              Junta la pincelada suelta con figuras, fachadas y bosques que se pueden nombrar.
             </p>
 
             <p className="text-ink-body leading-relaxed mb-6">
@@ -418,8 +419,15 @@ export default async function ImpresionismoFigurativoChilePage() {
               <Link href="/guias" className="text-brand underline">guías</Link>{" "}
               y los perfiles de{" "}
               <Link href="/artistas-chilenas" className="text-brand underline">artistas chilenas</Link>{" "}
-              siguen desde aquí.
+              siguen desde aquí. Para consultar una tela, mira{" "}
+              <Link href="/cuadros" className="text-brand underline">cuadros</Link>{" "}
+              o{" "}
+              <Link href="/comprar-arte-chile" className="text-brand underline">
+                comprar arte en Chile
+              </Link>
+              .
             </p>
+            <CatalogFichaLinks />
           </article>
 
           {/* Enlaces relacionados */}

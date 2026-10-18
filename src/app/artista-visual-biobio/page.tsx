@@ -7,13 +7,14 @@ import { getSiteImageUrl } from "@/lib/cloudinary";
 import { getManagedImageUrl } from "@/lib/managed-image-store";
 import { pageMetadata } from "@/lib/metadata";
 import Breadcrumbs from "../components/seo/Breadcrumbs";
+import CatalogFichaLinks from "../components/seo/CatalogFichaLinks";
 import SiteHub from "../components/seo/SiteHub";
 
 
 export const metadata: Metadata = pageMetadata({
   title: 'Artista visual del Biobío | Marcela Pedrosa',
   description:
-    'Marcela Pedrosa, artista visual del Biobío. Pintura al óleo e impresionismo figurativo desde Concepción.',
+    'Artista visual del Biobío: Marcela Pedrosa pinta al óleo en Concepción. Consulta por WhatsApp o correo.',
   path: '/artista-visual-biobio',
   ogImageKey: 'gente',
   imageAlt: 'Obra de Marcela Pedrosa, artista visual del Biobío',
@@ -258,8 +259,17 @@ export default async function ArtistaVisualBiobioPage() {
               La guía del estilo es{" "}
               <Link href="/guias/que-es-el-impresionismo-figurativo" className="text-brand underline">
                 qué es el impresionismo figurativo
-              </Link>.
+              </Link>
+              . El índice de esas lecturas está en{" "}
+              <Link href="/guias" className="text-brand underline">guías</Link>.
+              La compra por motivo está en{" "}
+              <Link href="/comprar-arte-chile" className="text-brand underline">
+                comprar arte en Chile
+              </Link>{" "}
+              y el recorrido por muro, en{" "}
+              <Link href="/cuadros" className="text-brand underline">cuadros</Link>.
             </p>
+            <CatalogFichaLinks />
           </article>
 
           {/* Enlaces relacionados */}

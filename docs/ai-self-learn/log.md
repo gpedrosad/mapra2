@@ -46,3 +46,10 @@ Formato: `YYYY-MM-DD | tema | hecho | acción/implicación`
 - SEO | 301 `/cuadros-para-living` → `/cuadros/para-living`. Guía de living se mantiene (cómo medir) | Head de pintoras sigue en `/pintoras-chilenas`
 - SEO | Fichas: slug de motivo + 301 desde `c1`…`c15`. VisualArtwork sin precio | Lista de indexación en `docs/seo-lote-2026-10-17.md`
 - SEO | `www.mpedrosa.studio` 307 al apex | Configuración de dominio en Vercel, no de código
+
+## 2026-10-18
+
+- GSC | Brief del lote (dato hasta 2026-10-16): 90d 7 clics, 229 imp, CTR 3,1 %, pos 9,6. Últimos 7 días: 2 clics, 14 imp, pos 20,3 | Clics de la semana en `/artista-visual-biobio` y `/ceramica-artistica-concepcion`
+- SEO | Prod: `/pinturas/c13` 301 → `/pinturas/casas-dia-y-noche` 404. Sitemap listaba `/pinturas/c13` | El publicId vivo de la ranura es `mapra/managed/gallery-c13-1787246109422`, no `c13_iqxkyv`
+- SEO | La foto viva no es el díptico (1280×466). Es laguna, cordillera, atardecer y juncos, 1600×1236 | El slug `casas-dia-y-noche` queda con el díptico documentado; la foto nueva tiene slug propio
+- SEO | Lote 2026-10-18: snippets en páginas que ya imprimen, enlaces desde indexadas hacia hubs unknown y fichas. Sin página nueva de compra | Doc `docs/seo-lote-2026-10-18.md`. `pendiente:` reenviar sitemap y Request indexing

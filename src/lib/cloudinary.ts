@@ -82,6 +82,7 @@ export const IMAGE_PIXELS_BY_PUBLIC_ID: Record<
   c11_oy6mdw: { width: 1463, height: 1152 },
   c12_qtsjik: { width: 1554, height: 1600 },
   c13_iqxkyv: { width: 1280, height: 466 },
+  "mapra/managed/gallery-c13-1787246109422": { width: 1600, height: 1236 },
   c14_v0dphn: { width: 1600, height: 1590 },
   c15_rntbzb: { width: 1312, height: 1600 },
 };

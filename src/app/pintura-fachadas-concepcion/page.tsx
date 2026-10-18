@@ -7,6 +7,7 @@ import { getSiteImageUrl } from "@/lib/cloudinary";
 import { getManagedImageUrl } from "@/lib/managed-image-store";
 import { pageMetadata } from "@/lib/metadata";
 import Breadcrumbs from "../components/seo/Breadcrumbs";
+import CatalogFichaLinks from "../components/seo/CatalogFichaLinks";
 import SiteHub from "../components/seo/SiteHub";
 
 
@@ -187,7 +188,21 @@ export default async function PinturaFachadasConcepcionPage() {
               <Link href="/pintura-de-bosques" className="text-brand underline">pintura de bosques</Link>.
               Las de ciudad, en{" "}
               <Link href="/pintura-de-ciudad" className="text-brand underline">pintura de ciudad</Link>.
+              El grupo por muro está en{" "}
+              <Link href="/cuadros" className="text-brand underline">cuadros</Link>.
+              Para medir o encargar, el índice es{" "}
+              <Link href="/guias" className="text-brand underline">guías</Link>.
+              La compra por motivo está en{" "}
+              <Link href="/comprar-arte-chile" className="text-brand underline">
+                comprar arte en Chile
+              </Link>
+              . Otros nombres, con fuente, están en{" "}
+              <Link href="/artistas-chilenas" className="text-brand underline">
+                artistas chilenas
+              </Link>
+              .
             </p>
+            <CatalogFichaLinks />
           </article>
 
           <div className="mt-12 pt-8 border-t border-line">

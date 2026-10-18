@@ -13,9 +13,9 @@ import SiteHub from "../components/seo/SiteHub";
 
 
 export const metadata: Metadata = pageMetadata({
-  title: 'Óleo sobre tela en Chile | medidas | Pedrosa',
+  title: 'Óleos sobre tela en Chile | Pedrosa',
   description:
-    'Óleo sobre tela de Marcela Pedrosa en Concepción. Medidas publicadas: 158x122, 110x110, 90x120 y 100x130. El resto se consulta.',
+    'Óleos sobre tela de Marcela Pedrosa en Concepción. Medidas publicadas: 158x122, 110x110, 90x120 y 100x130. Consulta el resto.',
   path: '/oleo-sobre-tela-chile',
   ogImageKey: 'mujer',
   imageAlt: 'Pintura al óleo sobre tela de Marcela Pedrosa',
@@ -62,7 +62,7 @@ export default async function OleoSobreTelaChilePage() {
           <Breadcrumbs items={[{ name: "Óleo sobre tela", path: "/oleo-sobre-tela-chile" }]} />
           <div className="text-center">
             <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-medium tracking-tight text-ink mb-6">
-              Óleo sobre Tela en Chile
+              Óleos sobre tela en Chile
             </h1>
             <p className="text-xl sm:text-2xl text-ink-body mb-8 leading-relaxed">
               Técnica Tradicional, Calidad Profesional
@@ -92,10 +92,9 @@ export default async function OleoSobreTelaChilePage() {
             </h2>
 
             <p className="text-ink-body leading-relaxed mb-6">
-              El <strong>óleo sobre tela</strong> es una de las técnicas más nobles y duraderas 
-              de la pintura artística. En Chile, artistas como <strong>Marcela Pedrosa</strong> 
-              mantienen viva esta tradición centenaria, combinando métodos clásicos con sensibilidades 
-              contemporáneas.
+              Los <strong>óleos sobre tela</strong> de Marcela Pedrosa se pintan en Concepción.
+              El óleo sobre tela es una técnica de pigmento y aceite sobre un soporte de tela.
+              En el taller se mantiene con pincelada visible y temas reconocibles.
             </p>
 
             <p className="text-ink-body leading-relaxed mb-6">
@@ -417,6 +416,14 @@ export default async function OleoSobreTelaChilePage() {
               . La guía del estilo está en{" "}
               <Link href="/guias/que-es-el-impresionismo-figurativo" className="text-brand underline">
                 qué es el impresionismo figurativo
+              </Link>
+              . La compra por motivo está en{" "}
+              <Link href="/comprar-arte-chile" className="text-brand underline">
+                comprar arte en Chile
+              </Link>
+              . Otros nombres, con la fuente de cada dato, están en{" "}
+              <Link href="/artistas-chilenas" className="text-brand underline">
+                artistas chilenas
               </Link>
               .
             </p>
