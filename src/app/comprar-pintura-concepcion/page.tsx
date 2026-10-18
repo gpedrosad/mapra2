@@ -7,6 +7,7 @@ import { getSiteImageUrl } from "@/lib/cloudinary";
 import { getManagedImageUrl } from "@/lib/managed-image-store";
 import { pageMetadata } from "@/lib/metadata";
 import Breadcrumbs from "../components/seo/Breadcrumbs";
+import CatalogFichaLinks from "../components/seo/CatalogFichaLinks";
 import SiteHub from "../components/seo/SiteHub";
 
 
@@ -226,7 +227,15 @@ export default async function ComprarPinturaConcepcionPage() {
               </Link>
               . El bodegón publicado está en{" "}
               <Link href="/bodegon-oleo" className="text-brand underline">bodegón al óleo</Link>.
+              El índice de esas lecturas está en{" "}
+              <Link href="/guias" className="text-brand underline">guías</Link>.
+              Los perfiles con fuente están en{" "}
+              <Link href="/artistas-chilenas" className="text-brand underline">
+                artistas chilenas
+              </Link>
+              .
             </p>
+            <CatalogFichaLinks />
           </article>
 
           <div className="mt-12 pt-8 border-t border-line">

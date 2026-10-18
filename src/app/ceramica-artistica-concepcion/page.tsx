@@ -7,13 +7,14 @@ import { getSiteImageUrl } from "@/lib/cloudinary";
 import { getManagedImageUrl } from "@/lib/managed-image-store";
 import { pageMetadata } from "@/lib/metadata";
 import Breadcrumbs from "../components/seo/Breadcrumbs";
+import CatalogFichaLinks from "../components/seo/CatalogFichaLinks";
 import SiteHub from "../components/seo/SiteHub";
 
 
 export const metadata: Metadata = pageMetadata({
   title: 'Cerámica artística en Concepción | Marcela Pedrosa',
   description:
-    'Cerámica artística en gres de Marcela Pedrosa, desde Concepción. Piezas decorativas y escultóricas del Biobío.',
+    'Cerámica artística en Concepción: gres de Marcela Pedrosa. Consulta piezas del taller por WhatsApp o correo.',
   path: '/ceramica-artistica-concepcion',
   ogImageKey: 'elefante',
   imageAlt: 'Cerámica artística de Marcela Pedrosa en Concepción',
@@ -450,7 +451,15 @@ export default async function CeramicaArtisticaConcepcionPage() {
               <Link href="/guias/oleo-vs-acrilico" className="text-brand underline">óleo o acrílico</Link>{" "}
               compara soportes. El índice de esas lecturas está en{" "}
               <Link href="/guias" className="text-brand underline">guías</Link>.
+              Si la consulta es una tela, mira{" "}
+              <Link href="/cuadros" className="text-brand underline">cuadros</Link>{" "}
+              o{" "}
+              <Link href="/comprar-arte-chile" className="text-brand underline">
+                comprar arte en Chile
+              </Link>
+              .
             </p>
+            <CatalogFichaLinks />
           </article>
 
           {/* Enlaces relacionados */}

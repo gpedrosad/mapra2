@@ -1,4 +1,5 @@
 import { MetadataRoute } from "next";
+import { LEGACY_ARTWORK_PATHS } from "@/lib/artwork-slugs";
 import { listCatalogArtworks } from "@/lib/artworks";
 import { SEO_GUIDES } from "@/lib/seo-guides";
 import { SITEMAP_ROUTES } from "@/lib/seo-routes";
@@ -16,6 +17,7 @@ const EXCLUDED = new Set([
   "/pinturas-originales-a-la-venta",
   "/admin/imagenes",
   "/imagenes",
+  ...LEGACY_ARTWORK_PATHS,
 ]);
 
 type Route = {
@@ -68,6 +70,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
   const artworkRoutes: MetadataRoute.Sitemap = works
     .filter((work) => !known.has(`/pinturas/${work.slug}`))
+    .filter((work) => !EXCLUDED.has(`/pinturas/${work.slug}`))
     .map((work) => ({
       url: absoluteUrl(`/pinturas/${work.slug}`),
       lastModified: lastModifiedFor(`/pinturas/${work.slug}`),

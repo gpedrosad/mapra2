@@ -1,14 +1,16 @@
+export type ArtworkMotif = {
+  id: string;
+  publicId: string;
+  slug: string;
+  name: string;
+};
+
 /**
  * Slug y nombre visible de cada óleo, tomados del motivo que el repo ya describe
  * (alt y detalle en seo-artworks, o el título publicado de la oferta del mes).
  * No son títulos de catálogo distintos de eso: el JSON solo guarda "Pintura cN".
  */
-export const ARTWORK_SLUGS: {
-  id: string;
-  publicId: string;
-  slug: string;
-  name: string;
-}[] = [
+export const ARTWORK_SLUGS: ArtworkMotif[] = [
   {
     id: "c1",
     publicId: "bosque_wvvs3r",
@@ -101,10 +103,64 @@ export const ARTWORK_SLUGS: {
   },
 ];
 
-const BY_PUBLIC_ID = new Map(ARTWORK_SLUGS.map((item) => [item.publicId, item]));
+/**
+ * Archivo que en producción reemplazó a `c13_iqxkyv` en la ranura gallery.c13
+ * (`mapra/managed/gallery-c13-1787246109422`, foto 1600×1236).
+ * No es el díptico de casas: se ve laguna, cordillera, atardecer y juncos.
+ * El nombre solo describe eso. No hereda el slug `casas-dia-y-noche`.
+ */
+export const SLOT_REPLACEMENTS: ArtworkMotif[] = [
+  {
+    id: "gallery-c13-live",
+    publicId: "mapra/managed/gallery-c13-1787246109422",
+    slug: "laguna-cordillera-atardecer",
+    name: "Laguna y cordillera al atardecer",
+  },
+];
+
+const BY_PUBLIC_ID = new Map(
+  [...ARTWORK_SLUGS, ...SLOT_REPLACEMENTS].map((item) => [item.publicId, item]),
+);
+const BY_ID = new Map(ARTWORK_SLUGS.map((item) => [item.id, item]));
 
 export function motifForPublicId(publicId: string) {
-  return BY_PUBLIC_ID.get(publicId);
+  return BY_PUBLIC_ID.get(publicId.trim());
+}
+
+export function motifForId(id: string) {
+  return BY_ID.get(id);
+}
+
+export type SlotResolution = {
+  /** Motivo documentado del id, cuando el archivo de la ranura es otro. */
+  documented: ArtworkMotif | null;
+  /** Motivo del archivo que está realmente en la ranura. */
+  published: ArtworkMotif | null;
+};
+
+/**
+ * El 301 de `/pinturas/c13` apunta al slug documentado.
+ * Si el publicId de la ranura no es el del motivo, el archivo nuevo no puede
+ * quedarse en el slug `c13`: esa URL ya redirige y la ficha destino no existiría.
+ */
+export function resolveGallerySlot(id: string, publicId: string): SlotResolution {
+  const trimmed = publicId.trim();
+  const byPublic = motifForPublicId(trimmed);
+  const byId = motifForId(id);
+
+  if (byPublic && (!byId || byPublic.publicId === byId.publicId)) {
+    return { documented: null, published: byPublic };
+  }
+
+  if (byPublic && byId && byPublic.publicId !== byId.publicId) {
+    return { documented: byId, published: byPublic };
+  }
+
+  if (byId && byId.publicId !== trimmed) {
+    return { documented: byId, published: null };
+  }
+
+  return { documented: null, published: byId ?? null };
 }
 
 /** 301 desde el slug corto c1…c15 cuando no coincide con el slug descriptivo. */
@@ -115,3 +171,7 @@ export const LEGACY_ARTWORK_REDIRECTS = ARTWORK_SLUGS.filter(
   destination: `/pinturas/${item.slug}`,
   statusCode: 301 as const,
 }));
+
+export const LEGACY_ARTWORK_PATHS = new Set(
+  LEGACY_ARTWORK_REDIRECTS.map((item) => item.source),
+);

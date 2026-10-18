@@ -7,6 +7,7 @@ import { getSiteImageUrl } from "@/lib/cloudinary";
 import { getManagedImageUrl } from "@/lib/managed-image-store";
 import { pageMetadata } from "@/lib/metadata";
 import Breadcrumbs from "../components/seo/Breadcrumbs";
+import CatalogFichaLinks from "../components/seo/CatalogFichaLinks";
 import SiteHub from "../components/seo/SiteHub";
 
 
@@ -254,7 +255,15 @@ export default async function ArteConcepcionPage() {
               <Link href="/cuadros/para-oficina" className="text-brand underline">cuadros para oficina</Link>.
               La compra por motivo, fuera de esta página local, está en{" "}
               <Link href="/comprar-arte-chile" className="text-brand underline">comprar arte en Chile</Link>.
+              El índice para medir y encargar está en{" "}
+              <Link href="/guias" className="text-brand underline">guías</Link>.
+              Los perfiles con fuente están en{" "}
+              <Link href="/artistas-chilenas" className="text-brand underline">
+                artistas chilenas
+              </Link>
+              .
             </p>
+            <CatalogFichaLinks />
           </article>
 
           <div className="mt-12 pt-8 border-t border-line">

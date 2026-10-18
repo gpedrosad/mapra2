@@ -7,6 +7,7 @@ import { getSiteImageUrl } from "@/lib/cloudinary";
 import { getManagedImageUrl } from "@/lib/managed-image-store";
 import { pageMetadata } from "@/lib/metadata";
 import Breadcrumbs from "../components/seo/Breadcrumbs";
+import CatalogFichaLinks from "../components/seo/CatalogFichaLinks";
 import SiteHub from "../components/seo/SiteHub";
 
 
@@ -319,7 +320,17 @@ export default async function TallerArteConcepcionPage() {
               </Link>
               . Los animales publicados están en{" "}
               <Link href="/pintura-de-animales" className="text-brand underline">pintura de animales</Link>.
+              La compra por motivo está en{" "}
+              <Link href="/comprar-arte-chile" className="text-brand underline">
+                comprar arte en Chile
+              </Link>
+              . Los perfiles con fuente están en{" "}
+              <Link href="/artistas-chilenas" className="text-brand underline">
+                artistas chilenas
+              </Link>
+              .
             </p>
+            <CatalogFichaLinks />
           </article>
 
           {/* Enlaces relacionados */}

@@ -1,5 +1,10 @@
-import { motifForPublicId } from "@/lib/artwork-slugs";
-import { getImagePixels } from "@/lib/cloudinary";
+import {
+  ARTWORK_SLUGS,
+  LEGACY_ARTWORK_PATHS,
+  resolveGallerySlot,
+  type ArtworkMotif,
+} from "@/lib/artwork-slugs";
+import { getImagePixels, resolveManagedImageUrl } from "@/lib/cloudinary";
 import { listGalleryCatalogSources } from "@/lib/managed-image-store";
 import { TITLE as OFFER_TITLE } from "@/lib/monthly-offer";
 
@@ -45,28 +50,95 @@ function slugFromId(id: string) {
     .replace(/^-|-$/g, "");
 }
 
+/** Nunca el slug corto cN: esa URL es un 301 al slug descriptivo. */
+function fallbackSlug(id: string) {
+  const raw = slugFromId(id);
+  if (LEGACY_ARTWORK_PATHS.has(`/pinturas/${raw}`)) return `obra-${raw}`;
+  return raw;
+}
+
+function artworkFromMotif(
+  motif: ArtworkMotif,
+  info: string,
+  imageUrl: string,
+): CatalogArtwork {
+  const parsed = parseArtworkInfo(info);
+  const pixels = getImagePixels(motif.publicId);
+  const name =
+    motif.publicId === "elefante_l0mpmz" ? OFFER_TITLE : motif.name;
+  const alt = parsed.medium
+    ? `${name}, ${parsed.medium} de Marcela Pedrosa`
+    : `${name} de Marcela Pedrosa`;
+
+  return {
+    id: motif.id,
+    slug: motif.slug,
+    name,
+    alt,
+    imageUrl,
+    publicId: motif.publicId,
+    info: info.trim() || "óleo sobre tela",
+    medium: parsed.medium,
+    measure: parsed.measure,
+    pixelWidth: pixels?.width,
+    pixelHeight: pixels?.height,
+  };
+}
+
 export async function listCatalogArtworks(): Promise<CatalogArtwork[]> {
   const items = await listGalleryCatalogSources();
+  const works: CatalogArtwork[] = [];
+  const seen = new Set<string>();
 
-  return items.map((item) => {
-    const named = motifForPublicId(item.publicId);
+  const push = (work: CatalogArtwork) => {
+    if (seen.has(work.slug)) return;
+    if (LEGACY_ARTWORK_PATHS.has(`/pinturas/${work.slug}`)) return;
+    seen.add(work.slug);
+    works.push(work);
+  };
+
+  for (const item of items) {
+    const { documented, published } = resolveGallerySlot(item.id, item.publicId);
+
+    if (documented) {
+      const imageUrl = resolveManagedImageUrl(documented.publicId);
+      if (imageUrl) push(artworkFromMotif(documented, "óleo sobre tela", imageUrl));
+    }
+
+    if (published) {
+      push(artworkFromMotif(published, item.info, item.imageUrl));
+      continue;
+    }
+
+    if (documented) {
+      const slug = fallbackSlug(item.id);
+      const parsed = parseArtworkInfo(item.info);
+      const pixels = getImagePixels(item.publicId);
+      const name = `Pintura ${item.id}`;
+      push({
+        id: `obra-${item.id}`,
+        slug,
+        name,
+        alt: item.alt?.trim() || `${name} de Marcela Pedrosa`,
+        imageUrl: item.imageUrl,
+        publicId: item.publicId,
+        info: item.info,
+        medium: parsed.medium,
+        measure: parsed.measure,
+        pixelWidth: pixels?.width,
+        pixelHeight: pixels?.height,
+      });
+      continue;
+    }
+
     const parsed = parseArtworkInfo(item.info);
     const pixels = getImagePixels(item.publicId);
-    const name =
-      item.publicId === "elefante_l0mpmz"
-        ? OFFER_TITLE
-        : named?.name || `Pintura ${item.id}`;
-    const alt = named
-      ? parsed.medium
-        ? `${name}, ${parsed.medium} de Marcela Pedrosa`
-        : `${name} de Marcela Pedrosa`
-      : item.alt?.trim() || `${name} de Marcela Pedrosa`;
-
-    return {
+    const name = `Pintura ${item.id}`;
+    push({
       id: item.id,
-      slug: named?.slug || slugFromId(item.id),
+      slug: fallbackSlug(item.id),
       name,
-      alt,
+      alt: item.alt?.trim() || `${name} de Marcela Pedrosa`,
       imageUrl: item.imageUrl,
       publicId: item.publicId,
       info: item.info,
@@ -74,8 +146,17 @@ export async function listCatalogArtworks(): Promise<CatalogArtwork[]> {
       measure: parsed.measure,
       pixelWidth: pixels?.width,
       pixelHeight: pixels?.height,
-    };
-  });
+    });
+  }
+
+  for (const motif of ARTWORK_SLUGS) {
+    if (seen.has(motif.slug)) continue;
+    const imageUrl = resolveManagedImageUrl(motif.publicId);
+    if (!imageUrl) continue;
+    push(artworkFromMotif(motif, "óleo sobre tela", imageUrl));
+  }
+
+  return works;
 }
 
 export async function getCatalogArtwork(slug: string) {

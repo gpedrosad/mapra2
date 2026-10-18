@@ -8,6 +8,7 @@ import { getManagedImageUrl } from "@/lib/managed-image-store";
 import { pageMetadata } from "@/lib/metadata";
 import ArtworkCards from "../components/seo/ArtworkCards";
 import Breadcrumbs from "../components/seo/Breadcrumbs";
+import CatalogFichaLinks from "../components/seo/CatalogFichaLinks";
 import SiteHub from "../components/seo/SiteHub";
 import { listCatalogArtworks } from "@/lib/artworks";
 import { CONTACT_EMAIL } from "@/lib/site";
@@ -203,8 +204,21 @@ export default async function EncargosPinturaPage() {
               <Link href="/cuadros/para-oficina" className="text-brand underline">
                 cuadros para oficina
               </Link>
+              . El índice de las lecturas está en{" "}
+              <Link href="/guias" className="text-brand underline">guías</Link>{" "}
+              y el recorrido por muro, en{" "}
+              <Link href="/cuadros" className="text-brand underline">cuadros</Link>.
+              La compra por motivo está en{" "}
+              <Link href="/comprar-arte-chile" className="text-brand underline">
+                comprar arte en Chile
+              </Link>
+              . Los perfiles con fuente están en{" "}
+              <Link href="/artistas-chilenas" className="text-brand underline">
+                artistas chilenas
+              </Link>
               .
             </p>
+            <CatalogFichaLinks />
           </article>
 
           <div className="mt-12 pt-8 border-t border-line">

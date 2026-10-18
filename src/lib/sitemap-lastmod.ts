@@ -1,6 +1,6 @@
 /**
  * lastmod fijo por URL. Sale del último commit de la página (git log %cs)
- * o de 2026-10-17 cuando este lote cambió el contenido.
+ * o de la fecha del lote que cambió el contenido.
  * No usar `new Date()` en el build: Google vería todas las URLs como recién editadas.
  */
 const LASTMOD: Record<string, string> = {
@@ -11,19 +11,19 @@ const LASTMOD: Record<string, string> = {
   "/contacto": "2026-07-23",
   "/marcela-pedrosa": "2026-10-16",
   "/pintora-concepcion": "2026-10-16",
-  "/arte-concepcion": "2026-10-17",
-  "/artista-visual-biobio": "2026-10-17",
-  "/taller-arte-concepcion": "2026-10-17",
-  "/galeria-arte-concepcion": "2026-10-17",
-  "/pintura-fachadas-concepcion": "2026-10-17",
-  "/comprar-pintura-concepcion": "2026-10-17",
+  "/arte-concepcion": "2026-10-18",
+  "/artista-visual-biobio": "2026-10-18",
+  "/taller-arte-concepcion": "2026-10-18",
+  "/galeria-arte-concepcion": "2026-10-18",
+  "/pintura-fachadas-concepcion": "2026-10-18",
+  "/comprar-pintura-concepcion": "2026-10-18",
   "/comprar-cuadros-al-oleo-chile": "2026-10-17",
-  "/encargos-pintura": "2026-10-17",
-  "/oleo-sobre-tela-chile": "2026-10-17",
-  "/impresionismo-figurativo-chile": "2026-10-17",
-  "/mujeres-artistas-chilenas": "2026-10-17",
-  "/pintoras-chilenas": "2026-10-17",
-  "/ceramica-artistica-concepcion": "2026-10-17",
+  "/encargos-pintura": "2026-10-18",
+  "/oleo-sobre-tela-chile": "2026-10-18",
+  "/impresionismo-figurativo-chile": "2026-10-18",
+  "/mujeres-artistas-chilenas": "2026-10-18",
+  "/pintoras-chilenas": "2026-10-18",
+  "/ceramica-artistica-concepcion": "2026-10-18",
   "/devoluciones": "2026-08-23",
   "/tiempos-de-entrega": "2026-08-23",
   "/privacidad": "2026-08-23",
@@ -74,13 +74,14 @@ const LASTMOD: Record<string, string> = {
   "/pinturas/retrato-con-lentes": "2026-10-17",
   "/pinturas/manos-superpuestas": "2026-10-17",
   "/pinturas/ciudad-casas-de-colores": "2026-10-17",
-  "/pinturas/casas-dia-y-noche": "2026-10-17",
+  "/pinturas/casas-dia-y-noche": "2026-10-18",
+  "/pinturas/laguna-cordillera-atardecer": "2026-10-18",
   "/pinturas/bosque-troncos-de-colores": "2026-10-17",
   "/pinturas/gato-recostado": "2026-10-17",
 };
 
 /** Fecha fija si una ruta nueva no está en el mapa. No es la hora del build. */
-const FALLBACK = "2026-10-17";
+const FALLBACK = "2026-10-18";
 
 export function lastModifiedFor(path: string): Date {
   const iso = LASTMOD[path] ?? FALLBACK;

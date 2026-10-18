@@ -203,6 +203,13 @@ export default async function GaleriaArteConcepcionPage() {
               <Link href="/bodegon-oleo" className="text-brand underline">bodegón</Link>.
               La compra por tema está en{" "}
               <Link href="/comprar-arte-chile" className="text-brand underline">comprar arte en Chile</Link>.
+              El índice de lecturas está en{" "}
+              <Link href="/guias" className="text-brand underline">guías</Link>.
+              Los perfiles con fuente están en{" "}
+              <Link href="/artistas-chilenas" className="text-brand underline">
+                artistas chilenas
+              </Link>
+              .
             </p>
             <CatalogFichaLinks />
           </article>
