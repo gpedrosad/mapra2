@@ -10,7 +10,7 @@ import {
   RelatedGuides,
 } from "../components/seo/GuideParts";
 import { getOgImageUrl } from "@/lib/cloudinary";
-import { listPaintingsByTheme } from "@/lib/seo-artworks";
+import { listPaintingsByTheme, paintingItemUrl } from "@/lib/seo-artworks";
 
 const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://mpedrosa.studio";
 
@@ -64,7 +64,7 @@ export default async function PinturaDeCiudadPage() {
         items={works.map((work) => ({
           name: work.alt,
           imageUrl: work.src,
-          url: `${BASE_URL}/pintura-de-ciudad`,
+          url: paintingItemUrl(work.publicId, `${BASE_URL}/pintura-de-ciudad`),
           description: `${work.info}. ${work.detail}`,
         }))}
       />
@@ -86,7 +86,15 @@ export default async function PinturaDeCiudadPage() {
           <p className="leading-relaxed text-ink-body">
             En el primero se ven casas de colores, una cordillera nevada, un tren amarillo y
             azul, árboles en flor y un arco. En el segundo hay dos vistas de casas: de día, con
-            escaleras, y de noche, con luna y ventanas encendidas.
+            escaleras, y de noche, con luna y ventanas encendidas. Esa tela tiene ficha:{" "}
+            <Link href="/pinturas/casas-dia-y-noche" className="text-brand underline">
+              casas de día y de noche
+            </Link>
+            . La vista con el tren está en{" "}
+            <Link href="/pinturas/ciudad-casas-de-colores" className="text-brand underline">
+              ciudad de casas de colores
+            </Link>
+            .
           </p>
           <p className="mt-4 leading-relaxed text-ink-body">
             La serie de fachadas que el sitio describe está en{" "}

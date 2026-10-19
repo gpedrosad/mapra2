@@ -7,14 +7,16 @@ import { getSiteImageUrl } from "@/lib/cloudinary";
 import { getManagedImageUrl } from "@/lib/managed-image-store";
 import { pageMetadata } from "@/lib/metadata";
 import Breadcrumbs from "../components/seo/Breadcrumbs";
-import CatalogFichaLinks from "../components/seo/CatalogFichaLinks";
+import CatalogFichaLinks, {
+  DescriptiveFichaLinks,
+} from "../components/seo/CatalogFichaLinks";
 import SiteHub from "../components/seo/SiteHub";
 
 
 export const metadata: Metadata = pageMetadata({
   title: 'Pintoras chilenas famosas y actuales | Pedrosa',
   description:
-    'Pintoras chilenas famosas y actuales: Castro, Mira, Petit, Barrios, Bru, Aldunate y Pedrosa en Concepción.',
+    'Pintoras chilenas famosas y actuales, y mujeres pintoras: Castro, Mira, Petit, Barrios, Bru, Aldunate y Pedrosa en Concepción.',
   path: '/pintoras-chilenas',
   ogImageKey: 'gente',
   imageAlt: 'Obra de Marcela Pedrosa, pintora chilena',
@@ -44,7 +46,7 @@ const faqSchema = {
       name: "¿Quiénes son las pintoras chilenas más importantes de la historia?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Entre las pintoras chilenas más importantes destacan Celia Castro y Aurora Mira (siglo XIX), Henriette Petit (primera mujer Premio Nacional de Arte en 1965), Matilde Pérez, Roser Bru y Gracia Barrios en el siglo XX, y contemporáneas como Marcela Pedrosa desde Concepción.",
+        text: "Celia Castro y Aurora Mira en el siglo XIX; Henriette Petit (primera mujer Premio Nacional de Arte), Matilde Pérez, Roser Bru y Gracia Barrios en el siglo XX, entre muchas otras.",
       },
     },
     {
@@ -52,7 +54,7 @@ const faqSchema = {
       name: "¿Qué pintoras chilenas contemporáneas están activas hoy?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Hay pintoras chilenas actuales en todo el país. En Concepción, Región del Biobío, Marcela Pedrosa pinta óleo sobre tela e impresionismo figurativo, vende obras originales y realiza encargos personalizados.",
+        text: "Hay pintoras chilenas actuales en todo el país. En la Región del Biobío, Marcela Pedrosa pinta óleo sobre tela e impresionismo figurativo.",
       },
     },
     {
@@ -60,7 +62,7 @@ const faqSchema = {
       name: "¿Dónde comprar pinturas de pintoras chilenas?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Las pinturas originales de pintoras chilenas pueden comprarse directamente en sus talleres, galerías y sitios web. Marcela Pedrosa vende sus obras al óleo desde su taller en Concepción, con envío a todo Chile, vía WhatsApp o formulario de contacto.",
+        text: "Directamente en talleres, galerías y sitios web de las artistas. Marcela Pedrosa vende sus obras desde Concepción con envío a todo Chile. La compra por consulta está en comprar arte en Chile.",
       },
     },
     {
@@ -68,7 +70,7 @@ const faqSchema = {
       name: "¿Qué técnicas utilizan las pintoras chilenas?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Las pintoras chilenas trabajan principalmente óleo sobre tela, acrílico, acuarela, grabado y técnicas mixtas. Marcela Pedrosa se especializa en óleo sobre tela con un estilo de impresionismo figurativo.",
+        text: "Principalmente óleo sobre tela, acrílico, acuarela, grabado y técnicas mixtas. El óleo sobre tela sigue siendo la técnica reina de la pintura chilena.",
       },
     },
     {
@@ -226,6 +228,7 @@ export default async function PintorasChilenasPage() {
               .
             </p>
             <CatalogFichaLinks />
+            <DescriptiveFichaLinks lead="Esas telas de Marcela, con el nombre de la ficha, son" />
 
             <h3 className="text-2xl font-semibold text-ink mt-10 mb-4">
               Pioneras: Las Primeras Pintoras de Chile
@@ -539,7 +542,11 @@ export default async function PintorasChilenasPage() {
                 <p className="text-ink-body text-sm">
                   Directamente en talleres, galerías y sitios web de las
                   artistas. Marcela Pedrosa vende sus obras desde Concepción
-                  con envío a todo Chile.
+                  con envío a todo Chile. La compra por consulta está en{" "}
+                  <Link href="/comprar-arte-chile" className="text-brand underline">
+                    comprar arte en Chile
+                  </Link>
+                  .
                 </p>
               </div>
 
@@ -573,7 +580,11 @@ export default async function PintorasChilenasPage() {
                   Las famosas de este recorrido son Castro, las hermanas Mira,
                   Petit, Pérez, Barrios, Bru y Aldunate. De las actuales, el
                   sitio presenta a Marcela Pedrosa en Concepción. Los perfiles
-                  con fuente están en la serie de artistas chilenas.
+                  con fuente están en la serie de{" "}
+                  <Link href="/artistas-chilenas" className="text-brand underline">
+                    artistas chilenas
+                  </Link>
+                  .
                 </p>
               </div>
             </div>

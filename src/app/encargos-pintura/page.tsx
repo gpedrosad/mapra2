@@ -8,7 +8,9 @@ import { getManagedImageUrl } from "@/lib/managed-image-store";
 import { pageMetadata } from "@/lib/metadata";
 import ArtworkCards from "../components/seo/ArtworkCards";
 import Breadcrumbs from "../components/seo/Breadcrumbs";
-import CatalogFichaLinks from "../components/seo/CatalogFichaLinks";
+import CatalogFichaLinks, {
+  DescriptiveFichaLinks,
+} from "../components/seo/CatalogFichaLinks";
 import SiteHub from "../components/seo/SiteHub";
 import { listCatalogArtworks } from "@/lib/artworks";
 import { CONTACT_EMAIL } from "@/lib/site";
@@ -219,6 +221,7 @@ export default async function EncargosPinturaPage() {
               .
             </p>
             <CatalogFichaLinks />
+            <DescriptiveFichaLinks lead="Si prefieres una obra ya hecha, mira" />
           </article>
 
           <div className="mt-12 pt-8 border-t border-line">

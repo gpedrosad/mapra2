@@ -10,7 +10,7 @@ import {
   RelatedGuides,
 } from "../components/seo/GuideParts";
 import { getOgImageUrl } from "@/lib/cloudinary";
-import { listPaintingsByTheme } from "@/lib/seo-artworks";
+import { listPaintingsByTheme, paintingItemUrl } from "@/lib/seo-artworks";
 
 const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://mpedrosa.studio";
 
@@ -64,7 +64,7 @@ export default async function PinturaDeBosquesPage() {
         items={works.map((work) => ({
           name: work.alt,
           imageUrl: work.src,
-          url: `${BASE_URL}/pintura-de-bosques`,
+          url: paintingItemUrl(work.publicId, `${BASE_URL}/pintura-de-bosques`),
           description: `${work.info}. ${work.detail}`,
         }))}
       />

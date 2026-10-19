@@ -1,6 +1,6 @@
 # INDEX — hechos densos (leer primero)
 
-Actualizado: **2026-10-18**
+Actualizado: **2026-10-19**
 
 ## Identidad
 
@@ -23,6 +23,7 @@ Actualizado: **2026-10-18**
 - **Corte 2026-08-23 (28d):** 0 clics · **7** impresiones · CTR 0% · páginas con imp: `/` (5), `/privacidad` (2), `/contacto` (1)
 - **Corte 2026-10-17 (90d, dato de trabajo):** 6 clics · 221 impresiones · posición 9.0 · `/pintoras-chilenas` 156 imp, pos 7.6, CTR 1.9% · `/mujeres-artistas-chilenas` pos 13.9 · `/pinturas` pos 3.9, 0 clics · `/oleo-sobre-tela-chile` pos 11 · `/impresionismo-figurativo-chile` pos 17.8
 - **Corte 2026-10-18 (brief, dato hasta 2026-10-16):** 90d 7 clics · 229 impresiones · CTR 3,1 % · pos 9,6. Últimos 7 días: 2 clics · 14 imp · pos 20,3. Clics de la semana: `/artista-visual-biobio`, `/ceramica-artistica-concepcion`. Unknown: `/guias`, `/artistas-chilenas`, `/cuadros`, `/comprar-arte-chile`, `/guias/elegir-cuadro-para-el-living`, `/pinturas/elefante`.
+- **Corte 2026-10-19 (brief, dato hasta 2026-10-17):** 90d 8 clics · 234 imp · CTR 3,4 % · pos 9,9. Últimos 7 días: 3 clics · 19 imp · CTR 15,8 % · pos 21,6 (previos: 0c/19i pos 12,6). `/pintoras-chilenas` 1c/6i pos 7,3. Unknown: `/guias`, `/artistas-chilenas`, `/cuadros`, `/comprar-arte-chile`, `/pinturas/casas-dia-y-noche`, `/pinturas/laguna-cordillera-atardecer`. `/pintoras-chilenas` indexada (crawl 2026-09-18).
 - Sitemap en GSC: **solo** `https://mpedrosa.studio/sitemap.xml` (`sitemap.ts` eliminado 2026-08-23)
 - Indexación pública: home + legales/pinturas/prensa/contacto sí; landings SEO tipo `/pintora-concepcion` **no** aparecen en `site:` (2026-08-23)
 - Write token: `.secrets/gsc-oauth-write-token.json` (scope `webmasters`) — usar para submit/delete sitemap; readonly no alcanza
@@ -59,6 +60,7 @@ Actualizado: **2026-10-18**
 - **Merge ronda 2 (2026-10-17):** `origin/main` entra en `cursor/seo-ronda2-guias-e05e`. Se conservan las 6 guías de `src/app/guias/` y las páginas de temas y compra. El sitemap une `SITEMAP_ROUTES`, las fichas `/pinturas/[slug]`, `/guias`, cada `/guias/[slug]` y las rutas de `SEO_GUIDES`. Menú, nav y home quedan idénticos a main.
 - **Lote diario 2026-10-17:** sitemap con `/artistas-chilenas` (13) y `/cuadros` (8), `lastmod` fijo por URL (no la hora del build). 301 `/cuadros-para-living` → `/cuadros/para-living` y `/pinturas/c1`…`c15` → slugs de motivo (`/pinturas/elefante` incluido). `/pintoras-chilenas` sigue siendo la URL del head term. Lista para pedir indexación: [`docs/seo-lote-2026-10-17.md`](../seo-lote-2026-10-17.md). `www` → apex es 307 de Vercel, no de código. `pendiente:` reenviar sitemap y Request indexing.
 - **Lote diario 2026-10-18:** `/pinturas/c13` sigue en 301 a `/pinturas/casas-dia-y-noche`. Esa ficha se genera con el díptico `c13_iqxkyv` aunque Cloudinary tenga otro archivo en la ranura (`mapra/managed/gallery-c13-1787246109422`, laguna y cordillera). El sitemap no lista `c13`. La foto nueva, si el build la ve, va a `/pinturas/laguna-cordillera-atardecer`. Sin página nueva de compra. Lista: [`docs/seo-lote-2026-10-18.md`](../seo-lote-2026-10-18.md). `pendiente:` reenviar sitemap y Request indexing de hubs + ficha casas.
+- **Lote diario 2026-10-19:** c13 sigue coherente (301, sitemap sin `c13`, díptico y laguna separados). Snippets en páginas que imprimen; `/pintoras-chilenas` conserva title y canonical. Enlaces con nombre de ficha desde esas páginas, y desde cada ficha hacia `/guias`, `/artistas-chilenas`, `/cuadros` y `/comprar-arte-chile`. Sin página nueva. Lista: [`docs/seo-lote-2026-10-19.md`](../seo-lote-2026-10-19.md). `pendiente:` reenviar sitemap y Request indexing.
 - Gap #2: analytics (GA4/Clarity del dominio correcto)
 - Gap #3 (aprobación): diferenciar landings thin, FAQ/GEO, backlinks prensa/IG
 

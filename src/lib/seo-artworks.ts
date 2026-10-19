@@ -1,6 +1,8 @@
 import type { SiteImageKey } from "@/lib/cloudinary";
 import { buildCloudinaryImageUrl, getSiteImageUrl } from "@/lib/cloudinary";
+import { motifForPublicId } from "@/lib/artwork-slugs";
 import { getManagedImageSection } from "@/lib/managed-image-store";
+import { absoluteUrl } from "@/lib/site";
 
 /** Temas visibles en las pinturas publicadas de la galería. */
 export type SeoTheme =
@@ -193,7 +195,20 @@ export type CatalogPainting = {
   info: string;
   detail: string;
   themes: SeoTheme[];
+  /** Slug de ficha, si el publicId ya tiene motivo en el repo. */
+  slug: string | null;
 };
+
+export function fichaPathForPublicId(publicId: string): string | null {
+  const slug = motifForPublicId(publicId)?.slug;
+  return slug ? `/pinturas/${slug}` : null;
+}
+
+/** URL de la ficha cuando existe; si no, la página que agrupa la obra. */
+export function paintingItemUrl(publicId: string, fallbackAbsolute: string) {
+  const path = fichaPathForPublicId(publicId);
+  return path ? absoluteUrl(path) : fallbackAbsolute;
+}
 
 export type ResolvedArtworkImage = {
   src: string;
@@ -259,6 +274,7 @@ export async function listCatalogPaintings(): Promise<CatalogPainting[]> {
       info: section?.info?.trim() || "óleo sobre tela",
       detail: known.detail,
       themes: known.themes,
+      slug: motifForPublicId(publicId)?.slug ?? null,
     });
   }
 

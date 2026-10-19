@@ -7,7 +7,9 @@ import { getSiteImageUrl } from "@/lib/cloudinary";
 import { getManagedImageUrl } from "@/lib/managed-image-store";
 import { pageMetadata } from "@/lib/metadata";
 import Breadcrumbs from "../components/seo/Breadcrumbs";
-import CatalogFichaLinks from "../components/seo/CatalogFichaLinks";
+import CatalogFichaLinks, {
+  DescriptiveFichaLinks,
+} from "../components/seo/CatalogFichaLinks";
 import SiteHub from "../components/seo/SiteHub";
 
 
@@ -45,7 +47,7 @@ export default async function CeramicaArtisticaConcepcionPage() {
           <Breadcrumbs items={[{ name: "Cerámica artística", path: "/ceramica-artistica-concepcion" }]} />
           <div className="text-center">
             <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-medium tracking-tight text-ink mb-6">
-              Cerámica Artística en Concepción
+              Cerámica artística en Concepción
             </h1>
             <p className="text-xl sm:text-2xl text-ink-body mb-8 leading-relaxed">
               Piezas Únicas en Gres de Alta Temperatura
@@ -460,6 +462,7 @@ export default async function CeramicaArtisticaConcepcionPage() {
               .
             </p>
             <CatalogFichaLinks />
+            <DescriptiveFichaLinks lead="Si la consulta es una tela y no una pieza de gres, abre" />
           </article>
 
           {/* Enlaces relacionados */}

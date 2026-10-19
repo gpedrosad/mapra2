@@ -7,14 +7,16 @@ import { getSiteImageUrl } from "@/lib/cloudinary";
 import { getManagedImageUrl } from "@/lib/managed-image-store";
 import { pageMetadata } from "@/lib/metadata";
 import Breadcrumbs from "../components/seo/Breadcrumbs";
-import CatalogFichaLinks from "../components/seo/CatalogFichaLinks";
+import CatalogFichaLinks, {
+  DescriptiveFichaLinks,
+} from "../components/seo/CatalogFichaLinks";
 import SiteHub from "../components/seo/SiteHub";
 
 
 export const metadata: Metadata = pageMetadata({
-  title: 'Mujeres artistas chilenas | gres y pintura',
+  title: 'Mujeres artistas chilenas | pintura y gres',
   description:
-    'Mujeres artistas chilenas en pintura, gres y arte visual. El listado de pintoras está en otra página. Pedrosa, Concepción.',
+    'Mujeres artistas chilenas en pintura, gres y arte visual, aparte del listado de pintoras. Pedrosa, en Concepción.',
   path: '/mujeres-artistas-chilenas',
   ogImageKey: 'gente',
   imageAlt: 'Obra de Marcela Pedrosa, mujer artista chilena',
@@ -45,7 +47,7 @@ export default async function MujeresArtistasChilenasPage() {
           <Breadcrumbs items={[{ name: "Mujeres artistas chilenas", path: "/mujeres-artistas-chilenas" }]} />
           <div className="text-center">
             <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-medium tracking-tight text-ink mb-6">
-              Mujeres Artistas Chilenas
+              Mujeres artistas chilenas
             </h1>
             <p className="text-xl sm:text-2xl text-ink-body mb-8 leading-relaxed">
               Pintura, cerámica y arte visual, aparte del listado de pintoras
@@ -221,6 +223,7 @@ export default async function MujeresArtistasChilenasPage() {
               <Link href="/guias" className="text-brand underline">guías</Link>.
             </p>
             <CatalogFichaLinks />
+            <DescriptiveFichaLinks lead="Las telas de Marcela, aparte del listado de pintoras, están en" />
 
             <h3 className="text-2xl font-semibold text-ink mt-10 mb-4">
               Marcela Pedrosa: Artista Visual de Concepción

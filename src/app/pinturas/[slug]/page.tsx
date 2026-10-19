@@ -169,6 +169,22 @@ export default async function ArtworkPage({ params }: Props) {
           <Link href="/encargos-pintura" className="text-brand underline underline-offset-4">
             encargar una pintura
           </Link>
+          . Para ubicarla entre otras lecturas, mira las{" "}
+          <Link href="/guias" className="text-brand underline underline-offset-4">
+            guías
+          </Link>
+          , los perfiles de{" "}
+          <Link href="/artistas-chilenas" className="text-brand underline underline-offset-4">
+            artistas chilenas
+          </Link>
+          , los{" "}
+          <Link href="/cuadros" className="text-brand underline underline-offset-4">
+            cuadros según el muro
+          </Link>{" "}
+          y{" "}
+          <Link href="/comprar-arte-chile" className="text-brand underline underline-offset-4">
+            comprar arte en Chile
+          </Link>
           .
         </p>
 

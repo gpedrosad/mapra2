@@ -10,7 +10,7 @@ import {
   RelatedGuides,
 } from "../components/seo/GuideParts";
 import { getOgImageUrl } from "@/lib/cloudinary";
-import { listPaintingsByTheme } from "@/lib/seo-artworks";
+import { listPaintingsByTheme, paintingItemUrl } from "@/lib/seo-artworks";
 
 const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://mpedrosa.studio";
 
@@ -64,7 +64,7 @@ export default async function PinturaDeAnimalesPage() {
         items={works.map((work) => ({
           name: work.alt,
           imageUrl: work.src,
-          url: `${BASE_URL}/pintura-de-animales`,
+          url: paintingItemUrl(work.publicId, `${BASE_URL}/pintura-de-animales`),
           description: `${work.info}. ${work.detail}`,
         }))}
       />
@@ -85,10 +85,19 @@ export default async function PinturaDeAnimalesPage() {
 
           <h2 className="mb-4 text-2xl font-semibold text-ink">Elefante, caballos y gato</h2>
           <p className="leading-relaxed text-ink-body">
-            El elefante está de frente, con colmillos claros y el cuerpo en naranja, azul y
-            rojo. Los caballos son dos: una cabeza grande y otro animal en movimiento, sobre
-            azul. El gato está recostado; el pelaje mezcla su color con manchas y dibujos, y el
-            fondo es azul.
+            El{" "}
+            <Link href="/pinturas/elefante" className="text-brand underline">
+              elefante
+            </Link>{" "}
+            está de frente, con colmillos claros y el cuerpo en naranja, azul y rojo. Los{" "}
+            <Link href="/pinturas/dos-caballos" className="text-brand underline">
+              dos caballos
+            </Link>{" "}
+            muestran una cabeza grande y otro animal en movimiento, sobre azul. El{" "}
+            <Link href="/pinturas/gato-recostado" className="text-brand underline">
+              gato recostado
+            </Link>{" "}
+            mezcla el color del pelaje con manchas y dibujos, y el fondo es azul.
           </p>
           <p className="mt-4 leading-relaxed text-ink-body">
             La pintura del elefante no es una pieza de{" "}
