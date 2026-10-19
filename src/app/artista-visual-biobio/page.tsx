@@ -7,7 +7,9 @@ import { getSiteImageUrl } from "@/lib/cloudinary";
 import { getManagedImageUrl } from "@/lib/managed-image-store";
 import { pageMetadata } from "@/lib/metadata";
 import Breadcrumbs from "../components/seo/Breadcrumbs";
-import CatalogFichaLinks from "../components/seo/CatalogFichaLinks";
+import CatalogFichaLinks, {
+  DescriptiveFichaLinks,
+} from "../components/seo/CatalogFichaLinks";
 import SiteHub from "../components/seo/SiteHub";
 
 
@@ -45,7 +47,7 @@ export default async function ArtistaVisualBiobioPage() {
           <Breadcrumbs items={[{ name: "Artista visual del Biobío", path: "/artista-visual-biobio" }]} />
           <div className="text-center">
             <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-medium tracking-tight text-ink mb-6">
-              Artista Visual del Biobío
+              Artista visual del Biobío
             </h1>
             <p className="text-xl sm:text-2xl text-ink-body mb-8 leading-relaxed">
               Marcela Pedrosa - Arte Contemporáneo desde la Región del Biobío
@@ -270,6 +272,7 @@ export default async function ArtistaVisualBiobioPage() {
               <Link href="/cuadros" className="text-brand underline">cuadros</Link>.
             </p>
             <CatalogFichaLinks />
+            <DescriptiveFichaLinks lead="De la Región del Biobío, estas fichas muestran la tela" />
           </article>
 
           {/* Enlaces relacionados */}

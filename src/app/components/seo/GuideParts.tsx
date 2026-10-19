@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import WhatsAppButton from "../WhatsAppButton";
+import { motifForPublicId } from "@/lib/artwork-slugs";
 import type { CatalogPainting } from "@/lib/seo-artworks";
 import { SEO_GUIDES } from "@/lib/seo-guides";
 
@@ -62,7 +63,9 @@ export function ArtworkGrid({ works }: { works: CatalogPainting[] }) {
     <ul
       className={`my-10 grid list-none grid-cols-1 gap-8 p-0 ${works.length > 1 ? "sm:grid-cols-2" : ""}`}
     >
-      {works.map((work, index) => (
+      {works.map((work, index) => {
+        const motif = motifForPublicId(work.publicId);
+        return (
         <li key={work.id} className="border border-line bg-white">
           <Image
             src={work.src}
@@ -76,9 +79,20 @@ export function ArtworkGrid({ works }: { works: CatalogPainting[] }) {
           <div className="p-4">
             <p className="text-sm font-medium text-ink">{work.info}</p>
             <p className="mt-2 text-sm leading-relaxed text-ink-body">{work.detail}</p>
+            {motif ? (
+              <p className="mt-3 text-sm">
+                <Link
+                  href={`/pinturas/${motif.slug}`}
+                  className="text-brand underline underline-offset-4"
+                >
+                  Ficha de {motif.name}
+                </Link>
+              </p>
+            ) : null}
           </div>
         </li>
-      ))}
+        );
+      })}
     </ul>
   );
 }

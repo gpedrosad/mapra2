@@ -53,3 +53,10 @@ Formato: `YYYY-MM-DD | tema | hecho | acción/implicación`
 - SEO | Prod: `/pinturas/c13` 301 → `/pinturas/casas-dia-y-noche` 404. Sitemap listaba `/pinturas/c13` | El publicId vivo de la ranura es `mapra/managed/gallery-c13-1787246109422`, no `c13_iqxkyv`
 - SEO | La foto viva no es el díptico (1280×466). Es laguna, cordillera, atardecer y juncos, 1600×1236 | El slug `casas-dia-y-noche` queda con el díptico documentado; la foto nueva tiene slug propio
 - SEO | Lote 2026-10-18: snippets en páginas que ya imprimen, enlaces desde indexadas hacia hubs unknown y fichas. Sin página nueva de compra | Doc `docs/seo-lote-2026-10-18.md`. `pendiente:` reenviar sitemap y Request indexing
+
+## 2026-10-19
+
+- GSC | Brief del lote (dato hasta 2026-10-17): 90d 8 clics, 234 imp, CTR 3,4 %, pos 9,9. Últimos 7 días: 3 clics, 19 imp, CTR 15,8 %, pos 21,6. Previos: 0 clics, 19 imp, pos 12,6 | `/pintoras-chilenas` 1c/6i pos 7,3
+- SEO | Inspección URL: indexada `/pintoras-chilenas` (crawl 2026-09-18). Unknown: `/guias`, `/artistas-chilenas`, `/cuadros`, `/comprar-arte-chile`, `/pinturas/casas-dia-y-noche`, `/pinturas/laguna-cordillera-atardecer` | `pendiente:` reenviar sitemap y Request indexing (OAuth solo lectura)
+- SEO | Prod: `/pinturas/c13` 301 → `/pinturas/casas-dia-y-noche` 200. Sitemap sin `c13`, con el slug descriptivo y con laguna. 74 URLs | No reabrir. El JSON del repo sigue en `c13_iqxkyv`; la laguna entra si el build lee el publicId vivo
+- SEO | Lote 2026-10-19: snippets sin cambiar el canonical de `/pintoras-chilenas`. Enlaces con nombre hacia casas, elefante y laguna (esta solo si el catálogo la genera). Cada ficha enlaza los cuatro hubs unknown. Sin página nueva | Doc `docs/seo-lote-2026-10-19.md`

@@ -7,7 +7,9 @@ import { getSiteImageUrl } from "@/lib/cloudinary";
 import { getManagedImageUrl } from "@/lib/managed-image-store";
 import { pageMetadata } from "@/lib/metadata";
 import Breadcrumbs from "../components/seo/Breadcrumbs";
-import CatalogFichaLinks from "../components/seo/CatalogFichaLinks";
+import CatalogFichaLinks, {
+  DescriptiveFichaLinks,
+} from "../components/seo/CatalogFichaLinks";
 import { FaqJsonLd } from "../components/seo/GuideParts";
 import SiteHub from "../components/seo/SiteHub";
 
@@ -15,7 +17,7 @@ import SiteHub from "../components/seo/SiteHub";
 export const metadata: Metadata = pageMetadata({
   title: 'Óleos sobre tela en Chile | Pedrosa',
   description:
-    'Óleos sobre tela de Marcela Pedrosa en Concepción. Medidas publicadas: 158x122, 110x110, 90x120 y 100x130. Consulta el resto.',
+    'Óleos sobre tela en Chile, pintados en Concepción. Medidas publicadas: 158x122, 110x110, 90x120 y 100x130. Consulta el resto.',
   path: '/oleo-sobre-tela-chile',
   ogImageKey: 'mujer',
   imageAlt: 'Pintura al óleo sobre tela de Marcela Pedrosa',
@@ -88,7 +90,7 @@ export default async function OleoSobreTelaChilePage() {
         <div className="mx-auto max-w-4xl px-4 sm:px-6">
           <article className="prose prose-lg max-w-none">
             <h2 className="text-3xl font-semibold text-ink mb-6">
-              Óleo sobre tela en Chile, con las medidas publicadas
+              Óleos sobre tela en Chile, con las medidas publicadas
             </h2>
 
             <p className="text-ink-body leading-relaxed mb-6">
@@ -428,6 +430,7 @@ export default async function OleoSobreTelaChilePage() {
               .
             </p>
             <CatalogFichaLinks />
+            <DescriptiveFichaLinks lead="Entre los óleos sobre tela con ficha propia están" />
           </article>
 
           {/* Enlaces relacionados */}

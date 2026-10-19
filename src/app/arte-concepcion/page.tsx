@@ -7,7 +7,9 @@ import { getSiteImageUrl } from "@/lib/cloudinary";
 import { getManagedImageUrl } from "@/lib/managed-image-store";
 import { pageMetadata } from "@/lib/metadata";
 import Breadcrumbs from "../components/seo/Breadcrumbs";
-import CatalogFichaLinks from "../components/seo/CatalogFichaLinks";
+import CatalogFichaLinks, {
+  DescriptiveFichaLinks,
+} from "../components/seo/CatalogFichaLinks";
 import SiteHub from "../components/seo/SiteHub";
 
 
@@ -264,6 +266,7 @@ export default async function ArteConcepcionPage() {
               .
             </p>
             <CatalogFichaLinks />
+            <DescriptiveFichaLinks lead="De lo publicado con nombre propio, abre" />
           </article>
 
           <div className="mt-12 pt-8 border-t border-line">

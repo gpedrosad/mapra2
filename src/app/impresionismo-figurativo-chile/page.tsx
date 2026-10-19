@@ -7,15 +7,17 @@ import { getSiteImageUrl } from "@/lib/cloudinary";
 import { getManagedImageUrl } from "@/lib/managed-image-store";
 import { pageMetadata } from "@/lib/metadata";
 import Breadcrumbs from "../components/seo/Breadcrumbs";
-import CatalogFichaLinks from "../components/seo/CatalogFichaLinks";
+import CatalogFichaLinks, {
+  DescriptiveFichaLinks,
+} from "../components/seo/CatalogFichaLinks";
 import { FaqJsonLd } from "../components/seo/GuideParts";
 import SiteHub from "../components/seo/SiteHub";
 
 
 export const metadata: Metadata = pageMetadata({
-  title: 'Impresionismo figurativo actual | Pedrosa',
+  title: 'Impresionismo figurativo actual en Chile | Pedrosa',
   description:
-    'Impresionismo figurativo actual de Marcela Pedrosa: fachadas, bosques y figura al óleo, en Concepción.',
+    'Impresionismo figurativo actual en Chile: fachadas, bosques y figura al óleo de Marcela Pedrosa, en Concepción.',
   path: '/impresionismo-figurativo-chile',
   ogImageKey: 'bosque',
   imageAlt: 'Impresionismo figurativo de Marcela Pedrosa',
@@ -428,6 +430,7 @@ export default async function ImpresionismoFigurativoChilePage() {
               .
             </p>
             <CatalogFichaLinks />
+            <DescriptiveFichaLinks lead="Ese impresionismo figurativo actual se ve en" />
           </article>
 
           {/* Enlaces relacionados */}

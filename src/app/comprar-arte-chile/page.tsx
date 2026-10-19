@@ -10,7 +10,7 @@ import {
   RelatedGuides,
 } from "../components/seo/GuideParts";
 import { getOgImageUrl } from "@/lib/cloudinary";
-import { listCatalogPaintings, type SeoTheme } from "@/lib/seo-artworks";
+import { listCatalogPaintings, paintingItemUrl, type SeoTheme } from "@/lib/seo-artworks";
 
 const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://mpedrosa.studio";
 
@@ -81,7 +81,7 @@ export default async function ComprarArteChilePage() {
         items={works.map((work) => ({
           name: work.alt,
           imageUrl: work.src,
-          url: `${BASE_URL}/comprar-arte-chile`,
+          url: paintingItemUrl(work.publicId, `${BASE_URL}/comprar-arte-chile`),
           description: `${work.info}. ${work.detail}`,
         }))}
       />
