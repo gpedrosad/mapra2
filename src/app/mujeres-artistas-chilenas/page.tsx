@@ -10,8 +10,20 @@ import Breadcrumbs from "../components/seo/Breadcrumbs";
 import CatalogFichaLinks, {
   DescriptiveFichaLinks,
 } from "../components/seo/CatalogFichaLinks";
+import { FaqJsonLd } from "../components/seo/GuideParts";
 import SiteHub from "../components/seo/SiteHub";
 
+
+const MUJERES_FAQS = [
+  {
+    q: "¿Esta página es el listado de pintoras chilenas?",
+    a: "No. El listado de pintoras famosas y actuales está en pintoras chilenas. Aquí el tema es más ancho: escultura, grabado, cerámica y arte visual.",
+  },
+  {
+    q: "¿Quién fue Lily Garafulic?",
+    a: "Lily Garafulic Yancovic fue escultora. Nació en Antofagasta el 14 de mayo de 1914 y murió en Santiago el 15 de marzo de 2012. Recibió el Premio Nacional de Artes Plásticas en 1995 y dirigió el Museo Nacional de Bellas Artes entre 1973 y 1977.",
+  },
+];
 
 export const metadata: Metadata = pageMetadata({
   title: 'Mujeres artistas chilenas | pintura y gres',
@@ -41,6 +53,7 @@ export default async function MujeresArtistasChilenasPage() {
 
   return (
     <main className="min-h-screen bg-[var(--background)]">
+      <FaqJsonLd faqs={MUJERES_FAQS} />
       {/* Hero Section */}
       <section className="relative py-16 sm:py-20 lg:py-24">
         <div className="mx-auto max-w-4xl px-4 sm:px-6">
@@ -50,7 +63,7 @@ export default async function MujeresArtistasChilenasPage() {
               Mujeres artistas chilenas
             </h1>
             <p className="text-xl sm:text-2xl text-ink-body mb-8 leading-relaxed">
-              Pintura, cerámica y arte visual, aparte del listado de pintoras
+              Escultura, grabado y cerámica, aparte del listado de pintoras
             </p>
           </div>
 
@@ -73,148 +86,125 @@ export default async function MujeresArtistasChilenasPage() {
         <div className="mx-auto max-w-4xl px-4 sm:px-6">
           <article className="prose prose-lg max-w-none">
             <h2 className="text-3xl font-semibold text-ink mb-6">
-              El Arte Femenino en Chile: Una Historia de Talento y Perseverancia
+              Mujeres artistas, no solo pintoras
             </h2>
 
             <p className="text-ink-body leading-relaxed mb-6">
-              Las <strong>mujeres artistas chilenas</strong> han desempeñado un papel fundamental 
-              en el desarrollo del arte nacional, aunque durante mucho tiempo su contribución fue 
-              invisibilizada o minimizada. Desde las pioneras del siglo XIX hasta las creadoras 
-              contemporáneas, las artistas mujeres han enriquecido el panorama cultural chileno con 
-              perspectivas únicas y obras de gran valor.
-            </p>
-
-            <p className="text-ink-body leading-relaxed mb-6">
-              Hoy, <strong>artistas como Marcela Pedrosa</strong> continúan esta tradición, 
-              desarrollando carreras sólidas y contribuyendo significativamente al arte visual 
-              chileno desde diversas regiones del país.
-            </p>
-
-            <h3 className="text-2xl font-semibold text-ink mt-10 mb-4">
-              Pioneras: Las Primeras Mujeres Artistas en Chile
-            </h3>
-
-            <p className="text-ink-body leading-relaxed mb-6">
-              A finales del siglo XIX y principios del XX, las <strong>mujeres artistas chilenas</strong> 
-              comenzaron a abrirse paso en un mundo artístico dominado por hombres. Algunas pioneras 
-              destacadas incluyen:
-            </p>
-
-            <div className="bg-surface rounded-xl p-6 mb-8">
-              <ul className="space-y-4 text-ink-body">
-                <li className="flex items-start">
-                  <span className="text-brand mr-2">•</span>
-                  <span><strong>Celia Castro (1860-1930):</strong> Considerada una de las primeras pintoras profesionales de Chile, conocida por sus retratos y escenas costumbristas</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-brand mr-2">•</span>
-                  <span><strong>Aurora Mira (1868-1940):</strong> Destacada retratista que logró reconocimiento en una época donde las mujeres tenían acceso limitado a la educación artística formal</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-brand mr-2">•</span>
-                  <span><strong>Henriette Petit (1894-1983):</strong> Pintora y grabadora, primera mujer en recibir el Premio Nacional de Arte en 1965</span>
-                </li>
-              </ul>
-            </div>
-
-            <p className="text-ink-body leading-relaxed mb-6">
-              Estas pioneras enfrentaron barreras significativas: acceso limitado a academias de arte, 
-              exclusión de ciertos géneros pictóricos (como el desnudo), y dificultades para exponer 
-              y vender su trabajo. Sin embargo, su perseverancia abrió camino para las generaciones 
-              siguientes.
-            </p>
-
-            <h3 className="text-2xl font-semibold text-ink mt-10 mb-4">
-              Siglo XX: Consolidación y Reconocimiento
-            </h3>
-
-            <p className="text-ink-body leading-relaxed mb-6">
-              Durante el siglo XX, las <strong>mujeres artistas chilenas</strong> ganaron mayor 
-              visibilidad y reconocimiento. Algunas figuras destacadas:
-            </p>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 my-8">
-              <div className="bg-white border border-line rounded-xl p-6">
-                <h4 className="font-semibold text-ink mb-3">Matilde Pérez (1916-2014)</h4>
-                <p className="text-ink-body text-sm">
-                  Pionera del arte cinético en América Latina. Su trabajo con luz, movimiento y 
-                  geometría la posicionó como una de las artistas más innovadoras de Chile.
-                </p>
-              </div>
-
-              <div className="bg-white border border-line rounded-xl p-6">
-                <h4 className="font-semibold text-ink mb-3">Marta Colvin (1907-1995)</h4>
-                <p className="text-ink-body text-sm">
-                  Escultora de renombre internacional. Sus obras monumentales combinan influencias 
-                  precolombinas con abstracción moderna.
-                </p>
-              </div>
-
-              <div className="bg-white border border-line rounded-xl p-6">
-                <h4 className="font-semibold text-ink mb-3">Roser Bru (1923-2021)</h4>
-                <p className="text-ink-body text-sm">
-                  Pintora y grabadora catalano-chilena. Su obra aborda temas de memoria, exilio 
-                  y derechos humanos con profunda sensibilidad.
-                </p>
-              </div>
-
-              <div className="bg-white border border-line rounded-xl p-6">
-                <h4 className="font-semibold text-ink mb-3">Gracia Barrios (1927-2020)</h4>
-                <p className="text-ink-body text-sm">
-                  Pintora expresionista abstracta. Premio Nacional de Artes Plásticas 2011. 
-                  Su trabajo explora color, gesto y emoción.
-                </p>
-              </div>
-            </div>
-
-            <h3 className="text-2xl font-semibold text-ink mt-10 mb-4">
-              Mujeres Artistas Chilenas Contemporáneas
-            </h3>
-
-            <p className="text-ink-body leading-relaxed mb-6">
-              En el siglo XXI, las <strong>mujeres artistas chilenas</strong> han alcanzado una 
-              presencia significativa en el panorama artístico nacional e internacional. Trabajan 
-              en diversas disciplinas: pintura, escultura, instalación, video arte, performance y 
-              más.
-            </p>
-
-            <p className="text-ink-body leading-relaxed mb-6">
-              Artistas contemporáneas como <strong>Marcela Pedrosa</strong> representan esta nueva 
-              generación: profesionales consolidadas que desarrollan carreras sólidas, exhiben en 
-              galerías, venden su trabajo y contribuyen al desarrollo cultural de sus regiones.
-            </p>
-
-            <p className="text-ink-body leading-relaxed mb-6">
-              En pintura, el hilo de las{" "}
+              Las <strong>mujeres artistas chilenas</strong> de esta página no son
+              el listado de pintoras. Ese recorrido, famosas y actuales, está en{" "}
               <Link href="/pintoras-chilenas" className="text-brand underline">
                 pintoras chilenas
+              </Link>
+              . Aquí el mapa es más ancho: escultura, grabado, cerámica y arte
+              visual, solo con datos que el sitio ya publica en un perfil.
+            </p>
+
+            <h2
+              id="escultura"
+              className="text-3xl font-semibold text-ink mt-10 mb-6"
+            >
+              Escultura
+            </h2>
+
+            <p id="lily-garafulic" className="text-ink-body leading-relaxed mb-6">
+              <Link href="/artistas-chilenas/lily-garafulic" className="text-brand underline">
+                Lily Garafulic
               </Link>{" "}
-              recorre a las pioneras y a quienes trabajan hoy, incluida Marcela
-              Pedrosa desde Concepción. Esta página no compite con ese listado:
-              aquí el tema es más ancho, pintura y también cerámica y arte visual.
-              Los perfiles con fuente están en{" "}
+              Yancovic es escultora, no pintora de caballete. Nació en
+              Antofagasta el 14 de mayo de 1914 y murió en Santiago el 15 de
+              marzo de 2012. El Museo Nacional de Bellas Artes la sitúa, junto a
+              Rebeca Matte y Marta Colvin, entre las tres escultoras más
+              importantes del país. Recibió el Premio Nacional de Artes
+              Plásticas en 1995 y dirigió ese museo entre 1973 y 1977. La
+              Facultad de Artes la señala como la primera mujer en el cargo.
+              Estudió escultura con Lorenzo Domínguez, conoció la obra de
+              Constantin Brancusi, trabajó el mosaico en Rávena y el grabado en
+              el Atelier 17 de William Hayter.
+            </p>
+
+            <p className="text-ink-body leading-relaxed mb-6">
+              En el mismo mapa, con perfil propio,{" "}
+              <Link href="/artistas-chilenas/magdalena-mira" className="text-brand underline">
+                Magdalena Mira
+              </Link>{" "}
+              es pintora y escultora (1859-1930), y{" "}
+              <Link href="/artistas-chilenas/matilde-perez" className="text-brand underline">
+                Matilde Pérez
+              </Link>{" "}
+              es pintora, escultora y artista cinética (1916-2014). Sus biografías
+              de pintura no se repiten aquí: están en{" "}
+              <Link href="/pintoras-chilenas" className="text-brand underline">
+                pintoras chilenas
+              </Link>
+              .
+            </p>
+
+            <h2
+              id="grabado"
+              className="text-3xl font-semibold text-ink mt-10 mb-6"
+            >
+              Grabado
+            </h2>
+
+            <p className="text-ink-body leading-relaxed mb-6">
+              <Link href="/artistas-chilenas/roser-bru" className="text-brand underline">
+                Roser Bru
+              </Link>{" "}
+              (1923-2021) es pintora y grabadora. Nació en Barcelona, llegó a
+              Chile en el Winnipeg y se especializó en grabado en el Taller 99.
+              Recibió el Premio Nacional de Artes Plásticas en 2015. Lily
+              Garafulic, además de la escultura, estudió grabado en Nueva York.
+              El listado de quien pinta, sin el oficio del grabado, sigue en{" "}
+              <Link href="/pintoras-chilenas" className="text-brand underline">
+                pintoras chilenas
+              </Link>
+              .
+            </p>
+
+            <h2
+              id="ceramica"
+              className="text-3xl font-semibold text-ink mt-10 mb-6"
+            >
+              Cerámica
+            </h2>
+
+            <p className="text-ink-body leading-relaxed mb-6">
+              En Concepción, Marcela Pedrosa trabaja cerámica artística en gres
+              además del óleo. Las piezas del taller se consultan en{" "}
+              <Link href="/ceramica-artistica-concepcion" className="text-brand underline">
+                cerámica artística en Concepción
+              </Link>{" "}
+              y en{" "}
+              <Link href="/esculturas" className="text-brand underline">
+                cerámica gres
+              </Link>
+              . El sitio no tiene fichas de otras ceramistas, así que aquí no
+              se agregan nombres.
+            </p>
+
+            <h2 className="text-3xl font-semibold text-ink mt-10 mb-6">
+              Dónde sigue la pintura
+            </h2>
+
+            <p className="text-ink-body leading-relaxed mb-6">
+              Castro, las hermanas Mira, Petit, Barrios, Bru, Aldunate y Pedrosa,
+              leídas como pintoras, están en{" "}
+              <Link href="/pintoras-chilenas#pintoras-chilenas-famosas" className="text-brand underline">
+                pintoras chilenas famosas
+              </Link>{" "}
+              y en{" "}
+              <Link href="/pintoras-chilenas#pintoras-chilenas-actuales" className="text-brand underline">
+                pintoras chilenas actuales
+              </Link>
+              . Los perfiles, uno por persona, viven en{" "}
               <Link href="/artistas-chilenas" className="text-brand underline">
                 artistas chilenas
               </Link>
-              :{" "}
-              <Link href="/artistas-chilenas/celia-castro" className="text-brand underline">Celia Castro</Link>,{" "}
-              <Link href="/artistas-chilenas/magdalena-mira" className="text-brand underline">Magdalena Mira</Link>,{" "}
-              <Link href="/artistas-chilenas/aurora-mira" className="text-brand underline">Aurora Mira</Link>,{" "}
-              <Link href="/artistas-chilenas/henriette-petit" className="text-brand underline">Henriette Petit</Link>,{" "}
-              <Link href="/artistas-chilenas/camilo-mori" className="text-brand underline">Camilo Mori</Link>,{" "}
-              <Link href="/artistas-chilenas/lily-garafulic" className="text-brand underline">Lily Garafulic</Link>,{" "}
-              <Link href="/artistas-chilenas/matilde-perez" className="text-brand underline">Matilde Pérez</Link>,{" "}
-              <Link href="/artistas-chilenas/gracia-barrios" className="text-brand underline">Gracia Barrios</Link>,{" "}
-              <Link href="/artistas-chilenas/roser-bru" className="text-brand underline">Roser Bru</Link>,{" "}
-              <Link href="/artistas-chilenas/carmen-aldunate" className="text-brand underline">Carmen Aldunate</Link>,{" "}
-              <Link href="/artistas-chilenas/totoy-zamudio" className="text-brand underline">Totoy Zamudio</Link>{" "}
-              y{" "}
-              <Link href="/artistas-chilenas/pintoras-chilenas-contemporaneas" className="text-brand underline">
-                Barrios, Bru, Pérez y Aldunate
-              </Link>
-              . Los retratos al óleo de Marcela están en{" "}
-              <Link href="/retratos-al-oleo" className="text-brand underline">retratos al óleo</Link>.
-              Para elegir una tela de Marcela, mira{" "}
+              .
+            </p>
+
+            <p className="text-ink-body leading-relaxed mb-6">
+              Para una tela de Marcela, mira{" "}
               <Link href="/cuadros" className="text-brand underline">cuadros</Link>,{" "}
               <Link href="/comprar-arte-chile" className="text-brand underline">
                 comprar arte en Chile
@@ -461,6 +451,31 @@ export default async function MujeresArtistasChilenasPage() {
               </ul>
             </div>
           </article>
+
+            <h2 className="text-2xl font-semibold text-ink mt-10 mb-4">
+              Preguntas frecuentes
+            </h2>
+            <div className="space-y-4 my-8">
+              {MUJERES_FAQS.map((faq) => (
+                <div key={faq.q} className="bg-white border border-line rounded-xl p-6">
+                  <h3 className="font-semibold text-ink mb-2">{faq.q}</h3>
+                  <p className="text-ink-body text-sm">
+                    {faq.q.startsWith("¿Esta") ? (
+                      <>
+                        No. El listado de pintoras famosas y actuales está en{" "}
+                        <Link href="/pintoras-chilenas" className="text-brand underline">
+                          pintoras chilenas
+                        </Link>
+                        . Aquí el tema es más ancho: escultura, grabado, cerámica
+                        y arte visual.
+                      </>
+                    ) : (
+                      faq.a
+                    )}
+                  </p>
+                </div>
+              ))}
+            </div>
 
           {/* Enlaces relacionados */}
           <div className="mt-12 pt-8 border-t border-line">

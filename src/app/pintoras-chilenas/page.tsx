@@ -46,7 +46,7 @@ const faqSchema = {
       name: "¿Quiénes son las pintoras chilenas más importantes de la historia?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Celia Castro y Aurora Mira en el siglo XIX; Henriette Petit (primera mujer Premio Nacional de Arte), Matilde Pérez, Roser Bru y Gracia Barrios en el siglo XX, entre muchas otras.",
+        text: "En los perfiles de este sitio: Celia Castro y las hermanas Mira en el siglo XIX; Henriette Petit, Matilde Pérez, Gracia Barrios (Premio Nacional de Artes Plásticas 2011), Roser Bru (Premio Nacional de Artes Plásticas 2015) y Carmen Aldunate en el siglo XX.",
       },
     },
     {
@@ -54,7 +54,7 @@ const faqSchema = {
       name: "¿Qué pintoras chilenas contemporáneas están activas hoy?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Hay pintoras chilenas actuales en todo el país. En la Región del Biobío, Marcela Pedrosa pinta óleo sobre tela e impresionismo figurativo.",
+        text: "De quien pinta hoy, este sitio documenta a Marcela Pedrosa en Concepción, con óleo sobre tela e impresionismo figurativo. Carmen Aldunate falleció en 2026: queda entre las famosas, no entre las actuales.",
       },
     },
     {
@@ -86,7 +86,7 @@ const faqSchema = {
       name: "¿Dónde ver pintoras chilenas famosas y actuales?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Las famosas de este recorrido son Castro, las hermanas Mira, Petit, Pérez, Barrios, Bru y Aldunate. De las actuales, el sitio presenta a Marcela Pedrosa en Concepción. Los perfiles con fuente están en la serie de artistas chilenas.",
+        text: "Las famosas con perfil son Castro, las hermanas Mira, Petit, Pérez, Barrios, Bru y Aldunate. De las actuales, el sitio presenta a Marcela Pedrosa en Concepción. Los perfiles con fuente están en artistas chilenas.",
       },
     },
   ],
@@ -135,85 +135,133 @@ export default async function PintorasChilenasPage() {
       <section className="py-12 sm:py-16">
         <div className="mx-auto max-w-4xl px-4 sm:px-6">
           <article className="prose prose-lg max-w-none">
-            <h2 className="text-3xl font-semibold text-ink mb-6">
-              Pintoras chilenas famosas y actuales
+            <h2
+              id="pintoras-chilenas-famosas"
+              className="text-3xl font-semibold text-ink mb-6"
+            >
+              Pintoras chilenas famosas
             </h2>
 
             <p className="text-ink-body leading-relaxed mb-6">
-              Las <strong>pintoras chilenas</strong> han construido una de las
-              tradiciones pictóricas más ricas de América Latina, aunque su
-              aporte fue durante décadas menos visible que el de sus pares
-              hombres. Desde las primeras alumnas de la Academia de Pintura en
-              el siglo XIX hasta las creadoras contemporáneas, la pintura
-              chilena hecha por mujeres ha aportado una mirada única sobre el
-              paisaje, el retrato y la identidad nacional.
-            </p>
-
-            <p className="text-ink-body leading-relaxed mb-6">
-              Hoy, esta tradición continúa viva en todas las regiones del país.
-              Artistas como <strong>Marcela Pedrosa</strong>, pintora de
-              Concepción, Región del Biobío, son herederas directas de este
-              legado y lo proyectan hacia el futuro con obras originales en{" "}
-              <strong>óleo sobre tela</strong>.
-            </p>
-
-            <p className="text-ink-body leading-relaxed mb-6">
               Las <strong>pintoras chilenas famosas</strong> de este recorrido
-              son{" "}
-              <Link href="/artistas-chilenas/celia-castro" className="text-brand underline">
-                Celia Castro
-              </Link>
-              ,{" "}
-              <Link href="/artistas-chilenas/aurora-mira" className="text-brand underline">
-                Aurora Mira
-              </Link>{" "}
-              y{" "}
-              <Link href="/artistas-chilenas/magdalena-mira" className="text-brand underline">
-                Magdalena Mira
-              </Link>
-              , y en el siglo XX{" "}
-              <Link href="/artistas-chilenas/henriette-petit" className="text-brand underline">
-                Henriette Petit
-              </Link>
-              ,{" "}
-              <Link href="/artistas-chilenas/matilde-perez" className="text-brand underline">
-                Matilde Pérez
-              </Link>
-              ,{" "}
-              <Link href="/artistas-chilenas/gracia-barrios" className="text-brand underline">
-                Gracia Barrios
-              </Link>
-              ,{" "}
-              <Link href="/artistas-chilenas/roser-bru" className="text-brand underline">
-                Roser Bru
-              </Link>{" "}
-              y{" "}
-              <Link href="/artistas-chilenas/carmen-aldunate" className="text-brand underline">
-                Carmen Aldunate
-              </Link>
-              . Las <strong>pintoras chilenas actuales</strong> siguen
-              en regiones: en Concepción, Marcela Pedrosa pinta fachadas y
-              bosques del Biobío. Los perfiles, con la fuente de cada dato, están
-              en{" "}
+              son las que ya tienen perfil con fuente. No es un ranking: es el
+              grupo que el sitio puede nombrar sin inventar una biografía.
+            </p>
+
+            <ul className="space-y-3 text-ink-body mb-8 list-disc pl-5">
+              <li>
+                <Link href="/artistas-chilenas/celia-castro" className="text-brand underline">
+                  Celia Castro
+                </Link>{" "}
+                (1860-1930), de Quillota. Una de las primeras profesionales del
+                país y la primera mujer pensionada por el Estado para estudiar
+                arte en Europa.
+              </li>
+              <li>
+                <Link href="/artistas-chilenas/magdalena-mira" className="text-brand underline">
+                  Magdalena Mira
+                </Link>{" "}
+                (1859-1930), pintora y escultora de Santiago. Medalla de oro en
+                1884 por La hermana de la caridad.
+              </li>
+              <li>
+                <Link href="/artistas-chilenas/aurora-mira" className="text-brand underline">
+                  Aurora Mira
+                </Link>{" "}
+                (1863-1939), pintora de Santiago y hermana de Magdalena.
+                Retratos, flores y bodegones, y medallas en los salones
+                oficiales.
+              </li>
+              <li>
+                <Link href="/artistas-chilenas/henriette-petit" className="text-brand underline">
+                  Henriette Petit
+                </Link>{" "}
+                (1894-1983), de Santiago, cofundadora del Grupo Montparnasse.
+              </li>
+              <li>
+                <Link href="/artistas-chilenas/matilde-perez" className="text-brand underline">
+                  Matilde Pérez
+                </Link>{" "}
+                (1916-2014), pintora y artista cinética. Investigó el movimiento
+                en Chile y en París.
+              </li>
+              <li>
+                <Link href="/artistas-chilenas/gracia-barrios" className="text-brand underline">
+                  Gracia Barrios
+                </Link>{" "}
+                (1927-2020), del Grupo Signo. Premio Nacional de Artes Plásticas
+                2011.
+              </li>
+              <li>
+                <Link href="/artistas-chilenas/roser-bru" className="text-brand underline">
+                  Roser Bru
+                </Link>{" "}
+                (1923-2021), pintora y grabadora. Llegó a Chile en el Winnipeg y
+                recibió el Premio Nacional de Artes Plásticas en 2015.
+              </li>
+              <li>
+                <Link href="/artistas-chilenas/carmen-aldunate" className="text-brand underline">
+                  Carmen Aldunate
+                </Link>{" "}
+                (1940-2026), pintora y dibujante de figuración simbólica. El
+                Museo Nacional de Bellas Artes confirmó su fallecimiento el 25
+                de septiembre de 2026.
+              </li>
+            </ul>
+
+            <p className="text-ink-body leading-relaxed mb-6">
+              Cada dato está en el perfil, dentro de{" "}
               <Link href="/artistas-chilenas" className="text-brand underline">
                 artistas chilenas
               </Link>
-              . El recorte de Barrios, Bru, Pérez y Aldunate está en{" "}
+              . Barrios, Bru, Pérez y Aldunate, leídas juntas, están en{" "}
               <Link
                 href="/artistas-chilenas/pintoras-chilenas-contemporaneas"
                 className="text-brand underline"
               >
                 esos cuatro perfiles
               </Link>
-              . El marco más amplio, el de las{" "}
-              <Link
-                href="/mujeres-artistas-chilenas"
-                className="text-brand underline"
-              >
-                artistas chilenas, mujeres pintoras
+              . Quien busque escultura, grabado o cerámica —y no solo pintura—
+              sigue en{" "}
+              <Link href="/mujeres-artistas-chilenas" className="text-brand underline">
+                mujeres artistas chilenas
               </Link>
-              , está en la página de mujeres artistas chilenas. Para ver obra
-              de Marcela, entra a{" "}
+              .
+            </p>
+
+            <h2
+              id="artistas-chilenas-mujeres-pintoras"
+              className="text-3xl font-semibold text-ink mt-10 mb-6"
+            >
+              Artistas chilenas, mujeres pintoras
+            </h2>
+
+            <p className="text-ink-body leading-relaxed mb-6">
+              <strong>Artistas chilenas mujeres pintoras</strong>, en esta
+              página, son Castro, las hermanas Mira, Petit, Pérez, Barrios, Bru,
+              Aldunate y Marcela Pedrosa. El enlace de cada nombre está en la
+              lista de arriba. Camilo Mori y Totoy Zamudio también tienen
+              perfil en el sitio, y son pintores: no entran en este grupo.
+            </p>
+
+            <h2
+              id="pintoras-chilenas-actuales"
+              className="text-3xl font-semibold text-ink mt-10 mb-6"
+            >
+              Pintoras chilenas actuales
+            </h2>
+
+            <p className="text-ink-body leading-relaxed mb-6">
+              De las <strong>pintoras chilenas actuales</strong>, este sitio
+              documenta a <strong>Marcela Pedrosa</strong>, que pinta hoy en
+              Concepción, Región del Biobío: fachadas y bosques en óleo sobre
+              tela e impresionismo figurativo. Aldunate, Barrios, Bru y Pérez
+              pertenecen al recorrido de las famosas. Aldunate falleció el 25 de
+              septiembre de 2026, así que no queda entre quienes trabajan hoy.
+            </p>
+
+            <p className="text-ink-body leading-relaxed mb-6">
+              Para ver esas telas, entra a{" "}
               <Link href="/cuadros" className="text-brand underline">
                 cuadros al óleo
               </Link>{" "}
@@ -246,25 +294,26 @@ export default async function PintorasChilenasPage() {
                 <li className="flex items-start">
                   <span className="text-brand mr-2">•</span>
                   <span>
-                    <strong>Celia Castro (1860-1930):</strong> Primera pintora
-                    profesional de Chile, becada para estudiar en Europa. Se
-                    especializó en retratos y escenas costumbristas.
+                    <strong>Celia Castro (1860-1930):</strong> Pintora de
+                    Quillota, una de las primeras profesionales del país y la
+                    primera mujer pensionada por el Estado para estudiar arte
+                    en Europa.
                   </span>
                 </li>
                 <li className="flex items-start">
                   <span className="text-brand mr-2">•</span>
                   <span>
-                    <strong>Aurora Mira (1868-1940):</strong> Retratista
-                    destacada, una de las primeras mujeres en recibir premios en
-                    salones oficiales chilenos.
+                    <strong>Aurora Mira (1863-1939):</strong> Pintora de
+                    Santiago, hermana de Magdalena. Retratos, flores y
+                    bodegones, y medallas en los salones oficiales.
                   </span>
                 </li>
                 <li className="flex items-start">
                   <span className="text-brand mr-2">•</span>
                   <span>
-                    <strong>Magdalena Mira (1859-1930):</strong> Hermana de
-                    Aurora, reconocida por su obra de tema familiar y su
-                    temprana presencia en exposiciones internacionales.
+                    <strong>Magdalena Mira (1859-1930):</strong> Pintora y
+                    escultora de Santiago, hermana de Aurora. Medalla de oro en
+                    1884 por La hermana de la caridad.
                   </span>
                 </li>
               </ul>
@@ -281,10 +330,10 @@ export default async function PintorasChilenasPage() {
             </h3>
 
             <p className="text-ink-body leading-relaxed mb-6">
-              Durante el siglo XX, las <strong>pintoras chilenas</strong>{" "}
-              alcanzaron reconocimiento nacional e internacional. Henriette
-              Petit se convirtió en 1965 en la primera mujer en recibir el
-              Premio Nacional de Arte. Otras figuras imprescindibles:
+              En el siglo XX el sitio documenta a Henriette Petit, cofundadora
+              del Grupo Montparnasse, y a quienes recibieron el Premio Nacional
+              de Artes Plásticas con ficha propia: Gracia Barrios en 2011 y
+              Roser Bru en 2015.
             </p>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 my-8">
@@ -326,8 +375,9 @@ export default async function PintorasChilenasPage() {
                   Carmen Aldunate (1940)
                 </h4>
                 <p className="text-ink-body text-sm">
-                  Pintora de figuración simbólica con sello inconfundible: sus
-                  mujeres de cuello alargado son un ícono del arte chileno.
+                  Pintora y dibujante de figuración simbólica. Nació en Viña del
+                  Mar en 1940. El Museo Nacional de Bellas Artes confirmó su
+                  fallecimiento el 25 de septiembre de 2026.
                 </p>
               </div>
             </div>
@@ -381,23 +431,18 @@ export default async function PintorasChilenasPage() {
             </div>
 
             <h3 className="text-2xl font-semibold text-ink mt-10 mb-4">
-              Pintoras Chilenas Contemporáneas: La Escena Actual
+              Del siglo XX al taller de hoy
             </h3>
 
             <p className="text-ink-body leading-relaxed mb-6">
-              En el siglo XXI, las <strong>pintoras chilenas
-              contemporáneas</strong> trabajan con libertad temática y técnica,
-              exhiben en galerías y museos, y venden su obra a coleccionistas en
-              Chile y el extranjero. El auge de las ventas online y las redes
-              sociales ha permitido a las artistas de regiones llegar
-              directamente a compradores de todo el mundo.
-            </p>
-
-            <p className="text-ink-body leading-relaxed mb-6">
-              La escena no se concentra solo en Santiago: ciudades como
-              Valparaíso, Valdivia, Temuco y <strong>Concepción</strong> albergan
-              activas comunidades de pintoras que desarrollan carreras sólidas
-              desde regiones.
+              Barrios, Bru, Pérez y Aldunate tienen obra en la segunda mitad del
+              siglo XX y, en el caso de Aldunate, hasta 2026. Ese recorte no es
+              la lista de{" "}
+              <a href="#pintoras-chilenas-actuales" className="text-brand underline">
+                pintoras chilenas actuales
+              </a>
+              . Quien pinta hoy, en este sitio, es Marcela Pedrosa desde
+              Concepción.
             </p>
 
             <h3 className="text-2xl font-semibold text-ink mt-10 mb-4">
@@ -406,12 +451,11 @@ export default async function PintorasChilenasPage() {
 
             <p className="text-ink-body leading-relaxed mb-6">
               <strong>Marcela Pedrosa</strong> es una <strong>pintora
-              chilena</strong> contemporánea radicada en Concepción, Región del
-              Biobío. Con más de 20 años de trayectoria, se especializa en{" "}
+              chilena</strong> que trabaja en Concepción, Región del Biobío. Con
+              más de 20 años de trayectoria, pinta{" "}
               <strong>óleo sobre tela</strong> e <strong>impresionismo
-              figurativo</strong>, pintando fachadas, bosques y atmósferas del
-              sur de Chile. Su trabajo la posiciona como una de las pintoras
-              activas más destacadas del Biobío.
+              figurativo</strong>: fachadas, bosques y atmósferas del sur de
+              Chile.
             </p>
 
             <div className="bg-surface rounded-xl p-6 mb-8">
@@ -518,9 +562,11 @@ export default async function PintorasChilenasPage() {
                   ¿Quiénes son las pintoras chilenas más importantes de la historia?
                 </h4>
                 <p className="text-ink-body text-sm">
-                  Celia Castro y Aurora Mira en el siglo XIX; Henriette Petit
-                  (primera mujer Premio Nacional de Arte), Matilde Pérez, Roser
-                  Bru y Gracia Barrios en el siglo XX, entre muchas otras.
+                  En los perfiles de este sitio: Celia Castro y las hermanas Mira
+                  en el siglo XIX; Henriette Petit, Matilde Pérez, Gracia
+                  Barrios (Premio Nacional de Artes Plásticas 2011), Roser Bru
+                  (Premio Nacional de Artes Plásticas 2015) y Carmen Aldunate en
+                  el siglo XX.
                 </p>
               </div>
 
@@ -529,9 +575,10 @@ export default async function PintorasChilenasPage() {
                   ¿Qué pintoras chilenas contemporáneas están activas hoy?
                 </h4>
                 <p className="text-ink-body text-sm">
-                  Hay pintoras chilenas actuales en todo el país. En la Región
-                  del Biobío, Marcela Pedrosa pinta óleo sobre tela e
-                  impresionismo figurativo.
+                  De quien pinta hoy, este sitio documenta a Marcela Pedrosa en
+                  Concepción, con óleo sobre tela e impresionismo figurativo.
+                  Carmen Aldunate falleció en 2026: queda entre las famosas, no
+                  entre las actuales.
                 </p>
               </div>
 
@@ -577,10 +624,10 @@ export default async function PintorasChilenasPage() {
                   ¿Dónde ver pintoras chilenas famosas y actuales?
                 </h4>
                 <p className="text-ink-body text-sm">
-                  Las famosas de este recorrido son Castro, las hermanas Mira,
-                  Petit, Pérez, Barrios, Bru y Aldunate. De las actuales, el
-                  sitio presenta a Marcela Pedrosa en Concepción. Los perfiles
-                  con fuente están en la serie de{" "}
+                  Las famosas con perfil son Castro, las hermanas Mira, Petit,
+                  Pérez, Barrios, Bru y Aldunate. De las actuales, el sitio
+                  presenta a Marcela Pedrosa en Concepción. Los perfiles con
+                  fuente están en{" "}
                   <Link href="/artistas-chilenas" className="text-brand underline">
                     artistas chilenas
                   </Link>

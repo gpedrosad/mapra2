@@ -60,3 +60,10 @@ Formato: `YYYY-MM-DD | tema | hecho | acción/implicación`
 - SEO | Inspección URL: indexada `/pintoras-chilenas` (crawl 2026-09-18). Unknown: `/guias`, `/artistas-chilenas`, `/cuadros`, `/comprar-arte-chile`, `/pinturas/casas-dia-y-noche`, `/pinturas/laguna-cordillera-atardecer` | `pendiente:` reenviar sitemap y Request indexing (OAuth solo lectura)
 - SEO | Prod: `/pinturas/c13` 301 → `/pinturas/casas-dia-y-noche` 200. Sitemap sin `c13`, con el slug descriptivo y con laguna. 74 URLs | No reabrir. El JSON del repo sigue en `c13_iqxkyv`; la laguna entra si el build lee el publicId vivo
 - SEO | Lote 2026-10-19: snippets sin cambiar el canonical de `/pintoras-chilenas`. Enlaces con nombre hacia casas, elefante y laguna (esta solo si el catálogo la genera). Cada ficha enlaza los cuatro hubs unknown. Sin página nueva | Doc `docs/seo-lote-2026-10-19.md`
+
+## 2026-10-20
+
+- GSC | Brief del lote (dato hasta 2026-10-18): 90d 8 clics, 233 imp, CTR 3,4 %, pos 10,0. Últimos 7 días: 2 clics, 16 imp, CTR 12,5 %, pos 24,1. Previos: 1 clic, 17 imp, pos 14,5 | `/pintoras-chilenas` 4c/160i pos 7,6. `/mujeres-artistas-chilenas` cae a pos 29 en 7d
+- SEO | Inspección URL: unknown por 4.º día `/guias`, `/artistas-chilenas`, `/cuadros`, `/comprar-arte-chile`, `/pinturas/casas-dia-y-noche`. Sitemap GSC descargado 2026-10-16, 22 URLs; live 74 | `pendiente:` reenviar sitemap y Request indexing (OAuth solo lectura)
+- SEO | Prod 2026-10-20: esas cinco URLs responden 200, canonical propio, `index, follow`, en sitemap con lastmod. Enlaces `<a href>` en el HTML de `/pintoras-chilenas`, `/mujeres-artistas-chilenas`, `/oleo-sobre-tela-chile` y `/pinturas/elefante`. Sin bloqueo técnico | `Disallow: /imagenes` se mantiene: panel interno con noindex, no las fotos de obra
+- SEO | Lote 2026-10-20: H2 famosas/actuales en `/pintoras-chilenas` con datos de los perfiles. `/mujeres-artistas-chilenas` pasa a escultura, grabado y cerámica, con Lily Garafulic. Fichas reales en óleo e impresionismo. Titles y canonical intactos. Sin página nueva | Doc `docs/seo-lote-2026-10-20.md`
