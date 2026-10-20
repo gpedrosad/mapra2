@@ -5,7 +5,10 @@ import Footer from "../components/Footer";
 import WhatsAppButton from "../components/WhatsAppButton";
 import { getSiteImageUrl } from "@/lib/cloudinary";
 import { getManagedImageUrl } from "@/lib/managed-image-store";
+import { listCatalogArtworks, type CatalogArtwork } from "@/lib/artworks";
 import { pageMetadata } from "@/lib/metadata";
+import { CONTACT_EMAIL, CONTACT_PHONE } from "@/lib/site";
+import ArtworkCards from "../components/seo/ArtworkCards";
 import Breadcrumbs from "../components/seo/Breadcrumbs";
 import CatalogFichaLinks, {
   DescriptiveFichaLinks,
@@ -54,6 +57,20 @@ export default async function ImpresionismoFigurativoChilePage() {
   const heroImageUrl =
     (await getManagedImageUrl("pages.impresionismo.hero")) ||
     getSiteImageUrl("bosque");
+  const works = await listCatalogArtworks();
+  const styleSlugs = [
+    "casas-dia-y-noche",
+    "ciudad-casas-de-colores",
+    "laguna-cordillera-atardecer",
+    "bosque-troncos-luz",
+    "bosque-troncos-de-colores",
+    "grupo-de-figuras",
+    "figura-recostada",
+    "retrato-de-mujer",
+  ];
+  const styleWorks = styleSlugs
+    .map((slug) => works.find((work) => work.slug === slug))
+    .filter((work): work is CatalogArtwork => Boolean(work));
 
   return (
     <main className="min-h-screen bg-[var(--background)]">
@@ -97,6 +114,30 @@ export default async function ImpresionismoFigurativoChilePage() {
               El <strong>impresionismo figurativo</strong> actual, en este sitio, es el modo en que
               Marcela Pedrosa pinta hoy en Concepción: formas reconocibles, luz y color, en óleo sobre tela.
               Junta la pincelada suelta con figuras, fachadas y bosques que se pueden nombrar.
+            </p>
+
+            <h2
+              id="pintores-impresionistas-actuales"
+              className="text-3xl font-semibold text-ink mt-10 mb-6"
+            >
+              Pintores impresionistas actuales
+            </h2>
+            <p className="text-ink-body leading-relaxed mb-6">
+              Quien busca <strong>pintores impresionistas actuales</strong>{" "}
+              encuentra aquí una práctica vigente: Marcela Pedrosa pinta hoy en
+              Concepción. Este sitio no lista a otros pintores en actividad. El
+              antecedente chileno de pincelada suelta está en la guía{" "}
+              <Link
+                href="/guias/que-es-el-impresionismo-figurativo"
+                className="text-brand underline"
+              >
+                qué es el impresionismo figurativo
+              </Link>
+              , y la técnica, en{" "}
+              <Link href="/oleo-sobre-tela-chile" className="text-brand underline">
+                óleos sobre tela
+              </Link>
+              .
             </p>
 
             <p className="text-ink-body leading-relaxed mb-6">
@@ -395,6 +436,31 @@ export default async function ImpresionismoFigurativoChilePage() {
               asegura que el impresionismo figurativo seguirá siendo una corriente vital en el 
               panorama artístico chileno.
             </p>
+
+            <h2
+              id="obras-de-impresionismo-figurativo"
+              className="text-3xl font-semibold text-ink mt-10 mb-6"
+            >
+              Obras de impresionismo figurativo
+            </h2>
+            <p className="text-ink-body leading-relaxed mb-6">
+              Fachadas, bosques y figura del catálogo. La consulta va por
+              WhatsApp al {CONTACT_PHONE} o por correo a{" "}
+              <a href={`mailto:${CONTACT_EMAIL}`} className="text-brand underline">
+                {CONTACT_EMAIL}
+              </a>
+              . Las medidas publicadas están en{" "}
+              <Link href="/oleo-sobre-tela-chile#oleos-sobre-tela-publicados" className="text-brand underline">
+                óleos sobre tela
+              </Link>
+              . Por motivo:{" "}
+              <Link href="/figuras-al-oleo" className="text-brand underline">figuras</Link>,{" "}
+              <Link href="/retratos-al-oleo" className="text-brand underline">retratos</Link>,{" "}
+              <Link href="/pintura-de-bosques" className="text-brand underline">bosques</Link>{" "}
+              y{" "}
+              <Link href="/pintura-de-ciudad" className="text-brand underline">ciudad</Link>.
+            </p>
+            <ArtworkCards works={styleWorks} />
 
             <h2 className="text-2xl font-semibold text-ink mt-10 mb-4">
               Impresionismo figurativo: fachadas, bosques y figura

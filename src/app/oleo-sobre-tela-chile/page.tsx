@@ -5,7 +5,10 @@ import Footer from "../components/Footer";
 import WhatsAppButton from "../components/WhatsAppButton";
 import { getSiteImageUrl } from "@/lib/cloudinary";
 import { getManagedImageUrl } from "@/lib/managed-image-store";
+import { listCatalogArtworks } from "@/lib/artworks";
 import { pageMetadata } from "@/lib/metadata";
+import { CONTACT_EMAIL, CONTACT_PHONE } from "@/lib/site";
+import ArtworkCards from "../components/seo/ArtworkCards";
 import Breadcrumbs from "../components/seo/Breadcrumbs";
 import CatalogFichaLinks, {
   DescriptiveFichaLinks,
@@ -54,6 +57,7 @@ export default async function OleoSobreTelaChilePage() {
   const heroImageUrl =
     (await getManagedImageUrl("pages.oleo.hero")) ||
     getSiteImageUrl("mujer");
+  const measured = (await listCatalogArtworks()).filter((work) => work.measure);
 
   return (
     <main className="min-h-screen bg-[var(--background)]">
@@ -365,6 +369,27 @@ export default async function OleoSobreTelaChilePage() {
               Sus obras en <strong>óleo sobre tela</strong> forman parte de colecciones privadas en 
               Chile y el extranjero, testimonio de la calidad técnica y el valor artístico de su trabajo.
             </p>
+
+            <h2
+              id="oleos-sobre-tela-publicados"
+              className="text-3xl font-semibold text-ink mt-10 mb-6"
+            >
+              Óleos sobre tela publicados
+            </h2>
+            <p className="text-ink-body leading-relaxed mb-6">
+              Estas fichas traen la medida en el catálogo. El precio no está en
+              la página: se consulta por WhatsApp al {CONTACT_PHONE} o por
+              correo a{" "}
+              <a href={`mailto:${CONTACT_EMAIL}`} className="text-brand underline">
+                {CONTACT_EMAIL}
+              </a>
+              . El mismo óleo, leído como estilo, está en{" "}
+              <Link href="/impresionismo-figurativo-chile" className="text-brand underline">
+                impresionismo figurativo
+              </Link>
+              .
+            </p>
+            <ArtworkCards works={measured} />
 
             <h2 className="text-2xl font-semibold text-ink mt-10 mb-4">
               Preguntas sobre el óleo sobre tela
