@@ -3,14 +3,34 @@ import Image from "next/image";
 import Link from "next/link";
 import Footer from "../components/Footer";
 import WhatsAppButton from "../components/WhatsAppButton";
+import { listCatalogArtworks } from "@/lib/artworks";
 import { getSiteImageUrl } from "@/lib/cloudinary";
 import { getManagedImageUrl } from "@/lib/managed-image-store";
 import { pageMetadata } from "@/lib/metadata";
+import { absoluteUrl, CONTACT_EMAIL, CONTACT_PHONE } from "@/lib/site";
+import ArtworkCards from "../components/seo/ArtworkCards";
 import Breadcrumbs from "../components/seo/Breadcrumbs";
 import CatalogFichaLinks, {
   DescriptiveFichaLinks,
 } from "../components/seo/CatalogFichaLinks";
+import { FaqJsonLd } from "../components/seo/GuideParts";
+import ItemListJsonLd from "../components/seo/ItemListJsonLd";
 import SiteHub from "../components/seo/SiteHub";
+
+const BIOBIO_FAQS = [
+  {
+    q: "¿Cómo se consulta una obra de Marcela Pedrosa?",
+    a: "Se elige una pintura de la galería y se escribe por WhatsApp al +56 9 5618 9912 o por correo a contacto@marcelapedrosa.com. El envío se coordina en esa conversación. Los plazos están en tiempos de entrega y los cambios, en la política de devolución. La ficha no trae precio.",
+  },
+  {
+    q: "¿Qué obras del catálogo se pueden ver desde el Biobío?",
+    a: "Las fichas publicadas son óleos sobre tela. Cuatro traen medida: 158x122, 110x110, 90x120 y 100x130. El resto dice óleo sobre tela y la medida se pide al consultar.",
+  },
+  {
+    q: "¿El sitio muestra el precio?",
+    a: "No. La disponibilidad y el valor se confirman por WhatsApp o por correo.",
+  },
+];
 
 
 export const metadata: Metadata = pageMetadata({
@@ -38,9 +58,24 @@ export default async function ArtistaVisualBiobioPage() {
   const heroImageUrl =
     (await getManagedImageUrl("pages.artista-visual.hero")) ||
     getSiteImageUrl("gente");
+  const works = await listCatalogArtworks();
 
   return (
     <main className="min-h-screen bg-[var(--background)]">
+      <ItemListJsonLd
+        listName="Óleos de Marcela Pedrosa, artista visual del Biobío"
+        listUrl={absoluteUrl("/artista-visual-biobio")}
+        items={works.map((work) => ({
+          name: work.name,
+          imageUrl: work.imageUrl.startsWith("http")
+            ? work.imageUrl
+            : absoluteUrl(work.imageUrl),
+          url: absoluteUrl(`/pinturas/${work.slug}`),
+          description: work.info,
+          artMedium: work.medium,
+        }))}
+      />
+      <FaqJsonLd faqs={BIOBIO_FAQS} />
       {/* Hero Section */}
       <section className="relative py-16 sm:py-20 lg:py-24">
         <div className="mx-auto max-w-4xl px-4 sm:px-6">
@@ -174,59 +209,87 @@ export default async function ArtistaVisualBiobioPage() {
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
                 <WhatsAppButton
-                  phone="+56 9 5618 9912"
+                  phone={CONTACT_PHONE}
                   text="Hola Marcela, vi tu página de artista visual del Biobío y me interesa conocer tu trabajo."
                   label="Contactar por WhatsApp"
                   size="lg"
                 />
-                <Link
-                  href="/pinturas"
+                <a
+                  href={`mailto:${CONTACT_EMAIL}`}
                   className="inline-block bg-white text-brand px-6 py-3 rounded-xl font-medium hover:bg-cream transition-colors"
                 >
-                  Ver Galería Completa
-                </Link>
+                  {CONTACT_EMAIL}
+                </a>
               </div>
             </div>
 
-            <h3 className="text-2xl font-semibold text-ink mt-10 mb-4">
-              Colecciones y Obras Disponibles
-            </h3>
-
+            <h2 className="text-3xl font-semibold text-ink mt-10 mb-6">
+              Cómo consultar y comprar una obra
+            </h2>
             <p className="text-ink-body leading-relaxed mb-6">
-              Las obras de Marcela Pedrosa están disponibles para coleccionistas, decoradores y 
-              personas que buscan <strong>arte visual original del Biobío</strong>. Su catálogo 
-              incluye:
+              La obra se vende por consulta, desde Concepción. La ficha no trae
+              precio.
             </p>
+            <div className="bg-surface rounded-xl p-6 mb-8">
+              <ol className="space-y-3 text-ink-body list-decimal list-inside">
+                <li>
+                  Elige una pintura del catálogo de más abajo. Cada tarjeta abre
+                  su ficha.
+                </li>
+                <li>
+                  Escribe por WhatsApp al {CONTACT_PHONE} o por correo a{" "}
+                  <a
+                    href={`mailto:${CONTACT_EMAIL}`}
+                    className="text-brand underline"
+                  >
+                    {CONTACT_EMAIL}
+                  </a>
+                  . Nombra la obra. La disponibilidad y el valor se confirman
+                  ahí.
+                </li>
+                <li>
+                  Coordina el envío o el retiro en la misma conversación. Los
+                  plazos publicados están en{" "}
+                  <Link
+                    href="/tiempos-de-entrega"
+                    className="text-brand underline"
+                  >
+                    tiempos de entrega
+                  </Link>
+                  . Los cambios y la devolución, en{" "}
+                  <Link href="/devoluciones" className="text-brand underline">
+                    devoluciones
+                  </Link>
+                  .
+                </li>
+              </ol>
+            </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 my-8">
-              <div className="border border-line rounded-xl p-6">
-                <h4 className="font-semibold text-ink mb-3">Serie Fachadas</h4>
-                <p className="text-ink-muted text-sm">
-                  Arquitectura urbana de Concepción y el Biobío capturada con sensibilidad 
-                  impresionista. Formatos desde 60x80 hasta 130x100 cm.
-                </p>
-              </div>
-              <div className="border border-line rounded-xl p-6">
-                <h4 className="font-semibold text-ink mb-3">Serie Bosques</h4>
-                <p className="text-ink-muted text-sm">
-                  Paisajes naturales de la región del Biobío. Óleo sobre tela con técnica 
-                  de veladuras. Diversos formatos disponibles.
-                </p>
-              </div>
-              <div className="border border-line rounded-xl p-6">
-                <h4 className="font-semibold text-ink mb-3">Obras Figurativas</h4>
-                <p className="text-ink-muted text-sm">
-                  Representaciones de personas y escenas cotidianas con enfoque impresionista. 
-                  Piezas únicas de diversos tamaños.
-                </p>
-              </div>
-              <div className="border border-line rounded-xl p-6">
-                <h4 className="font-semibold text-ink mb-3">Cerámica Artística</h4>
-                <p className="text-ink-muted text-sm">
-                  Piezas en gres que complementan su obra pictórica. Objetos decorativos 
-                  y escultóricos únicos.
-                </p>
-              </div>
+            <h2 className="text-3xl font-semibold text-ink mt-10 mb-6">
+              Obras del catálogo
+            </h2>
+            <p className="text-ink-body leading-relaxed mb-6">
+              Estas fichas son las pinturas publicadas. Donde el catálogo trae
+              medida, se cita tal cual: 158x122, 110x110, 90x120 y 100x130. El
+              resto dice óleo sobre tela, sin números. El gres del taller no
+              tiene ficha propia en este listado: las piezas publicadas están
+              en{" "}
+              <Link href="/esculturas" className="text-brand underline">
+                cerámica gres
+              </Link>
+              .
+            </p>
+            <ArtworkCards works={works} />
+            <h2 className="text-2xl font-semibold text-ink mt-10 mb-4">
+              Preguntas sobre la obra
+            </h2>
+            <div className="space-y-4 my-8">
+              {BIOBIO_FAQS.map((faq) => (
+                <div key={faq.q} className="bg-white border border-line rounded-xl p-6">
+                  <h3 className="font-semibold text-ink mb-2">{faq.q}</h3>
+                  <p className="text-ink-body text-sm">{faq.a}</p>
+                </div>
+              ))}
             </div>
 
             <h3 className="text-2xl font-semibold text-ink mt-10 mb-4">
