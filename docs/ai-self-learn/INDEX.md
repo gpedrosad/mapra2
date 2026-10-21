@@ -1,6 +1,6 @@
 # INDEX — hechos densos (leer primero)
 
-Actualizado: **2026-10-20**
+Actualizado: **2026-10-21**
 
 ## Identidad
 
@@ -25,6 +25,7 @@ Actualizado: **2026-10-20**
 - **Corte 2026-10-18 (brief, dato hasta 2026-10-16):** 90d 7 clics · 229 impresiones · CTR 3,1 % · pos 9,6. Últimos 7 días: 2 clics · 14 imp · pos 20,3. Clics de la semana: `/artista-visual-biobio`, `/ceramica-artistica-concepcion`. Unknown: `/guias`, `/artistas-chilenas`, `/cuadros`, `/comprar-arte-chile`, `/guias/elegir-cuadro-para-el-living`, `/pinturas/elefante`.
 - **Corte 2026-10-19 (brief, dato hasta 2026-10-17):** 90d 8 clics · 234 imp · CTR 3,4 % · pos 9,9. Últimos 7 días: 3 clics · 19 imp · CTR 15,8 % · pos 21,6 (previos: 0c/19i pos 12,6). `/pintoras-chilenas` 1c/6i pos 7,3. Unknown: `/guias`, `/artistas-chilenas`, `/cuadros`, `/comprar-arte-chile`, `/pinturas/casas-dia-y-noche`, `/pinturas/laguna-cordillera-atardecer`. `/pintoras-chilenas` indexada (crawl 2026-09-18).
 - **Corte 2026-10-20 (brief, dato hasta 2026-10-18):** 90d 8 clics · 233 imp · CTR 3,4 % · pos 10,0. Últimos 7 días (10-12..10-18): 2 clics · 16 imp · CTR 12,5 % · pos 24,1 (previos 10-05..10-11: 1c/17i pos 14,5). `/pintoras-chilenas` 4c/160i pos 7,6. `/mujeres-artistas-chilenas` 1c/13i pos 13,9 en 90d y 0/1 pos 29 en 7d. Unknown por 4.º día: `/guias`, `/artistas-chilenas`, `/cuadros`, `/comprar-arte-chile`, `/pinturas/casas-dia-y-noche`. Sitemap GSC descargado 2026-10-16 con 22 URLs; live 74.
+- **Corte 2026-10-21 (brief, dato hasta 2026-10-19):** 90d 8 clics · 233 imp · CTR 3,4 % · pos 10,0. Últimos 7 días (10-13..10-19): 2 clics · 14 imp · pos 26,4 (previos 10-06..10-12: 1c/13i pos 7,1). `/artista-visual-biobio` 1c/1i pos 2. `/pintoras-chilenas` 1c/4i pos 7,3. `/comprar-pintura-concepcion` 0/1 pos 9. Unknown por 5.º día: `/guias`, `/artistas-chilenas`, `/cuadros`, `/comprar-arte-chile`, `/pinturas/casas-dia-y-noche`. Sitemap GSC sin descarga desde 2026-10-16 (22 URLs; live 74).
 - Sitemap en GSC: **solo** `https://mpedrosa.studio/sitemap.xml` (`sitemap.ts` eliminado 2026-08-23)
 - Indexación pública: home + legales/pinturas/prensa/contacto sí; landings SEO tipo `/pintora-concepcion` **no** aparecen en `site:` (2026-08-23)
 - Write token: `.secrets/gsc-oauth-write-token.json` (scope `webmasters`) — usar para submit/delete sitemap; readonly no alcanza
@@ -63,6 +64,7 @@ Actualizado: **2026-10-20**
 - **Lote diario 2026-10-18:** `/pinturas/c13` sigue en 301 a `/pinturas/casas-dia-y-noche`. Esa ficha se genera con el díptico `c13_iqxkyv` aunque Cloudinary tenga otro archivo en la ranura (`mapra/managed/gallery-c13-1787246109422`, laguna y cordillera). El sitemap no lista `c13`. La foto nueva, si el build la ve, va a `/pinturas/laguna-cordillera-atardecer`. Sin página nueva de compra. Lista: [`docs/seo-lote-2026-10-18.md`](../seo-lote-2026-10-18.md). `pendiente:` reenviar sitemap y Request indexing de hubs + ficha casas.
 - **Lote diario 2026-10-19:** c13 sigue coherente (301, sitemap sin `c13`, díptico y laguna separados). Snippets en páginas que imprimen; `/pintoras-chilenas` conserva title y canonical. Enlaces con nombre de ficha desde esas páginas, y desde cada ficha hacia `/guias`, `/artistas-chilenas`, `/cuadros` y `/comprar-arte-chile`. Sin página nueva. Lista: [`docs/seo-lote-2026-10-19.md`](../seo-lote-2026-10-19.md). `pendiente:` reenviar sitemap y Request indexing.
 - **Lote diario 2026-10-20:** sin bloqueo técnico en los hubs unknown (200, canonical, index, `<a href>` en HTML, sitemap con lastmod). `Disallow: /imagenes` sigue: es el panel interno, no las fotos de obra (Cloudinary). Contenido visible en `/pintoras-chilenas` (famosas vs actuales) y `/mujeres-artistas-chilenas` (escultura, grabado, cerámica; Lily Garafulic). Obras con ficha en `/oleo-sobre-tela-chile` e `/impresionismo-figurativo-chile`. Titles y canonical de esas páginas sin cambio. Sin página nueva. Lista: [`docs/seo-lote-2026-10-20.md`](../seo-lote-2026-10-20.md). `pendiente:` reenviar sitemap y Request indexing.
+- **Lote diario 2026-10-21:** pasos de consulta (obra, WhatsApp/correo, plazos vía `/tiempos-de-entrega` y `/devoluciones`) y fichas reales en `/comprar-pintura-concepcion`, `/encargos-pintura`, `/artista-visual-biobio` y `/ceramica-artistica-concepcion`. Gres sin ficha propia (`gresExtras` vacío). Title de Biobío y cerámica sin cambio (meta del 2026-10-18). Meta de compra en Concepción sí (130 caracteres). Sin página nueva: grandes, regalo y oficina ya están. Lista: [`docs/seo-lote-2026-10-21.md`](../seo-lote-2026-10-21.md). `pendiente:` reenviar sitemap y Request indexing.
 - Gap #2: analytics (GA4/Clarity del dominio correcto)
 - Gap #3 (aprobación): diferenciar landings thin, FAQ/GEO, backlinks prensa/IG
 

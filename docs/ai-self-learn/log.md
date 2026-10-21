@@ -67,3 +67,9 @@ Formato: `YYYY-MM-DD | tema | hecho | acción/implicación`
 - SEO | Inspección URL: unknown por 4.º día `/guias`, `/artistas-chilenas`, `/cuadros`, `/comprar-arte-chile`, `/pinturas/casas-dia-y-noche`. Sitemap GSC descargado 2026-10-16, 22 URLs; live 74 | `pendiente:` reenviar sitemap y Request indexing (OAuth solo lectura)
 - SEO | Prod 2026-10-20: esas cinco URLs responden 200, canonical propio, `index, follow`, en sitemap con lastmod. Enlaces `<a href>` en el HTML de `/pintoras-chilenas`, `/mujeres-artistas-chilenas`, `/oleo-sobre-tela-chile` y `/pinturas/elefante`. Sin bloqueo técnico | `Disallow: /imagenes` se mantiene: panel interno con noindex, no las fotos de obra
 - SEO | Lote 2026-10-20: H2 famosas/actuales en `/pintoras-chilenas` con datos de los perfiles. `/mujeres-artistas-chilenas` pasa a escultura, grabado y cerámica, con Lily Garafulic. Fichas reales en óleo e impresionismo. Titles y canonical intactos. Sin página nueva | Doc `docs/seo-lote-2026-10-20.md`
+
+## 2026-10-21
+
+- GSC | Brief del lote (dato hasta 2026-10-19): 90d 8 clics, 233 imp, CTR 3,4 %, pos 10,0. Últimos 7 días (10-13..10-19): 2 clics, 14 imp, pos 26,4. Previos (10-06..10-12): 1 clic, 13 imp, pos 7,1 | `/artista-visual-biobio` 1c/1i pos 2. `/pintoras-chilenas` 1c/4i pos 7,3. `/comprar-pintura-concepcion` 0/1 pos 9
+- SEO | Unknown por 5.º día: `/guias`, `/artistas-chilenas`, `/cuadros`, `/comprar-arte-chile`, `/pinturas/casas-dia-y-noche`. Sitemap GSC sin descarga desde 2026-10-16 (22 URLs; live 74) | `pendiente:` reenviar sitemap y Request indexing (OAuth solo lectura)
+- SEO | Lote 2026-10-21: consulta en tres pasos y fichas del catálogo en `/comprar-pintura-concepcion`, `/encargos-pintura`, `/artista-visual-biobio` y `/ceramica-artistica-concepcion`. Gres sin imagen publicada en `data/managed-images.json` (`gresExtras` vacío): no se inventan piezas. Sin página nueva | Doc `docs/seo-lote-2026-10-21.md`

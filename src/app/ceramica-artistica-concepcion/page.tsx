@@ -3,14 +3,33 @@ import Image from "next/image";
 import Link from "next/link";
 import Footer from "../components/Footer";
 import WhatsAppButton from "../components/WhatsAppButton";
+import { listCatalogArtworks } from "@/lib/artworks";
 import { getSiteImageUrl } from "@/lib/cloudinary";
-import { getManagedImageUrl } from "@/lib/managed-image-store";
+import { getManagedImageUrl, listGresArtworks } from "@/lib/managed-image-store";
 import { pageMetadata } from "@/lib/metadata";
+import { CONTACT_EMAIL, CONTACT_PHONE } from "@/lib/site";
+import ArtworkCards from "../components/seo/ArtworkCards";
 import Breadcrumbs from "../components/seo/Breadcrumbs";
 import CatalogFichaLinks, {
   DescriptiveFichaLinks,
 } from "../components/seo/CatalogFichaLinks";
+import { FaqJsonLd } from "../components/seo/GuideParts";
 import SiteHub from "../components/seo/SiteHub";
+
+const CERAMICA_FAQS = [
+  {
+    q: "¿Cómo se consulta una pieza de gres?",
+    a: "Se mira la cerámica gres publicada y se escribe por WhatsApp al +56 9 5618 9912 o por correo a contacto@marcelapedrosa.com. El precio no está en el sitio. El envío se coordina en esa conversación.",
+  },
+  {
+    q: "¿Cada pieza de cerámica tiene ficha propia?",
+    a: "No. En este catálogo la ficha con URL propia es la de cada óleo. El gres publicado, cuando lo hay, se ve en la página de cerámica gres, sin una dirección por pieza.",
+  },
+  {
+    q: "¿Qué plazo de envío tiene la cerámica?",
+    a: "Los plazos publicados, también para cerámica gres, están en tiempos de entrega. Los cambios y la devolución están en la política de devolución.",
+  },
+];
 
 
 export const metadata: Metadata = pageMetadata({
@@ -38,9 +57,12 @@ export default async function CeramicaArtisticaConcepcionPage() {
   const heroImageUrl =
     (await getManagedImageUrl("pages.ceramica.hero")) ||
     getSiteImageUrl("elefante");
+  const works = await listCatalogArtworks();
+  const gres = await listGresArtworks();
 
   return (
     <main className="min-h-screen bg-[var(--background)]">
+      <FaqJsonLd faqs={CERAMICA_FAQS} />
       {/* Hero Section */}
       <section className="relative py-16 sm:py-20 lg:py-24">
         <div className="mx-auto max-w-4xl px-4 sm:px-6">
@@ -89,6 +111,109 @@ export default async function CeramicaArtisticaConcepcionPage() {
               resistencia, durabilidad y las posibilidades expresivas que ofrece tanto en forma como 
               en acabados superficiales.
             </p>
+
+            <h2 className="text-3xl font-semibold text-ink mt-10 mb-6">
+              Cómo consultar y comprar
+            </h2>
+            <p className="text-ink-body leading-relaxed mb-6">
+              El gres se consulta. Esta página no publica precios ni una ficha
+              con dirección propia por pieza.
+            </p>
+            <div className="bg-surface rounded-xl p-6 mb-8">
+              <ol className="space-y-3 text-ink-body list-decimal list-inside">
+                <li>
+                  Mira las piezas publicadas en{" "}
+                  <Link href="/esculturas" className="text-brand underline">
+                    cerámica gres
+                  </Link>
+                  . Si no aparece ninguna, la disponibilidad se pregunta
+                  directo.
+                </li>
+                <li>
+                  Escribe por WhatsApp al {CONTACT_PHONE} o por correo a{" "}
+                  <a
+                    href={`mailto:${CONTACT_EMAIL}`}
+                    className="text-brand underline"
+                  >
+                    {CONTACT_EMAIL}
+                  </a>
+                  . Nombra la pieza si la viste. El valor se acuerda al
+                  escribir.
+                </li>
+                <li>
+                  Coordina el envío en esa conversación. Los plazos, también
+                  para cerámica gres, están en{" "}
+                  <Link
+                    href="/tiempos-de-entrega"
+                    className="text-brand underline"
+                  >
+                    tiempos de entrega
+                  </Link>
+                  . Los cambios y la devolución, en{" "}
+                  <Link href="/devoluciones" className="text-brand underline">
+                    devoluciones
+                  </Link>
+                  .
+                </li>
+              </ol>
+            </div>
+            {gres.length > 0 ? (
+              <>
+                <h3 className="text-2xl font-semibold text-ink mt-10 mb-4">
+                  Gres publicado
+                </h3>
+                <ul className="grid grid-cols-1 sm:grid-cols-2 gap-6 list-none p-0 m-0 mb-8">
+                  {gres.map((item) => (
+                    <li key={item.id} className="border border-line bg-surface">
+                      <Link href="/esculturas" className="block">
+                        {/* eslint-disable-next-line @next/next/no-img-element */}
+                        <img
+                          src={item.imageUrl}
+                          alt={item.title || item.info}
+                          className="block w-full h-auto"
+                          loading="lazy"
+                          decoding="async"
+                        />
+                        <div className="p-4">
+                          <h3 className="font-display text-lg font-medium text-ink">
+                            {item.title || item.info}
+                          </h3>
+                          <p className="mt-1 text-sm text-ink-body">{item.info}</p>
+                          <p className="mt-2 text-sm text-brand">Ver en cerámica gres</p>
+                        </div>
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </>
+            ) : (
+              <p className="text-ink-body leading-relaxed mb-8">
+                En el catálogo de este sitio no hay piezas de gres con imagen
+                publicada ni ficha propia. Cuando haya, se ven en la página de
+                cerámica gres. Para saber si hay una disponible, la consulta es
+                por WhatsApp o por correo.
+              </p>
+            )}
+
+            <h2 className="text-3xl font-semibold text-ink mt-10 mb-6">
+              Si la consulta es una tela
+            </h2>
+            <p className="text-ink-body leading-relaxed mb-6">
+              El catálogo con ficha es el de óleos. Cada tarjeta abre la pintura.
+              El precio tampoco está ahí.
+            </p>
+            <ArtworkCards works={works} />
+            <h2 className="text-2xl font-semibold text-ink mt-10 mb-4">
+              Preguntas sobre la cerámica
+            </h2>
+            <div className="space-y-4 my-8">
+              {CERAMICA_FAQS.map((faq) => (
+                <div key={faq.q} className="bg-white border border-line rounded-xl p-6">
+                  <h3 className="font-semibold text-ink mb-2">{faq.q}</h3>
+                  <p className="text-ink-body text-sm">{faq.a}</p>
+                </div>
+              ))}
+            </div>
 
             <h3 className="text-2xl font-semibold text-ink mt-10 mb-4">
               ¿Qué es la Cerámica en Gres?
@@ -228,7 +353,7 @@ export default async function CeramicaArtisticaConcepcionPage() {
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
                 <WhatsAppButton
-                  phone="+56 9 5618 9912"
+                  phone={CONTACT_PHONE}
                   text="Hola Marcela, me interesa conocer tu trabajo en cerámica artística."
                   label="Consultar Disponibilidad"
                   size="lg"

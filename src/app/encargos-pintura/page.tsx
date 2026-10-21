@@ -13,8 +13,24 @@ import CatalogFichaLinks, {
 } from "../components/seo/CatalogFichaLinks";
 import SiteHub from "../components/seo/SiteHub";
 import { listCatalogArtworks } from "@/lib/artworks";
-import { CONTACT_EMAIL } from "@/lib/site";
+import { absoluteUrl, CONTACT_EMAIL, CONTACT_PHONE } from "@/lib/site";
+import { FaqJsonLd } from "../components/seo/GuideParts";
+import ItemListJsonLd from "../components/seo/ItemListJsonLd";
 
+const ENCARGO_FAQS = [
+  {
+    q: "¿Cómo se encarga una pintura?",
+    a: "Se escribe por WhatsApp al +56 9 5618 9912 o por correo a contacto@marcelapedrosa.com con la idea, una medida aproximada y, si hay, una referencia. Marcela confirma si puede hacerla, el plazo y el valor. El precio no está en el sitio.",
+  },
+  {
+    q: "¿Se puede comprar una obra que ya está pintada?",
+    a: "Sí. Las fichas de la galería son obras publicadas, no encargos de clientes. Se nombra la obra y se consulta si sigue disponible.",
+  },
+  {
+    q: "¿Dónde están el plazo de envío y la devolución?",
+    a: "Los plazos publicados, con marco y sin marco, están en tiempos de entrega. Los cambios y la devolución están en la política de devolución. El enmarcado a medida no tiene devolución, según esa página.",
+  },
+];
 
 export const metadata: Metadata = pageMetadata({
   title: 'Encargar una pintura | Marcela Pedrosa',
@@ -40,9 +56,25 @@ export default async function EncargosPinturaPage() {
     (await getManagedImageUrl("pages.artista-visual.hero")) ||
     getSiteImageUrl("gente");
   const works = await listCatalogArtworks();
+  const measured = works.filter((work) => work.measure);
+  const withoutMeasure = works.filter((work) => !work.measure);
 
   return (
     <main className="min-h-screen bg-[var(--background)]">
+      <ItemListJsonLd
+        listName="Obras del taller de Marcela Pedrosa para ver formato"
+        listUrl={absoluteUrl("/encargos-pintura")}
+        items={works.map((work) => ({
+          name: work.name,
+          imageUrl: work.imageUrl.startsWith("http")
+            ? work.imageUrl
+            : absoluteUrl(work.imageUrl),
+          url: absoluteUrl(`/pinturas/${work.slug}`),
+          description: work.info,
+          artMedium: work.medium,
+        }))}
+      />
+      <FaqJsonLd faqs={ENCARGO_FAQS} />
       <section className="relative py-16 sm:py-20 lg:py-24">
         <div className="mx-auto max-w-4xl px-4 sm:px-6">
           <Breadcrumbs items={[{ name: "Encargar una pintura", path: "/encargos-pintura" }]} />
@@ -125,20 +157,55 @@ export default async function EncargosPinturaPage() {
             </h3>
 
             <p className="text-ink-body leading-relaxed mb-6">
-              Escribes por WhatsApp o{" "}
-              <Link href="/contacto" className="text-brand underline">
-                contacto
-              </Link>{" "}
-              con la idea, medidas aproximadas y referencias. Marcela confirma
-              viabilidad, plazos y valor. La obra se desarrolla en el{" "}
-              <Link
-                href="/taller-arte-concepcion"
-                className="text-brand underline"
-              >
-                taller de arte en Concepción
-              </Link>
-              , con la misma técnica de óleo que caracteriza su trabajo.
+              El encargo también se consulta. No hay un formulario de precio ni
+              un plazo cerrado en esta página.
             </p>
+            <div className="bg-surface rounded-xl p-6 mb-8">
+              <ol className="space-y-3 text-ink-body list-decimal list-inside">
+                <li>
+                  Mira primero las obras publicadas, más abajo, por si el tema
+                  y el formato ya están en una ficha. Si no, anota la idea, una
+                  medida aproximada del muro y una referencia.
+                </li>
+                <li>
+                  Escribe por WhatsApp al {CONTACT_PHONE} o por correo a{" "}
+                  <a
+                    href={`mailto:${CONTACT_EMAIL}`}
+                    className="text-brand underline"
+                  >
+                    {CONTACT_EMAIL}
+                  </a>
+                  . También puedes usar el{" "}
+                  <Link href="/contacto" className="text-brand underline">
+                    contacto
+                  </Link>
+                  . Marcela confirma si puede hacerlo, el plazo y el valor. La
+                  obra se pinta en el{" "}
+                  <Link
+                    href="/taller-arte-concepcion"
+                    className="text-brand underline"
+                  >
+                    taller de arte en Concepción
+                  </Link>
+                  .
+                </li>
+                <li>
+                  El envío se coordina en esa misma conversación. Los plazos
+                  publicados están en{" "}
+                  <Link
+                    href="/tiempos-de-entrega"
+                    className="text-brand underline"
+                  >
+                    tiempos de entrega
+                  </Link>
+                  . Los cambios y la devolución, en{" "}
+                  <Link href="/devoluciones" className="text-brand underline">
+                    devoluciones
+                  </Link>
+                  .
+                </li>
+              </ol>
+            </div>
 
             <p className="text-ink-body leading-relaxed mb-6">
               Si prefieres una pieza lista para llevar, revisa cómo{" "}
@@ -163,7 +230,27 @@ export default async function EncargosPinturaPage() {
               cuando la ficha la trae, la medida. No son encargos de clientes:
               son obras publicadas en el sitio.
             </p>
-            <ArtworkCards works={works.filter((work) => work.measure)} />
+            <ArtworkCards works={measured} />
+            <h3 className="text-2xl font-semibold text-ink mt-10 mb-4">
+              Otras obras publicadas
+            </h3>
+            <p className="text-ink-body leading-relaxed mb-6">
+              Estas fichas dicen óleo sobre tela y no publican medida. Sirven
+              igual para ver el tema antes de encargar otra, o para consultar
+              la que ya está hecha. La medida se pide al escribir.
+            </p>
+            <ArtworkCards works={withoutMeasure} />
+            <h2 className="text-2xl font-semibold text-ink mt-10 mb-4">
+              Preguntas sobre el encargo
+            </h2>
+            <div className="space-y-4 my-8">
+              {ENCARGO_FAQS.map((faq) => (
+                <div key={faq.q} className="bg-white border border-line rounded-xl p-6">
+                  <h3 className="font-semibold text-ink mb-2">{faq.q}</h3>
+                  <p className="text-ink-body text-sm">{faq.a}</p>
+                </div>
+              ))}
+            </div>
 
             <div className="bg-brand text-white rounded-xl p-8 my-10 text-center">
               <h3 className="text-2xl font-semibold mb-4">
@@ -174,7 +261,7 @@ export default async function EncargosPinturaPage() {
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
                 <WhatsAppButton
-                  phone="+56 9 5618 9912"
+                  phone={CONTACT_PHONE}
                   text="Hola Marcela, me gustaría encargar una pintura al óleo. Te cuento medidas e idea."
                   label="Solicitar encargo"
                   size="lg"

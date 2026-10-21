@@ -3,20 +3,39 @@ import Image from "next/image";
 import Link from "next/link";
 import Footer from "../components/Footer";
 import WhatsAppButton from "../components/WhatsAppButton";
+import { listCatalogArtworks } from "@/lib/artworks";
 import { getSiteImageUrl } from "@/lib/cloudinary";
 import { getManagedImageUrl } from "@/lib/managed-image-store";
 import { pageMetadata } from "@/lib/metadata";
+import { absoluteUrl, CONTACT_EMAIL, CONTACT_PHONE } from "@/lib/site";
+import ArtworkCards from "../components/seo/ArtworkCards";
 import Breadcrumbs from "../components/seo/Breadcrumbs";
 import CatalogFichaLinks, {
   DescriptiveFichaLinks,
 } from "../components/seo/CatalogFichaLinks";
+import { FaqJsonLd } from "../components/seo/GuideParts";
+import ItemListJsonLd from "../components/seo/ItemListJsonLd";
 import SiteHub from "../components/seo/SiteHub";
 
+const COMPRAR_FAQS = [
+  {
+    q: "¿Cómo se compra una pintura en Concepción?",
+    a: "Se elige una obra de la galería, se consulta por WhatsApp al +56 9 5618 9912 o por correo a contacto@marcelapedrosa.com, y el envío o el retiro se coordina en esa conversación. Los plazos están en tiempos de entrega y los cambios, en la política de devolución. La ficha no trae precio.",
+  },
+  {
+    q: "¿La ficha publica el valor de la obra?",
+    a: "No. La disponibilidad y el valor se confirman al escribir, por WhatsApp o por correo.",
+  },
+  {
+    q: "¿Se puede encargar una pintura que no está en la galería?",
+    a: "Sí. El encargo se conversa por los mismos canales. Marcela confirma si puede hacerlo, el plazo y el valor antes de empezar.",
+  },
+];
 
 export const metadata: Metadata = pageMetadata({
   title: 'Comprar pintura en Concepción | Marcela Pedrosa',
   description:
-    'Compra pintura original en Concepción. Óleo sobre tela de Marcela Pedrosa, encargos y envíos dentro de Chile.',
+    'Compra pintura original en Concepción. Elige la obra, consulta por WhatsApp o correo y coordina el envío. La ficha no trae precio.',
   path: '/comprar-pintura-concepcion',
   ogImageKey: 'bosque',
   imageAlt: 'Pinturas originales de Marcela Pedrosa en Concepción',
@@ -36,9 +55,24 @@ export default async function ComprarPinturaConcepcionPage() {
   const heroImageUrl =
     (await getManagedImageUrl("pages.pintora.hero")) ||
     getSiteImageUrl("bosque");
+  const works = await listCatalogArtworks();
 
   return (
     <main className="min-h-screen bg-[var(--background)]">
+      <ItemListJsonLd
+        listName="Pinturas de Marcela Pedrosa para consultar en Concepción"
+        listUrl={absoluteUrl("/comprar-pintura-concepcion")}
+        items={works.map((work) => ({
+          name: work.name,
+          imageUrl: work.imageUrl.startsWith("http")
+            ? work.imageUrl
+            : absoluteUrl(work.imageUrl),
+          url: absoluteUrl(`/pinturas/${work.slug}`),
+          description: work.info,
+          artMedium: work.medium,
+        }))}
+      />
+      <FaqJsonLd faqs={COMPRAR_FAQS} />
       <section className="relative py-16 sm:py-20 lg:py-24">
         <div className="mx-auto max-w-4xl px-4 sm:px-6">
           <Breadcrumbs items={[{ name: "Comprar en Concepción", path: "/comprar-pintura-concepcion" }]} />
@@ -101,20 +135,46 @@ export default async function ComprarPinturaConcepcionPage() {
               Cómo comprar una obra
             </h3>
 
+            <p className="text-ink-body leading-relaxed mb-6">
+              Marcela vende por consulta, desde el taller en Concepción. No hay
+              carrito. El precio no está en la ficha.
+            </p>
+
             <div className="bg-surface rounded-xl p-6 mb-8">
               <ol className="space-y-3 text-ink-body list-decimal list-inside">
                 <li>
-                  Revisa la{" "}
+                  Elige la obra en la{" "}
                   <Link href="/pinturas" className="text-brand underline">
                     galería de pinturas
                   </Link>{" "}
-                  o consulta disponibilidad por WhatsApp.
+                  o en las fichas de más abajo. La tarjeta abre el nombre y, si
+                  el catálogo lo trae, la medida.
                 </li>
                 <li>
-                  Confirma medidas, tema y formato (medio o gran formato).
+                  Consulta disponibilidad por WhatsApp al {CONTACT_PHONE} o por
+                  correo a{" "}
+                  <a
+                    href={`mailto:${CONTACT_EMAIL}`}
+                    className="text-brand underline"
+                  >
+                    {CONTACT_EMAIL}
+                  </a>
+                  . Nombra la obra. El valor se acuerda en esa conversación.
                 </li>
                 <li>
-                  Coordina retiro en Concepción o envío dentro de Chile.
+                  Coordina el retiro en Concepción o el envío en la misma
+                  conversación. Los plazos publicados están en{" "}
+                  <Link
+                    href="/tiempos-de-entrega"
+                    className="text-brand underline"
+                  >
+                    tiempos de entrega
+                  </Link>
+                  . Los cambios y la devolución, en{" "}
+                  <Link href="/devoluciones" className="text-brand underline">
+                    devoluciones
+                  </Link>
+                  .
                 </li>
               </ol>
             </div>
@@ -176,22 +236,42 @@ export default async function ComprarPinturaConcepcionPage() {
                 ¿Quieres comprar una pintura en Concepción?
               </h3>
               <p className="mb-6 text-white/90">
-                Consulta obras disponibles, precios y envíos
+                Nombra la obra. La disponibilidad y el valor se confirman al
+                escribir.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
                 <WhatsAppButton
-                  phone="+56 9 5618 9912"
+                  phone={CONTACT_PHONE}
                   text="Hola Marcela, quiero comprar una pintura original en Concepción. ¿Qué obras tienes disponibles?"
                   label="Consultar por WhatsApp"
                   size="lg"
                 />
-                <Link
-                  href="/pinturas"
+                <a
+                  href={`mailto:${CONTACT_EMAIL}`}
                   className="inline-block bg-white text-brand px-6 py-3 rounded-xl font-medium hover:bg-cream transition-colors"
                 >
-                  Ver galería
-                </Link>
+                  {CONTACT_EMAIL}
+                </a>
               </div>
+            </div>
+            <h2 className="text-3xl font-semibold text-ink mt-10 mb-6">
+              Obras publicadas para consultar
+            </h2>
+            <p className="text-ink-body leading-relaxed mb-6">
+              Estas son las pinturas del catálogo. Cada una abre su ficha. Si
+              la ficha no trae medida, se pide junto con la disponibilidad.
+            </p>
+            <ArtworkCards works={works} />
+            <h2 className="text-2xl font-semibold text-ink mt-10 mb-4">
+              Preguntas al comprar en Concepción
+            </h2>
+            <div className="space-y-4 my-8">
+              {COMPRAR_FAQS.map((faq) => (
+                <div key={faq.q} className="bg-white border border-line rounded-xl p-6">
+                  <h3 className="font-semibold text-ink mb-2">{faq.q}</h3>
+                  <p className="text-ink-body text-sm">{faq.a}</p>
+                </div>
+              ))}
             </div>
             <p className="text-ink-body leading-relaxed mb-6">
               Esta página es la compra en Concepción. Para ver la obra por motivo
