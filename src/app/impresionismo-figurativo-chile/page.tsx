@@ -7,13 +7,15 @@ import { getSiteImageUrl } from "@/lib/cloudinary";
 import { getManagedImageUrl } from "@/lib/managed-image-store";
 import { listCatalogArtworks, type CatalogArtwork } from "@/lib/artworks";
 import { pageMetadata } from "@/lib/metadata";
-import { CONTACT_EMAIL, CONTACT_PHONE } from "@/lib/site";
+import { absoluteUrl, CONTACT_EMAIL, CONTACT_PHONE } from "@/lib/site";
 import ArtworkCards from "../components/seo/ArtworkCards";
 import Breadcrumbs from "../components/seo/Breadcrumbs";
 import CatalogFichaLinks, {
   DescriptiveFichaLinks,
 } from "../components/seo/CatalogFichaLinks";
+import ConsultaSteps from "../components/seo/ConsultaSteps";
 import { FaqJsonLd } from "../components/seo/GuideParts";
+import ItemListJsonLd from "../components/seo/ItemListJsonLd";
 import SiteHub from "../components/seo/SiteHub";
 
 
@@ -75,6 +77,21 @@ export default async function ImpresionismoFigurativoChilePage() {
   return (
     <main className="min-h-screen bg-[var(--background)]">
       <FaqJsonLd faqs={ESTILO_FAQS} />
+      {styleWorks.length > 0 ? (
+        <ItemListJsonLd
+          listName="Obras de impresionismo figurativo de Marcela Pedrosa"
+          listUrl={absoluteUrl("/impresionismo-figurativo-chile")}
+          items={styleWorks.map((work) => ({
+            name: work.name,
+            imageUrl: work.imageUrl.startsWith("http")
+              ? work.imageUrl
+              : absoluteUrl(work.imageUrl),
+            url: absoluteUrl(`/pinturas/${work.slug}`),
+            description: work.info,
+            artMedium: work.medium,
+          }))}
+        />
+      ) : null}
       {/* Hero Section */}
       <section className="relative py-16 sm:py-20 lg:py-24">
         <div className="mx-auto max-w-4xl px-4 sm:px-6">
@@ -436,6 +453,11 @@ export default async function ImpresionismoFigurativoChilePage() {
               asegura que el impresionismo figurativo seguirá siendo una corriente vital en el 
               panorama artístico chileno.
             </p>
+
+            <ConsultaSteps
+              heading="Cómo consultar una obra de este estilo"
+              intro="Una obra de este impresionismo figurativo se consulta desde Concepción. No hay carrito. El precio no está en la ficha."
+            />
 
             <h2
               id="obras-de-impresionismo-figurativo"

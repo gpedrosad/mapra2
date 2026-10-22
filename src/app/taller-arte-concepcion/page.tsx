@@ -3,20 +3,26 @@ import Image from "next/image";
 import Link from "next/link";
 import Footer from "../components/Footer";
 import WhatsAppButton from "../components/WhatsAppButton";
+import { listCatalogArtworks } from "@/lib/artworks";
 import { getSiteImageUrl } from "@/lib/cloudinary";
 import { getManagedImageUrl } from "@/lib/managed-image-store";
 import { pageMetadata } from "@/lib/metadata";
+import { absoluteUrl } from "@/lib/site";
+import ArtworkCards from "../components/seo/ArtworkCards";
 import Breadcrumbs from "../components/seo/Breadcrumbs";
 import CatalogFichaLinks, {
   DescriptiveFichaLinks,
 } from "../components/seo/CatalogFichaLinks";
+import ConsultaSteps from "../components/seo/ConsultaSteps";
+import { FaqJsonLd } from "../components/seo/GuideParts";
+import ItemListJsonLd from "../components/seo/ItemListJsonLd";
 import SiteHub from "../components/seo/SiteHub";
 
 
 export const metadata: Metadata = pageMetadata({
   title: 'Taller de arte en Concepción | Marcela Pedrosa',
   description:
-    'Taller de arte en Concepción de Marcela Pedrosa. Pintura al óleo, impresionismo figurativo y cerámica en el Biobío.',
+    'Taller de arte en Concepción: óleo, impresionismo y gres de Marcela Pedrosa. Consulta una obra por WhatsApp o correo.',
   path: '/taller-arte-concepcion',
   ogImageKey: 'elefante',
   imageAlt: 'Obra del taller de arte de Marcela Pedrosa en Concepción',
@@ -34,13 +40,41 @@ export const metadata: Metadata = pageMetadata({
   ],
 });
 
+const TALLER_FAQS = [
+  {
+    q: "¿Cómo se consulta una obra del taller?",
+    a: "Se elige una pintura publicada, se escribe por WhatsApp al +56 9 5618 9912 o a contacto@marcelapedrosa.com, y se coordina el envío o el retiro. La visita al taller es previa coordinación, por los mismos canales. La ficha no trae precio.",
+  },
+  {
+    q: "¿El taller publica horarios de clases?",
+    a: "No. Esta página no trae un horario de clases ni una inscripción. Lo publicado es la obra, el encargo y la visita previa coordinación.",
+  },
+];
+
 export default async function TallerArteConcepcionPage() {
   const heroImageUrl =
     (await getManagedImageUrl("pages.taller.hero")) ||
     getSiteImageUrl("elefante");
+  const works = await listCatalogArtworks();
 
   return (
     <main className="min-h-screen bg-[var(--background)]">
+      <FaqJsonLd faqs={TALLER_FAQS} />
+      {works.length > 0 ? (
+        <ItemListJsonLd
+          listName="Pinturas del taller de Marcela Pedrosa en Concepción"
+          listUrl={absoluteUrl("/taller-arte-concepcion")}
+          items={works.map((work) => ({
+            name: work.name,
+            imageUrl: work.imageUrl.startsWith("http")
+              ? work.imageUrl
+              : absoluteUrl(work.imageUrl),
+            url: absoluteUrl(`/pinturas/${work.slug}`),
+            description: work.info,
+            artMedium: work.medium,
+          }))}
+        />
+      ) : null}
       {/* Hero Section */}
       <section className="relative py-16 sm:py-20 lg:py-24">
         <div className="mx-auto max-w-4xl px-4 sm:px-6">
@@ -91,6 +125,11 @@ export default async function TallerArteConcepcionPage() {
               de trabajo que combina técnicas tradicionales con enfoques contemporáneos, manteniendo 
               siempre la calidad y autenticidad en cada pieza creada.
             </p>
+
+            <ConsultaSteps
+              heading="Cómo consultar una obra del taller"
+              intro="Marcela vende por consulta desde el taller en Concepción. No hay carrito. El precio no está en la ficha. La visita al taller es previa coordinación, por WhatsApp o por correo."
+            />
 
             <h3 className="text-2xl font-semibold text-ink mt-10 mb-4">
               Especialidades del Taller
@@ -332,8 +371,27 @@ export default async function TallerArteConcepcionPage() {
               </Link>
               .
             </p>
+            <h2 className="text-3xl font-semibold text-ink mt-10 mb-6">
+              Obras publicadas del taller
+            </h2>
+            <p className="text-ink-body leading-relaxed mb-6">
+              Estas son las pinturas del catálogo, cada una con su ficha. El
+              precio no está en la página.
+            </p>
+            <ArtworkCards works={works} />
             <CatalogFichaLinks />
             <DescriptiveFichaLinks lead="En el taller ya están publicadas" />
+            <h2 className="text-2xl font-semibold text-ink mt-10 mb-4">
+              Preguntas sobre el taller
+            </h2>
+            <div className="space-y-4 my-8">
+              {TALLER_FAQS.map((faq) => (
+                <div key={faq.q} className="bg-white border border-line rounded-xl p-6">
+                  <h3 className="font-semibold text-ink mb-2">{faq.q}</h3>
+                  <p className="text-ink-body text-sm">{faq.a}</p>
+                </div>
+              ))}
+            </div>
           </article>
 
           {/* Enlaces relacionados */}

@@ -7,13 +7,15 @@ import { getSiteImageUrl } from "@/lib/cloudinary";
 import { getManagedImageUrl } from "@/lib/managed-image-store";
 import { listCatalogArtworks } from "@/lib/artworks";
 import { pageMetadata } from "@/lib/metadata";
-import { CONTACT_EMAIL, CONTACT_PHONE } from "@/lib/site";
+import { absoluteUrl, CONTACT_EMAIL, CONTACT_PHONE } from "@/lib/site";
 import ArtworkCards from "../components/seo/ArtworkCards";
 import Breadcrumbs from "../components/seo/Breadcrumbs";
 import CatalogFichaLinks, {
   DescriptiveFichaLinks,
 } from "../components/seo/CatalogFichaLinks";
+import ConsultaSteps from "../components/seo/ConsultaSteps";
 import { FaqJsonLd } from "../components/seo/GuideParts";
+import ItemListJsonLd from "../components/seo/ItemListJsonLd";
 import SiteHub from "../components/seo/SiteHub";
 
 
@@ -62,6 +64,21 @@ export default async function OleoSobreTelaChilePage() {
   return (
     <main className="min-h-screen bg-[var(--background)]">
       <FaqJsonLd faqs={OLEO_FAQS} />
+      {measured.length > 0 ? (
+        <ItemListJsonLd
+          listName="Óleos sobre tela con medida publicada"
+          listUrl={absoluteUrl("/oleo-sobre-tela-chile")}
+          items={measured.map((work) => ({
+            name: work.name,
+            imageUrl: work.imageUrl.startsWith("http")
+              ? work.imageUrl
+              : absoluteUrl(work.imageUrl),
+            url: absoluteUrl(`/pinturas/${work.slug}`),
+            description: work.info,
+            artMedium: work.medium,
+          }))}
+        />
+      ) : null}
       {/* Hero Section */}
       <section className="relative py-16 sm:py-20 lg:py-24">
         <div className="mx-auto max-w-4xl px-4 sm:px-6">
@@ -369,6 +386,11 @@ export default async function OleoSobreTelaChilePage() {
               Sus obras en <strong>óleo sobre tela</strong> forman parte de colecciones privadas en 
               Chile y el extranjero, testimonio de la calidad técnica y el valor artístico de su trabajo.
             </p>
+
+            <ConsultaSteps
+              heading="Cómo consultar un óleo sobre tela"
+              intro="Un óleo sobre tela de este taller se consulta desde Concepción. No hay carrito. El precio no está en la ficha."
+            />
 
             <h2
               id="oleos-sobre-tela-publicados"

@@ -3,20 +3,26 @@ import Image from "next/image";
 import Link from "next/link";
 import Footer from "../components/Footer";
 import WhatsAppButton from "../components/WhatsAppButton";
+import { listCatalogArtworks } from "@/lib/artworks";
 import { getSiteImageUrl } from "@/lib/cloudinary";
 import { getManagedImageUrl } from "@/lib/managed-image-store";
 import { pageMetadata } from "@/lib/metadata";
+import { absoluteUrl } from "@/lib/site";
+import ArtworkCards from "../components/seo/ArtworkCards";
 import Breadcrumbs from "../components/seo/Breadcrumbs";
 import CatalogFichaLinks, {
   DescriptiveFichaLinks,
 } from "../components/seo/CatalogFichaLinks";
+import ConsultaSteps from "../components/seo/ConsultaSteps";
+import { FaqJsonLd } from "../components/seo/GuideParts";
+import ItemListJsonLd from "../components/seo/ItemListJsonLd";
 import SiteHub from "../components/seo/SiteHub";
 
 
 export const metadata: Metadata = pageMetadata({
   title: 'Galería de arte en Concepción | Marcela Pedrosa',
   description:
-    'Galería de arte en Concepción: pinturas al óleo y obra de Marcela Pedrosa. Selección de originales del Biobío.',
+    'Galería de arte en Concepción con óleos de Marcela Pedrosa. Cada obra tiene ficha. Consulta disponibilidad por WhatsApp o correo.',
   path: '/galeria-arte-concepcion',
   ogImageKey: 'bosque',
   imageAlt: 'Galería de arte de Marcela Pedrosa en Concepción',
@@ -31,13 +37,41 @@ export const metadata: Metadata = pageMetadata({
   ],
 });
 
+const GALERIA_FAQS = [
+  {
+    q: "¿Cómo se consulta una obra de la galería?",
+    a: "Cada óleo publicado abre su ficha. La disponibilidad se pide por WhatsApp al +56 9 5618 9912 o por correo a contacto@marcelapedrosa.com. El precio no está en la ficha.",
+  },
+  {
+    q: "¿La galería publica dirección u horario de sala?",
+    a: "No. Es la galería en línea del taller en Concepción. No publica dirección ni horario. La visita o el retiro se acuerdan por WhatsApp o por correo.",
+  },
+];
+
 export default async function GaleriaArteConcepcionPage() {
   const heroImageUrl =
     (await getManagedImageUrl("pages.pintora.hero")) ||
     getSiteImageUrl("bosque");
+  const works = await listCatalogArtworks();
 
   return (
     <main className="min-h-screen bg-[var(--background)]">
+      <FaqJsonLd faqs={GALERIA_FAQS} />
+      {works.length > 0 ? (
+        <ItemListJsonLd
+          listName="Galería de óleos de Marcela Pedrosa en Concepción"
+          listUrl={absoluteUrl("/galeria-arte-concepcion")}
+          items={works.map((work) => ({
+            name: work.name,
+            imageUrl: work.imageUrl.startsWith("http")
+              ? work.imageUrl
+              : absoluteUrl(work.imageUrl),
+            url: absoluteUrl(`/pinturas/${work.slug}`),
+            description: work.info,
+            artMedium: work.medium,
+          }))}
+        />
+      ) : null}
       <section className="relative py-16 sm:py-20 lg:py-24">
         <div className="mx-auto max-w-4xl px-4 sm:px-6">
           <Breadcrumbs items={[{ name: "Galería de arte", path: "/galeria-arte-concepcion" }]} />
@@ -141,6 +175,11 @@ export default async function GaleriaArteConcepcionPage() {
               .
             </p>
 
+            <ConsultaSteps
+              heading="Cómo consultar una obra de la galería"
+              intro="Esta galería es la del taller en Concepción, publicada en línea. No hay carrito. El precio no está en la ficha."
+            />
+
             <h3 className="text-2xl font-semibold text-ink mt-10 mb-4">
               Arte local, acceso online
             </h3>
@@ -213,8 +252,27 @@ export default async function GaleriaArteConcepcionPage() {
               </Link>
               .
             </p>
+            <h2 className="text-3xl font-semibold text-ink mt-10 mb-6">
+              Obras de la galería
+            </h2>
+            <p className="text-ink-body leading-relaxed mb-6">
+              Estas son las pinturas del catálogo, cada una con su ficha. El
+              precio no está en la página.
+            </p>
+            <ArtworkCards works={works} />
             <CatalogFichaLinks />
             <DescriptiveFichaLinks lead="En la galería, estas fichas se abren solas" />
+            <h2 className="text-2xl font-semibold text-ink mt-10 mb-4">
+              Preguntas sobre la galería
+            </h2>
+            <div className="space-y-4 my-8">
+              {GALERIA_FAQS.map((faq) => (
+                <div key={faq.q} className="bg-white border border-line rounded-xl p-6">
+                  <h3 className="font-semibold text-ink mb-2">{faq.q}</h3>
+                  <p className="text-ink-body text-sm">{faq.a}</p>
+                </div>
+              ))}
+            </div>
           </article>
 
           <div className="mt-12 pt-8 border-t border-line">

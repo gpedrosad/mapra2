@@ -73,3 +73,9 @@ Formato: `YYYY-MM-DD | tema | hecho | acción/implicación`
 - GSC | Brief del lote (dato hasta 2026-10-19): 90d 8 clics, 233 imp, CTR 3,4 %, pos 10,0. Últimos 7 días (10-13..10-19): 2 clics, 14 imp, pos 26,4. Previos (10-06..10-12): 1 clic, 13 imp, pos 7,1 | `/artista-visual-biobio` 1c/1i pos 2. `/pintoras-chilenas` 1c/4i pos 7,3. `/comprar-pintura-concepcion` 0/1 pos 9
 - SEO | Unknown por 5.º día: `/guias`, `/artistas-chilenas`, `/cuadros`, `/comprar-arte-chile`, `/pinturas/casas-dia-y-noche`. Sitemap GSC sin descarga desde 2026-10-16 (22 URLs; live 74) | `pendiente:` reenviar sitemap y Request indexing (OAuth solo lectura)
 - SEO | Lote 2026-10-21: consulta en tres pasos y fichas del catálogo en `/comprar-pintura-concepcion`, `/encargos-pintura`, `/artista-visual-biobio` y `/ceramica-artistica-concepcion`. Gres sin imagen publicada en `data/managed-images.json` (`gresExtras` vacío): no se inventan piezas. Sin página nueva | Doc `docs/seo-lote-2026-10-21.md`
+
+## 2026-10-22
+
+- GSC | Brief del lote (dato hasta 2026-10-20): 90d 9 clics, 244 imp, CTR 3,7 %, pos 9,8. Últimos 7 días (10-14..10-20): 3 clics, 24 imp, pos 17,6. Previos (10-07..10-13): 1 clic, 9 imp, pos 10 | `/taller-arte-concepcion` 1c/5i pos 5,6 en 90d. `/pintoras-chilenas` 1c/5i pos 13 en 7d y 4c/161i pos 7,7 en 90d
+- SEO | Unknown por 6.º día: `/guias`, `/artistas-chilenas`, `/cuadros`, `/comprar-arte-chile`, `/pinturas/casas-dia-y-noche`. Sitemap GSC sin descarga desde 2026-10-16 (22 URLs; live 74) | `pendiente:` reenviar sitemap y Request indexing (OAuth solo lectura)
+- SEO | Lote 2026-10-22: pasos de consulta y fichas en `/taller-arte-concepcion`, `/arte-concepcion` y `/galeria-arte-concepcion`. Meta nueva (title sin cambio desde 2026-10-16). Pasos en óleo e impresionismo sin tocar title ni meta. FAQ de pintora actual en `/mujeres-artistas-chilenas`. `/pintoras-chilenas` no se editó. Sin página nueva. El taller no publica horario de clases | Doc `docs/seo-lote-2026-10-22.md`
