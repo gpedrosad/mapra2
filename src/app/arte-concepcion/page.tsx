@@ -3,20 +3,26 @@ import Image from "next/image";
 import Link from "next/link";
 import Footer from "../components/Footer";
 import WhatsAppButton from "../components/WhatsAppButton";
+import { listCatalogArtworks } from "@/lib/artworks";
 import { getSiteImageUrl } from "@/lib/cloudinary";
 import { getManagedImageUrl } from "@/lib/managed-image-store";
 import { pageMetadata } from "@/lib/metadata";
+import { absoluteUrl } from "@/lib/site";
+import ArtworkCards from "../components/seo/ArtworkCards";
 import Breadcrumbs from "../components/seo/Breadcrumbs";
 import CatalogFichaLinks, {
   DescriptiveFichaLinks,
 } from "../components/seo/CatalogFichaLinks";
+import ConsultaSteps from "../components/seo/ConsultaSteps";
+import { FaqJsonLd } from "../components/seo/GuideParts";
+import ItemListJsonLd from "../components/seo/ItemListJsonLd";
 import SiteHub from "../components/seo/SiteHub";
 
 
 export const metadata: Metadata = pageMetadata({
   title: 'Arte en Concepción | Marcela Pedrosa',
   description:
-    'Arte en Concepción: pintura al óleo e impresionismo figurativo de Marcela Pedrosa. Obras originales y taller en el Biobío.',
+    'Arte en Concepción: óleos e impresionismo figurativo de Marcela Pedrosa. Consulta la ficha por WhatsApp o correo. Sin precio en la página.',
   path: '/arte-concepcion',
   ogImageKey: 'bosque',
   imageAlt: 'Arte y pintura de Marcela Pedrosa en Concepción',
@@ -34,48 +40,45 @@ export const metadata: Metadata = pageMetadata({
   ],
 });
 
-const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  mainEntity: [
-    {
-      "@type": "Question",
-      name: "¿Dónde encontrar arte y pintura de Marcela Pedrosa en Concepción?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Marcela Pedrosa trabaja desde su taller en Concepción, Región del Biobío. Ofrece obras originales de pintura al óleo y piezas de arte contemporáneo, con consulta por WhatsApp o formulario de contacto.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "¿Qué tipo de arte realiza Marcela Pedrosa?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Se especializa en pintura al óleo sobre tela e impresionismo figurativo, con temas de fachadas, bosques y paisaje del Biobío. También desarrolla cerámica artística en gres.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "¿Se pueden comprar pinturas originales en Concepción?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Sí. Marcela Pedrosa ofrece obras originales disponibles y encargos personalizados de pintura y arte para hogares, colecciones y espacios en Concepción y el resto de Chile.",
-      },
-    },
-  ],
-};
+const ARTE_FAQS = [
+  {
+    q: "¿Dónde encontrar arte de Marcela Pedrosa en Concepción?",
+    a: "En su taller en Concepción, Región del Biobío. Las pinturas publicadas tienen ficha en este sitio. La consulta es por WhatsApp al +56 9 5618 9912 o por correo a contacto@marcelapedrosa.com.",
+  },
+  {
+    q: "¿Qué tipo de arte realiza Marcela Pedrosa?",
+    a: "Óleo sobre tela e impresionismo figurativo, con fachadas, bosques y paisaje del Biobío, y cerámica artística en gres.",
+  },
+  {
+    q: "¿Cómo se compra una pintura original?",
+    a: "Se elige la ficha, se consulta por WhatsApp al +56 9 5618 9912 o por correo a contacto@marcelapedrosa.com, y el envío o el retiro se coordina en esa conversación. Los plazos están en tiempos de entrega y los cambios, en devoluciones. La ficha no trae precio.",
+  },
+];
 
 export default async function ArteConcepcionPage() {
   const heroImageUrl =
     (await getManagedImageUrl("pages.pintora.hero")) ||
     getSiteImageUrl("bosque");
+  const works = await listCatalogArtworks();
 
   return (
     <main className="min-h-screen bg-[var(--background)]">
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />
+      <FaqJsonLd faqs={ARTE_FAQS} />
+      {works.length > 0 ? (
+        <ItemListJsonLd
+          listName="Arte publicado de Marcela Pedrosa en Concepción"
+          listUrl={absoluteUrl("/arte-concepcion")}
+          items={works.map((work) => ({
+            name: work.name,
+            imageUrl: work.imageUrl.startsWith("http")
+              ? work.imageUrl
+              : absoluteUrl(work.imageUrl),
+            url: absoluteUrl(`/pinturas/${work.slug}`),
+            description: work.info,
+            artMedium: work.medium,
+          }))}
+        />
+      ) : null}
 
       <section className="relative py-16 sm:py-20 lg:py-24">
         <div className="mx-auto max-w-4xl px-4 sm:px-6">
@@ -190,6 +193,11 @@ export default async function ArteConcepcionPage() {
               Chile y visitas acordadas al taller.
             </p>
 
+            <ConsultaSteps
+              heading="Cómo consultar una obra en Concepción"
+              intro="La compra de este arte es por consulta, desde el taller en Concepción. No hay carrito. El precio no está en la ficha."
+            />
+
             <div className="bg-brand text-white rounded-xl p-8 my-10 text-center">
               <h3 className="text-2xl font-semibold mb-4">
                 ¿Buscas arte en Concepción?
@@ -213,39 +221,25 @@ export default async function ArteConcepcionPage() {
               </div>
             </div>
 
-            <h3 className="text-2xl font-semibold text-ink mt-10 mb-4">
-              Preguntas frecuentes
-            </h3>
-
-            <div className="space-y-6 mb-8">
-              <div>
-                <h4 className="text-lg font-semibold text-ink mb-2">
-                  ¿Dónde encontrar arte de Marcela Pedrosa en Concepción?
-                </h4>
-                <p className="text-ink-body leading-relaxed">
-                  Desde su taller en Concepción ofrece obras originales y encargos.
-                  Puedes contactarla por WhatsApp o desde la página de contacto.
-                </p>
-              </div>
-              <div>
-                <h4 className="text-lg font-semibold text-ink mb-2">
-                  ¿Qué tipo de arte realiza?
-                </h4>
-                <p className="text-ink-body leading-relaxed">
-                  Pintura al óleo e impresionismo figurativo, con temas del Biobío, y
-                  también cerámica artística en gres.
-                </p>
-              </div>
-              <div>
-                <h4 className="text-lg font-semibold text-ink mb-2">
-                  ¿Se pueden comprar pinturas originales?
-                </h4>
-                <p className="text-ink-body leading-relaxed">
-                  Sí: hay obras disponibles y la posibilidad de encargos personalizados
-                  para espacios en Concepción y el resto de Chile.
-                </p>
-              </div>
+            <h2 className="text-2xl font-semibold text-ink mt-10 mb-4">
+              Preguntas sobre el arte en Concepción
+            </h2>
+            <div className="space-y-4 my-8">
+              {ARTE_FAQS.map((faq) => (
+                <div key={faq.q} className="bg-white border border-line rounded-xl p-6">
+                  <h3 className="font-semibold text-ink mb-2">{faq.q}</h3>
+                  <p className="text-ink-body text-sm">{faq.a}</p>
+                </div>
+              ))}
             </div>
+            <h2 className="text-3xl font-semibold text-ink mt-10 mb-6">
+              Obras publicadas
+            </h2>
+            <p className="text-ink-body leading-relaxed mb-6">
+              Estas son las pinturas del catálogo, cada una con su ficha. El
+              precio no está en la página.
+            </p>
+            <ArtworkCards works={works} />
             <p className="text-ink-body leading-relaxed mb-6">
               Para elegir una tela de la ciudad, mira{" "}
               <Link href="/pintura-de-ciudad" className="text-brand underline">pintura de ciudad</Link>{" "}
@@ -253,7 +247,9 @@ export default async function ArteConcepcionPage() {
               <Link href="/cuadros/fachadas-arquitectura" className="text-brand underline">
                 cuadros de fachadas
               </Link>
-              . Un muro de trabajo tiene su grupo en{" "}
+              . El índice por muro está en{" "}
+              <Link href="/cuadros" className="text-brand underline">cuadros</Link>.
+              Un muro de trabajo tiene su grupo en{" "}
               <Link href="/cuadros/para-oficina" className="text-brand underline">cuadros para oficina</Link>.
               La compra por motivo, fuera de esta página local, está en{" "}
               <Link href="/comprar-arte-chile" className="text-brand underline">comprar arte en Chile</Link>.

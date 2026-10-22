@@ -23,6 +23,10 @@ const MUJERES_FAQS = [
     q: "¿Quién fue Lily Garafulic?",
     a: "Lily Garafulic Yancovic fue escultora. Nació en Antofagasta el 14 de mayo de 1914 y murió en Santiago el 15 de marzo de 2012. Recibió el Premio Nacional de Artes Plásticas en 1995 y dirigió el Museo Nacional de Bellas Artes entre 1973 y 1977.",
   },
+  {
+    q: "¿Qué mujer pintora chilena actual se consulta en este sitio?",
+    a: "De quien pinta hoy, este sitio documenta a Marcela Pedrosa en Concepción. El recorrido de famosas y actuales está en pintoras chilenas. Sus óleos se consultan por WhatsApp al +56 9 5618 9912 o por correo a contacto@marcelapedrosa.com. La ficha no publica el precio.",
+  },
 ];
 
 export const metadata: Metadata = pageMetadata({
@@ -468,6 +472,21 @@ export default async function MujeresArtistasChilenasPage() {
                         </Link>
                         . Aquí el tema es más ancho: escultura, grabado, cerámica
                         y arte visual.
+                      </>
+                    ) : faq.q.startsWith("¿Qué mujer") ? (
+                      <>
+                        De quien pinta hoy, este sitio documenta a Marcela
+                        Pedrosa en Concepción. El recorrido de famosas y
+                        actuales está en{" "}
+                        <Link
+                          href="/pintoras-chilenas#pintoras-chilenas-actuales"
+                          className="text-brand underline"
+                        >
+                          pintoras chilenas
+                        </Link>
+                        . Sus óleos se consultan por WhatsApp al +56 9 5618 9912
+                        o por correo a contacto@marcelapedrosa.com. La ficha no
+                        publica el precio.
                       </>
                     ) : (
                       faq.a
