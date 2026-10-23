@@ -97,4 +97,8 @@ export const cuidarColgarOleo: Block[] = [
     type: "p",
     text: "Anota en el reverso, con lápiz suave en el bastidor y nunca sobre la pintura, la fecha en que la colgaste y el muro. Dentro de un año vas a saber si ese lugar se portó bien. El cuidado de un óleo es sobre todo constancia: sombra, aire, dos puntos firmes y manos limpias en el marco.",
   },
+  {
+    type: "p",
+    text: "Si la tela es de este taller, parte por la ficha: [Bosque con luz entre troncos](/pinturas/bosque-troncos-luz) (158x122) o [Retrato de mujer](/pinturas/retrato-de-mujer) (100x130). Cómo elegir el muro del living está en [esa guía](/guias/elegir-cuadro-para-el-living). Las telas ya pensadas para ese muro están en [cuadros para el living](/cuadros/para-living).",
+  },
 ];

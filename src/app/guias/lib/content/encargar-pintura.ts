@@ -103,4 +103,8 @@ export const encargarPintura: Block[] = [
     type: "p",
     text: "Un encargo bien llevado se siente lento al principio y simple al final: había medidas, había un motivo, había un acuerdo y la tela llegó seca, identificada y del tamaño que el muro podía sostener. Esa sencillez se construye en las preguntas, no en la prisa.",
   },
+  {
+    type: "p",
+    text: "Si una medida publicada ya calza, mira [cuadros grandes al óleo](/cuadros/grandes-al-oleo): [Bosque con luz entre troncos](/pinturas/bosque-troncos-luz), [Grupo de figuras](/pinturas/grupo-de-figuras), [Elefante](/pinturas/elefante) y [Retrato de mujer](/pinturas/retrato-de-mujer). El encargo del taller, cuando el muro pide otra medida, está en [encargos de pintura](/encargos-pintura).",
+  },
 ];

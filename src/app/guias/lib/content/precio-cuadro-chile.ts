@@ -105,4 +105,8 @@ export const precioCuadroChile: Block[] = [
     type: "p",
     text: "Marcela Pedrosa trabaja desde Concepción. Si la consulta es por una pintura de este taller, el camino es el contacto del sitio: WhatsApp, correo o formulario. Lleva las medidas y la pregunta por el medio. Con eso la respuesta puede ser un monto real, referido a una tela real, en lugar de una cifra inventada en una guía.",
   },
+  {
+    type: "p",
+    text: "Ninguna ficha de este sitio publica el monto. Un ejemplo para pedir el valor con el dato de la ficha en la mano es [Elefante](/pinturas/elefante) (90x120, óleo sobre tela). La compra por motivo está en [comprar arte en Chile](/comprar-arte-chile). El óleo con envío, en [comprar cuadros al óleo](/comprar-cuadros-al-oleo-chile).",
+  },
 ];

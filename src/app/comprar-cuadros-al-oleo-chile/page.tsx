@@ -3,6 +3,7 @@ import Link from "next/link";
 import Footer from "../components/Footer";
 import ArtworkCards from "../components/seo/ArtworkCards";
 import Breadcrumbs from "../components/seo/Breadcrumbs";
+import ConsultaSteps from "../components/seo/ConsultaSteps";
 import InquiryCta from "../components/seo/InquiryCta";
 import ItemListJsonLd from "../components/seo/ItemListJsonLd";
 import SiteHub from "../components/seo/SiteHub";
@@ -106,6 +107,27 @@ export default async function ComprarCuadrosAlOleoChilePage() {
           Cuadros al óleo publicados
         </h2>
         <ArtworkCards works={oilWorks} />
+
+        <ConsultaSteps intro="Esta página es el óleo con envío dentro de Chile. Nombra la ficha. El plazo depende del marco y de la región." />
+
+        <p className="text-ink-body leading-relaxed mb-6">
+          Las cuatro telas con medida publicada están en{" "}
+          <Link href="/cuadros/grandes-al-oleo" className="text-brand underline underline-offset-4">
+            cuadros grandes al óleo
+          </Link>
+          . Cómo medir un living, en la{" "}
+          <Link
+            href="/guias/elegir-cuadro-para-el-living"
+            className="text-brand underline underline-offset-4"
+          >
+            guía del living
+          </Link>
+          . El índice de esas lecturas está en{" "}
+          <Link href="/guias" className="text-brand underline underline-offset-4">
+            guías
+          </Link>
+          .
+        </p>
 
         <InquiryCta
           heading="¿Quieres un cuadro al óleo?"

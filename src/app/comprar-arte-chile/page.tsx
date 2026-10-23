@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Footer from "../components/Footer";
+import ConsultaSteps from "../components/seo/ConsultaSteps";
 import ItemListJsonLd from "../components/seo/ItemListJsonLd";
 import {
   ArtworkGrid,
@@ -149,15 +150,7 @@ export default async function ComprarArteChilePage() {
             );
           })}
 
-          <h2 className="mb-4 mt-12 text-2xl font-semibold text-ink">Cómo es la compra</h2>
-          <ol className="list-decimal space-y-3 pl-5 text-ink-body">
-            <li>Elige un tema o revisa la galería de pinturas.</li>
-            <li>Escribe por WhatsApp o por correo e indica la obra, o el tema si aún no hay una.</li>
-            <li>
-              Se confirman disponibilidad, medida y precio. El retiro es en Concepción o hay envío
-              dentro de Chile.
-            </li>
-          </ol>
+          <ConsultaSteps intro="Esta página ordena por motivo. Nombra la ficha, o el tema si todavía no hay una." />
 
           <p className="mt-6 leading-relaxed text-ink-body">
             Sin enmarcado, el plazo publicado es de 48 horas en la Región del Biobío y de 3 a 5
@@ -202,6 +195,26 @@ export default async function ComprarArteChilePage() {
               "/bodegon-oleo",
             ]}
             also={[
+              {
+                href: "/cuadros/para-living",
+                label: "Cuadros para el living",
+                note: "Las telas que se leen desde el sofá, no la guía de cómo medir",
+              },
+              {
+                href: "/cuadros/grandes-al-oleo",
+                label: "Cuadros grandes al óleo",
+                note: "Solo las cuatro fichas que publican medida",
+              },
+              {
+                href: "/cuadros/regalar-pintura-original",
+                label: "Regalar una pintura",
+                note: "Obras fáciles de nombrar, sin precio en la página",
+              },
+              {
+                href: "/comprar-cuadros-al-oleo-chile",
+                label: "Comprar cuadros al óleo",
+                note: "La misma técnica, leída por el envío dentro de Chile",
+              },
               {
                 href: "/pinturas",
                 label: "Galería de pinturas",

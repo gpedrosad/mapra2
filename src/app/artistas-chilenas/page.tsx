@@ -1,4 +1,5 @@
 import Link from "next/link";
+import ConsultaSteps from "../components/seo/ConsultaSteps";
 import { SITE_URL } from "@/lib/site";
 import { PERFILES, ProfilePage, perfilMetadata } from "./ui";
 
@@ -14,6 +15,7 @@ export const metadata = perfilMetadata({
 export default function ArtistasChilenasIndexPage() {
   return (
     <ProfilePage
+      modified="2026-10-23"
       h1="Artistas chilenas"
       kicker="Perfiles para leer con calma a pintoras, una escultora y dos pintores que aparecen una y otra vez cuando alguien busca arte chileno."
       description={DESCRIPTION}
@@ -162,6 +164,41 @@ export default function ArtistasChilenasIndexPage() {
         </Link>
         .
       </p>
+      <h2 className="text-2xl font-semibold text-ink pt-4">Obra de Marcela, con ficha</h2>
+      <p>
+        Los perfiles de esta página documentan a otras artistas, con la fuente de
+        cada dato. La pintura que este sitio vende es la de Marcela Pedrosa, en
+        Concepción. Tres fichas para entrar al catálogo:{" "}
+        <Link href="/pinturas/elefante" className="text-brand underline">
+          Elefante
+        </Link>
+        ,{" "}
+        <Link href="/pinturas/bosque-troncos-luz" className="text-brand underline">
+          Bosque con luz entre troncos
+        </Link>{" "}
+        y{" "}
+        <Link href="/pinturas/casas-dia-y-noche" className="text-brand underline">
+          Casas de día y de noche
+        </Link>
+        . El grupo por muro está en{" "}
+        <Link href="/cuadros" className="text-brand underline">
+          cuadros
+        </Link>
+        . La compra por motivo, en{" "}
+        <Link href="/comprar-arte-chile" className="text-brand underline">
+          comprar arte en Chile
+        </Link>
+        . Cómo medir un living, en las{" "}
+        <Link href="/guias" className="text-brand underline">
+          guías
+        </Link>
+        . El óleo con envío, en{" "}
+        <Link href="/comprar-cuadros-al-oleo-chile" className="text-brand underline">
+          comprar cuadros al óleo
+        </Link>
+        .
+      </p>
+      <ConsultaSteps intro="Los perfiles no están a la venta. Si la consulta es una tela de Marcela, nombra la ficha." />
       <h2 className="text-2xl font-semibold text-ink pt-4">Los perfiles</h2>
       <ul className="space-y-3">
         {PERFILES.map((item) => (
