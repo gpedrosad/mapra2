@@ -1,14 +1,22 @@
 import Image from "next/image";
 import Link from "next/link";
 import Footer from "../components/Footer";
+import ConsultaSteps from "../components/seo/ConsultaSteps";
 import ItemListJsonLd from "../components/seo/ItemListJsonLd";
 import WhatsAppButton from "../components/WhatsAppButton";
+import { motifForId } from "@/lib/artwork-slugs";
 import { SITE_URL } from "@/lib/site";
 import BreadcrumbJsonLd from "./BreadcrumbJsonLd";
 import { EMAIL, PHONE, type CuadroPage } from "./catalog";
 import type { CuadroWork } from "./load-works";
 import { CUADRO_PAGES } from "./pages";
 import { RichText } from "./RichText";
+
+function fichaOf(id: string) {
+  const motif = motifForId(id);
+  if (!motif) return null;
+  return { href: `/pinturas/${motif.slug}`, name: motif.name };
+}
 
 function absoluteUrl(url: string) {
   if (url.startsWith("http")) return url;
@@ -38,12 +46,16 @@ export default function CuadrosLanding({
       <ItemListJsonLd
         listName={page.h1}
         listUrl={`${SITE_URL}${page.path}`}
-        items={works.map((work) => ({
-          name: work.caption,
-          imageUrl: absoluteUrl(work.imageUrl),
-          url: `${SITE_URL}${page.workLinks?.[work.id] ?? page.path}`,
-          description: `${work.alt} ${work.info}`,
-        }))}
+        items={works.map((work) => {
+          const ficha = fichaOf(work.id);
+          return {
+            name: ficha?.name ?? work.caption,
+            imageUrl: absoluteUrl(work.imageUrl),
+            url: ficha ? `${SITE_URL}${ficha.href}` : `${SITE_URL}${page.path}`,
+            description: `${work.alt}. ${work.info}`,
+            artMedium: /[oó]leo sobre tela/i.test(work.info) ? "óleo sobre tela" : undefined,
+          };
+        })}
       />
 
       <article className="mx-auto w-full max-w-6xl px-4 sm:px-6 py-10 sm:py-14">
@@ -95,22 +107,43 @@ export default function CuadrosLanding({
           <ul className="mt-6 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {works.map((work) => {
               const detailHref = page.workLinks?.[work.id];
+              const ficha = fichaOf(work.id);
+              const image = (
+                <Image
+                  src={work.imageUrl}
+                  alt={work.alt}
+                  width={work.width}
+                  height={work.height}
+                  className="block h-auto w-full"
+                  sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
+                />
+              );
               return (
                 <li
                   key={work.id}
                   className="overflow-hidden border border-line bg-surface"
                 >
                   <figure>
-                    <Image
-                      src={work.imageUrl}
-                      alt={work.alt}
-                      width={work.width}
-                      height={work.height}
-                      className="block h-auto w-full"
-                      sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
-                    />
+                    {ficha ? (
+                      <Link href={ficha.href} className="block">
+                        {image}
+                      </Link>
+                    ) : (
+                      image
+                    )}
                     <figcaption className="space-y-1 px-4 py-3">
-                      <p className="font-medium text-ink">{work.caption}</p>
+                      <p className="font-medium text-ink">
+                        {ficha ? (
+                          <Link
+                            href={ficha.href}
+                            className="underline decoration-brand/30 underline-offset-4 hover:decoration-brand"
+                          >
+                            {ficha.name}
+                          </Link>
+                        ) : (
+                          work.caption
+                        )}
+                      </p>
                       <p className="text-sm text-ink-muted">{work.info}</p>
                       {detailHref ? (
                         <p className="pt-1 text-sm">
@@ -164,6 +197,10 @@ export default function CuadrosLanding({
               </p>
             );
           })}
+        </div>
+
+        <div className="max-w-3xl">
+          <ConsultaSteps intro={page.consultaIntro} />
         </div>
 
         <section className="mt-12 max-w-3xl rounded-xl bg-brand px-6 py-8 text-white sm:px-8">

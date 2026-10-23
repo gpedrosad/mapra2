@@ -15,5 +15,6 @@ export type Guide = {
   ctaTitle: string;
   ctaBody: string;
   whatsappText: string;
+  consultaIntro: string;
   blocks: Block[];
 };

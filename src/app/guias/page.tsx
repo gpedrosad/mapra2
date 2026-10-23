@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Footer from "../components/Footer";
+import ConsultaSteps from "../components/seo/ConsultaSteps";
+import { pageMetadata } from "@/lib/metadata";
 import { SEO_GUIDES } from "@/lib/seo-guides";
 import { SITE_URL } from "@/lib/site";
 import { GUIDES } from "./lib/guides";
@@ -9,21 +11,15 @@ const THEME_GUIDES = SEO_GUIDES.filter((guide) => guide.path !== "/guias");
 
 const TITLE = "Guías para elegir y cuidar pintura";
 const DESCRIPTION =
-  "Guías para elegir un cuadro, comparar óleo y acrílico, cuidar una obra y encargar pintura original en Chile.";
+  "Cómo medir un muro, comparar óleo y acrílico, cuidar una tela y encargar. Sin precios: la obra se consulta.";
 const CANONICAL = `${SITE_URL}/guias`;
 
-export const metadata: Metadata = {
-  title: { absolute: TITLE },
+export const metadata: Metadata = pageMetadata({
+  title: TITLE,
   description: DESCRIPTION,
-  alternates: { canonical: CANONICAL },
-  openGraph: {
-    title: TITLE,
-    description: DESCRIPTION,
-    url: CANONICAL,
-    type: "website",
-    locale: "es_CL",
-  },
-};
+  path: "/guias",
+  imageAlt: "Guías para elegir y cuidar un óleo de Marcela Pedrosa",
+});
 
 const breadcrumb = {
   "@context": "https://schema.org",
@@ -144,8 +140,8 @@ export default function GuiasIndexPage() {
           .
         </p>
         <p className="mt-4 text-[1.05rem] text-ink-body leading-relaxed">
-          Son guías de oficio. El monto de una obra de Marcela Pedrosa, pintora en
-          Concepción, se consulta por WhatsApp, por{" "}
+          Son guías de oficio, no el catálogo. El monto de una obra de Marcela
+          Pedrosa, pintora en Concepción, se consulta por WhatsApp, por{" "}
           <a
             href="mailto:contacto@marcelapedrosa.com"
             className="text-brand underline underline-offset-4"
@@ -156,8 +152,58 @@ export default function GuiasIndexPage() {
           <Link href="/contacto" className="text-brand underline underline-offset-4">
             formulario de contacto
           </Link>
+          . El catálogo por muro está en{" "}
+          <Link href="/cuadros" className="text-brand underline underline-offset-4">
+            cuadros
+          </Link>
+          . La compra por motivo, en{" "}
+          <Link
+            href="/comprar-arte-chile"
+            className="text-brand underline underline-offset-4"
+          >
+            comprar arte en Chile
+          </Link>
+          . El óleo con envío, en{" "}
+          <Link
+            href="/comprar-cuadros-al-oleo-chile"
+            className="text-brand underline underline-offset-4"
+          >
+            comprar cuadros al óleo
+          </Link>
+          . Los perfiles con fuente, en{" "}
+          <Link
+            href="/artistas-chilenas"
+            className="text-brand underline underline-offset-4"
+          >
+            artistas chilenas
+          </Link>
           .
         </p>
+        <p className="mt-4 text-[1.05rem] text-ink-body leading-relaxed">
+          Tres telas para cruzar con estas guías:{" "}
+          <Link
+            href="/pinturas/bosque-troncos-luz"
+            className="text-brand underline underline-offset-4"
+          >
+            Bosque con luz entre troncos
+          </Link>{" "}
+          (158x122),{" "}
+          <Link
+            href="/pinturas/elefante"
+            className="text-brand underline underline-offset-4"
+          >
+            Elefante
+          </Link>{" "}
+          (90x120) y{" "}
+          <Link
+            href="/pinturas/casas-dia-y-noche"
+            className="text-brand underline underline-offset-4"
+          >
+            Casas de día y de noche
+          </Link>
+          .
+        </p>
+        <ConsultaSteps intro="Estas páginas explican cómo elegir y cuidar. No publican el valor: se pide nombrando la ficha." />
 
         <ul className="mt-10 space-y-4">
           {GUIDES.map((guide) => (

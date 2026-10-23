@@ -89,4 +89,8 @@ export const oleoVsAcrilico: Block[] = [
     type: "p",
     text: "Si dudas entre dos obras, míralas en la misma luz y anota en una frase qué te detiene: el color, el tamaño o el material. Esa frase ordena la conversación con el taller mejor que una foto recortada. El material se puede explicar. El lugar de tu casa, solo lo conoces tú.",
   },
+  {
+    type: "p",
+    text: "En este sitio las obras publicadas son óleo sobre tela. Para ver una ficha: [Bosque con luz entre troncos](/pinturas/bosque-troncos-luz), [Retrato de mujer](/pinturas/retrato-de-mujer) y [Grupo de figuras](/pinturas/grupo-de-figuras). El acrílico no está en la galería. La compra con envío está en [comprar cuadros al óleo](/comprar-cuadros-al-oleo-chile).",
+  },
 ];

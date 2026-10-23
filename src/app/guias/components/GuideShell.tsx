@@ -1,8 +1,9 @@
 import Link from "next/link";
 import Footer from "../../components/Footer";
+import ConsultaSteps from "../../components/seo/ConsultaSteps";
 import { getOgImageUrl } from "@/lib/cloudinary";
 import { SITE_URL } from "@/lib/site";
-import { GUIDE_DATE, GUIDES } from "../lib/guides";
+import { GUIDE_DATE, GUIDE_MODIFIED, GUIDES } from "../lib/guides";
 import type { Guide } from "../lib/types";
 import GuideBlocks from "./GuideBlocks";
 import GuideInquiry from "./GuideInquiry";
@@ -17,7 +18,7 @@ function articleSchema(guide: Guide) {
     description: guide.description,
     image: getOgImageUrl(guide.imageKey, SITE_URL),
     datePublished: GUIDE_DATE,
-    dateModified: GUIDE_DATE,
+    dateModified: GUIDE_MODIFIED,
     inLanguage: "es-CL",
     mainEntityOfPage: {
       "@type": "WebPage",
@@ -112,6 +113,8 @@ export default function GuideShell({ guide }: { guide: Guide }) {
         <p className="mt-4 text-sm text-ink-muted">
           <time dateTime={GUIDE_DATE}>17 de octubre de 2026</time>
           <span aria-hidden> · </span>
+          Actualizada el <time dateTime={GUIDE_MODIFIED}>23 de octubre de 2026</time>
+          <span aria-hidden> · </span>
           Marcela Pedrosa, Concepción
         </p>
 
@@ -139,6 +142,8 @@ export default function GuideShell({ guide }: { guide: Guide }) {
             ))}
           </ul>
         </section>
+
+        <ConsultaSteps intro={guide.consultaIntro} />
 
         <GuideInquiry
           title={guide.ctaTitle}

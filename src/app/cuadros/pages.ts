@@ -18,6 +18,8 @@ export const CUADRO_PAGES: CuadroPage[] = [
     ctaTitle: "Consulta la obra que te interesa",
     ctaBody:
       "Escribe el lugar y el nombre de la pintura. Marcela confirma disponibilidad por WhatsApp o por correo. El valor se acuerda en esa conversación.",
+    consultaIntro:
+      "Esta página ordena por el lugar de la casa. Elige la ficha y escribe el nombre de la obra.",
     gridHeading: "Una obra de cada grupo",
     workIds: ["c3", "c7", "c2", "c1", "c13", "c4", "c15"],
     workLinks: {
@@ -33,6 +35,10 @@ export const CUADRO_PAGES: CuadroPage[] = [
       {
         type: "p",
         text: "Si buscas un cuadro y ya sabes el muro, parte por aquí. Marcela Pedrosa, pintora en Concepción, tiene óleos reales en la galería del sitio. Esta serie de páginas los agrupa por el motivo de la consulta: el living, el dormitorio, la oficina, un bosque, una fachada, un formato con medida publicada o un regalo. Cada grupo usa solo pinturas que están en esa galería.",
+      },
+      {
+        type: "p",
+        text: `Cada miniatura abre la ficha de esa tela: ${link("/pinturas/elefante", "Elefante")}, ${link("/pinturas/figura-recostada", "Figura recostada")}, ${link("/pinturas/grupo-de-figuras", "Grupo de figuras")}, ${link("/pinturas/bosque-troncos-luz", "Bosque con luz entre troncos")}, ${link("/pinturas/casas-dia-y-noche", "Casas de día y de noche")}, ${link("/pinturas/retrato-de-mujer", "Retrato de mujer")} y ${link("/pinturas/gato-recostado", "Gato recostado")}. Por motivo, entra a ${link("/comprar-arte-chile", "comprar arte en Chile")}. Para medir antes de elegir, el índice es ${link("/guias", "guías")}. Un óleo con envío está en ${link("/comprar-cuadros-al-oleo-chile", "comprar cuadros al óleo")}. Otros nombres, con fuente, están en ${link("/artistas-chilenas", "artistas chilenas")}.`,
       },
       {
         type: "h2",
@@ -99,12 +105,18 @@ export const CUADRO_PAGES: CuadroPage[] = [
     ctaTitle: "Pide el cuadro para tu living",
     ctaBody:
       "Cuéntale el ancho del muro y qué obra viste: el bosque, el elefante, las figuras, el retrato, la ciudad, los caballos, el bosque en color o los rostros.",
+    consultaIntro:
+      "Si ya mediste el muro, nombra la tela del living que viste y el ancho libre.",
     gridHeading: "Óleos que se leen desde el sofá",
     workIds: ["c1", "c2", "c3", "c4", "c12", "c9", "c14", "c8"],
     blocks: [
       {
         type: "p",
         text: "Un cuadro para el living tiene que funcionar cuando hay visitas, con la tele apagada y con la luz de la tarde. En la galería de Marcela Pedrosa hay óleos que aguantan esa distancia por lo que se ve en la tela y, cuando existe, por la medida publicada. La selección sigue el formato y el motivo.",
+      },
+      {
+        type: "p",
+        text: `Esta página lista las telas. Cómo medir el muro, la altura y la luz está en ${link("/guias/elegir-cuadro-para-el-living", "cómo elegir un cuadro para el living")}, y no se repite aquí. Fichas: ${link("/pinturas/bosque-troncos-luz", "Bosque con luz entre troncos")} (158x122), ${link("/pinturas/grupo-de-figuras", "Grupo de figuras")} (110x110), ${link("/pinturas/elefante", "Elefante")} (90x120), ${link("/pinturas/retrato-de-mujer", "Retrato de mujer")} (100x130), ${link("/pinturas/ciudad-casas-de-colores", "Ciudad de casas de colores")}, ${link("/pinturas/dos-caballos", "Dos caballos")}, ${link("/pinturas/bosque-troncos-de-colores", "Bosque de troncos de colores")} y ${link("/pinturas/rostros-superpuestos", "Rostros superpuestos")}.`,
       },
       {
         type: "h2",
@@ -163,12 +175,18 @@ export const CUADRO_PAGES: CuadroPage[] = [
     ctaTitle: "Consulta un cuadro para el dormitorio",
     ctaBody:
       "Di que es para el dormitorio y nombra la obra: la figura recostada, las manos, el rostro cercano, el gato o el retrato de 100x130.",
+    consultaIntro:
+      "Di que es para el dormitorio y nombra la ficha: la figura recostada, las manos, el rostro, el gato o el retrato.",
     gridHeading: "Óleos para ver de cerca",
     workIds: ["c7", "c11", "c6", "c15", "c4"],
     blocks: [
       {
         type: "p",
         text: "Un dormitorio pide una imagen que aguante verse de cerca, de mañana y con poca luz. En la galería de Marcela Pedrosa hay óleos que sirven para eso por lo que muestran. No existe una serie llamada dormitorio: esta página elige las telas de cercanía y deja fuera las de impacto alto.",
+      },
+      {
+        type: "p",
+        text: `Fichas de esta selección: ${link("/pinturas/figura-recostada", "Figura recostada")}, ${link("/pinturas/manos-superpuestas", "Manos superpuestas")}, ${link("/pinturas/retrato-con-mano", "Retrato con mano al mentón")}, ${link("/pinturas/gato-recostado", "Gato recostado")} y ${link("/pinturas/retrato-de-mujer", "Retrato de mujer")} (100x130). Para colgar un óleo sin dañar la tela, la guía es ${link("/guias/cuidar-y-colgar-pintura-al-oleo", "cuidar y colgar una pintura al óleo")}.`,
       },
       {
         type: "h2",
@@ -227,12 +245,18 @@ export const CUADRO_PAGES: CuadroPage[] = [
     ctaTitle: "Consulta un cuadro para la oficina",
     ctaBody:
       "Di si el espacio es compartido o personal, y qué obra viste: las figuras, la ciudad, las fachadas, los rostros, el retrato con lentes o los caballos.",
+    consultaIntro:
+      "Di si el espacio es compartido y qué ficha viste. El valor no está en la página.",
     gridHeading: "Óleos con carácter de lugar de trabajo",
     workIds: ["c2", "c12", "c13", "c8", "c10", "c9"],
     blocks: [
       {
         type: "p",
         text: "Una oficina pide un cuadro que se pueda compartir durante muchas horas, con clientes o con el equipo. En el taller de Marcela Pedrosa, en Concepción, los encargos ya contemplan formatos para un muro o un espacio corporativo, y también interiores residenciales. Esta página muestra obras de la galería cuyo motivo aguanta un lugar de trabajo.",
+      },
+      {
+        type: "p",
+        text: `Fichas: ${link("/pinturas/grupo-de-figuras", "Grupo de figuras")} (110x110), ${link("/pinturas/ciudad-casas-de-colores", "Ciudad de casas de colores")}, ${link("/pinturas/casas-dia-y-noche", "Casas de día y de noche")}, ${link("/pinturas/rostros-superpuestos", "Rostros superpuestos")}, ${link("/pinturas/retrato-con-lentes", "Retrato con lentes")} y ${link("/pinturas/dos-caballos", "Dos caballos")}. El living de una casa es otra selección, en ${link("/cuadros/para-living", "cuadros para el living")}.`,
       },
       {
         type: "h2",
@@ -287,12 +311,18 @@ export const CUADRO_PAGES: CuadroPage[] = [
     ctaTitle: "Consulta un cuadro de bosque",
     ctaBody:
       "Nombra el bosque de troncos o el bosque en color, y pide disponibilidad. En el segundo, pide también la medida: la ficha no la publica.",
+    consultaIntro:
+      "Nombra el bosque de troncos o el de colores. En el segundo, pide la medida: la ficha no la publica.",
     gridHeading: "Los dos bosques de la galería",
     workIds: ["c1", "c14"],
     blocks: [
       {
         type: "p",
         text: `En la galería hay dos pinturas que son bosque. El resto de las telas son figuras, retratos, animales, un bodegón o ciudad. Esta página es para comprar uno de esos dos óleos. La ficha del motivo, sin el filtro de muro, está en ${link("/pintura-de-bosques", "pintura de bosques")}.`,
+      },
+      {
+        type: "p",
+        text: `Las dos fichas son ${link("/pinturas/bosque-troncos-luz", "Bosque con luz entre troncos")} (158x122, óleo sobre tela) y ${link("/pinturas/bosque-troncos-de-colores", "Bosque de troncos de colores")} (óleo sobre tela, sin medida publicada).`,
       },
       {
         type: "h2",
@@ -347,12 +377,18 @@ export const CUADRO_PAGES: CuadroPage[] = [
     ctaTitle: "Consulta un cuadro de fachadas",
     ctaBody:
       "Di si te interesa el par de fachadas o la ciudad con cerros y tren, y cuenta el muro. Pide la medida: ninguna de las dos fichas la publica.",
+    consultaIntro:
+      "Di si te interesa el par de día y noche o la ciudad con cerros. Pide la medida: ninguna de las dos fichas la publica.",
     gridHeading: "Fachadas que están en la galería",
     workIds: ["c13", "c12"],
     blocks: [
       {
         type: "p",
-        text: `Quien busca un cuadro de fachadas suele querer casas, color y una ciudad con clima de sur, no un plano técnico. En la galería de Marcela Pedrosa hay dos fichas que muestran eso. Las describo por lo que se ve, para consultarlas. El texto más largo sobre la serie, escrito desde Concepción, sigue en ${link("/pintura-fachadas-concepcion", "pintura de fachadas y bosques")}. Las vistas de ciudad, solas, están en ${link("/pintura-de-ciudad", "pintura de ciudad")}.`,
+        text: `Quien busca un cuadro de fachadas suele querer casas, color y una ciudad con clima de sur, no un plano técnico. En la galería de Marcela Pedrosa hay dos fichas que muestran eso. Las describo por lo que se ve, para consultarlas. No es un servicio para pintar el muro de una casa. El relato de la serie sigue en ${link("/pintura-fachadas-concepcion", "óleos de fachadas y bosques")}. Las vistas de ciudad, solas, están en ${link("/pintura-de-ciudad", "pintura de ciudad")}.`,
+      },
+      {
+        type: "p",
+        text: `Las fichas son ${link("/pinturas/casas-dia-y-noche", "Casas de día y de noche")} y ${link("/pinturas/ciudad-casas-de-colores", "Ciudad de casas de colores")}. Las dos dicen óleo sobre tela y no publican medida.`,
       },
       {
         type: "h2",
@@ -407,12 +443,18 @@ export const CUADRO_PAGES: CuadroPage[] = [
     ctaTitle: "Consulta un cuadro con medida publicada",
     ctaBody:
       "Nombra la obra y repite la medida de la ficha: 158x122, 110x110, 90x120 o 100x130. Agrega el ancho del muro.",
+    consultaIntro:
+      "Repite la medida de la ficha: 158x122, 110x110, 90x120 o 100x130, y el ancho del muro.",
     gridHeading: "Las cuatro fichas con medida",
     workIds: ["c1", "c2", "c3", "c4"],
     blocks: [
       {
         type: "p",
         text: "Grande, aquí, tiene una definición comprobable. De todas las pinturas de la galería, solo cuatro fichas publican medida. Esas cuatro son las que están en esta página. El resto dice óleo sobre tela y nada más. Esas otras telas quedan fuera hasta que la galería publique su número.",
+      },
+      {
+        type: "p",
+        text: `Abre cada una: ${link("/pinturas/bosque-troncos-luz", "Bosque con luz entre troncos")}, ${link("/pinturas/grupo-de-figuras", "Grupo de figuras")}, ${link("/pinturas/elefante", "Elefante")} y ${link("/pinturas/retrato-de-mujer", "Retrato de mujer")}. Cómo mirar el muro antes de elegir está en ${link("/guias/elegir-cuadro-para-el-living", "la guía del living")}.`,
       },
       {
         type: "h2",
@@ -472,12 +514,18 @@ export const CUADRO_PAGES: CuadroPage[] = [
     ctaTitle: "Escribe que es un regalo",
     ctaBody:
       "En la primera línea di que es un regalo, nombra la obra y, si hay fecha, dilo. Marcela confirma disponibilidad y valor.",
+    consultaIntro:
+      "En la primera línea di que es un regalo, nombra la ficha y, si hay fecha, dilo.",
     gridHeading: "Óleos fáciles de nombrar",
     workIds: ["c15", "c3", "c9", "c5", "c6", "c11", "c4", "c10"],
     blocks: [
       {
         type: "p",
         text: "Regalar una pintura original de Marcela Pedrosa es escribirle. Ella vende a pedido desde Concepción, por WhatsApp o por correo. La obra es un óleo único. Si sigue disponible, ella lo confirma. El valor también lo confirma ella: esta página no publica precios.",
+      },
+      {
+        type: "p",
+        text: `Fichas fáciles de nombrar: ${link("/pinturas/gato-recostado", "Gato recostado")}, ${link("/pinturas/elefante", "Elefante")} (90x120), ${link("/pinturas/dos-caballos", "Dos caballos")}, ${link("/pinturas/bodegon-calabazas", "Bodegón de calabazas")}, ${link("/pinturas/retrato-con-mano", "Retrato con mano al mentón")}, ${link("/pinturas/manos-superpuestas", "Manos superpuestas")}, ${link("/pinturas/retrato-de-mujer", "Retrato de mujer")} (100x130) y ${link("/pinturas/retrato-con-lentes", "Retrato con lentes")}.`,
       },
       {
         type: "h2",

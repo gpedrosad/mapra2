@@ -7,28 +7,23 @@ import { getSiteImageUrl } from "@/lib/cloudinary";
 import { getManagedImageUrl } from "@/lib/managed-image-store";
 import { pageMetadata } from "@/lib/metadata";
 import Breadcrumbs from "../components/seo/Breadcrumbs";
-import CatalogFichaLinks, {
-  DescriptiveFichaLinks,
-} from "../components/seo/CatalogFichaLinks";
+import { DescriptiveFichaLinks } from "../components/seo/CatalogFichaLinks";
 import SiteHub from "../components/seo/SiteHub";
 
 
 export const metadata: Metadata = pageMetadata({
-  title: 'Fachadas y bosques | Marcela Pedrosa',
+  title: "Cuadros de fachadas al óleo | Marcela Pedrosa",
   description:
-    'Pintura de fachadas urbanas y bosques del Biobío por Marcela Pedrosa. Óleo e impresionismo figurativo desde Concepción.',
-  path: '/pintura-fachadas-concepcion',
-  ogImageKey: 'bosque',
-  imageAlt: 'Pintura de fachadas y bosques de Marcela Pedrosa',
+    "Óleos de fachadas y de bosques, de Marcela Pedrosa en Concepción. Son cuadros para consultar, no un servicio de pintar muros.",
+  path: "/pintura-fachadas-concepcion",
+  ogImageKey: "bosque",
+  imageAlt: "Óleo de un bosque de Marcela Pedrosa, junto a su serie de fachadas",
   keywords: [
-    "pintura fachadas concepción",
-    "fachadas concepción arte",
-    "pintura bosques chile",
-    "paisaje biobío pintura",
-    "óleo fachadas urbanas",
-    "arte urbano concepción",
+    "cuadros de fachadas al óleo",
+    "óleos de fachadas",
+    "bosques biobío óleo",
     "marcela pedrosa fachadas",
-    "pintura paisaje sur chile",
+    "pintura de paisaje sur chile",
   ],
 });
 
@@ -44,10 +39,11 @@ export default async function PinturaFachadasConcepcionPage() {
           <Breadcrumbs items={[{ name: "Fachadas y bosques", path: "/pintura-fachadas-concepcion" }]} />
           <div className="text-center">
             <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-medium tracking-tight text-ink mb-6">
-              Pintura de Fachadas y Bosques
+              Óleos de fachadas y de bosques
             </h1>
             <p className="text-xl sm:text-2xl text-ink-body mb-8 leading-relaxed">
-              Series al óleo con identidad de Concepción y el Biobío
+              Series al óleo con identidad de Concepción y el Biobío. Son cuadros,
+              no un servicio para pintar la fachada de una casa.
             </p>
           </div>
 
@@ -204,8 +200,15 @@ export default async function PinturaFachadasConcepcionPage() {
               </Link>
               .
             </p>
-            <CatalogFichaLinks />
-            <DescriptiveFichaLinks lead="Las casas de este motivo, y otras telas con nombre, están en" />
+            <DescriptiveFichaLinks
+              lead="Las fichas de este motivo son"
+              slugs={[
+                "casas-dia-y-noche",
+                "ciudad-casas-de-colores",
+                "bosque-troncos-luz",
+                "bosque-troncos-de-colores",
+              ]}
+            />
           </article>
 
           <div className="mt-12 pt-8 border-t border-line">

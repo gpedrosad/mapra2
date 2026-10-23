@@ -170,6 +170,8 @@ export type CuadroPage = {
   whatsappText: string;
   ctaTitle: string;
   ctaBody: string;
+  /** Texto propio de los tres pasos de consulta. */
+  consultaIntro: string;
   gridHeading: string;
   workIds: string[];
   /** En el índice, cada obra apunta a la subpágina donde se explica. */

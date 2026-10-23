@@ -12,6 +12,7 @@ import {
   listCatalogArtworks,
   type CatalogArtwork,
 } from "@/lib/artworks";
+import { relatedSeoLinks } from "@/lib/artwork-related";
 import { pageMetadata } from "@/lib/metadata";
 import { CONTACT_EMAIL } from "@/lib/site";
 
@@ -75,6 +76,7 @@ export default async function ArtworkPage({ params }: Props) {
   const index = works.findIndex((item) => item.slug === work.slug);
   const previous = index > 0 ? works[index - 1] : null;
   const next = index >= 0 && index < works.length - 1 ? works[index + 1] : null;
+  const related = relatedSeoLinks(work.slug);
 
   return (
     <main className="min-h-screen bg-[var(--background)]">
@@ -147,45 +149,28 @@ export default async function ArtworkPage({ params }: Props) {
 
         <p className="mt-8 text-ink-body leading-relaxed">
           Esta ficha usa el nombre, la imagen y los datos publicados en la galería.
-          {work.medium && /[oó]leo/i.test(work.medium) && (
+          {related.length > 0 ? (
             <>
               {" "}
-              La técnica está descrita en{" "}
-              <Link href="/oleo-sobre-tela-chile" className="text-brand underline underline-offset-4">
-                óleo sobre tela
-              </Link>
+              Para seguir con esta tela, mira{" "}
+              {related.map((item, itemIndex) => (
+                <span key={item.href}>
+                  {itemIndex > 0
+                    ? itemIndex === related.length - 1
+                      ? " y "
+                      : ", "
+                    : null}
+                  <Link
+                    href={item.href}
+                    className="text-brand underline underline-offset-4"
+                  >
+                    {item.label}
+                  </Link>
+                </span>
+              ))}
               .
             </>
-          )}{" "}
-          Para comprar una obra en Chile, revisa{" "}
-          <Link href="/comprar-cuadros-al-oleo-chile" className="text-brand underline underline-offset-4">
-            cuadros al óleo
-          </Link>{" "}
-          o{" "}
-          <Link href="/comprar-pintura-concepcion" className="text-brand underline underline-offset-4">
-            comprar pintura en Concepción
-          </Link>
-          . Si buscas otra medida o tema, se puede{" "}
-          <Link href="/encargos-pintura" className="text-brand underline underline-offset-4">
-            encargar una pintura
-          </Link>
-          . Para ubicarla entre otras lecturas, mira las{" "}
-          <Link href="/guias" className="text-brand underline underline-offset-4">
-            guías
-          </Link>
-          , los perfiles de{" "}
-          <Link href="/artistas-chilenas" className="text-brand underline underline-offset-4">
-            artistas chilenas
-          </Link>
-          , los{" "}
-          <Link href="/cuadros" className="text-brand underline underline-offset-4">
-            cuadros según el muro
-          </Link>{" "}
-          y{" "}
-          <Link href="/comprar-arte-chile" className="text-brand underline underline-offset-4">
-            comprar arte en Chile
-          </Link>
-          .
+          ) : null}
         </p>
 
         {work.slug === "elefante" && (

@@ -50,12 +50,14 @@ export function ProfileJsonLd({
   slug,
   crumbs,
   person,
+  modified = "2026-10-17",
 }: {
   headline: string;
   description: string;
   slug?: string;
   crumbs: { name: string; url: string }[];
   person: PersonFacts;
+  modified?: string;
 }) {
   const url = pageUrl(slug);
   const article = {
@@ -66,7 +68,7 @@ export function ProfileJsonLd({
     inLanguage: "es-CL",
     mainEntityOfPage: url,
     datePublished: "2026-10-17",
-    dateModified: "2026-10-17",
+    dateModified: modified,
     author: {
       "@type": "Person",
       name: "Marcela Pedrosa",
@@ -206,6 +208,7 @@ export function ProfilePage({
   description,
   person,
   children,
+  modified,
 }: {
   slug?: string;
   h1: string;
@@ -213,6 +216,7 @@ export function ProfilePage({
   description: string;
   person: PersonFacts;
   children: ReactNode;
+  modified?: string;
 }) {
   const url = pageUrl(slug);
   const crumbs = baseCrumbs(slug ? { name: h1, url } : undefined);
@@ -226,6 +230,7 @@ export function ProfilePage({
         slug={slug}
         crumbs={crumbs}
         person={person}
+        modified={modified}
       />
 
       <section className="relative py-16 sm:py-20">
