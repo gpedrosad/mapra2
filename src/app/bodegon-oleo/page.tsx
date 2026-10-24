@@ -84,21 +84,35 @@ export default async function BodegonOleoPage() {
 
           <h2 className="mb-4 text-2xl font-semibold text-ink">Qué hay sobre la mesa</h2>
           <p className="leading-relaxed text-ink-body">
-            Se ven calabazas y zapallos de distinto tamaño. Hay una grande al centro, una rayada
-            a la izquierda, una chica naranja, una verde oscura y una alargada y clara a la
-            derecha. El fondo es ocre y la mesa, de madera. A diferencia de los retratos y de
-            los animales, aquí el color se acerca al de los objetos.
+            La ficha es{" "}
+            <Link href="/pinturas/bodegon-calabazas" className="text-brand underline">
+              Bodegón de calabazas
+            </Link>
+            . Se ven calabazas y zapallos de distinto tamaño sobre una mesa de madera: una
+            grande al centro, una rayada a la izquierda, una chica naranja, una verde oscura y
+            una alargada y clara a la derecha. El fondo es ocre. El color se acerca al de los
+            objetos. No hay medida publicada: se pide al consultar. No es un retrato ni un
+            animal.
           </p>
           <p className="mt-4 leading-relaxed text-ink-body">
-            Si buscas otro motivo de la misma galería, están la{" "}
+            Esta página es solo la naturaleza muerta. Si el muro es el de la mesa, el bodegón
+            está junto a la ciudad y al par de día y noche en{" "}
+            <Link href="/cuadros/para-comedor" className="text-brand underline">
+              cuadros para el comedor
+            </Link>
+            . Cómo medir ese paño está en{" "}
+            <Link href="/guias/elegir-cuadro-para-el-comedor" className="text-brand underline">
+              la guía del comedor
+            </Link>
+            . Los{" "}
+            <Link href="/retratos-al-oleo" className="text-brand underline">
+              retratos
+            </Link>{" "}
+            y la{" "}
             <Link href="/pintura-de-animales" className="text-brand underline">
               pintura de animales
             </Link>{" "}
-            y los{" "}
-            <Link href="/retratos-al-oleo" className="text-brand underline">
-              retratos
-            </Link>
-            . Otro bodegón, distinto de este, se habla como{" "}
+            son otros motivos. Otro bodegón, distinto de este, se habla como{" "}
             <Link href="/encargos-pintura" className="text-brand underline">
               encargo
             </Link>

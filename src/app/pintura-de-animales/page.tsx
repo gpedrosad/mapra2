@@ -89,30 +89,41 @@ export default async function PinturaDeAnimalesPage() {
             <Link href="/pinturas/elefante" className="text-brand underline">
               elefante
             </Link>{" "}
-            está de frente, con colmillos claros y el cuerpo en naranja, azul y rojo. Los{" "}
+            está de frente, con colmillos claros y el cuerpo en naranja, azul y rojo. Es el único
+            de los tres con medida publicada: 90x120, óleo sobre tela. Los{" "}
             <Link href="/pinturas/dos-caballos" className="text-brand underline">
               dos caballos
             </Link>{" "}
-            muestran una cabeza grande y otro animal en movimiento, sobre azul. El{" "}
+            muestran una cabeza grande y otro animal en movimiento, sobre azul, sin números. El{" "}
             <Link href="/pinturas/gato-recostado" className="text-brand underline">
               gato recostado
             </Link>{" "}
-            mezcla el color del pelaje con manchas y dibujos, y el fondo es azul.
+            mezcla el color del pelaje con manchas y dibujos, y el fondo es azul. Tampoco trae
+            medida.
           </p>
           <p className="mt-4 leading-relaxed text-ink-body">
-            La pintura del elefante no es una pieza de{" "}
+            Esta página es el motivo animal, no el muro. El elefante de 90x120 es un regalo de
+            muro, no de mesa: está en{" "}
+            <Link href="/cuadros/grandes-al-oleo" className="text-brand underline">
+              cuadros grandes
+            </Link>{" "}
+            y en{" "}
+            <Link href="/cuadros/para-living" className="text-brand underline">
+              el living
+            </Link>
+            . El gato, por la cercanía, está en{" "}
+            <Link href="/cuadros/para-dormitorio" className="text-brand underline">
+              el dormitorio
+            </Link>
+            . La pintura del elefante no es una pieza de{" "}
             <Link href="/ceramica-artistica-concepcion" className="text-brand underline">
               cerámica
             </Link>
-            : la ficha dice óleo sobre tela. Para otros temas de la misma galería, mira{" "}
-            <Link href="/pintura-de-bosques" className="text-brand underline">
-              bosques
-            </Link>{" "}
-            o{" "}
+            . El{" "}
             <Link href="/bodegon-oleo" className="text-brand underline">
-              el bodegón
-            </Link>
-            .
+              bodegón
+            </Link>{" "}
+            es otra consulta: objetos sobre una mesa, no un animal.
           </p>
 
           <ConsultaCta

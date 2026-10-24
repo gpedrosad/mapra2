@@ -97,7 +97,20 @@ export default async function PinturaDeCiudadPage() {
             .
           </p>
           <p className="mt-4 leading-relaxed text-ink-body">
-            La serie de fachadas que el sitio describe está en{" "}
+            Esta página muestra las dos vistas. Para comprarlas por el muro, sin mezclarlas con
+            el bosque, está{" "}
+            <Link href="/cuadros/fachadas-arquitectura" className="text-brand underline">
+              cuadros de fachadas
+            </Link>
+            . El par ancho, junto al bodegón, también se consulta para el{" "}
+            <Link href="/cuadros/para-comedor" className="text-brand underline">
+              comedor
+            </Link>
+            . Cómo medir ese paño, sin repetir las telas, está en{" "}
+            <Link href="/guias/elegir-cuadro-para-el-comedor" className="text-brand underline">
+              la guía del comedor
+            </Link>
+            . La serie que el sitio describe está en{" "}
             <Link href="/pintura-fachadas-concepcion" className="text-brand underline">
               pintura de fachadas y bosques
             </Link>

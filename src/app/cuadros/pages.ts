@@ -21,10 +21,11 @@ export const CUADRO_PAGES: CuadroPage[] = [
     consultaIntro:
       "Esta página ordena por el lugar de la casa. Elige la ficha y escribe el nombre de la obra.",
     gridHeading: "Una obra de cada grupo",
-    workIds: ["c3", "c7", "c2", "c1", "c13", "c4", "c15"],
+    workIds: ["c3", "c7", "c5", "c2", "c1", "c13", "c4", "c15"],
     workLinks: {
       c3: "/cuadros/para-living",
       c7: "/cuadros/para-dormitorio",
+      c5: "/cuadros/para-comedor",
       c2: "/cuadros/para-oficina",
       c1: "/cuadros/paisajes-bosques-biobio",
       c13: "/cuadros/fachadas-arquitectura",
@@ -34,11 +35,11 @@ export const CUADRO_PAGES: CuadroPage[] = [
     blocks: [
       {
         type: "p",
-        text: "Si buscas un cuadro y ya sabes el muro, parte por aquí. Marcela Pedrosa, pintora en Concepción, tiene óleos reales en la galería del sitio. Esta serie de páginas los agrupa por el motivo de la consulta: el living, el dormitorio, la oficina, un bosque, una fachada, un formato con medida publicada o un regalo. Cada grupo usa solo pinturas que están en esa galería.",
+        text: "Si buscas un cuadro y ya sabes el muro, parte por aquí. Marcela Pedrosa, pintora en Concepción, tiene óleos reales en la galería del sitio. Esta serie de páginas los agrupa por el motivo de la consulta: el living, el dormitorio, el comedor, la oficina, un bosque, una fachada, un formato con medida publicada o un regalo. Cada grupo usa solo pinturas que están en esa galería.",
       },
       {
         type: "p",
-        text: `Cada miniatura abre la ficha de esa tela: ${link("/pinturas/elefante", "Elefante")}, ${link("/pinturas/figura-recostada", "Figura recostada")}, ${link("/pinturas/grupo-de-figuras", "Grupo de figuras")}, ${link("/pinturas/bosque-troncos-luz", "Bosque con luz entre troncos")}, ${link("/pinturas/casas-dia-y-noche", "Casas de día y de noche")}, ${link("/pinturas/retrato-de-mujer", "Retrato de mujer")} y ${link("/pinturas/gato-recostado", "Gato recostado")}. Por motivo, entra a ${link("/comprar-arte-chile", "comprar arte en Chile")}. Para medir antes de elegir, el índice es ${link("/guias", "guías")}. Un óleo con envío está en ${link("/comprar-cuadros-al-oleo-chile", "comprar cuadros al óleo")}. Otros nombres, con fuente, están en ${link("/artistas-chilenas", "artistas chilenas")}.`,
+        text: `Cada miniatura abre la ficha de esa tela: ${link("/pinturas/elefante", "Elefante")}, ${link("/pinturas/figura-recostada", "Figura recostada")}, ${link("/pinturas/bodegon-calabazas", "Bodegón de calabazas")}, ${link("/pinturas/grupo-de-figuras", "Grupo de figuras")}, ${link("/pinturas/bosque-troncos-luz", "Bosque con luz entre troncos")}, ${link("/pinturas/casas-dia-y-noche", "Casas de día y de noche")}, ${link("/pinturas/retrato-de-mujer", "Retrato de mujer")} y ${link("/pinturas/gato-recostado", "Gato recostado")}. Por motivo, entra a ${link("/comprar-arte-chile", "comprar arte en Chile")}. Para medir antes de elegir, el índice es ${link("/guias", "guías")}. Un óleo con envío está en ${link("/comprar-cuadros-al-oleo-chile", "comprar cuadros al óleo")}. Otros nombres, con fuente, están en ${link("/artistas-chilenas", "artistas chilenas")}.`,
       },
       {
         type: "h2",
@@ -63,6 +64,10 @@ export const CUADRO_PAGES: CuadroPage[] = [
       {
         type: "p",
         text: `Para el ${link("/cuadros/para-dormitorio", "dormitorio")} el criterio es la cercanía. Hay una figura recostada de espaldas sobre sábanas claras, un cuadro de manos superpuestas, un rostro en primer plano, un gato acostado sobre un textil y el retrato de 100x130. El bosque de 158x122 es calmo, pero pide un muro ancho, así que quedó en paisaje y en formato grande, no como primera opción de dormitorio.`,
+      },
+      {
+        type: "p",
+        text: `El ${link("/cuadros/para-comedor", "comedor")} se mira sentado, desde la mesa, y no usa la lista del living. Entran el bodegón de calabazas, la ciudad de casas de colores y el par de casas de día y de noche. Ninguna de esas tres fichas publica medida. Cómo medir el paño, sin repetir las telas, está en ${link("/guias/elegir-cuadro-para-el-comedor", "cómo elegir un cuadro para el comedor")}.`,
       },
       {
         type: "p",
@@ -136,7 +141,7 @@ export const CUADRO_PAGES: CuadroPage[] = [
       },
       {
         type: "p",
-        text: `La ciudad no trae números, solo óleo sobre tela. Se ve una aglomeración de casas de colores, torres, un tren amarillo y azul, árboles en flor y cerros nevados. Se lee de lejos por el color. Encaja en un living amplio o en un comedor abierto al living. Esa arquitectura está desarrollada en ${link("/cuadros/fachadas-arquitectura", "fachadas y arquitectura")}.`,
+        text: `La ciudad no trae números, solo óleo sobre tela. Se ve una aglomeración de casas de colores, torres, un tren amarillo y azul, árboles en flor y cerros nevados. Se lee de lejos por el color. Encaja en un living amplio. Si el muro es el de la mesa, la misma tela está en ${link("/cuadros/para-comedor", "cuadros para el comedor")}, con el bodegón y el par de día y noche. La arquitectura, en ${link("/cuadros/fachadas-arquitectura", "fachadas y arquitectura")}.`,
       },
       {
         type: "p",
@@ -227,6 +232,72 @@ export const CUADRO_PAGES: CuadroPage[] = [
       {
         type: "p",
         text: `Marcela confirma disponibilidad por WhatsApp, al +56 9 5618 9912, o por contacto@marcelapedrosa.com. Si quieres una escena quieta y ninguna de estas sigue disponible, se puede encargar un óleo del mismo carácter en el ${link("/encargos-pintura", "taller de Concepción")}: ella confirma viabilidad, plazo y valor antes de empezar. La galería completa está en ${link("/pinturas", "pinturas")} y el mapa de este grupo, en ${link("/cuadros", "cuadros")}.`,
+      },
+    ],
+  },
+  {
+    slug: "para-comedor",
+    path: "/cuadros/para-comedor",
+    navLabel: "Para el comedor",
+    title: "Cuadros para el comedor | Marcela Pedrosa",
+    description:
+      "Cuadros para el comedor: bodegón de zapallos, ciudad de colores y casas de día y de noche. Sin precio en la ficha. Consulta por WhatsApp.",
+    h1: "Cuadros para el comedor",
+    ogKey: "c5",
+    ogAlt: "Bodegón al óleo de zapallos y calabazas, de Marcela Pedrosa",
+    whatsappText:
+      "Hola Marcela, quiero consultar un cuadro para el comedor. Te nombro la obra que vi en el sitio.",
+    ctaTitle: "Consulta un cuadro para el comedor",
+    ctaBody:
+      "Di que es para el comedor y nombra el bodegón, la ciudad o el par de día y noche. Si la ficha no trae medida, pídela.",
+    consultaIntro:
+      "Di que es para el comedor y nombra la ficha. El valor no está en la página.",
+    gridHeading: "Óleos para ver desde la mesa",
+    workIds: ["c5", "c12", "c13"],
+    blocks: [
+      {
+        type: "p",
+        text: "El comedor se mira sentado, con la mesa de por medio. No es el muro del sofá ni el de la cama. En la galería de Marcela Pedrosa hay tres óleos que aguantan esa distancia o esa cercanía: un bodegón, una ciudad de colores y un par de casas de día y de noche. Las tres fichas dicen óleo sobre tela y ninguna publica medida.",
+      },
+      {
+        type: "p",
+        text: `Esta página lista las telas. Cómo medir el paño, la altura sentado y la lámpara de la mesa está en ${link("/guias/elegir-cuadro-para-el-comedor", "cómo elegir un cuadro para el comedor")}, y no se repite aquí. El living es otra lista, en ${link("/cuadros/para-living", "cuadros para el living")}.`,
+      },
+      {
+        type: "h2",
+        text: "El bodegón, de cerca",
+      },
+      {
+        type: "p",
+        text: `La ficha es ${link("/pinturas/bodegon-calabazas", "Bodegón de calabazas")}. Se ven calabazas y zapallos de distinto tamaño sobre una mesa de madera, con fondo ocre. El color se acerca al de los objetos. Sirve cuando el paño es corto, por ejemplo sobre un aparador, y se mira desde la silla de al lado. El motivo, sin el filtro del comedor, está en ${link("/bodegon-oleo", "bodegón al óleo")}. Otro bodegón, distinto de este, se habla como ${link("/encargos-pintura", "encargo")}.`,
+      },
+      {
+        type: "h2",
+        text: "La ciudad, desde el otro lado de la mesa",
+      },
+      {
+        type: "p",
+        text: `La segunda ficha es ${link("/pinturas/ciudad-casas-de-colores", "Ciudad de casas de colores")}. Casas, un tren amarillo y azul, árboles en flor y cerros nevados. Se entiende de lejos por el color, que es la distancia de una mesa. También está en el living y en ${link("/cuadros/fachadas-arquitectura", "fachadas")}, porque el motivo es urbano. Aquí entra solo si el muro que miras es el del comedor.`,
+      },
+      {
+        type: "h2",
+        text: "El par de día y de noche",
+      },
+      {
+        type: "p",
+        text: `La tercera ficha es ${link("/pinturas/casas-dia-y-noche", "Casas de día y de noche")}. La galería junta dos vistas en una sola entrada: de día, casas y escaleras; de noche, luna y ventanas encendidas. La foto es ancha. Pregunta si te interesa una tela o el par, y la medida de cada una. No es un servicio para pintar el muro de una casa. El relato de la serie sigue en ${link("/pintura-fachadas-concepcion", "óleos de fachadas y bosques")}.`,
+      },
+      {
+        type: "h2",
+        text: "Cómo pedirlo",
+      },
+      {
+        type: "p",
+        text: `Escribe por WhatsApp al +56 9 5618 9912 o a contacto@marcelapedrosa.com. En la primera línea di que es para el comedor. Nombra la ficha y, si lo tienes, el ancho libre del paño y si hay un mueble debajo. El valor se confirma en esa conversación. Sin enmarcado, el sitio indica 48 horas en la Región del Biobío y de 3 a 5 días hábiles a otras regiones. Con enmarcado, 5 a 7 días hábiles en el Biobío y 10 a otras regiones. El detalle está en ${link("/tiempos-de-entrega", "tiempos de entrega")} y puede variar.`,
+      },
+      {
+        type: "p",
+        text: `Si ninguna de las tres sigue disponible, o el muro pide otra medida, el camino es el encargo: motivo, ancho aproximado y fecha. Marcela confirma viabilidad, plazo y valor. La galería completa está en ${link("/pinturas", "pinturas")}. El índice de los grupos está en ${link("/cuadros", "cuadros")}. La compra por motivo, sin este filtro de muro, está en ${link("/comprar-arte-chile", "comprar arte en Chile")}.`,
       },
     ],
   },
@@ -400,7 +471,7 @@ export const CUADRO_PAGES: CuadroPage[] = [
       },
       {
         type: "p",
-        text: "Por lo ancho de la foto, el par se piensa para un living largo, un comedor o una recepción. Una tela chica y una tela grande pueden verse parecidas en la pantalla. Sin el número de la ficha, la foto no alcanza para comprar.",
+        text: `Por lo ancho de la foto, el par se piensa para un living largo, un comedor o una recepción. La selección del comedor, con esta ficha y otras dos, está en ${link("/cuadros/para-comedor", "cuadros para el comedor")}. Una tela chica y una tela grande pueden verse parecidas en la pantalla. Sin el número de la ficha, la foto no alcanza para comprar.`,
       },
       {
         type: "h2",
@@ -533,7 +604,7 @@ export const CUADRO_PAGES: CuadroPage[] = [
       },
       {
         type: "p",
-        text: "Si el regalo tiene que entenderse sin una charla de estilo, mira primero estas telas. El gato acostado sobre un textil de motivos. El elefante de frente, en naranjos y azules, con ficha 90x120, óleo sobre tela. Los dos caballos, uno quieto en primer plano y otro en movimiento. El bodegón de zapallos y calabazas sobre una mesa, con luz cálida: es la naturaleza muerta de la galería. El rostro cercano, con una mano junto a la boca. El cuadro de manos superpuestas. El retrato de mujer, 100x130, óleo sobre tela. Y el retrato con lentes redondos, sin un nombre publicado en la ficha.",
+        text: `Si el regalo tiene que entenderse sin una charla de estilo, mira primero estas telas. El gato acostado sobre un textil de motivos. El elefante de frente, en naranjos y azules, con ficha 90x120, óleo sobre tela. Los dos caballos, uno quieto en primer plano y otro en movimiento. El bodegón de zapallos y calabazas sobre una mesa: es la naturaleza muerta de la galería, y si el destino es un comedor está también en ${link("/cuadros/para-comedor", "cuadros para el comedor")}. El rostro cercano, con una mano junto a la boca. El cuadro de manos superpuestas. El retrato de mujer, 100x130, óleo sobre tela. Y el retrato con lentes redondos, sin un nombre publicado en la ficha.`,
       },
       {
         type: "p",

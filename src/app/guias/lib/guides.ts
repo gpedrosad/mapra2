@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { getOgImageUrl } from "@/lib/cloudinary";
 import { SITE_URL } from "@/lib/site";
 import { cuidarColgarOleo } from "./content/cuidar-colgar-oleo";
+import { elegirCuadroComedor } from "./content/elegir-cuadro-comedor";
 import { elegirCuadroLiving } from "./content/elegir-cuadro-living";
 import { encargarPintura } from "./content/encargar-pintura";
 import { impresionismoFigurativo } from "./content/impresionismo-figurativo";
@@ -28,6 +29,24 @@ export const GUIDES: Guide[] = [
     consultaIntro:
       "Si ya mediste el muro y viste una tela de este taller, nombra la ficha. El valor no está en la guía.",
     blocks: elegirCuadroLiving,
+  },
+  {
+    slug: "elegir-cuadro-para-el-comedor",
+    title: "Cómo elegir un cuadro para el comedor",
+    description:
+      "Cómo medir el muro del comedor: la vista sentado, el mueble de abajo y la lámpara de la mesa. Sin precios. Las telas están en otra página.",
+    imageKey: "c5",
+    imageAlt: "Bodegón al óleo de calabazas y zapallos, de Marcela Pedrosa",
+    ctaTitle: "¿El muro es el del comedor?",
+    ctaBody:
+      "Escribe el ancho libre, si hay aparador y qué ficha viste: el bodegón, la ciudad o las casas de día y de noche. El valor se responde en la consulta.",
+    whatsappText:
+      "Hola Marcela, quiero elegir un cuadro para el comedor. Te mando el ancho del muro y la obra que vi en el sitio.",
+    consultaIntro:
+      "Esta guía mide el paño. Si ya viste una tela, nómbrala: bodegón, ciudad o casas de día y de noche.",
+    published: "2026-10-24",
+    modified: "2026-10-24",
+    blocks: elegirCuadroComedor,
   },
   {
     slug: "oleo-vs-acrilico",

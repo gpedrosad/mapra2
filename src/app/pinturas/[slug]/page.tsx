@@ -12,7 +12,8 @@ import {
   listCatalogArtworks,
   type CatalogArtwork,
 } from "@/lib/artworks";
-import { relatedSeoLinks } from "@/lib/artwork-related";
+import { artworkPageContext, type ArtworkSeoLink } from "@/lib/artwork-related";
+import { detailForPublicId } from "@/lib/seo-artworks";
 import { pageMetadata } from "@/lib/metadata";
 import { CONTACT_EMAIL } from "@/lib/site";
 
@@ -34,11 +35,25 @@ function titleFor(work: CatalogArtwork) {
 }
 
 function descriptionFor(work: CatalogArtwork) {
+  if (work.slug === "casas-dia-y-noche") {
+    return "Casas de día y de noche, óleo sobre tela. Dos vistas en una ficha, sin medida publicada. Consulta el par por WhatsApp o correo.";
+  }
   const facts = [work.name, work.medium, work.measure ? `medidas ${work.measure}` : ""]
     .filter(Boolean)
     .join(", ");
   const text = `${facts}. Obra de Marcela Pedrosa en Concepción. Consulta disponibilidad por WhatsApp o correo.`;
   return text.length <= 155 ? text : text.slice(0, 155);
+}
+
+function LinkList({ items }: { items: ArtworkSeoLink[] }) {
+  return items.map((item, itemIndex) => (
+    <span key={item.href}>
+      {itemIndex > 0 ? (itemIndex === items.length - 1 ? " y " : ", ") : null}
+      <Link href={item.href} className="text-brand underline underline-offset-4">
+        {item.label}
+      </Link>
+    </span>
+  ));
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
@@ -76,11 +91,17 @@ export default async function ArtworkPage({ params }: Props) {
   const index = works.findIndex((item) => item.slug === work.slug);
   const previous = index > 0 ? works[index - 1] : null;
   const next = index >= 0 && index < works.length - 1 ? works[index + 1] : null;
-  const related = relatedSeoLinks(work.slug);
+  const seen = detailForPublicId(work.publicId);
+  const context = artworkPageContext(work.slug);
+  const schemaDescription = [work.name, seen, work.info].filter(Boolean).join(". ");
 
   return (
     <main className="min-h-screen bg-[var(--background)]">
-      <VisualArtworkJsonLd artwork={work} />
+      <VisualArtworkJsonLd
+        artwork={work}
+        description={schemaDescription}
+        related={context.works}
+      />
       <article className="mx-auto w-full max-w-4xl px-4 sm:px-6 py-10 sm:py-14">
         <Breadcrumbs
           items={[
@@ -148,27 +169,47 @@ export default async function ArtworkPage({ params }: Props) {
         </dl>
 
         <p className="mt-8 text-ink-body leading-relaxed">
-          Esta ficha usa el nombre, la imagen y los datos publicados en la galería.
-          {related.length > 0 ? (
+          {seen ? (
+            <>
+              {seen} La ficha publicada dice {work.info}.
+            </>
+          ) : (
+            <>
+              Esta ficha usa el nombre, la imagen y los datos publicados en la galería:{" "}
+              {work.info}.
+            </>
+          )}
+        </p>
+
+        {work.slug === "casas-dia-y-noche" ? (
+          <p className="mt-4 text-ink-body leading-relaxed">
+            Las dos vistas salen juntas en una sola entrada de la galería. La ficha no
+            publica medida. Al escribir, pregunta si te interesa una tela o el par, y la
+            medida de cada una. No es un servicio para pintar el muro de una casa. El
+            formato ancho se piensa para un muro largo: el{" "}
+            <Link href="/cuadros/para-comedor" className="text-brand underline underline-offset-4">
+              comedor
+            </Link>
+            , un living o una recepción.
+          </p>
+        ) : null}
+
+        {context.works.length > 0 ? (
+          <p className="mt-4 text-ink-body leading-relaxed">
+            {context.worksLead} <LinkList items={context.works} />.
+          </p>
+        ) : null}
+
+        <p className="mt-4 text-ink-body leading-relaxed">
+          {context.guideLead}{" "}
+          <Link href={context.guide.href} className="text-brand underline underline-offset-4">
+            {context.guide.label}
+          </Link>
+          .
+          {context.hubs.length > 0 ? (
             <>
               {" "}
-              Para seguir con esta tela, mira{" "}
-              {related.map((item, itemIndex) => (
-                <span key={item.href}>
-                  {itemIndex > 0
-                    ? itemIndex === related.length - 1
-                      ? " y "
-                      : ", "
-                    : null}
-                  <Link
-                    href={item.href}
-                    className="text-brand underline underline-offset-4"
-                  >
-                    {item.label}
-                  </Link>
-                </span>
-              ))}
-              .
+              También puedes seguir por <LinkList items={context.hubs} />.
             </>
           ) : null}
         </p>

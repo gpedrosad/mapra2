@@ -11,7 +11,7 @@ const THEME_GUIDES = SEO_GUIDES.filter((guide) => guide.path !== "/guias");
 
 const TITLE = "Guías para elegir y cuidar pintura";
 const DESCRIPTION =
-  "Cómo medir un muro, comparar óleo y acrílico, cuidar una tela y encargar. Sin precios: la obra se consulta.";
+  "Índice de oficio: living, comedor, óleo, cuidado y encargo. No es el catálogo. La obra se consulta, sin precio.";
 const CANONICAL = `${SITE_URL}/guias`;
 
 export const metadata: Metadata = pageMetadata({
@@ -106,10 +106,10 @@ export default function GuiasIndexPage() {
           {TITLE}
         </h1>
         <p className="mt-6 text-xl text-ink leading-relaxed text-pretty">
-          Seis textos para decidir con calma: el cuadro del living, la diferencia
-          entre óleo y acrílico, el cuidado de una tela, el impresionismo
-          figurativo, el encargo y los factores que mueven el valor de un original
-          en Chile.
+          Siete textos para decidir con calma: el cuadro del living, el del
+          comedor, la diferencia entre óleo y acrílico, el cuidado de una tela, el
+          impresionismo figurativo, el encargo y los factores que mueven el valor
+          de un original en Chile.
         </p>
         <p className="mt-4 text-[1.05rem] text-ink-body leading-relaxed">
           Si quieres mirar obra antes de leer, parte por las{" "}
@@ -202,6 +202,31 @@ export default function GuiasIndexPage() {
             Casas de día y de noche
           </Link>
           .
+        </p>
+        <p className="mt-4 text-[1.05rem] text-ink-body leading-relaxed">
+          La guía del living mide el muro del sofá. La del{" "}
+          <Link
+            href="/guias/elegir-cuadro-para-el-comedor"
+            className="text-brand underline underline-offset-4"
+          >
+            comedor
+          </Link>{" "}
+          mide el paño que se ve desde la mesa. No listan las mismas telas: el
+          bodegón, la ciudad y{" "}
+          <Link
+            href="/pinturas/casas-dia-y-noche"
+            className="text-brand underline underline-offset-4"
+          >
+            Casas de día y de noche
+          </Link>{" "}
+          están en{" "}
+          <Link
+            href="/cuadros/para-comedor"
+            className="text-brand underline underline-offset-4"
+          >
+            cuadros para el comedor
+          </Link>
+          . El 158x122 del bosque se cruza con la guía del living, no con esa.
         </p>
         <ConsultaSteps intro="Estas páginas explican cómo elegir y cuidar. No publican el valor: se pide nombrando la ficha." />
 
