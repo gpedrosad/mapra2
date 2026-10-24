@@ -1,9 +1,9 @@
 import Link from "next/link";
 import { ProfilePage, perfilMetadata } from "../ui";
 
-const TITLE = "Carmen Aldunate, pintora chilena | Pedrosa";
+const TITLE = "Carmen Aldunate, pintora chilena (1940-2026)";
 const DESCRIPTION =
-  "Carmen Aldunate (1940-2026), pintora y dibujante de Viña del Mar. Figuración simbólica, docencia y obra en museos de Chile.";
+  "Carmen Aldunate (1940-2026), pintora y dibujante de Viña del Mar. Perfil con fuente del museo. Su obra no se vende en este sitio.";
 
 export const metadata = perfilMetadata({
   title: TITLE,
@@ -15,6 +15,7 @@ export default function CarmenAldunatePage() {
   return (
     <ProfilePage
       slug="carmen-aldunate"
+      modified="2026-10-24"
       h1="Carmen Aldunate"
       kicker="Pintora y dibujante nacida en Viña del Mar el 10 de febrero de 1940. El Museo Nacional de Bellas Artes confirmó su fallecimiento el 25 de septiembre de 2026."
       description={DESCRIPTION}
@@ -146,6 +147,36 @@ export default function CarmenAldunatePage() {
         </Link>
         , ocurre después de esa historia, con otras luz y otro territorio, y
         con la figura y el paisaje como asuntos todavía abiertos.
+      </p>
+      <p>
+        Este perfil responde a la búsqueda por su nombre y no vende su obra. El
+        índice de estos textos está en{" "}
+        <Link href="/artistas-chilenas" className="text-brand underline">
+          artistas chilenas
+        </Link>
+        . La mesa del comedor nombrada más arriba es obra de Aldunate y no es
+        una tela de este taller. Los óleos de Marcela Pedrosa para ese muro
+        están en{" "}
+        <Link href="/cuadros/para-comedor" className="text-brand underline">
+          cuadros para el comedor
+        </Link>
+        , y cómo medir el paño, en{" "}
+        <Link
+          href="/guias/elegir-cuadro-para-el-comedor"
+          className="text-brand underline"
+        >
+          la guía del comedor
+        </Link>
+        . El{" "}
+        <Link href="/pinturas/retrato-de-mujer" className="text-brand underline">
+          Retrato de mujer
+        </Link>{" "}
+        (100x130, óleo sobre tela) es de Marcela Pedrosa, en Concepción, y entra
+        en los{" "}
+        <Link href="/retratos-al-oleo" className="text-brand underline">
+          retratos al óleo
+        </Link>
+        . No es obra de Aldunate.
       </p>
     </ProfilePage>
   );

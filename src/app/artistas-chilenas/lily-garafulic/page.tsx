@@ -1,9 +1,9 @@
 import Link from "next/link";
 import { ProfilePage, perfilMetadata } from "../ui";
 
-const TITLE = "Lily Garafulic, escultora chilena | Pedrosa";
+const TITLE = "Lily Garafulic, escultora chilena (1914-2012)";
 const DESCRIPTION =
-  "Lily Garafulic (1914-2012), escultora de Antofagasta. Premio Nacional de Artes Plásticas 1995 y directora del Museo de Bellas Artes.";
+  "Lily Garafulic (1914-2012), escultora de Antofagasta. Premio Nacional de Artes Plásticas 1995. Perfil: su obra no se vende en este sitio.";
 
 export const metadata = perfilMetadata({
   title: TITLE,
@@ -15,6 +15,7 @@ export default function LilyGarafulicPage() {
   return (
     <ProfilePage
       slug="lily-garafulic"
+      modified="2026-10-24"
       h1="Lily Garafulic"
       kicker="Escultora, docente y directora del Museo Nacional de Bellas Artes. Nació en Antofagasta el 14 de mayo de 1914 y murió en Santiago el 15 de marzo de 2012."
       description={DESCRIPTION}
@@ -137,6 +138,25 @@ export default function LilyGarafulicPage() {
           pinturas
         </Link>
         , el óleo sobre tela de Marcela Pedrosa desde Concepción.
+      </p>
+      <p>
+        Este perfil responde a la búsqueda por su nombre y no vende su
+        escultura. El índice está en{" "}
+        <Link href="/artistas-chilenas" className="text-brand underline">
+          artistas chilenas
+        </Link>
+        . Las piezas en gres de Marcela Pedrosa están en{" "}
+        <Link href="/esculturas" className="text-brand underline">
+          esculturas
+        </Link>
+        . El texto sobre esa cerámica en Concepción está en{" "}
+        <Link
+          href="/ceramica-artistica-concepcion"
+          className="text-brand underline"
+        >
+          cerámica artística en Concepción
+        </Link>
+        .
       </p>
     </ProfilePage>
   );

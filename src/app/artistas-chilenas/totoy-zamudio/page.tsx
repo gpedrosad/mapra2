@@ -1,9 +1,9 @@
 import Link from "next/link";
 import { ProfilePage, perfilMetadata } from "../ui";
 
-const TITLE = "Totoy Zamudio, pintor chileno | Pedrosa";
+const TITLE = "Totoy Zamudio, pintor chileno (Santiago, 1972)";
 const DESCRIPTION =
-  "Totoy Zamudio, pintor chileno nacido en Santiago en 1972. Color, figura y estudios de arte en la Finis Terrae y en Barcelona.";
+  "Totoy Zamudio, pintor chileno nacido en Santiago en 1972. José Manuel Zamudio: Finis Terrae y Barcelona. Su obra no se vende aquí.";
 
 export const metadata = perfilMetadata({
   title: TITLE,
@@ -15,6 +15,7 @@ export default function TotoyZamudioPage() {
   return (
     <ProfilePage
       slug="totoy-zamudio"
+      modified="2026-10-24"
       h1="Totoy Zamudio"
       kicker="José Manuel Zamudio, pintor y artista visual de Santiago. Nació en 1972 y trabaja un imaginario de color intenso y figuras humanas."
       description={DESCRIPTION}
@@ -136,6 +137,23 @@ export default function TotoyZamudioPage() {
         su taller en Concepción. El perfil de Totoy Zamudio queda como lo que
         es: la ficha de un pintor chileno vivo, con fecha de nacimiento, escuela
         y un imaginario que ya se reconoce en museos, galerías y muros.
+      </p>
+      <p>
+        Este perfil responde a la búsqueda por su nombre y no vende su pintura.
+        El índice está en{" "}
+        <Link href="/artistas-chilenas" className="text-brand underline">
+          artistas chilenas
+        </Link>
+        . El{" "}
+        <Link href="/pinturas/grupo-de-figuras" className="text-brand underline">
+          Grupo de figuras
+        </Link>{" "}
+        (110x110, óleo sobre tela) es de Marcela Pedrosa, en Concepción, no de
+        Zamudio. Esa tela entra en{" "}
+        <Link href="/figuras-al-oleo" className="text-brand underline">
+          figuras al óleo
+        </Link>
+        .
       </p>
     </ProfilePage>
   );

@@ -1,9 +1,9 @@
 import Link from "next/link";
 import { ProfilePage, perfilMetadata } from "../ui";
 
-const TITLE = "Camilo Mori, pintor chileno | Pedrosa";
+const TITLE = "Camilo Mori, pintor chileno (Premio Nacional 1950)";
 const DESCRIPTION =
-  "Camilo Mori (1896-1973), pintor de Valparaíso. Grupo Montparnasse, carteles y Premio Nacional de Arte en pintura, 1950.";
+  "Camilo Mori (1896-1973), pintor de Valparaíso. Grupo Montparnasse y Premio Nacional de Arte en pintura, 1950. Perfil, no catálogo.";
 
 export const metadata = perfilMetadata({
   title: TITLE,
@@ -15,6 +15,7 @@ export default function CamiloMoriPage() {
   return (
     <ProfilePage
       slug="camilo-mori"
+      modified="2026-10-24"
       h1="Camilo Mori"
       kicker="Pintor, dibujante y cartelista. Nació en Valparaíso el 24 de septiembre de 1896, integró el Grupo Montparnasse y recibió el Premio Nacional de Arte en 1950."
       description={DESCRIPTION}
@@ -133,10 +134,34 @@ export default function CamiloMoriPage() {
         <Link href="/mujeres-artistas-chilenas" className="text-brand underline">
           mujeres artistas chilenas
         </Link>
-        . La pintura que se hace ahora en el Biobío, el óleo de Marcela Pedrosa,
+        .         La pintura que se hace ahora en el Biobío, el óleo de Marcela Pedrosa,
         está en{" "}
         <Link href="/pinturas" className="text-brand underline">
           pinturas
+        </Link>
+        .
+      </p>
+      <p>
+        Este perfil responde a la búsqueda por su nombre y no vende su pintura.
+        El índice está en{" "}
+        <Link href="/artistas-chilenas" className="text-brand underline">
+          artistas chilenas
+        </Link>
+        . La{" "}
+        <Link
+          href="/pinturas/ciudad-casas-de-colores"
+          className="text-brand underline"
+        >
+          Ciudad de casas de colores
+        </Link>{" "}
+        y el{" "}
+        <Link href="/pinturas/retrato-de-mujer" className="text-brand underline">
+          Retrato de mujer
+        </Link>{" "}
+        (100x130, óleo sobre tela) son de Marcela Pedrosa, en Concepción, no de
+        Mori. El retrato entra en los{" "}
+        <Link href="/retratos-al-oleo" className="text-brand underline">
+          retratos al óleo
         </Link>
         .
       </p>
