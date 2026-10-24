@@ -85,13 +85,35 @@ export default async function FigurasAlOleoPage() {
 
           <h2 className="mb-4 text-2xl font-semibold text-ink">Cuatro maneras de pintar la figura</h2>
           <p className="leading-relaxed text-ink-body">
-            En el grupo las personas están de pie, juntas, y el rostro no tiene rasgos; el color
-            está en la ropa. La figura recostada es un óleo apaisado, de espaldas, sobre telas
-            claras. Otra junta varios rostros, un abanico azul y planos de color. La última se
-            queda en las manos, superpuestas, en grises y celestes.
+            El{" "}
+            <Link href="/pinturas/grupo-de-figuras" className="text-brand underline">
+              grupo de figuras
+            </Link>{" "}
+            es el único con medida: 110x110, óleo sobre tela. Las personas están de pie, el
+            rostro no tiene rasgos y el color está en la ropa. La{" "}
+            <Link href="/pinturas/figura-recostada" className="text-brand underline">
+              figura recostada
+            </Link>{" "}
+            es un óleo apaisado, de espaldas, sobre telas claras, sin números en la ficha.{" "}
+            <Link href="/pinturas/rostros-superpuestos" className="text-brand underline">
+              Rostros superpuestos
+            </Link>{" "}
+            junta varios rostros, un abanico azul y planos de color.{" "}
+            <Link href="/pinturas/manos-superpuestas" className="text-brand underline">
+              Manos superpuestas
+            </Link>{" "}
+            se queda en las manos, en grises y celestes.
           </p>
           <p className="mt-4 leading-relaxed text-ink-body">
-            Si buscas un rostro solo, está en{" "}
+            El grupo de 110x110 también se consulta para un espacio compartido, en{" "}
+            <Link href="/cuadros/para-oficina" className="text-brand underline">
+              cuadros para la oficina
+            </Link>
+            . La figura recostada, por el formato ancho, está en{" "}
+            <Link href="/cuadros/para-dormitorio" className="text-brand underline">
+              cuadros para el dormitorio
+            </Link>
+            . Un rostro solo no entra aquí: está en{" "}
             <Link href="/retratos-al-oleo" className="text-brand underline">
               retratos al óleo
             </Link>

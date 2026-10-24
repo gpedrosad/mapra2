@@ -83,20 +83,40 @@ export default async function RetratosAlOleoPage() {
 
           <ArtworkGrid works={works} />
 
-          <h2 className="mb-4 text-2xl font-semibold text-ink">Qué se ve en cada uno</h2>
+          <h2 className="mb-4 text-2xl font-semibold text-ink">Tres rostros, no un cuerpo</h2>
           <p className="leading-relaxed text-ink-body">
-            Uno es un rostro de mujer, con cabello oscuro y planos azules, naranjas y violetas.
-            Otro acerca la cara y pone una mano junto al mentón, con verdes, rojos y amarillos.
-            El tercero es una persona con lentes redondos; el cabello y el fondo van en azul y
-            rojo.
+            El{" "}
+            <Link href="/pinturas/retrato-de-mujer" className="text-brand underline">
+              retrato de mujer
+            </Link>{" "}
+            es el único con medida publicada: 100x130, óleo sobre tela. El rostro va en planos
+            azules, naranjas y violetas. El{" "}
+            <Link href="/pinturas/retrato-con-mano" className="text-brand underline">
+              retrato con mano al mentón
+            </Link>{" "}
+            acerca la cara y no trae números. El{" "}
+            <Link href="/pinturas/retrato-con-lentes" className="text-brand underline">
+              retrato con lentes
+            </Link>{" "}
+            es una persona con lentes redondos; el cabello y el fondo van en azul y rojo, y la
+            ficha tampoco publica medida.
           </p>
           <p className="mt-4 leading-relaxed text-ink-body">
-            No son la misma serie que las{" "}
+            Esta página es solo esos tres rostros ya pintados. Un retrato que todavía no existe
+            se habla en{" "}
+            <Link href="/encargos-pintura" className="text-brand underline">
+              encargos
+            </Link>
+            , no aquí. El de 100x130, si va junto a la cama, pide altura: está también en{" "}
+            <Link href="/cuadros/para-dormitorio" className="text-brand underline">
+              cuadros para el dormitorio
+            </Link>
+            . Las{" "}
             <Link href="/figuras-al-oleo" className="text-brand underline">
               figuras al óleo
-            </Link>
-            , donde el cuerpo o las manos importan más que un rostro individual. La técnica, en
-            los tres, es{" "}
+            </Link>{" "}
+            son otra consulta: ahí importan el cuerpo o las manos, no una sola cara. La técnica,
+            en los tres retratos, es{" "}
             <Link href="/oleo-sobre-tela-chile" className="text-brand underline">
               óleo sobre tela
             </Link>

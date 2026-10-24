@@ -1,14 +1,24 @@
 import { absoluteUrl, ARTIST_NAME, SITE_URL } from "@/lib/site";
 import type { CatalogArtwork } from "@/lib/artworks";
 
+type RelatedWork = {
+  href: string;
+  label: string;
+};
+
 /**
  * VisualArtwork solo con datos que ya están en la ficha.
  * Sin precio, sin reseñas y sin unidad de medida inventada.
+ * `isRelatedTo` apunta a otras fichas reales, no a una oferta.
  */
 export default function VisualArtworkJsonLd({
   artwork,
+  description,
+  related = [],
 }: {
   artwork: CatalogArtwork;
+  description?: string;
+  related?: RelatedWork[];
 }) {
   const schema: Record<string, unknown> = {
     "@context": "https://schema.org",
@@ -33,8 +43,18 @@ export default function VisualArtworkJsonLd({
     name: ARTIST_NAME,
     url: `${SITE_URL}/marcela-pedrosa`,
   };
-  if (artwork.name || artwork.info) {
+  if (description) {
+    schema.description = description;
+  } else if (artwork.name || artwork.info) {
     schema.description = [artwork.name, artwork.info].filter(Boolean).join(". ");
+  }
+  schema.mainEntityOfPage = `${SITE_URL}/pinturas/${artwork.slug}`;
+  if (related.length > 0) {
+    schema.isRelatedTo = related.map((item) => ({
+      "@type": "VisualArtwork",
+      name: item.label,
+      url: absoluteUrl(item.href),
+    }));
   }
 
   return (

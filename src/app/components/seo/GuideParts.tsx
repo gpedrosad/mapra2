@@ -4,9 +4,7 @@ import WhatsAppButton from "../WhatsAppButton";
 import { motifForPublicId } from "@/lib/artwork-slugs";
 import type { CatalogPainting } from "@/lib/seo-artworks";
 import { SEO_GUIDES } from "@/lib/seo-guides";
-
-const PHONE = "+56 9 5618 9912";
-const EMAIL = "contacto@marcelapedrosa.com";
+import { CONTACT_EMAIL, CONTACT_PHONE } from "@/lib/site";
 
 export function FaqJsonLd({ faqs }: { faqs: Array<{ q: string; a: string }> }) {
   const schema = {
@@ -111,12 +109,17 @@ export function ConsultaCta({
       <h2 className="mb-4 text-2xl font-semibold">{title}</h2>
       <p className="mb-6 text-white/90">{text}</p>
       <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
-        <WhatsAppButton phone={PHONE} text={whatsappText} label="Consultar por WhatsApp" size="lg" />
+        <WhatsAppButton
+          phone={CONTACT_PHONE}
+          text={whatsappText}
+          label="Consultar por WhatsApp"
+          size="lg"
+        />
         <a
-          href={`mailto:${EMAIL}`}
+          href={`mailto:${CONTACT_EMAIL}`}
           className="inline-block rounded-xl bg-white px-6 py-3 font-medium text-brand transition-colors hover:bg-cream"
         >
-          Escribir por correo
+          {CONTACT_EMAIL}
         </a>
       </div>
     </div>

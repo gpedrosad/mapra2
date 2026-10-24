@@ -15,7 +15,7 @@ export const metadata = perfilMetadata({
 export default function ArtistasChilenasIndexPage() {
   return (
     <ProfilePage
-      modified="2026-10-23"
+      modified="2026-10-24"
       h1="Artistas chilenas"
       kicker="Perfiles para leer con calma a pintoras, una escultora y dos pintores que aparecen una y otra vez cuando alguien busca arte chileno."
       description={DESCRIPTION}
@@ -195,6 +195,32 @@ export default function ArtistasChilenasIndexPage() {
         . El óleo con envío, en{" "}
         <Link href="/comprar-cuadros-al-oleo-chile" className="text-brand underline">
           comprar cuadros al óleo
+        </Link>
+        .
+      </p>
+      <p>
+        Si el parecido que buscas es una tela de hoy, y no un perfil histórico,
+        hay tres motivos con ficha propia. El{" "}
+        <Link href="/pinturas/bodegon-calabazas" className="text-brand underline">
+          Bodegón de calabazas
+        </Link>{" "}
+        es la naturaleza muerta publicada, sin medida. El{" "}
+        <Link href="/pinturas/retrato-de-mujer" className="text-brand underline">
+          Retrato de mujer
+        </Link>{" "}
+        mide 100x130. El{" "}
+        <Link href="/pinturas/grupo-de-figuras" className="text-brand underline">
+          Grupo de figuras
+        </Link>{" "}
+        mide 110x110. Esas obras son de Marcela Pedrosa, en Concepción. Los
+        perfiles de arriba no están a la venta. El bodegón y las dos vistas de
+        ciudad que se miran desde una mesa están en{" "}
+        <Link href="/cuadros/para-comedor" className="text-brand underline">
+          cuadros para el comedor
+        </Link>
+        . Cómo medir ese muro, en{" "}
+        <Link href="/guias/elegir-cuadro-para-el-comedor" className="text-brand underline">
+          la guía del comedor
         </Link>
         .
       </p>

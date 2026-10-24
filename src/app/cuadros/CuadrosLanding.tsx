@@ -217,7 +217,7 @@ export default function CuadrosLanding({
               href={`mailto:${EMAIL}?subject=${encodeURIComponent(page.h1)}`}
               className="inline-flex items-center justify-center rounded-xl bg-white px-5 py-2.5 text-base font-medium text-brand hover:bg-cream transition-colors"
             >
-              Escribir por correo
+              {EMAIL}
             </a>
             <Link
               href="/pinturas"

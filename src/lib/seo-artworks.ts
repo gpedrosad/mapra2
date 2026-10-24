@@ -183,6 +183,11 @@ const KNOWN_ARTWORKS: KnownArtwork[] = [
 
 const BY_PUBLIC_ID = new Map(KNOWN_ARTWORKS.map((artwork) => [artwork.publicId, artwork]));
 
+/** Lo que se ve en el archivo, si el publicId está descrito en el repo. */
+export function detailForPublicId(publicId: string): string | undefined {
+  return BY_PUBLIC_ID.get(publicId.trim())?.detail;
+}
+
 const GALLERY_IDS = Array.from({ length: 15 }, (_, index) => `gallery.c${index + 1}`);
 
 export type CatalogPainting = {

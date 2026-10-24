@@ -108,9 +108,18 @@ export default async function ComprarArteChilePage() {
             <Link href="/comprar-cuadros-al-oleo-chile" className="text-brand underline">
               comprar cuadros al óleo
             </Link>
-            . Esta página ordena por motivo. Si partes por el muro, mira{" "}
+            . Esta página ordena por motivo            . Si partes por el muro, mira{" "}
             <Link href="/cuadros" className="text-brand underline">
               cuadros según el espacio
+            </Link>
+            . El del sofá no es el de la mesa: el bodegón, la ciudad de colores y
+            las casas de día y de noche están en{" "}
+            <Link href="/cuadros/para-comedor" className="text-brand underline">
+              cuadros para el comedor
+            </Link>
+            . Cómo medir ese paño, sin repetir el catálogo, está en{" "}
+            <Link href="/guias/elegir-cuadro-para-el-comedor" className="text-brand underline">
+              la guía del comedor
             </Link>
             .
           </p>
@@ -199,6 +208,16 @@ export default async function ComprarArteChilePage() {
                 href: "/cuadros/para-living",
                 label: "Cuadros para el living",
                 note: "Las telas que se leen desde el sofá, no la guía de cómo medir",
+              },
+              {
+                href: "/cuadros/para-comedor",
+                label: "Cuadros para el comedor",
+                note: "Bodegón, ciudad y el par de día y noche, vistos desde la mesa",
+              },
+              {
+                href: "/guias/elegir-cuadro-para-el-comedor",
+                label: "Cómo elegir un cuadro para el comedor",
+                note: "Mide el paño. No repite el listado de telas",
               },
               {
                 href: "/cuadros/grandes-al-oleo",

@@ -8,6 +8,27 @@ import type { Guide } from "../lib/types";
 import GuideBlocks from "./GuideBlocks";
 import GuideInquiry from "./GuideInquiry";
 
+const MONTHS = [
+  "enero",
+  "febrero",
+  "marzo",
+  "abril",
+  "mayo",
+  "junio",
+  "julio",
+  "agosto",
+  "septiembre",
+  "octubre",
+  "noviembre",
+  "diciembre",
+];
+
+function spanishDate(iso: string) {
+  const [year, month, day] = iso.split("-");
+  const name = MONTHS[Number(month) - 1] ?? month;
+  return `${Number(day)} de ${name} de ${year}`;
+}
+
 function articleSchema(guide: Guide) {
   const url = `${SITE_URL}/guias/${guide.slug}`;
 
@@ -17,8 +38,8 @@ function articleSchema(guide: Guide) {
     headline: guide.title,
     description: guide.description,
     image: getOgImageUrl(guide.imageKey, SITE_URL),
-    datePublished: GUIDE_DATE,
-    dateModified: GUIDE_MODIFIED,
+    datePublished: guide.published ?? GUIDE_DATE,
+    dateModified: guide.modified ?? GUIDE_MODIFIED,
     inLanguage: "es-CL",
     mainEntityOfPage: {
       "@type": "WebPage",
@@ -68,6 +89,8 @@ function breadcrumbSchema(guide: Guide) {
 
 export default function GuideShell({ guide }: { guide: Guide }) {
   const others = GUIDES.filter((item) => item.slug !== guide.slug);
+  const published = guide.published ?? GUIDE_DATE;
+  const modified = guide.modified ?? GUIDE_MODIFIED;
 
   return (
     <main className="min-h-screen bg-cream">
@@ -111,9 +134,13 @@ export default function GuideShell({ guide }: { guide: Guide }) {
           {guide.title}
         </h1>
         <p className="mt-4 text-sm text-ink-muted">
-          <time dateTime={GUIDE_DATE}>17 de octubre de 2026</time>
-          <span aria-hidden> · </span>
-          Actualizada el <time dateTime={GUIDE_MODIFIED}>23 de octubre de 2026</time>
+          <time dateTime={published}>{spanishDate(published)}</time>
+          {modified !== published ? (
+            <>
+              <span aria-hidden> · </span>
+              Actualizada el <time dateTime={modified}>{spanishDate(modified)}</time>
+            </>
+          ) : null}
           <span aria-hidden> · </span>
           Marcela Pedrosa, Concepción
         </p>

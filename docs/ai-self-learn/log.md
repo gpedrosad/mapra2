@@ -85,3 +85,9 @@ Formato: `YYYY-MM-DD | tema | hecho | acción/implicación`
 - GSC | Brief del lote (dato hasta 2026-10-21): 90d 9 clics, 249 imp, CTR 3,6 %, pos 10,0. Últimos 7 días (10-15..10-21): 2 clics, 26 imp, pos 19,2. Previos (10-08..10-14): 2 clics, 12 imp, pos 8,3 | `/pintura-fachadas-concepcion` 0/1 pos 52 en 90d
 - SEO | Inspección URL: indexadas home, pintoras, mujeres artistas, óleo, Biobío, compra en Concepción, encargos y cerámica. Descubiertas, sin indexar: `/guias`, `/artistas-chilenas`, `/cuadros`, `/comprar-arte-chile`, `/pinturas/casas-dia-y-noche` | El sitemap lo descargó Google el 2026-10-23 (74 URLs, 0 errores)
 - SEO | Lote 2026-10-23: fichas enlazadas desde `/cuadros` y desde las guías. Cada `/pinturas/[slug]` apunta a 1–3 páginas por tema o uso. Living (medir) y living (telas) se cruzan sin 301. El snippet de fachadas aclara que son óleos, no un servicio de pintar muros. Sin página nueva | Doc `docs/seo-lote-2026-10-23.md`. `pendiente:` Request indexing (OAuth solo lectura)
+
+## 2026-10-24
+
+- SEO | Lote de fin de semana: fichas con texto de lo que se ve, enlace a otra tela del mismo grupo y a una guía. Schema VisualArtwork con `description` e `isRelatedTo`, sin precio. `/pinturas/casas-dia-y-noche` distingue el par de un servicio de pintar muros | Doc `docs/seo-lote-2026-10-24.md`
+- SEO | Hueco de compra: el comedor se nombraba en living y fachadas y no tenía URL. Nuevas `/cuadros/para-comedor` y `/guias/elegir-cuadro-para-el-comedor`, con bodegón, ciudad y casas de día y de noche. Sin precio | No se creó «pintura abstracta»: las telas son figurativas. «Óleo chile» y «encargar cuadro» ya tenían URL
+- SEO | Hubs `/guias`, `/artistas-chilenas`, `/cuadros` y `/comprar-arte-chile` enlazan el comedor y fichas reales. El correo queda visible en el CTA de consulta | Menú, nav, home, Footer, HamburgerMenu y ArtCard sin cambios. `pendiente:` Request indexing

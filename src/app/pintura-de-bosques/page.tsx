@@ -85,16 +85,29 @@ export default async function PinturaDeBosquesPage() {
 
           <h2 className="mb-4 text-2xl font-semibold text-ink">Dos bosques, no la misma pincelada</h2>
           <p className="leading-relaxed text-ink-body">
-            En el primero los troncos son verticales, la luz entra en franjas y el suelo tiene
-            verdes y amarillos. La pincelada se ve. En el segundo los troncos son planos de verde,
-            azul, rosa y ocre, hay un árbol blanco al centro y el cielo es rosado.
+            En{" "}
+            <Link href="/pinturas/bosque-troncos-luz" className="text-brand underline">
+              Bosque con luz entre troncos
+            </Link>{" "}
+            la ficha dice 158x122, óleo sobre tela. Los troncos son verticales, la luz entra en
+            franjas y el suelo tiene verdes y amarillos. La pincelada se ve. En{" "}
+            <Link href="/pinturas/bosque-troncos-de-colores" className="text-brand underline">
+              Bosque de troncos de colores
+            </Link>{" "}
+            los troncos son planos de verde, azul, rosa y ocre, hay un árbol blanco al centro y
+            el cielo es rosado. Esa ficha no publica medida.
           </p>
           <p className="mt-4 leading-relaxed text-ink-body">
-            El sitio junta esta serie con las fachadas en{" "}
+            Aquí se describe el motivo. Para consultarlas por el muro, con el 158x122 a la vista,
+            está{" "}
+            <Link href="/cuadros/paisajes-bosques-biobio" className="text-brand underline">
+              cuadros de bosques del Biobío
+            </Link>
+            . El sitio junta la serie con las fachadas en{" "}
             <Link href="/pintura-fachadas-concepcion" className="text-brand underline">
               pintura de fachadas y bosques
             </Link>
-            . Las casas de colores están aparte, en{" "}
+            . Las casas de colores no son bosque: están en{" "}
             <Link href="/pintura-de-ciudad" className="text-brand underline">
               pintura de ciudad
             </Link>

@@ -16,5 +16,8 @@ export type Guide = {
   ctaBody: string;
   whatsappText: string;
   consultaIntro: string;
+  /** ISO si esta guía no comparte la fecha del lote de octubre. */
+  published?: string;
+  modified?: string;
   blocks: Block[];
 };
