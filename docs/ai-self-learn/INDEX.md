@@ -1,6 +1,6 @@
 # INDEX — hechos densos (leer primero)
 
-Actualizado: **2026-10-24**
+Actualizado: **2026-10-25**
 
 ## Identidad
 
@@ -71,6 +71,8 @@ Actualizado: **2026-10-24**
 - **Lote diario 2026-10-23:** hubs descubiertos sin indexar (`/guias`, `/artistas-chilenas`, `/cuadros`, `/comprar-arte-chile`) y las páginas de muro, regalo, formato, guías y óleo con envío. Cada obra de `/cuadros` enlaza su ficha. Cada ficha `/pinturas/[slug]` enlaza 1–3 páginas por tema o uso. `/pintura-fachadas-concepcion`: el snippet dice que son óleos, no un servicio de pintar muros. Sin página nueva y sin 301. Lista: [`docs/seo-lote-2026-10-23.md`](../seo-lote-2026-10-23.md). `pendiente:` Request indexing (el sitemap ya se descargó el 2026-10-23).
 - **Lote 2026-10-24 (fin de semana):** cada ficha nombra lo que se ve, enlaza 1–2 telas del mismo grupo y una guía. `/pinturas/casas-dia-y-noche` aclara que es un par publicado en una ficha, sin medida, y no un servicio de pintar muros. Páginas nuevas, fuera del menú: `/cuadros/para-comedor` y `/guias/elegir-cuadro-para-el-comedor` (bodegón, ciudad y el par de día y noche). No se abrió «pintura abstracta»: el catálogo es figurativo. Lista: [`docs/seo-lote-2026-10-24.md`](../seo-lote-2026-10-24.md). `pendiente:` Request indexing de los hubs y de las dos URLs nuevas.
 - **Lote 2026-10-24b:** title y meta de Carmen Aldunate, Lily Garafulic, Camilo Mori y Totoy Zamudio abren con el nombre de la consulta. Cada perfil enlaza el índice y una ficha real de Marcela, y dice que esa obra histórica no se vende aquí. Sin datos biográficos nuevos. Ana Cortés sigue sin perfil: no hay fuente en el repo. Living, dormitorio, oficina, regalo, grandes, óleo con envío, las guías del 10-17 y `/pintura-fachadas-concepcion` no se reabren: ya se editaron el 22, el 23 o el 24. Lista: [`docs/seo-lote-2026-10-24b.md`](../seo-lote-2026-10-24b.md). `pendiente:` Request indexing de los cuatro perfiles y de las dos URLs que siguen descubiertas.
+- **Corte 2026-10-25 (brief, dato hasta 2026-10-23):** 90d 10 clics · 252 imp · CTR 4,0 % · pos 10,1. Últimos 7 días (10-17..10-23): 3 clics · 24 imp · pos 15,0 (previos 10-10..10-16: 2c/14i pos 20,3). `/pintoras-chilenas` 4c/162i pos 7,7. Descubiertas, nunca rastreadas: `/comprar-cuadros-al-oleo-chile`, `/guias/elegir-cuadro-para-el-living`, `/guias/oleo-vs-acrilico`, `/guias/como-encargar-una-pintura`, `/guias/cuanto-cuesta-un-cuadro-original-en-chile`, `/cuadros/para-dormitorio`, `/cuadros/para-oficina`, `/cuadros/paisajes-bosques-biobio`.
+- **Lote 2026-10-25:** title y meta separan pintoras (famosas y actuales), mujeres artistas (escultura, grabado, cerámica) y el índice `/artistas-chilenas`. `/oleo-sobre-tela-chile` abre en plural y nombra la consulta. Enlaces nuevos desde páginas ya indexadas hacia las 8 sin rastrear; las que ya estaban enlazadas no se duplicaron. Sin página nueva. Lista: [`docs/seo-lote-2026-10-25.md`](../seo-lote-2026-10-25.md). `pendiente:` Request indexing (OAuth solo lectura).
 - Gap #2: analytics (GA4/Clarity del dominio correcto)
 - Gap #3 (aprobación): diferenciar landings thin, FAQ/GEO, backlinks prensa/IG
 

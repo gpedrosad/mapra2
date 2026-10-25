@@ -78,6 +78,7 @@ export const GUIDES: Guide[] = [
       "Hola Marcela, quiero colgar una pintura al óleo. Te cuento el muro y las medidas para hacerlo con cuidado.",
     consultaIntro:
       "Si la obra es de este taller y quieres confirmar cómo colgarla, nómbrala en el mensaje.",
+    modified: "2026-10-25",
     blocks: cuidarColgarOleo,
   },
   {

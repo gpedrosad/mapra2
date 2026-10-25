@@ -30,9 +30,9 @@ const MUJERES_FAQS = [
 ];
 
 export const metadata: Metadata = pageMetadata({
-  title: 'Mujeres artistas chilenas | pintura y gres',
+  title: 'Mujeres artistas chilenas | escultura y gres',
   description:
-    'Mujeres artistas chilenas en pintura, gres y arte visual, aparte del listado de pintoras. Pedrosa, en Concepción.',
+    'Mujeres artistas chilenas: escultura, grabado y cerámica, con fuente. Lily Garafulic y otras. Las pintoras famosas van en otra página.',
   path: '/mujeres-artistas-chilenas',
   ogImageKey: 'gente',
   imageAlt: 'Obra de Marcela Pedrosa, mujer artista chilena',

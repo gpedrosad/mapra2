@@ -108,11 +108,15 @@ export default async function ComprarArteChilePage() {
             <Link href="/comprar-cuadros-al-oleo-chile" className="text-brand underline">
               comprar cuadros al óleo
             </Link>
-            . Esta página ordena por motivo            . Si partes por el muro, mira{" "}
+            . Esta página ordena por motivo. Si partes por el muro, mira{" "}
             <Link href="/cuadros" className="text-brand underline">
               cuadros según el espacio
             </Link>
-            . El del sofá no es el de la mesa: el bodegón, la ciudad de colores y
+            . El{" "}
+            <Link href="/guias/elegir-cuadro-para-el-living" className="text-brand underline">
+              muro del sofá
+            </Link>{" "}
+            no es el de la mesa: el bodegón, la ciudad de colores y
             las casas de día y de noche están en{" "}
             <Link href="/cuadros/para-comedor" className="text-brand underline">
               cuadros para el comedor
@@ -179,6 +183,10 @@ export default async function ComprarArteChilePage() {
             Si buscas una pieza que no está en esta lista, se puede hablar de un{" "}
             <Link href="/encargos-pintura" className="text-brand underline">
               encargo
+            </Link>
+            . Los pasos, sin publicar un monto, están en{" "}
+            <Link href="/guias/como-encargar-una-pintura" className="text-brand underline">
+              cómo encargar una pintura
             </Link>
             . Para compra con foco en la ciudad, mira{" "}
             <Link href="/comprar-pintura-concepcion" className="text-brand underline">

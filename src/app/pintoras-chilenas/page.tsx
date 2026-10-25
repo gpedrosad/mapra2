@@ -14,9 +14,9 @@ import SiteHub from "../components/seo/SiteHub";
 
 
 export const metadata: Metadata = pageMetadata({
-  title: 'Pintoras chilenas famosas y actuales | Pedrosa',
+  title: 'Pintoras chilenas famosas y actuales | con fuente',
   description:
-    'Pintoras chilenas famosas y actuales, y mujeres pintoras: Castro, Mira, Petit, Barrios, Bru, Aldunate y Pedrosa en Concepción.',
+    'Lista de pintoras chilenas famosas y actuales, con fuente: Castro, Barrios, Bru, Aldunate y Pedrosa en Concepción. Artistas chilenas mujeres pintoras.',
   path: '/pintoras-chilenas',
   ogImageKey: 'gente',
   imageAlt: 'Obra de Marcela Pedrosa, pintora chilena',
@@ -253,7 +253,11 @@ export default async function PintorasChilenasPage() {
 
             <p className="text-ink-body leading-relaxed mb-6">
               De las <strong>pintoras chilenas actuales</strong>, este sitio
-              documenta a <strong>Marcela Pedrosa</strong>, que pinta hoy en
+              documenta a{" "}
+              <Link href="/marcela-pedrosa" className="text-brand underline">
+                <strong>Marcela Pedrosa</strong>
+              </Link>
+              , que pinta hoy en
               Concepción, Región del Biobío: fachadas y bosques en óleo sobre
               tela e impresionismo figurativo. Aldunate, Barrios, Bru y Pérez
               pertenecen al recorrido de las famosas. Aldunate falleció el 25 de

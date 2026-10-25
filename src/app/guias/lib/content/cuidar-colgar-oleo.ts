@@ -20,7 +20,7 @@ export const cuidarColgarOleo: Block[] = [
   },
   {
     type: "p",
-    text: "Conviene saber cómo está construida la tela antes de intervenirla. El proceso de un [óleo sobre tela](/oleo-sobre-tela-chile) —imprimación, capas y barniz— explica por qué un paño húmedo es una mala idea: el agua no limpia el aceite y puede meterse por un craquelado microscópico.",
+    text: "Conviene saber cómo está construida la tela antes de intervenirla. El proceso de un [óleo sobre tela](/oleo-sobre-tela-chile) —imprimación, capas y barniz— explica por qué un paño húmedo es una mala idea: el agua no limpia el aceite y puede meterse por un craquelado microscópico. Si la tela no es óleo, el cuidado no es el mismo: la diferencia con el acrílico está en [óleo o acrílico](/guias/oleo-vs-acrilico).",
   },
   {
     type: "h2",

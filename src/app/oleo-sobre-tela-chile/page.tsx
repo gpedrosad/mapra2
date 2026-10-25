@@ -20,13 +20,14 @@ import SiteHub from "../components/seo/SiteHub";
 
 
 export const metadata: Metadata = pageMetadata({
-  title: 'Óleos sobre tela en Chile | Pedrosa',
+  title: 'Óleos sobre tela en Chile | consulta',
   description:
-    'Óleos sobre tela en Chile, pintados en Concepción. Medidas publicadas: 158x122, 110x110, 90x120 y 100x130. Consulta el resto.',
+    'Óleos sobre tela en Chile, pintados en Concepción. Medidas publicadas: 158x122, 110x110, 90x120 y 100x130. Consulta por WhatsApp o correo.',
   path: '/oleo-sobre-tela-chile',
   ogImageKey: 'mujer',
   imageAlt: 'Pintura al óleo sobre tela de Marcela Pedrosa',
   keywords: [
+    "óleos sobre tela",
     "óleo sobre tela chile",
     "pintura al óleo chile",
     "óleo chile",
@@ -82,7 +83,7 @@ export default async function OleoSobreTelaChilePage() {
       {/* Hero Section */}
       <section className="relative py-16 sm:py-20 lg:py-24">
         <div className="mx-auto max-w-4xl px-4 sm:px-6">
-          <Breadcrumbs items={[{ name: "Óleo sobre tela", path: "/oleo-sobre-tela-chile" }]} />
+          <Breadcrumbs items={[{ name: "Óleos sobre tela", path: "/oleo-sobre-tela-chile" }]} />
           <div className="text-center">
             <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-medium tracking-tight text-ink mb-6">
               Óleos sobre tela en Chile
@@ -411,10 +412,25 @@ export default async function OleoSobreTelaChilePage() {
               </Link>
               .
             </p>
+            <p className="text-ink-body leading-relaxed mb-6">
+              El retrato de 100x130 está entre los{" "}
+              <Link href="/cuadros/para-dormitorio" className="text-brand underline">
+                cuadros para el dormitorio
+              </Link>
+              . El grupo de figuras, de 110x110, entre los{" "}
+              <Link href="/cuadros/para-oficina" className="text-brand underline">
+                cuadros para la oficina
+              </Link>
+              . Si el muro pide otra medida, los pasos —sin un monto— están en{" "}
+              <Link href="/guias/como-encargar-una-pintura" className="text-brand underline">
+                cómo encargar una pintura
+              </Link>
+              .
+            </p>
             <ArtworkCards works={measured} />
 
             <h2 className="text-2xl font-semibold text-ink mt-10 mb-4">
-              Preguntas sobre el óleo sobre tela
+              Preguntas sobre los óleos sobre tela
             </h2>
             <div className="space-y-4 my-8">
               {OLEO_FAQS.map((faq) => (

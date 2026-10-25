@@ -257,7 +257,7 @@ export const CUADRO_PAGES: CuadroPage[] = [
     blocks: [
       {
         type: "p",
-        text: "El comedor se mira sentado, con la mesa de por medio. No es el muro del sofá ni el de la cama. En la galería de Marcela Pedrosa hay tres óleos que aguantan esa distancia o esa cercanía: un bodegón, una ciudad de colores y un par de casas de día y de noche. Las tres fichas dicen óleo sobre tela y ninguna publica medida.",
+        text: `El comedor se mira sentado, con la mesa de por medio. No es el ${link("/guias/elegir-cuadro-para-el-living", "muro del sofá")} ni ${link("/cuadros/para-dormitorio", "el de la cama")}. En la galería de Marcela Pedrosa hay tres óleos que aguantan esa distancia o esa cercanía: un bodegón, una ciudad de colores y un par de casas de día y de noche. Las tres fichas dicen óleo sobre tela y ninguna publica medida.`,
       },
       {
         type: "p",
