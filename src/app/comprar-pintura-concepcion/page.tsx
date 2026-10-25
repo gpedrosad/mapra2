@@ -287,7 +287,8 @@ export default async function ComprarPinturaConcepcionPage() {
               <Link href="/cuadros" className="text-brand underline">cuadros</Link>: hay
               selección para el{" "}
               <Link href="/cuadros/para-living" className="text-brand underline">living</Link>, el{" "}
-              <Link href="/cuadros/para-dormitorio" className="text-brand underline">dormitorio</Link>, los{" "}
+              <Link href="/cuadros/para-dormitorio" className="text-brand underline">dormitorio</Link>, la{" "}
+              <Link href="/cuadros/para-oficina" className="text-brand underline">oficina</Link>, los{" "}
               <Link href="/cuadros/grandes-al-oleo" className="text-brand underline">
                 formatos con medida publicada
               </Link>{" "}

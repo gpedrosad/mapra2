@@ -3,9 +3,9 @@ import ConsultaSteps from "../components/seo/ConsultaSteps";
 import { SITE_URL } from "@/lib/site";
 import { PERFILES, ProfilePage, perfilMetadata } from "./ui";
 
-const TITLE = "Artistas chilenas: perfiles de pintura | Pedrosa";
+const TITLE = "Artistas chilenas: índice de perfiles";
 const DESCRIPTION =
-  "Perfiles de pintoras chilenas y de artistas que se buscan con ellas: Aldunate, Garafulic, Mori, Bru y la pintura de hoy.";
+  "Índice de perfiles con fuente: pintoras, la escultora Garafulic y pintores como Mori. No es el listado de pintoras famosas.";
 
 export const metadata = perfilMetadata({
   title: TITLE,
@@ -15,7 +15,7 @@ export const metadata = perfilMetadata({
 export default function ArtistasChilenasIndexPage() {
   return (
     <ProfilePage
-      modified="2026-10-24"
+      modified="2026-10-25"
       h1="Artistas chilenas"
       kicker="Perfiles para leer con calma a pintoras, una escultora y dos pintores que aparecen una y otra vez cuando alguien busca arte chileno."
       description={DESCRIPTION}
