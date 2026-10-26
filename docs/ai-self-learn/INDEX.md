@@ -1,6 +1,6 @@
 # INDEX — hechos densos (leer primero)
 
-Actualizado: **2026-10-25**
+Actualizado: **2026-10-26**
 
 ## Identidad
 
@@ -73,6 +73,8 @@ Actualizado: **2026-10-25**
 - **Lote 2026-10-24b:** title y meta de Carmen Aldunate, Lily Garafulic, Camilo Mori y Totoy Zamudio abren con el nombre de la consulta. Cada perfil enlaza el índice y una ficha real de Marcela, y dice que esa obra histórica no se vende aquí. Sin datos biográficos nuevos. Ana Cortés sigue sin perfil: no hay fuente en el repo. Living, dormitorio, oficina, regalo, grandes, óleo con envío, las guías del 10-17 y `/pintura-fachadas-concepcion` no se reabren: ya se editaron el 22, el 23 o el 24. Lista: [`docs/seo-lote-2026-10-24b.md`](../seo-lote-2026-10-24b.md). `pendiente:` Request indexing de los cuatro perfiles y de las dos URLs que siguen descubiertas.
 - **Corte 2026-10-25 (brief, dato hasta 2026-10-23):** 90d 10 clics · 252 imp · CTR 4,0 % · pos 10,1. Últimos 7 días (10-17..10-23): 3 clics · 24 imp · pos 15,0 (previos 10-10..10-16: 2c/14i pos 20,3). `/pintoras-chilenas` 4c/162i pos 7,7. Descubiertas, nunca rastreadas: `/comprar-cuadros-al-oleo-chile`, `/guias/elegir-cuadro-para-el-living`, `/guias/oleo-vs-acrilico`, `/guias/como-encargar-una-pintura`, `/guias/cuanto-cuesta-un-cuadro-original-en-chile`, `/cuadros/para-dormitorio`, `/cuadros/para-oficina`, `/cuadros/paisajes-bosques-biobio`.
 - **Lote 2026-10-25:** title y meta separan pintoras (famosas y actuales), mujeres artistas (escultura, grabado, cerámica) y el índice `/artistas-chilenas`. `/oleo-sobre-tela-chile` abre en plural y nombra la consulta. Enlaces nuevos desde páginas ya indexadas hacia las 8 sin rastrear; las que ya estaban enlazadas no se duplicaron. Sin página nueva. Lista: [`docs/seo-lote-2026-10-25.md`](../seo-lote-2026-10-25.md). `pendiente:` Request indexing (OAuth solo lectura).
+- **Corte 2026-10-26 (brief, dato hasta 2026-10-24):** 90d 11 clics · 259 imp · CTR 4,2 % · pos 10,2. Últimos 7 días (10-18..10-24): 3 clics · 26 imp · pos 12,3 (previos 10-11..10-17: 3c/19i pos 21,6). `/pintoras-chilenas` 4c/162i pos 7,7. `/artista-visual-biobio` 4i pos 3 en 7d. Indexadas nuevas: `/comprar-cuadros-al-oleo-chile`, `/cuadros/para-dormitorio`, `/cuadros/para-oficina`, `/cuadros/paisajes-bosques-biobio`. Desconocidas: retratos, bosques, ciudad, Henriette Petit, pintoras contemporáneas, guía del living, óleo vs acrílico.
+- **Lote 2026-10-26:** las seis páginas de tema ya tenían ficha, FAQ y CTA; no se reescribieron. Enlaces nuevos desde páginas indexadas (óleo con envío, índice de cuadros, living, regalo, dormitorio, oficina). Nombres de perfil como ancla en `/pintoras-chilenas` y `/mujeres-artistas-chilenas`. Title y meta de Biobío y de la guía de impresionismo figurativo. Sin página nueva. Lista: [`docs/seo-lote-2026-10-26.md`](../seo-lote-2026-10-26.md). `pendiente:` Request indexing (OAuth solo lectura).
 - Gap #2: analytics (GA4/Clarity del dominio correcto)
 - Gap #3 (aprobación): diferenciar landings thin, FAQ/GEO, backlinks prensa/IG
 

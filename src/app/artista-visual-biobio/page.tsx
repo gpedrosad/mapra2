@@ -34,9 +34,9 @@ const BIOBIO_FAQS = [
 
 
 export const metadata: Metadata = pageMetadata({
-  title: 'Artista visual del Biobío | Marcela Pedrosa',
+  title: "Artista visual del Biobío | óleos en Concepción",
   description:
-    'Artista visual del Biobío: Marcela Pedrosa pinta al óleo en Concepción. Consulta por WhatsApp o correo.',
+    "Artista visual del Biobío: Marcela Pedrosa pinta óleos en Concepción. Obras publicadas, sin precio en la ficha. Consulta por WhatsApp o correo.",
   path: '/artista-visual-biobio',
   ogImageKey: 'gente',
   imageAlt: 'Obra de Marcela Pedrosa, artista visual del Biobío',
@@ -276,6 +276,14 @@ export default async function ArtistaVisualBiobioPage() {
               en{" "}
               <Link href="/esculturas" className="text-brand underline">
                 cerámica gres
+              </Link>
+              . Si el cuadro viaja a otra región, la consulta de envío está en{" "}
+              <Link href="/comprar-cuadros-al-oleo-chile" className="text-brand underline">
+                comprar cuadros al óleo en Chile
+              </Link>
+              . Si el muro es el del sofá, cómo medirlo está en{" "}
+              <Link href="/guias/elegir-cuadro-para-el-living" className="text-brand underline">
+                cómo elegir un cuadro para el living
               </Link>
               .
             </p>
