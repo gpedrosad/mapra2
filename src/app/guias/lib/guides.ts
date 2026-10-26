@@ -83,9 +83,10 @@ export const GUIDES: Guide[] = [
   },
   {
     slug: "que-es-el-impresionismo-figurativo",
-    title: "Qué es el impresionismo figurativo",
+    title: "Qué es el impresionismo figurativo | con obras",
     description:
-      "Qué es el impresionismo figurativo: la muestra de 1874, la pincelada y la luz, y cómo se lee hoy en la pintura chilena.",
+      "Qué es el impresionismo figurativo: motivo reconocible, pincelada suelta y luz. La muestra de 1874 y óleos de Marcela Pedrosa para consultar.",
+    modified: "2026-10-26",
     imageKey: "bosque",
     imageAlt: "Paisaje al óleo en clave de impresionismo figurativo",
     ctaTitle: "¿Quieres ver este lenguaje en una tela?",

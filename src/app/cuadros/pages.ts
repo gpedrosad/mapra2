@@ -59,7 +59,7 @@ export const CUADRO_PAGES: CuadroPage[] = [
       },
       {
         type: "p",
-        text: `Para el ${link("/cuadros/para-living", "living")} están las piezas que se leen desde el sofá: el bosque de troncos, las figuras en color, el elefante, el retrato vertical, la ciudad de casas y cerros, los dos caballos, el bosque en planos de color y los rostros con máscara. Son obras con presencia. La página explica cada tela y cómo mirar el muro antes de escribir.`,
+        text: `Para el ${link("/cuadros/para-living", "living")} están las piezas que se leen desde el sofá: el ${link("/pintura-de-bosques", "bosque de troncos")}, las ${link("/figuras-al-oleo", "figuras en color")}, el ${link("/pintura-de-animales", "elefante")}, el ${link("/retratos-al-oleo", "retrato vertical")}, la ${link("/pintura-de-ciudad", "ciudad de casas y cerros")}, los dos caballos, el bosque en planos de color y los rostros con máscara. Son obras con presencia. La página explica cada tela y cómo mirar el muro antes de escribir.`,
       },
       {
         type: "p",
@@ -67,7 +67,7 @@ export const CUADRO_PAGES: CuadroPage[] = [
       },
       {
         type: "p",
-        text: `El ${link("/cuadros/para-comedor", "comedor")} se mira sentado, desde la mesa, y no usa la lista del living. Entran el bodegón de calabazas, la ciudad de casas de colores y el par de casas de día y de noche. Ninguna de esas tres fichas publica medida. Cómo medir el paño, sin repetir las telas, está en ${link("/guias/elegir-cuadro-para-el-comedor", "cómo elegir un cuadro para el comedor")}.`,
+        text: `El ${link("/cuadros/para-comedor", "comedor")} se mira sentado, desde la mesa, y no usa la lista del living. Entran el ${link("/bodegon-oleo", "bodegón de calabazas")}, la ciudad de casas de colores y el par de casas de día y de noche. Ninguna de esas tres fichas publica medida. Cómo medir el paño, sin repetir las telas, está en ${link("/guias/elegir-cuadro-para-el-comedor", "cómo elegir un cuadro para el comedor")}.`,
       },
       {
         type: "p",
@@ -133,15 +133,15 @@ export const CUADRO_PAGES: CuadroPage[] = [
       },
       {
         type: "p",
-        text: `El grupo de figuras está en 110x110, óleo sobre tela. Es un cuadrado de personas de pie, rostros simplificados y ropa en azul, rojo, morado, amarillo y verde. No hay paisaje detrás. En un living funciona como una conversación colgada: el conjunto se entiende sin acercarse. La misma obra, leída para un espacio de trabajo, está en ${link("/cuadros/para-oficina", "cuadros para oficina")}.`,
+        text: `El grupo de figuras está en 110x110, óleo sobre tela. Es un cuadrado de personas de pie, rostros simplificados y ropa en azul, rojo, morado, amarillo y verde. No hay paisaje detrás. En un living funciona como una conversación colgada: el conjunto se entiende sin acercarse. La misma obra, leída para un espacio de trabajo, está en ${link("/cuadros/para-oficina", "cuadros para oficina")}. El motivo, con las otras figuras, está en ${link("/figuras-al-oleo", "figuras al óleo")}.`,
       },
       {
         type: "p",
-        text: "El elefante mide 90x120, óleo sobre tela. Está de frente, con naranjos, azules y rojos sobre un fondo gris. Es vertical y se reconoce al entrar. Queda como punto de color cuando el muro del sofá está despejado. El retrato de mujer figura como 100x130, óleo sobre tela: rostro en azules, naranjos y violetas, fondo cálido, también vertical. En el living se cuelga como retrato, no como una lámina chica. Si lo quieres junto a la cama, la altura hay que mirarla en la página de dormitorio, porque 100x130 no es una franja baja.",
+        text: `El elefante mide 90x120, óleo sobre tela. Está de frente, con naranjos, azules y rojos sobre un fondo gris. Es vertical y se reconoce al entrar. Queda como punto de color cuando el muro del sofá está despejado. El retrato de mujer figura como 100x130, óleo sobre tela: rostro en azules, naranjos y violetas, fondo cálido, también vertical. En el living se cuelga como retrato, no como una lámina chica. Los otros rostros de la galería están en ${link("/retratos-al-oleo", "retratos al óleo")}. Si lo quieres junto a la cama, la altura hay que mirarla en la página de dormitorio, porque 100x130 no es una franja baja.`,
       },
       {
         type: "p",
-        text: `La ciudad no trae números, solo óleo sobre tela. Se ve una aglomeración de casas de colores, torres, un tren amarillo y azul, árboles en flor y cerros nevados. Se lee de lejos por el color. Encaja en un living amplio. Si el muro es el de la mesa, la misma tela está en ${link("/cuadros/para-comedor", "cuadros para el comedor")}, con el bodegón y el par de día y noche. La arquitectura, en ${link("/cuadros/fachadas-arquitectura", "fachadas y arquitectura")}.`,
+        text: `La ciudad no trae números, solo óleo sobre tela. Se ve una aglomeración de casas de colores, torres, un tren amarillo y azul, árboles en flor y cerros nevados. Se lee de lejos por el color. Encaja en un living amplio. Si el muro es el de la mesa, la misma tela está en ${link("/cuadros/para-comedor", "cuadros para el comedor")}, con el ${link("/bodegon-oleo", "bodegón")} y el par de día y noche. La arquitectura, en ${link("/cuadros/fachadas-arquitectura", "fachadas y arquitectura")}.`,
       },
       {
         type: "p",
@@ -207,7 +207,7 @@ export const CUADRO_PAGES: CuadroPage[] = [
       },
       {
         type: "p",
-        text: `El gato está acostado, con el pelaje en ocres y color, sobre un textil de motivos geométricos. Es una escena doméstica y quieta. La ficha solo dice óleo sobre tela. También puede ser un regalo, y por eso está en ${link("/cuadros/regalar-pintura-original", "regalar una pintura original")}. El retrato de mujer sí trae medida: 100x130, óleo sobre tela. Es vertical y es de los formatos grandes de la galería. Cabe en un dormitorio si el muro tiene altura de sobra, por ejemplo un paño junto al clóset, no una franja baja sobre la cama. La misma obra está en ${link("/cuadros/para-living", "living")} y en ${link("/cuadros/grandes-al-oleo", "cuadros grandes")}, con el número a la vista.`,
+        text: `El gato está acostado, con el pelaje en ocres y color, sobre un textil de motivos geométricos. Es una escena doméstica y quieta. La ficha solo dice óleo sobre tela. También puede ser un regalo, y por eso está en ${link("/cuadros/regalar-pintura-original", "regalar una pintura original")}. El retrato de mujer sí trae medida: 100x130, óleo sobre tela. Es vertical y es de los formatos grandes de la galería. Cabe en un dormitorio si el muro tiene altura de sobra, por ejemplo un paño junto al clóset, no una franja baja sobre la cama. La misma obra está en ${link("/cuadros/para-living", "living")} y en ${link("/cuadros/grandes-al-oleo", "cuadros grandes")}, con el número a la vista. Los otros rostros de la galería están en ${link("/retratos-al-oleo", "retratos al óleo")}.`,
       },
       {
         type: "h2",
@@ -335,11 +335,11 @@ export const CUADRO_PAGES: CuadroPage[] = [
       },
       {
         type: "p",
-        text: `El grupo de figuras mide 110x110, óleo sobre tela. Son personas de pie, rostros simplificados, color en la ropa. No retrata a un equipo real. En una sala de reuniones o detrás de un escritorio se lee como presencia humana, sin volverse el retrato de alguien de la oficina. Es cuadrado, así que el muro no necesita ser muy alto. En una casa, la misma tela está pensada también para el ${link("/cuadros/para-living", "living")}.`,
+        text: `El grupo de figuras mide 110x110, óleo sobre tela. Son personas de pie, rostros simplificados, color en la ropa. No retrata a un equipo real. En una sala de reuniones o detrás de un escritorio se lee como presencia humana, sin volverse el retrato de alguien de la oficina. Es cuadrado, así que el muro no necesita ser muy alto. En una casa, la misma tela está pensada también para el ${link("/cuadros/para-living", "living")}. El motivo, con las otras figuras, está en ${link("/figuras-al-oleo", "figuras al óleo")}.`,
       },
       {
         type: "p",
-        text: `La ciudad es óleo sobre tela, sin medida publicada. Casas de colores, torres, un tren, árboles en flor y cerros nevados. Tiene algo de mapa y algo de recuerdo urbano. En una oficina en Concepción o en otra ciudad del Biobío conversa con quien trabaja mirando una ventana, sin exigir que el cuadro sea una foto del barrio. El detalle de esa arquitectura está en ${link("/cuadros/fachadas-arquitectura", "fachadas y arquitectura")}.`,
+        text: `La ciudad es óleo sobre tela, sin medida publicada. Casas de colores, torres, un tren, árboles en flor y cerros nevados. Tiene algo de mapa y algo de recuerdo urbano. En una oficina en Concepción o en otra ciudad del Biobío conversa con quien trabaja mirando una ventana, sin exigir que el cuadro sea una foto del barrio. El detalle de esa arquitectura está en ${link("/cuadros/fachadas-arquitectura", "fachadas y arquitectura")}. Las vistas, sin el filtro de la oficina, están en ${link("/pintura-de-ciudad", "pintura de ciudad")}.`,
       },
       {
         type: "p",
@@ -604,7 +604,7 @@ export const CUADRO_PAGES: CuadroPage[] = [
       },
       {
         type: "p",
-        text: `Si el regalo tiene que entenderse sin una charla de estilo, mira primero estas telas. El gato acostado sobre un textil de motivos. El elefante de frente, en naranjos y azules, con ficha 90x120, óleo sobre tela. Los dos caballos, uno quieto en primer plano y otro en movimiento. El bodegón de zapallos y calabazas sobre una mesa: es la naturaleza muerta de la galería, y si el destino es un comedor está también en ${link("/cuadros/para-comedor", "cuadros para el comedor")}. El rostro cercano, con una mano junto a la boca. El cuadro de manos superpuestas. El retrato de mujer, 100x130, óleo sobre tela. Y el retrato con lentes redondos, sin un nombre publicado en la ficha.`,
+        text: `Si el regalo tiene que entenderse sin una charla de estilo, mira primero estas telas. El gato acostado sobre un textil de motivos. El elefante de frente, en naranjos y azules, con ficha 90x120, óleo sobre tela. Los dos caballos, uno quieto en primer plano y otro en movimiento. El ${link("/bodegon-oleo", "bodegón de zapallos y calabazas")} sobre una mesa: es la naturaleza muerta de la galería, y si el destino es un comedor está también en ${link("/cuadros/para-comedor", "cuadros para el comedor")}. El rostro cercano, con una mano junto a la boca. El cuadro de manos superpuestas. El retrato de mujer, 100x130, óleo sobre tela. Y el retrato con lentes redondos, sin un nombre publicado en la ficha. Esos rostros están en ${link("/retratos-al-oleo", "retratos al óleo")}.`,
       },
       {
         type: "p",

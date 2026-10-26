@@ -156,8 +156,11 @@ export default async function MujeresArtistasChilenasPage() {
               </Link>{" "}
               (1923-2021) es pintora y grabadora. Nació en Barcelona, llegó a
               Chile en el Winnipeg y se especializó en grabado en el Taller 99.
-              Recibió el Premio Nacional de Artes Plásticas en 2015. Lily
-              Garafulic, además de la escultura, estudió grabado en Nueva York.
+              Recibió el Premio Nacional de Artes Plásticas en 2015.{" "}
+              <Link href="/artistas-chilenas/lily-garafulic" className="text-brand underline">
+                Lily Garafulic
+              </Link>
+              , además de la escultura, estudió grabado en Nueva York.
               El listado de quien pinta, sin el oficio del grabado, sigue en{" "}
               <Link href="/pintoras-chilenas" className="text-brand underline">
                 pintoras chilenas
@@ -191,8 +194,34 @@ export default async function MujeresArtistasChilenasPage() {
             </h2>
 
             <p className="text-ink-body leading-relaxed mb-6">
-              Castro, las hermanas Mira, Petit, Barrios, Bru, Aldunate y Pedrosa,
-              leídas como pintoras, están en{" "}
+              <Link href="/artistas-chilenas/celia-castro" className="text-brand underline">
+                Celia Castro
+              </Link>
+              ,{" "}
+              <Link href="/artistas-chilenas/magdalena-mira" className="text-brand underline">
+                Magdalena Mira
+              </Link>
+              ,{" "}
+              <Link href="/artistas-chilenas/aurora-mira" className="text-brand underline">
+                Aurora Mira
+              </Link>
+              ,{" "}
+              <Link href="/artistas-chilenas/henriette-petit" className="text-brand underline">
+                Henriette Petit
+              </Link>
+              ,{" "}
+              <Link href="/artistas-chilenas/gracia-barrios" className="text-brand underline">
+                Gracia Barrios
+              </Link>
+              ,{" "}
+              <Link href="/artistas-chilenas/roser-bru" className="text-brand underline">
+                Roser Bru
+              </Link>
+              ,{" "}
+              <Link href="/artistas-chilenas/carmen-aldunate" className="text-brand underline">
+                Carmen Aldunate
+              </Link>{" "}
+              y Pedrosa, leídas como pintoras, están en{" "}
               <Link href="/pintoras-chilenas#pintoras-chilenas-famosas" className="text-brand underline">
                 pintoras chilenas famosas
               </Link>{" "}
@@ -204,7 +233,26 @@ export default async function MujeresArtistasChilenasPage() {
               <Link href="/artistas-chilenas" className="text-brand underline">
                 artistas chilenas
               </Link>
-              .
+              . Barrios, Bru,{" "}
+              <Link href="/artistas-chilenas/matilde-perez" className="text-brand underline">
+                Matilde Pérez
+              </Link>{" "}
+              y Aldunate, leídas juntas, están en{" "}
+              <Link
+                href="/artistas-chilenas/pintoras-chilenas-contemporaneas"
+                className="text-brand underline"
+              >
+                pintoras chilenas contemporáneas
+              </Link>
+              .{" "}
+              <Link href="/artistas-chilenas/camilo-mori" className="text-brand underline">
+                Camilo Mori
+              </Link>{" "}
+              y{" "}
+              <Link href="/artistas-chilenas/totoy-zamudio" className="text-brand underline">
+                Totoy Zamudio
+              </Link>{" "}
+              tienen perfil y son pintores: no entran en este mapa.
             </p>
 
             <p className="text-ink-body leading-relaxed mb-6">

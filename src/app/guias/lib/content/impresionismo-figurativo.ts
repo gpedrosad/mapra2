@@ -95,10 +95,10 @@ export const impresionismoFigurativo: Block[] = [
   },
   {
     type: "p",
-    text: "También sirve para colgar. Una pintura así pierde sentido si la miras a diez centímetros o si el sol del norte la aplana durante toda la tarde. Gana cuando tiene aire alrededor, una altura cercana a la mirada y una distancia de sofá. El estilo no es un adorno del texto. Es una indicación de cómo fabricar el lugar donde el cuadro se va a leer.",
+    text: "También sirve para colgar. Una pintura así pierde sentido si la miras a diez centímetros o si el sol del norte la aplana durante toda la tarde. Gana cuando tiene aire alrededor, una altura cercana a la mirada y una distancia de sofá. Cómo medir ese muro está en [cómo elegir un cuadro para el living](/guias/elegir-cuadro-para-el-living). El estilo no es un adorno del texto. Es una indicación de cómo fabricar el lugar donde el cuadro se va a leer.",
   },
   {
     type: "p",
-    text: "En la galería, esa pincelada se ve en [Bosque con luz entre troncos](/pinturas/bosque-troncos-luz), [Casas de día y de noche](/pinturas/casas-dia-y-noche) y [Ciudad de casas de colores](/pinturas/ciudad-casas-de-colores). Esta guía define el término. Las telas están en [cuadros de fachadas](/cuadros/fachadas-arquitectura) y [cuadros de bosques](/cuadros/paisajes-bosques-biobio).",
+    text: "En la galería, esa pincelada se ve en [Bosque con luz entre troncos](/pinturas/bosque-troncos-luz), [Casas de día y de noche](/pinturas/casas-dia-y-noche) y [Ciudad de casas de colores](/pinturas/ciudad-casas-de-colores). Esta guía define el término. Las telas están en [cuadros de fachadas](/cuadros/fachadas-arquitectura) y [cuadros de bosques](/cuadros/paisajes-bosques-biobio). Para consultarlas con envío dentro de Chile, entra a [comprar cuadros al óleo](/comprar-cuadros-al-oleo-chile).",
   },
 ];

@@ -221,8 +221,11 @@ export default async function PintorasChilenasPage() {
               >
                 esos cuatro perfiles
               </Link>
-              . Quien busque escultura, grabado o cerámica —y no solo pintura—
-              sigue en{" "}
+              . Quien busque escultura (
+              <Link href="/artistas-chilenas/lily-garafulic" className="text-brand underline">
+                Lily Garafulic
+              </Link>
+              ), grabado o cerámica —y no solo pintura— sigue en{" "}
               <Link href="/mujeres-artistas-chilenas" className="text-brand underline">
                 mujeres artistas chilenas
               </Link>
@@ -240,8 +243,16 @@ export default async function PintorasChilenasPage() {
               <strong>Artistas chilenas mujeres pintoras</strong>, en esta
               página, son Castro, las hermanas Mira, Petit, Pérez, Barrios, Bru,
               Aldunate y Marcela Pedrosa. El enlace de cada nombre está en la
-              lista de arriba. Camilo Mori y Totoy Zamudio también tienen
-              perfil en el sitio, y son pintores: no entran en este grupo.
+              lista de arriba.{" "}
+              <Link href="/artistas-chilenas/camilo-mori" className="text-brand underline">
+                Camilo Mori
+              </Link>{" "}
+              y{" "}
+              <Link href="/artistas-chilenas/totoy-zamudio" className="text-brand underline">
+                Totoy Zamudio
+              </Link>{" "}
+              también tienen perfil en el sitio, y son pintores: no entran en
+              este grupo.
             </p>
 
             <h2
