@@ -151,10 +151,14 @@ export default async function ComprarCuadrosAlOleoChilePage() {
           También puedes encargar otro formato en{" "}
           <Link href="/encargos-pintura" className="text-brand underline underline-offset-4">
             encargos de pintura
-          </Link>{" "}
-          o ver la técnica en{" "}
+          </Link>
+          , ver la técnica en{" "}
           <Link href="/oleo-sobre-tela-chile" className="text-brand underline underline-offset-4">
             óleo sobre tela
+          </Link>{" "}
+          o, si todavía comparas el material, leer{" "}
+          <Link href="/guias/oleo-vs-acrilico" className="text-brand underline underline-offset-4">
+            óleo o acrílico
           </Link>
           .
         </p>

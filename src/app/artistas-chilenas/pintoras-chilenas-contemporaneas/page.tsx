@@ -2,9 +2,9 @@ import Link from "next/link";
 import { ProfilePage, perfilMetadata } from "../ui";
 import { SITE_URL } from "@/lib/site";
 
-const TITLE = "Barrios, Bru, Pérez y Aldunate | perfiles";
+const TITLE = "Pintoras chilenas contemporáneas | taller vivo";
 const DESCRIPTION =
-  "Perfiles de Gracia Barrios, Roser Bru, Matilde Pérez y Carmen Aldunate. El listado de pintoras chilenas está en su página.";
+  "Pintoras chilenas contemporáneas: Barrios, Bru, Pérez, Aldunate y el taller vivo de Marcela Pedrosa. Las famosas históricas están en otra página.";
 
 export const metadata = perfilMetadata({
   title: TITLE,
@@ -16,8 +16,9 @@ export default function PintorasContemporaneasPage() {
   return (
     <ProfilePage
       slug="pintoras-chilenas-contemporaneas"
-      h1="Perfiles: Barrios, Bru, Pérez y Aldunate"
+      h1="Pintoras chilenas contemporáneas"
       kicker="Un recorrido por pintoras con obra activa en la segunda mitad del siglo XX y en el XXI, hasta el taller de Marcela Pedrosa en Concepción."
+      modified="2026-10-27"
       description={DESCRIPTION}
       person={{
         name: "Marcela Pedrosa",

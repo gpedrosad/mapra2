@@ -1,6 +1,6 @@
 # INDEX — hechos densos (leer primero)
 
-Actualizado: **2026-10-26**
+Actualizado: **2026-10-27**
 
 ## Identidad
 
@@ -75,6 +75,8 @@ Actualizado: **2026-10-26**
 - **Lote 2026-10-25:** title y meta separan pintoras (famosas y actuales), mujeres artistas (escultura, grabado, cerámica) y el índice `/artistas-chilenas`. `/oleo-sobre-tela-chile` abre en plural y nombra la consulta. Enlaces nuevos desde páginas ya indexadas hacia las 8 sin rastrear; las que ya estaban enlazadas no se duplicaron. Sin página nueva. Lista: [`docs/seo-lote-2026-10-25.md`](../seo-lote-2026-10-25.md). `pendiente:` Request indexing (OAuth solo lectura).
 - **Corte 2026-10-26 (brief, dato hasta 2026-10-24):** 90d 11 clics · 259 imp · CTR 4,2 % · pos 10,2. Últimos 7 días (10-18..10-24): 3 clics · 26 imp · pos 12,3 (previos 10-11..10-17: 3c/19i pos 21,6). `/pintoras-chilenas` 4c/162i pos 7,7. `/artista-visual-biobio` 4i pos 3 en 7d. Indexadas nuevas: `/comprar-cuadros-al-oleo-chile`, `/cuadros/para-dormitorio`, `/cuadros/para-oficina`, `/cuadros/paisajes-bosques-biobio`. Desconocidas: retratos, bosques, ciudad, Henriette Petit, pintoras contemporáneas, guía del living, óleo vs acrílico.
 - **Lote 2026-10-26:** las seis páginas de tema ya tenían ficha, FAQ y CTA; no se reescribieron. Enlaces nuevos desde páginas indexadas (óleo con envío, índice de cuadros, living, regalo, dormitorio, oficina). Nombres de perfil como ancla en `/pintoras-chilenas` y `/mujeres-artistas-chilenas`. Title y meta de Biobío y de la guía de impresionismo figurativo. Sin página nueva. Lista: [`docs/seo-lote-2026-10-26.md`](../seo-lote-2026-10-26.md). `pendiente:` Request indexing (OAuth solo lectura).
+- **Corte 2026-10-27 (brief, dato hasta 2026-10-25):** 90d 11 clics · 263 imp · CTR 4,2 % · pos 10,2. Últimos 7 días (10-19..10-25): 3 clics · 30 imp · pos 11,7 (previos 10-12..10-18: 2c/16i pos 24,1). Indexadas nuevas: retratos, bosques, ciudad, figuras, animales y bodegón. Desconocida: `/guias/elegir-cuadro-para-el-living`. 44 de 60 URLs no-ficha indexadas.
+- **Lote 2026-10-27:** las cuatro guías de compra ya tenían ficha, CTA y, en la de precio, cero montos; no se reescribieron. Enlaces nuevos solo donde la frase ya hablaba del tema. Title de contemporáneas (46) separado de «famosas y actuales». Title de grandes al óleo nombra el bosque 158x122. `/cuadros` y fachadas no reabren el title: se editaron el 24 o el 26. Sin página nueva. Lista: [`docs/seo-lote-2026-10-27.md`](../seo-lote-2026-10-27.md). `pendiente:` Request indexing (OAuth solo lectura).
 - Gap #2: analytics (GA4/Clarity del dominio correcto)
 - Gap #3 (aprobación): diferenciar landings thin, FAQ/GEO, backlinks prensa/IG
 

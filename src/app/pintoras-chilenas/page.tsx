@@ -219,7 +219,7 @@ export default async function PintorasChilenasPage() {
                 href="/artistas-chilenas/pintoras-chilenas-contemporaneas"
                 className="text-brand underline"
               >
-                esos cuatro perfiles
+                pintoras chilenas contemporáneas
               </Link>
               . Quien busque escultura (
               <Link href="/artistas-chilenas/lily-garafulic" className="text-brand underline">
