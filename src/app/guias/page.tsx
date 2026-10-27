@@ -204,7 +204,14 @@ export default function GuiasIndexPage() {
           .
         </p>
         <p className="mt-4 text-[1.05rem] text-ink-body leading-relaxed">
-          La guía del living mide el muro del sofá. La del{" "}
+          La{" "}
+          <Link
+            href="/guias/elegir-cuadro-para-el-living"
+            className="text-brand underline underline-offset-4"
+          >
+            guía del living
+          </Link>{" "}
+          mide el muro del sofá. La del{" "}
           <Link
             href="/guias/elegir-cuadro-para-el-comedor"
             className="text-brand underline underline-offset-4"

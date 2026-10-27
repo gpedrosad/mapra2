@@ -107,7 +107,11 @@ export default async function RetratosAlOleoPage() {
             <Link href="/encargos-pintura" className="text-brand underline">
               encargos
             </Link>
-            , no aquí. El de 100x130, si va junto a la cama, pide altura: está también en{" "}
+            . Los pasos, sin publicar un monto, están en{" "}
+            <Link href="/guias/como-encargar-una-pintura" className="text-brand underline">
+              cómo encargar una pintura
+            </Link>
+            . El de 100x130, si va junto a la cama, pide altura: está también en{" "}
             <Link href="/cuadros/para-dormitorio" className="text-brand underline">
               cuadros para el dormitorio
             </Link>

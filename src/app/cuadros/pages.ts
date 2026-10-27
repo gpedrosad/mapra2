@@ -47,7 +47,7 @@ export const CUADRO_PAGES: CuadroPage[] = [
       },
       {
         type: "p",
-        text: `Marcela vende a pedido. Escribes por WhatsApp al +56 9 5618 9912 o al correo contacto@marcelapedrosa.com, nombras la obra y ella confirma si está disponible. También puedes usar el ${link("/contacto", "formulario de contacto")}. Si la pieza ya no está, se puede conversar un ${link("/encargos-pintura", "encargo")} del mismo tema. El valor de cada obra se confirma al escribir. La ficha de la galería no trae precio; la oferta del mes, si está vigente, está en la portada.`,
+        text: `Marcela vende a pedido. Escribes por WhatsApp al +56 9 5618 9912 o al correo contacto@marcelapedrosa.com, nombras la obra y ella confirma si está disponible. También puedes usar el ${link("/contacto", "formulario de contacto")}. Si la pieza ya no está, se puede conversar un ${link("/encargos-pintura", "encargo")} del mismo tema. El valor de cada obra se confirma al escribir. La ficha de la galería no trae precio. Qué lo mueve, sin cifras, está en ${link("/guias/cuanto-cuesta-un-cuadro-original-en-chile", "cuánto cuesta un cuadro original en Chile")}. La oferta del mes, si está vigente, está en la portada.`,
       },
       {
         type: "p",
@@ -503,9 +503,9 @@ export const CUADRO_PAGES: CuadroPage[] = [
     slug: "grandes-al-oleo",
     path: "/cuadros/grandes-al-oleo",
     navLabel: "Grandes al óleo",
-    title: "Cuadros grandes al óleo | Marcela Pedrosa",
+    title: "Cuadros grandes al óleo | bosque 158x122",
     description:
-      "Cuadros grandes al óleo de Marcela Pedrosa: las cuatro obras con medida publicada en la galería. Consulta disponibilidad en Concepción.",
+      "Bosque 158x122, figuras 110x110, elefante 90x120 y retrato 100x130. Consulta por WhatsApp o correo: el valor no está en la ficha.",
     h1: "Cuadros grandes al óleo",
     ogKey: "bosque",
     ogAlt: "Óleo de gran formato de Marcela Pedrosa, bosque de troncos",

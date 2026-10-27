@@ -97,7 +97,12 @@ export default async function ComprarArteChilePage() {
           <p className="text-xl leading-relaxed text-ink-body">
             Marcela Pedrosa vende obra original por consulta, desde su taller en Concepción
             hacia el resto de Chile. En esta página están las pinturas publicadas hoy, agrupadas
-            por lo que muestran. El precio no figura: se pide por WhatsApp o por correo.
+            por lo que muestran. El precio no figura: se pide por WhatsApp o por correo. Los
+            factores, sin cifras, están en{" "}
+            <Link href="/guias/cuanto-cuesta-un-cuadro-original-en-chile" className="text-brand underline">
+              cuánto cuesta un cuadro original en Chile
+            </Link>
+            .
           </p>
           <p className="mt-4 leading-relaxed text-ink-body">
             Hay tres consultas distintas. Si estás en la ciudad, usa{" "}
