@@ -1,9 +1,9 @@
 import Link from "next/link";
 import { ProfilePage, perfilMetadata } from "../ui";
 
-const TITLE = "Roser Bru, pintora chilena | Pedrosa";
+const TITLE = "Roser Bru, pintora y grabadora (1923-2021)";
 const DESCRIPTION =
-  "Roser Bru (1923-2021), pintora y grabadora. Llegó a Chile en el Winnipeg y recibió el Premio Nacional en 2015.";
+  "Roser Bru (1923-2021), llegada en el Winnipeg. Premio Nacional 2015. Su obra no se vende en este sitio.";
 
 export const metadata = perfilMetadata({
   title: TITLE,
@@ -15,6 +15,7 @@ export default function RoserBruPage() {
   return (
     <ProfilePage
       slug="roser-bru"
+      modified="2026-10-28"
       h1="Roser Bru"
       kicker="Pintora y grabadora nacida en Barcelona el 15 de febrero de 1923. Llegó a Chile en el Winnipeg, se nacionalizó chilena y murió en Santiago el 26 de mayo de 2021."
       description={DESCRIPTION}
@@ -113,7 +114,11 @@ export default function RoserBruPage() {
         <Link href="/mujeres-artistas-chilenas" className="text-brand underline">
           mujeres artistas chilenas
         </Link>{" "}
-        está al lado de Barrios, con quien compartió el Grupo de Estudiantes
+        está al lado de{" "}
+        <Link href="/artistas-chilenas/gracia-barrios" className="text-brand underline">
+          Gracia Barrios
+        </Link>
+        , con quien compartió el Grupo de Estudiantes
         Plásticos, y de{" "}
         <Link href="/artistas-chilenas/matilde-perez" className="text-brand underline">
           Matilde Pérez
@@ -124,9 +129,19 @@ export default function RoserBruPage() {
       </p>
       <p>
         La pintura que sigue en regiones tiene otro pulso. En Concepción,
-        Marcela Pedrosa trabaja óleo sobre tela e impresionismo figurativo:
-        fachadas, bosques y paisaje del sur, más cerámica artística en gres,
-        desde su taller, con obras originales y encargos. Esa producción está
+        Marcela Pedrosa trabaja{" "}
+        <Link href="/oleo-sobre-tela-chile" className="text-brand underline">
+          óleo sobre tela
+        </Link>{" "}
+        e{" "}
+        <Link href="/impresionismo-figurativo-chile" className="text-brand underline">
+          impresionismo figurativo
+        </Link>
+        . Las{" "}
+        <Link href="/figuras-al-oleo" className="text-brand underline">
+          figuras al óleo
+        </Link>{" "}
+        de ese taller no son obra de Bru. Esa producción está
         en{" "}
         <Link href="/pinturas" className="text-brand underline">
           pinturas

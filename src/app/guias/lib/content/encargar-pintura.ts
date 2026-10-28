@@ -61,7 +61,7 @@ export const encargarPintura: Block[] = [
   },
   {
     type: "p",
-    text: "Doce preguntas parecen muchas para un primer mensaje. No hace falta mandarlas en bloque. Sirven de lista cuando la conversación ya tomó forma. Las tres que no conviene dejar implícitas son el tamaño en centímetros, lo que incluye el valor y el uso de la imagen.",
+    text: "Doce preguntas parecen muchas para un primer mensaje. No hace falta mandarlas en bloque. Sirven de lista cuando la conversación ya tomó forma. Las tres que no conviene dejar implícitas son el tamaño en centímetros, lo que incluye el valor y el uso de la imagen. Qué mueve el monto, sin cifras, está en [cuánto cuesta un cuadro original en Chile](/guias/cuanto-cuesta-un-cuadro-original-en-chile).",
   },
   {
     type: "h2",

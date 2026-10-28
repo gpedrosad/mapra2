@@ -198,7 +198,11 @@ export default async function ImpresionismoFigurativoChilePage() {
               El <strong>impresionismo llegó a Chile</strong> a principios del siglo XX, influenciando 
               a generaciones de artistas chilenos. Pintores como Juan Francisco González, Alfredo 
               Helsby y Pedro Lira incorporaron elementos impresionistas en su trabajo, adaptándolos 
-              a la luz y paisajes únicos de Chile.
+              a la luz y paisajes únicos de Chile.{" "}
+              <Link href="/artistas-chilenas/celia-castro" className="text-brand underline">
+                Celia Castro
+              </Link>{" "}
+              fue alumna de González y de Lira. Su perfil documenta salones, retrato y naturaleza muerta, y no entra en esta lista: esa obra no se vende aquí.
             </p>
 
             <p className="text-ink-body leading-relaxed mb-6">

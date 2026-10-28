@@ -113,7 +113,11 @@ export default async function FigurasAlOleoPage() {
             <Link href="/cuadros/para-dormitorio" className="text-brand underline">
               cuadros para el dormitorio
             </Link>
-            . Un rostro solo no entra aquí: está en{" "}
+            . El grupo es de Marcela Pedrosa.{" "}
+            <Link href="/artistas-chilenas/totoy-zamudio" className="text-brand underline">
+              Totoy Zamudio
+            </Link>{" "}
+            también pinta figuras humanas; su obra no se vende aquí. Un rostro solo no entra aquí: está en{" "}
             <Link href="/retratos-al-oleo" className="text-brand underline">
               retratos al óleo
             </Link>

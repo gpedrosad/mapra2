@@ -60,7 +60,7 @@ export const oleoVsAcrilico: Block[] = [
   },
   {
     type: "p",
-    text: "El valor de una pintura original sigue al autor, al tamaño, al tiempo de trabajo y al circuito de venta. El óleo tiene una historia más larga en colecciones y subastas. Eso no convierte al acrílico en un material menor: hay obra contemporánea mayor hecha en acrílico. Lo que sí confunde el mercado es mezclar, en la misma frase, un original pintado a mano y una impresión de esa imagen.",
+    text: "El [valor de una pintura original](/guias/cuanto-cuesta-un-cuadro-original-en-chile) sigue al autor, al tamaño, al tiempo de trabajo y al circuito de venta. El óleo tiene una historia más larga en colecciones y subastas. Eso no convierte al acrílico en un material menor: hay obra contemporánea mayor hecha en acrílico. [Gracia Barrios](/artistas-chilenas/gracia-barrios) usó los dos medios; su perfil no vende esa obra. Lo que sí confunde el mercado es mezclar, en la misma frase, un original pintado a mano y una impresión de esa imagen.",
   },
   {
     type: "ul",

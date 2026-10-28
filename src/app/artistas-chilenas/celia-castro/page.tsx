@@ -1,9 +1,9 @@
 import Link from "next/link";
 import { ProfilePage, perfilMetadata } from "../ui";
 
-const TITLE = "Celia Castro, pintora chilena | Pedrosa";
+const TITLE = "Celia Castro, pintora de Quillota (1860-1930)";
 const DESCRIPTION =
-  "Celia Castro (1860-1930), pintora de Quillota. Primera mujer pensionada del arte chileno para estudiar en París.";
+  "Celia Castro (1860-1930), de Quillota. Primera mujer pensionada para estudiar en París. Su obra no se vende aquí.";
 
 export const metadata = perfilMetadata({
   title: TITLE,
@@ -15,6 +15,7 @@ export default function CeliaCastroPage() {
   return (
     <ProfilePage
       slug="celia-castro"
+      modified="2026-10-28"
       h1="Celia Castro"
       kicker="Pintora de Quillota, una de las primeras profesionales del país. Nació en 1860 y murió en Viña del Mar el 11 de junio de 1930."
       description={DESCRIPTION}
@@ -73,7 +74,23 @@ export default function CeliaCastroPage() {
       <h2 className="text-2xl font-semibold text-ink pt-2">Qué pintaba</h2>
       <p>
         El catálogo resume la obra en tres géneros: retrato, paisaje y
-        naturaleza muerta, con un acento especial en este último. En 1896 recibió
+        naturaleza muerta, con un acento especial en este último. El{" "}
+        <Link href="/pinturas/bodegon-calabazas" className="text-brand underline">
+          Bodegón de calabazas
+        </Link>{" "}
+        y el{" "}
+        <Link href="/pinturas/retrato-de-mujer" className="text-brand underline">
+          Retrato de mujer
+        </Link>{" "}
+        (100x130) son de Marcela Pedrosa, no de Castro. Están en{" "}
+        <Link href="/bodegon-oleo" className="text-brand underline">
+          bodegón al óleo
+        </Link>{" "}
+        y en{" "}
+        <Link href="/retratos-al-oleo" className="text-brand underline">
+          retratos al óleo
+        </Link>
+        . En 1896 recibió
         el premio de género del Certamen Edwards y el premio del Certamen
         Maturana, ambos en el Salón Oficial. Participó en salones oficiales de
         Santiago de forma casi continua entre 1884 y 1897. Una tela que el museo
@@ -126,8 +143,11 @@ export default function CeliaCastroPage() {
           Carmen Aldunate
         </Link>
         , trabajaron en un campo donde ya había precedentes de estudio, premio
-        y viaje. La pintura que se hace ahora en Concepción sigue siendo óleo
-        sobre tela, el mismo soporte de aquellas naturalezas muertas. Las obras
+        y viaje.         La pintura que se hace ahora en Concepción sigue siendo{" "}
+        <Link href="/oleo-sobre-tela-chile" className="text-brand underline">
+          óleo sobre tela
+        </Link>
+        , el mismo soporte de aquellas naturalezas muertas. Las obras
         de Marcela Pedrosa, impresionismo figurativo de fachadas y bosques del
         Biobío, están en{" "}
         <Link href="/pinturas" className="text-brand underline">

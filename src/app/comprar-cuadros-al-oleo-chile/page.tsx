@@ -160,6 +160,13 @@ export default async function ComprarCuadrosAlOleoChilePage() {
           <Link href="/guias/oleo-vs-acrilico" className="text-brand underline underline-offset-4">
             óleo o acrílico
           </Link>
+          . El valor no está en la ficha. Los factores, sin montos, están en{" "}
+          <Link
+            href="/guias/cuanto-cuesta-un-cuadro-original-en-chile"
+            className="text-brand underline underline-offset-4"
+          >
+            cuánto cuesta un cuadro original en Chile
+          </Link>
           .
         </p>
       </article>

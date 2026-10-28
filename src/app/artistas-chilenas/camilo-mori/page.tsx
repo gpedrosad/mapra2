@@ -15,7 +15,7 @@ export default function CamiloMoriPage() {
   return (
     <ProfilePage
       slug="camilo-mori"
-      modified="2026-10-24"
+      modified="2026-10-28"
       h1="Camilo Mori"
       kicker="Pintor, dibujante y cartelista. Nació en Valparaíso el 24 de septiembre de 1896, integró el Grupo Montparnasse y recibió el Premio Nacional de Arte en 1950."
       description={DESCRIPTION}
@@ -153,8 +153,12 @@ export default function CamiloMoriPage() {
           className="text-brand underline"
         >
           Ciudad de casas de colores
-        </Link>{" "}
-        y el{" "}
+        </Link>
+        , en{" "}
+        <Link href="/pintura-de-ciudad" className="text-brand underline">
+          pintura de ciudad
+        </Link>
+        , y el{" "}
         <Link href="/pinturas/retrato-de-mujer" className="text-brand underline">
           Retrato de mujer
         </Link>{" "}
