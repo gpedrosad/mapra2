@@ -1,9 +1,9 @@
 import Link from "next/link";
 import { ProfilePage, perfilMetadata } from "../ui";
 
-const TITLE = "Gracia Barrios, pintora chilena | Pedrosa";
+const TITLE = "Gracia Barrios, pintora chilena (1927-2020)";
 const DESCRIPTION =
-  "Gracia Barrios (1927-2020), pintora chilena del Grupo Signo. Premio Nacional de Artes Plásticas en 2011.";
+  "Gracia Barrios (1927-2020), Grupo Signo y Premio Nacional 2011. Su obra no se vende aquí. El óleo de Marcela se consulta aparte.";
 
 export const metadata = perfilMetadata({
   title: TITLE,
@@ -15,6 +15,7 @@ export default function GraciaBarriosPage() {
   return (
     <ProfilePage
       slug="gracia-barrios"
+      modified="2026-10-28"
       h1="Gracia Barrios"
       kicker="Pintora de Santiago. Nació el 27 de junio de 1927, integró el Grupo Signo y recibió el Premio Nacional de Artes Plásticas en 2011. Murió el 28 de mayo de 2020."
       description={DESCRIPTION}
@@ -54,7 +55,11 @@ export default function GraciaBarriosPage() {
         Balmes, y con Alberto Pérez y Eduardo Martínez Bonati, formó el Grupo
         Signo. Signo propuso en Chile una pintura abstracta, expresiva y
         gestual, cercana al informalismo europeo, y sostuvo que el arte tenía
-        un rol político en la sociedad de su tiempo.
+        un rol político en la sociedad de su tiempo.{" "}
+        <Link href="/artistas-chilenas/carmen-aldunate" className="text-brand underline">
+          Carmen Aldunate
+        </Link>{" "}
+        estudió después con Balmes y con Bru. Su obra tampoco se vende aquí.
       </p>
       <p>
         Barrios participó en los cambios culturales de fines de los sesenta, en
@@ -129,13 +134,28 @@ export default function GraciaBarriosPage() {
           Matilde Pérez
         </Link>
         , cada una con un problema distinto: la memoria, el movimiento, el
-        gesto. La pintura de Marcela Pedrosa, en Concepción, usa el óleo sobre
-        tela para fachadas y bosques, con impresionismo figurativo. Esas{" "}
+        gesto. La pintura de Marcela Pedrosa, en Concepción, usa el{" "}
+        <Link href="/oleo-sobre-tela-chile" className="text-brand underline">
+          óleo sobre tela
+        </Link>{" "}
+        para{" "}
+        <Link href="/cuadros/fachadas-arquitectura" className="text-brand underline">
+          fachadas
+        </Link>{" "}
+        y{" "}
+        <Link href="/pintura-de-bosques" className="text-brand underline">
+          bosques
+        </Link>
+        , con{" "}
+        <Link href="/impresionismo-figurativo-chile" className="text-brand underline">
+          impresionismo figurativo
+        </Link>
+        . Esas{" "}
         <Link href="/pinturas" className="text-brand underline">
           pinturas
         </Link>{" "}
         se pueden ver aparte, como trabajo de taller del Biobío, después de
-        esta historia.
+        esta historia. No son obra de Barrios.
       </p>
     </ProfilePage>
   );

@@ -437,9 +437,9 @@ export const CUADRO_PAGES: CuadroPage[] = [
     slug: "fachadas-arquitectura",
     path: "/cuadros/fachadas-arquitectura",
     navLabel: "Fachadas",
-    title: "Cuadros de fachadas al óleo | Marcela Pedrosa",
+    title: "Fachadas al óleo | día y noche y ciudad",
     description:
-      "Cuadros de fachadas y arquitectura al óleo de Marcela Pedrosa. Casas, ciudad y color, desde Concepción. Consulta disponibilidad.",
+      "Casas de día y de noche y la ciudad con cerros y tren. Óleo sobre tela, sin medida en la ficha. Consulta por WhatsApp o correo.",
     h1: "Cuadros de fachadas y arquitectura",
     ogKey: "c12",
     ogAlt: "Ciudad de casas de colores al óleo de Marcela Pedrosa",

@@ -1,9 +1,9 @@
 import Link from "next/link";
 import { ProfilePage, perfilMetadata } from "../ui";
 
-const TITLE = "Magdalena Mira, pintora chilena | Pedrosa";
+const TITLE = "Magdalena Mira, pintora chilena (1859-1930)";
 const DESCRIPTION =
-  "Magdalena Mira (1859-1930), pintora y escultora de Santiago. Medalla de oro en 1884 por La hermana de la caridad.";
+  "Magdalena Mira (1859-1930), pintora y escultora. Medalla de oro en 1884. Su obra no se vende en este sitio.";
 
 export const metadata = perfilMetadata({
   title: TITLE,
@@ -15,6 +15,7 @@ export default function MagdalenaMiraPage() {
   return (
     <ProfilePage
       slug="magdalena-mira"
+      modified="2026-10-28"
       h1="Magdalena Mira"
       kicker="Pintora y escultora de Santiago. Nació el 30 de mayo de 1859 y murió en la misma ciudad el 14 de octubre de 1930."
       description={DESCRIPTION}
@@ -120,14 +121,25 @@ export default function MagdalenaMiraPage() {
           mujeres artistas chilenas
         </Link>{" "}
         de después heredan ese precedente de premio público. Quien quiera ver
-        pintura hecha hoy, en óleo sobre tela y desde un taller de Concepción,
-        puede pasar a las{" "}
+        pintura hecha hoy, en{" "}
+        <Link href="/oleo-sobre-tela-chile" className="text-brand underline">
+          óleo sobre tela
+        </Link>{" "}
+        y desde un taller de Concepción, puede pasar a las{" "}
         <Link href="/pinturas" className="text-brand underline">
           pinturas
         </Link>{" "}
         de Marcela Pedrosa, impresionismo figurativo del Biobío, después de
         haber leído de dónde viene la tradición de colgar un óleo chileno en un
-        muro.
+        muro. El{" "}
+        <Link href="/pinturas/retrato-de-mujer" className="text-brand underline">
+          Retrato de mujer
+        </Link>{" "}
+        (100x130) es de Marcela, no de Mira, y entra en los{" "}
+        <Link href="/retratos-al-oleo" className="text-brand underline">
+          retratos al óleo
+        </Link>
+        .
       </p>
     </ProfilePage>
   );

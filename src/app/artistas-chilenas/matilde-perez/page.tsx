@@ -1,9 +1,9 @@
 import Link from "next/link";
 import { ProfilePage, perfilMetadata } from "../ui";
 
-const TITLE = "Matilde Pérez, arte cinético | Pedrosa";
+const TITLE = "Matilde Pérez, arte cinético (1916-2014)";
 const DESCRIPTION =
-  "Matilde Pérez (1916-2014), pintora y artista cinética de Santiago. Investigó el movimiento en Chile y en París.";
+  "Matilde Pérez (1916-2014), del óleo figurativo al arte cinético. Su obra no se vende en este sitio.";
 
 export const metadata = perfilMetadata({
   title: TITLE,
@@ -15,6 +15,7 @@ export default function MatildePerezPage() {
   return (
     <ProfilePage
       slug="matilde-perez"
+      modified="2026-10-28"
       h1="Matilde Pérez"
       kicker="Pintora, escultora y artista visual de Santiago. Nació el 7 de diciembre de 1916 y murió en la misma ciudad el 2 de octubre de 2014."
       description={DESCRIPTION}
@@ -105,7 +106,23 @@ export default function MatildePerezPage() {
         </Link>{" "}
         porque muestra hasta dónde podía llegar alguien formado en el óleo de
         academia. El retrato y la naturaleza muerta fueron el comienzo. El
-        movimiento y el color, el desarrollo. En el mapa de las{" "}
+        movimiento y el color, el desarrollo. El{" "}
+        <Link href="/pinturas/retrato-de-mujer" className="text-brand underline">
+          Retrato de mujer
+        </Link>{" "}
+        y el{" "}
+        <Link href="/pinturas/bodegon-calabazas" className="text-brand underline">
+          Bodegón de calabazas
+        </Link>{" "}
+        son de Marcela Pedrosa, no de Pérez. Están en{" "}
+        <Link href="/retratos-al-oleo" className="text-brand underline">
+          retratos al óleo
+        </Link>{" "}
+        y en{" "}
+        <Link href="/bodegon-oleo" className="text-brand underline">
+          bodegón al óleo
+        </Link>
+        . En el mapa de las{" "}
         <Link href="/mujeres-artistas-chilenas" className="text-brand underline">
           mujeres artistas chilenas
         </Link>{" "}

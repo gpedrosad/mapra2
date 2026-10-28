@@ -1,9 +1,9 @@
 import Link from "next/link";
 import { ProfilePage, perfilMetadata } from "../ui";
 
-const TITLE = "Aurora Mira, pintora chilena | Pedrosa";
+const TITLE = "Aurora Mira, pintora chilena (1863-1939)";
 const DESCRIPTION =
-  "Aurora Mira (1863-1939), pintora de Santiago. Retratos, flores y bodegones, y medallas en los salones oficiales.";
+  "Aurora Mira (1863-1939), retratos, flores y bodegones. Su obra no se vende aquí. El bodegón de Marcela es otra tela.";
 
 export const metadata = perfilMetadata({
   title: TITLE,
@@ -15,6 +15,7 @@ export default function AuroraMiraPage() {
   return (
     <ProfilePage
       slug="aurora-mira"
+      modified="2026-10-28"
       h1="Aurora Mira"
       kicker="Pintora de Santiago, hermana de Magdalena Mira. Nació en 1863 y murió en Santiago en diciembre de 1939."
       description={DESCRIPTION}
@@ -99,8 +100,20 @@ export default function AuroraMiraPage() {
       <h2 className="text-2xl font-semibold text-ink pt-2">Del bodegón al óleo de ahora</h2>
       <p>
         El bodegón y la flor enseñan algo que la pintura chilena no ha soltado:
-        el óleo sobre tela como lugar donde se mira de cerca un motivo
-        reconocible. Aurora lo hizo con frutas y paisajes de paleta intensa.
+        el{" "}
+        <Link href="/oleo-sobre-tela-chile" className="text-brand underline">
+          óleo sobre tela
+        </Link>{" "}
+        como lugar donde se mira de cerca un motivo reconocible. Aurora lo hizo
+        con frutas y paisajes de paleta intensa. El{" "}
+        <Link href="/pinturas/bodegon-calabazas" className="text-brand underline">
+          Bodegón de calabazas
+        </Link>{" "}
+        es de Marcela Pedrosa, no de Aurora, y está en{" "}
+        <Link href="/bodegon-oleo" className="text-brand underline">
+          bodegón al óleo
+        </Link>
+        .
         Un siglo y medio después, en Concepción, Marcela Pedrosa trabaja el
         mismo soporte con impresionismo figurativo: fachadas, bosques y la luz
         del sur, desde un taller del Biobío, con más de veinte años de

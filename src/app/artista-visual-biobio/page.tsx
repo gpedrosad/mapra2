@@ -320,9 +320,10 @@ export default async function ArtistaVisualBiobioPage() {
               Los perfiles de quienes se buscan junto a ese contexto están en{" "}
               <Link href="/artistas-chilenas" className="text-brand underline">artistas chilenas</Link>,
               entre ellos{" "}
-              <Link href="/artistas-chilenas/camilo-mori" className="text-brand underline">Camilo Mori</Link>{" "}
-              y{" "}
-              <Link href="/artistas-chilenas/totoy-zamudio" className="text-brand underline">Totoy Zamudio</Link>.
+              <Link href="/artistas-chilenas/camilo-mori" className="text-brand underline">Camilo Mori</Link>,{" "}
+              <Link href="/artistas-chilenas/totoy-zamudio" className="text-brand underline">Totoy Zamudio</Link>{" "}
+              y la escultora{" "}
+              <Link href="/artistas-chilenas/lily-garafulic" className="text-brand underline">Lily Garafulic</Link>.
               La obra de Marcela por lugar:{" "}
               <Link href="/cuadros/paisajes-bosques-biobio" className="text-brand underline">bosques del Biobío</Link>,{" "}
               <Link href="/cuadros/fachadas-arquitectura" className="text-brand underline">fachadas</Link>,{" "}

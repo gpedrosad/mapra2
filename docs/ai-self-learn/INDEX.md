@@ -1,6 +1,6 @@
 # INDEX — hechos densos (leer primero)
 
-Actualizado: **2026-10-27**
+Actualizado: **2026-10-28**
 
 ## Identidad
 
@@ -77,6 +77,8 @@ Actualizado: **2026-10-27**
 - **Lote 2026-10-26:** las seis páginas de tema ya tenían ficha, FAQ y CTA; no se reescribieron. Enlaces nuevos desde páginas indexadas (óleo con envío, índice de cuadros, living, regalo, dormitorio, oficina). Nombres de perfil como ancla en `/pintoras-chilenas` y `/mujeres-artistas-chilenas`. Title y meta de Biobío y de la guía de impresionismo figurativo. Sin página nueva. Lista: [`docs/seo-lote-2026-10-26.md`](../seo-lote-2026-10-26.md). `pendiente:` Request indexing (OAuth solo lectura).
 - **Corte 2026-10-27 (brief, dato hasta 2026-10-25):** 90d 11 clics · 263 imp · CTR 4,2 % · pos 10,2. Últimos 7 días (10-19..10-25): 3 clics · 30 imp · pos 11,7 (previos 10-12..10-18: 2c/16i pos 24,1). Indexadas nuevas: retratos, bosques, ciudad, figuras, animales y bodegón. Desconocida: `/guias/elegir-cuadro-para-el-living`. 44 de 60 URLs no-ficha indexadas.
 - **Lote 2026-10-27:** las cuatro guías de compra ya tenían ficha, CTA y, en la de precio, cero montos; no se reescribieron. Enlaces nuevos solo donde la frase ya hablaba del tema. Title de contemporáneas (46) separado de «famosas y actuales». Title de grandes al óleo nombra el bosque 158x122. `/cuadros` y fachadas no reabren el title: se editaron el 24 o el 26. Sin página nueva. Lista: [`docs/seo-lote-2026-10-27.md`](../seo-lote-2026-10-27.md). `pendiente:` Request indexing (OAuth solo lectura).
+- **Corte 2026-10-28 (brief, dato hasta 2026-10-26):** 90d 12 clics · 272 imp · CTR 4,4 % · pos 10,2. Últimos 7 días (10-20..10-26): 4 clics · 33 imp · pos 11,9 (previos 10-13..10-19: 2c/20i pos 22,1). Indexadas nuevas: guía del living, óleo vs acrílico, cómo encargar, pintoras contemporáneas. 48 de 60 URLs no-ficha indexadas. Descubierta sin indexar: guía de precio. Desconocidos: Mori, Garafulic, Barrios, Zamudio.
+- **Lote 2026-10-28:** los once perfiles ya estaban en el sitemap, con canonical y `<a href>` desde el índice, pintoras y mujeres artistas. Titles con el nombre en los que seguían en `| Pedrosa`. Enlaces nuevos a los cuatro desconocidos desde ciudad, retratos, figuras, Biobío y óleo vs acrílico. La guía de precio no se reescribió y sigue sin montos; se enlaza desde las tres guías recién indexadas y desde óleo con envío. Title del comedor (bodegón) y de fachadas (día y noche y ciudad). Sin página nueva. Lista: [`docs/seo-lote-2026-10-28.md`](../seo-lote-2026-10-28.md). `pendiente:` Request indexing (OAuth solo lectura).
 - Gap #2: analytics (GA4/Clarity del dominio correcto)
 - Gap #3 (aprobación): diferenciar landings thin, FAQ/GEO, backlinks prensa/IG
 

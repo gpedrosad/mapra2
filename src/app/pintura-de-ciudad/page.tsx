@@ -110,7 +110,11 @@ export default async function PinturaDeCiudadPage() {
             <Link href="/guias/elegir-cuadro-para-el-comedor" className="text-brand underline">
               la guía del comedor
             </Link>
-            . La serie que el sitio describe está en{" "}
+            . Estas casas son de Marcela Pedrosa, no de{" "}
+            <Link href="/artistas-chilenas/camilo-mori" className="text-brand underline">
+              Camilo Mori
+            </Link>
+            : ese perfil no vende su pintura. La serie que el sitio describe está en{" "}
             <Link href="/pintura-fachadas-concepcion" className="text-brand underline">
               pintura de fachadas y bosques
             </Link>

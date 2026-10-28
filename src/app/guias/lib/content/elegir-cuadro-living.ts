@@ -103,6 +103,6 @@ export const elegirCuadroLiving: Block[] = [
   },
   {
     type: "p",
-    text: "Con medida publicada, para cruzar con el metro: [Bosque con luz entre troncos](/pinturas/bosque-troncos-luz) (158x122), [Grupo de figuras](/pinturas/grupo-de-figuras) (110x110), [Elefante](/pinturas/elefante) (90x120) y [Retrato de mujer](/pinturas/retrato-de-mujer) (100x130). Esas cifras salen de la ficha.",
+    text: "Con medida publicada, para cruzar con el metro: [Bosque con luz entre troncos](/pinturas/bosque-troncos-luz) (158x122), [Grupo de figuras](/pinturas/grupo-de-figuras) (110x110), [Elefante](/pinturas/elefante) (90x120) y [Retrato de mujer](/pinturas/retrato-de-mujer) (100x130). Esas cifras salen de la ficha y son el bastidor, no el valor. Los factores, sin montos, están en [cuánto cuesta un cuadro original en Chile](/guias/cuanto-cuesta-un-cuadro-original-en-chile).",
   },
 ];

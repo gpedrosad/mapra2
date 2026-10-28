@@ -1,9 +1,9 @@
 import Link from "next/link";
 import { ProfilePage, perfilMetadata } from "../ui";
 
-const TITLE = "Henriette Petit, pintora chilena | Pedrosa";
+const TITLE = "Henriette Petit, Montparnasse (1894-1983)";
 const DESCRIPTION =
-  "Henriette Petit (1894-1983), pintora de Santiago y cofundadora del Grupo Montparnasse, formada entre Chile y París.";
+  "Henriette Petit (1894-1983), cofundadora del Grupo Montparnasse. Su obra no se vende en este sitio.";
 
 export const metadata = perfilMetadata({
   title: TITLE,
@@ -15,6 +15,7 @@ export default function HenriettePetitPage() {
   return (
     <ProfilePage
       slug="henriette-petit"
+      modified="2026-10-28"
       h1="Henriette Petit"
       kicker="Enriqueta Petit, pintora del Grupo Montparnasse. Nació en Santiago el 3 de marzo de 1894 y murió en la misma ciudad el 9 de diciembre de 1983."
       description={DESCRIPTION}
@@ -123,6 +124,14 @@ export default function HenriettePetitPage() {
         del Biobío. Se puede ver en{" "}
         <Link href="/pinturas" className="text-brand underline">
           pinturas
+        </Link>
+        . El{" "}
+        <Link href="/pinturas/retrato-de-mujer" className="text-brand underline">
+          Retrato de mujer
+        </Link>{" "}
+        (100x130) es de Marcela Pedrosa, no de Petit, y entra en los{" "}
+        <Link href="/retratos-al-oleo" className="text-brand underline">
+          retratos al óleo
         </Link>
         . El perfil de Petit queda en el tramo de 1920, cuando el Grupo
         Montparnasse le cambió el paso a la escuela.

@@ -119,7 +119,12 @@ export default async function RetratosAlOleoPage() {
             <Link href="/figuras-al-oleo" className="text-brand underline">
               figuras al óleo
             </Link>{" "}
-            son otra consulta: ahí importan el cuerpo o las manos, no una sola cara. La técnica,
+            son otra consulta: ahí importan el cuerpo o las manos, no una sola cara.
+            Los tres son de Marcela Pedrosa, no de{" "}
+            <Link href="/artistas-chilenas/camilo-mori" className="text-brand underline">
+              Camilo Mori
+            </Link>
+            : su perfil está aparte y su pintura no se vende aquí. La técnica,
             en los tres retratos, es{" "}
             <Link href="/oleo-sobre-tela-chile" className="text-brand underline">
               óleo sobre tela

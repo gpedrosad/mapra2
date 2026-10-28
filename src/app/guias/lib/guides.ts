@@ -28,13 +28,14 @@ export const GUIDES: Guide[] = [
       "Hola Marcela, quiero elegir un cuadro para el living. Te mando las medidas del muro y cómo le da la luz.",
     consultaIntro:
       "Si ya mediste el muro y viste una tela de este taller, nombra la ficha. El valor no está en la guía.",
+    modified: "2026-10-28",
     blocks: elegirCuadroLiving,
   },
   {
     slug: "elegir-cuadro-para-el-comedor",
-    title: "Cómo elegir un cuadro para el comedor",
+    title: "Cuadro para el comedor | bodegón al óleo",
     description:
-      "Cómo medir el muro del comedor: la vista sentado, el mueble de abajo y la lámpara de la mesa. Sin precios. Las telas están en otra página.",
+      "Bodegón de calabazas, ciudad de colores y el par de día y noche. Mide el paño sentado y consulta el valor: no está en la ficha.",
     imageKey: "c5",
     imageAlt: "Bodegón al óleo de calabazas y zapallos, de Marcela Pedrosa",
     ctaTitle: "¿El muro es el del comedor?",
@@ -45,7 +46,7 @@ export const GUIDES: Guide[] = [
     consultaIntro:
       "Esta guía mide el paño. Si ya viste una tela, nómbrala: bodegón, ciudad o casas de día y de noche.",
     published: "2026-10-24",
-    modified: "2026-10-24",
+    modified: "2026-10-28",
     blocks: elegirCuadroComedor,
   },
   {
@@ -62,6 +63,7 @@ export const GUIDES: Guide[] = [
       "Hola Marcela, estoy comparando óleo y acrílico. Me interesa ver obras al óleo y te cuento el espacio.",
     consultaIntro:
       "Las pinturas publicadas de Marcela son óleo sobre tela. El acrílico no está en la galería.",
+    modified: "2026-10-28",
     blocks: oleoVsAcrilico,
   },
   {
@@ -112,6 +114,7 @@ export const GUIDES: Guide[] = [
       "Hola Marcela, me gustaría encargar una pintura. Te cuento el motivo, las medidas del muro y la fecha que manejo.",
     consultaIntro:
       "Un encargo parte por el motivo y la medida. Si ya hay una tela que calza, consulta esa ficha.",
+    modified: "2026-10-28",
     blocks: encargarPintura,
   },
   {
