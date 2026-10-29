@@ -562,7 +562,7 @@ export const CUADRO_PAGES: CuadroPage[] = [
       },
       {
         type: "p",
-        text: `Cuando el muro pide un número distinto, o cuando el bosque de 158x122 ya no está, el encargo cubre medios y grandes formatos. Escribes la medida aproximada, el tema —fachada, bosque, paisaje o figura— y el plazo que tienes en mente. Marcela confirma viabilidad, plazos y valor. Así está descrito en ${link("/encargos-pintura", "encargos")}. La técnica de estas cuatro fichas, y del resto de la galería, es ${link("/oleo-sobre-tela-chile", "óleo sobre tela")}.`,
+        text: `Cuando el muro pide un número distinto, o cuando el bosque de 158x122 ya no está, el encargo cubre medios y grandes formatos. Escribes la medida aproximada, el tema —fachada, bosque, paisaje o figura— y el plazo que tienes en mente. Marcela confirma viabilidad, plazos y valor. Los factores, sin cifras, están en ${link("/guias/cuanto-cuesta-un-cuadro-original-en-chile", "cuánto cuesta un cuadro original")}. Así está descrito en ${link("/encargos-pintura", "encargos")}. La técnica de estas cuatro fichas, y del resto de la galería, es ${link("/oleo-sobre-tela-chile", "óleo sobre tela")}.`,
       },
       {
         type: "p",

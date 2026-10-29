@@ -131,6 +131,7 @@ export const GUIDES: Guide[] = [
       "Hola Marcela, quiero consultar el valor de un cuadro original. Te cuento si busco una obra disponible o un encargo, y las medidas.",
     consultaIntro:
       "Esta guía no publica montos. El valor de una obra de Marcela se pide por WhatsApp o por correo.",
+    modified: "2026-10-29",
     blocks: precioCuadroChile,
   },
 ];
