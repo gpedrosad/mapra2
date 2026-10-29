@@ -32,19 +32,18 @@ const MUJERES_FAQS = [
 export const metadata: Metadata = pageMetadata({
   title: 'Mujeres artistas chilenas | escultura y gres',
   description:
-    'Mujeres artistas chilenas: escultura, grabado y cerámica, con fuente. Lily Garafulic y otras. Las pintoras famosas van en otra página.',
+    'Mujeres artistas chilenas: escultura, grabado y cerámica. Lily Garafulic, Premio Nacional 1995, y Roser Bru en el Taller 99.',
   path: '/mujeres-artistas-chilenas',
   ogImageKey: 'gente',
   imageAlt: 'Obra de Marcela Pedrosa, mujer artista chilena',
   keywords: [
     "mujeres artistas chilenas",
     "artistas mujeres chile",
-    "pintoras chilenas",
     "arte femenino chile",
-    "mujeres pintoras chile",
     "artistas visuales mujeres chile",
+    "lily garafulic",
     "marcela pedrosa",
-    "pintoras contemporáneas chile",
+    "escultura chile",
     "arte femenino concepción",
     "mujeres arte biobío",
   ],
@@ -67,7 +66,7 @@ export default async function MujeresArtistasChilenasPage() {
               Mujeres artistas chilenas
             </h1>
             <p className="text-xl sm:text-2xl text-ink-body mb-8 leading-relaxed">
-              Escultura, grabado y cerámica, aparte del listado de pintoras
+              Escultura, grabado y cerámica, con fuente
             </p>
           </div>
 
@@ -94,13 +93,22 @@ export default async function MujeresArtistasChilenasPage() {
             </h2>
 
             <p className="text-ink-body leading-relaxed mb-6">
-              Las <strong>mujeres artistas chilenas</strong> de esta página no son
-              el listado de pintoras. Ese recorrido, famosas y actuales, está en{" "}
+              Las <strong>mujeres artistas chilenas</strong> de esta página se
+              leen por el oficio: escultura, grabado y cerámica, solo con datos
+              que el sitio ya publica en un perfil.{" "}
+              <Link href="/artistas-chilenas/lily-garafulic" className="text-brand underline">
+                Lily Garafulic
+              </Link>{" "}
+              es la escultora. El grabado está en Roser Bru. La cerámica en
+              gres es la de Marcela, en{" "}
+              <Link href="/ceramica-artistica-concepcion" className="text-brand underline">
+                cerámica artística en Concepción
+              </Link>
+              . Pintoras famosas y actuales siguen en{" "}
               <Link href="/pintoras-chilenas" className="text-brand underline">
                 pintoras chilenas
               </Link>
-              . Aquí el mapa es más ancho: escultura, grabado, cerámica y arte
-              visual, solo con datos que el sitio ya publica en un perfil.
+              .
             </p>
 
             <h2

@@ -347,8 +347,11 @@ export default async function PintorasChilenasPage() {
             <p className="text-ink-body leading-relaxed mb-6">
               En el siglo XX el sitio documenta a Henriette Petit, cofundadora
               del Grupo Montparnasse, y a quienes recibieron el Premio Nacional
-              de Artes Plásticas con ficha propia: Gracia Barrios en 2011 y
-              Roser Bru en 2015.
+              de Artes Plásticas con ficha propia: Gracia Barrios en 2011 y{" "}
+              <Link href="/artistas-chilenas/roser-bru" className="text-brand underline">
+                Roser Bru
+              </Link>{" "}
+              en 2015.
             </p>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 my-8">
@@ -376,7 +379,10 @@ export default async function PintorasChilenasPage() {
 
               <div className="bg-white border border-line rounded-xl p-6">
                 <h4 className="font-semibold text-ink mb-3">
-                  Roser Bru (1923-2021)
+                  <Link href="/artistas-chilenas/roser-bru" className="text-brand underline">
+                    Roser Bru
+                  </Link>{" "}
+                  (1923-2021)
                 </h4>
                 <p className="text-ink-body text-sm">
                   Pintora catalano-chilena, Premio Nacional de Artes Plásticas

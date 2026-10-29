@@ -24,7 +24,7 @@ export const precioCuadroChile: Block[] = [
   },
   {
     type: "p",
-    text: "La superficie manda. Una tela de 40 × 50 cm y una de 100 × 120 cm no se comparan entre sí: cambia la tela, la imprimación, el pigmento y las horas. Pide siempre alto y ancho del bastidor. Si hay marco, pide la medida exterior aparte. El marco es un trabajo distinto, a menudo encargado a un enmarcador, y conviene saber si está dentro del acuerdo o si se cotiza después.",
+    text: "La superficie manda. Una tela de 40 × 50 cm y una de 100 × 120 cm no se comparan entre sí: cambia la tela, la imprimación, el pigmento y las horas. Pide siempre alto y ancho del bastidor. Si hay marco, pide la medida exterior aparte. El marco es un trabajo distinto, a menudo encargado a un enmarcador, y conviene saber si está dentro del acuerdo o si se cotiza después. En este taller, las cuatro fichas que publican medida están en [cuadros grandes al óleo](/cuadros/grandes-al-oleo).",
   },
   {
     type: "p",
@@ -103,7 +103,7 @@ export const precioCuadroChile: Block[] = [
   },
   {
     type: "p",
-    text: "Marcela Pedrosa trabaja desde Concepción. Si la consulta es por una pintura de este taller, el camino es el contacto del sitio: WhatsApp, correo o formulario. Lleva las medidas y la pregunta por el medio. Con eso la respuesta puede ser un monto real, referido a una tela real, en lugar de una cifra inventada en una guía.",
+    text: "Marcela Pedrosa trabaja desde Concepción. La compra en la ciudad está en [comprar pintura en Concepción](/comprar-pintura-concepcion). Si la consulta es por una pintura de este taller, el camino es el contacto del sitio: WhatsApp, correo o [formulario](/contacto). Lleva las medidas y la pregunta por el medio. Con eso la respuesta puede ser un monto real, referido a una tela real, en lugar de una cifra inventada en una guía.",
   },
   {
     type: "p",

@@ -3,9 +3,9 @@ import ConsultaSteps from "../components/seo/ConsultaSteps";
 import { SITE_URL } from "@/lib/site";
 import { PERFILES, ProfilePage, perfilMetadata } from "./ui";
 
-const TITLE = "Artistas chilenas: índice de perfiles";
+const TITLE = "Artistas visuales chilenos | índice de perfiles";
 const DESCRIPTION =
-  "Índice de perfiles con fuente: pintoras, la escultora Garafulic y pintores como Mori. No es el listado de pintoras famosas.";
+  "Índice de artistas visuales chilenos y de artistas chilenos pintores, con fuente: Mori, Zamudio y Garafulic. No es el listado de pintoras famosas.";
 
 export const metadata = perfilMetadata({
   title: TITLE,
@@ -15,9 +15,9 @@ export const metadata = perfilMetadata({
 export default function ArtistasChilenasIndexPage() {
   return (
     <ProfilePage
-      modified="2026-10-25"
-      h1="Artistas chilenas"
-      kicker="Perfiles para leer con calma a pintoras, una escultora y dos pintores que aparecen una y otra vez cuando alguien busca arte chileno."
+      modified="2026-10-29"
+      h1="Artistas visuales chilenos"
+      kicker="Perfiles con fuente: pintoras, la escultora Garafulic y pintores como Mori y Zamudio. Las famosas y las actuales están en otra página."
       description={DESCRIPTION}
       person={{
         name: "Marcela Pedrosa",
@@ -37,10 +37,32 @@ export default function ArtistasChilenasIndexPage() {
       }}
     >
       <p>
-        Esta serie reúne perfiles de artistas chilenas y de artistas chilenos
-        cuyo nombre la gente escribe cuando quiere saber quién pintó, esculpió
-        o expuso en el país. Cada texto se apoya en datos que el Museo Nacional
-        de Bellas Artes, la Biblioteca Nacional o la propia trayectoria pública
+        Este índice reúne{" "}
+        <strong>artistas visuales chilenos</strong>. Entran pintoras, la
+        escultora{" "}
+        <Link href="/artistas-chilenas/lily-garafulic" className="text-brand underline">
+          Lily Garafulic
+        </Link>{" "}
+        y <strong>artistas chilenos pintores</strong>:{" "}
+        <Link href="/artistas-chilenas/camilo-mori" className="text-brand underline">
+          Camilo Mori
+        </Link>{" "}
+        y{" "}
+        <Link href="/artistas-chilenas/totoy-zamudio" className="text-brand underline">
+          Totoy Zamudio
+        </Link>{" "}
+        tienen ficha. No es el listado de pintoras famosas ni el de pintoras
+        actuales: eso sigue en{" "}
+        <Link href="/pintoras-chilenas" className="text-brand underline">
+          pintoras chilenas
+        </Link>
+        . Quien busca la{" "}
+        <Link href="/artista-visual-biobio" className="text-brand underline">
+          artista visual del Biobío
+        </Link>{" "}
+        con óleos a la venta llega a Marcela Pedrosa, no a estos perfiles
+        históricos. Cada texto se apoya en datos que el Museo Nacional de
+        Bellas Artes, la Biblioteca Nacional o la propia trayectoria pública
         del artista permiten comprobar: nacimiento, formación, premios, obras
         en colecciones y el lugar que ocupó en la pintura o la escultura. Si un
         dato no está claro, aquí no aparece.
