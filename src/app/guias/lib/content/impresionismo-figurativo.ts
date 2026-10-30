@@ -4,7 +4,7 @@ export const impresionismoFigurativo: Block[] = [
   {
     type: "p",
     lead: true,
-    text: "El impresionismo figurativo es una pintura en la que el motivo se reconoce —una persona, una fachada, un árbol— y la luz se construye con pinceladas sueltas, color partido y atención al momento del día. El nombre junta dos ideas que en el siglo XIX iban unidas y que el siglo XX separó: el impresionismo observaba el mundo visible, y ese mundo todavía tenía figura.",
+    text: "El impresionismo figurativo es una pintura con figura reconocible —una persona, una fachada, un árbol—, pincelada suelta y luz del momento del día. El nombre junta dos ideas que en el siglo XIX iban unidas y que el siglo XX separó: el impresionismo observaba el mundo visible, y ese mundo todavía tenía figura.",
   },
   {
     type: "h2",
@@ -83,7 +83,7 @@ export const impresionismoFigurativo: Block[] = [
   },
   {
     type: "p",
-    text: "Para ver el criterio puesto en obras, entra a las [pinturas](/pinturas) y a la página de [impresionismo figurativo](/impresionismo-figurativo-chile). Mira primero la luz y el motivo. Recién después decide si el tamaño conversa con tu muro. Un estilo se entiende en la tela. Una definición, por clara que sea, no la reemplaza.",
+    text: "Esta guía responde qué es el término. La práctica actual en Chile, con las telas de Marcela, está en [impresionismo figurativo](/impresionismo-figurativo-chile). Mira primero la luz y el motivo. Recién después decide si el tamaño conversa con tu muro. La galería completa está en [pinturas](/pinturas).",
   },
   {
     type: "h2",
