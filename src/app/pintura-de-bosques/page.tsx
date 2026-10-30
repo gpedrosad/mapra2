@@ -26,9 +26,9 @@ const FAQS = [
 ];
 
 export const metadata: Metadata = {
-  title: { absolute: "Pintura de bosques al óleo | Marcela Pedrosa" },
+  title: { absolute: "Pintura de bosques al óleo | luz 158x122" },
   description:
-    "Pintura de bosques al óleo de Marcela Pedrosa: un óleo de 158×122 con luz entre troncos y otro de troncos de colores. Consulta disponibilidad.",
+    "Dos óleos de bosque: luz entre troncos (158x122) y troncos de colores, sin medida en esa ficha. Consulta por WhatsApp al +56 9 5618 9912.",
   keywords: [
     "pintura de bosques",
     "óleo de bosque chile",
@@ -38,8 +38,9 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: `${BASE_URL}/pintura-de-bosques` },
   openGraph: {
-    title: "Pintura de bosques al óleo | Marcela Pedrosa",
-    description: "Dos óleos de bosque publicados en la galería.",
+    title: "Pintura de bosques al óleo | luz 158x122",
+    description:
+      "Dos óleos de bosque: luz entre troncos (158x122) y troncos de colores, sin medida en esa ficha. Consulta por WhatsApp al +56 9 5618 9912.",
     url: `${BASE_URL}/pintura-de-bosques`,
     type: "website",
     images: [
@@ -103,6 +104,14 @@ export default async function PinturaDeBosquesPage() {
             <Link href="/cuadros/paisajes-bosques-biobio" className="text-brand underline">
               cuadros de bosques del Biobío
             </Link>
+            . Si el muro es el del sofá, esa tela grande está en{" "}
+            <Link href="/cuadros/para-living" className="text-brand underline">
+              cuadros para el living
+            </Link>
+            . Cómo medir ese muro está en{" "}
+            <Link href="/guias/elegir-cuadro-para-el-living" className="text-brand underline">
+              cómo elegir un cuadro para el living
+            </Link>
             . El sitio junta la serie con las fachadas en{" "}
             <Link href="/pintura-fachadas-concepcion" className="text-brand underline">
               pintura de fachadas y bosques
@@ -116,7 +125,7 @@ export default async function PinturaDeBosquesPage() {
 
           <ConsultaCta
             title="Consulta un bosque"
-            text="Dime si te interesa el bosque con luz entre los troncos o el de troncos de colores."
+            text="Dime si te interesa la luz entre troncos (158x122) o los troncos de colores. WhatsApp +56 9 5618 9912 o contacto@marcelapedrosa.com."
             whatsappText="Hola Marcela, quiero consultar una pintura de bosque al óleo."
           />
 

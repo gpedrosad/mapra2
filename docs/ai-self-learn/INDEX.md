@@ -1,6 +1,6 @@
 # INDEX — hechos densos (leer primero)
 
-Actualizado: **2026-10-29**
+Actualizado: **2026-10-30**
 
 ## Identidad
 
@@ -81,6 +81,8 @@ Actualizado: **2026-10-29**
 - **Lote 2026-10-28:** los once perfiles ya estaban en el sitemap, con canonical y `<a href>` desde el índice, pintoras y mujeres artistas. Titles con el nombre en los que seguían en `| Pedrosa`. Enlaces nuevos a los cuatro desconocidos desde ciudad, retratos, figuras, Biobío y óleo vs acrílico. La guía de precio no se reescribió y sigue sin montos; se enlaza desde las tres guías recién indexadas y desde óleo con envío. Title del comedor (bodegón) y de fachadas (día y noche y ciudad). Sin página nueva. Lista: [`docs/seo-lote-2026-10-28.md`](../seo-lote-2026-10-28.md). `pendiente:` Request indexing (OAuth solo lectura).
 - **Corte 2026-10-29 (brief, dato hasta 2026-10-27):** 90d 12 clics · 278 imp · CTR 4,3 % · pos 10,1. Últimos 7 días (10-21..10-27): 3 clics · 36 imp · pos 11,8 (previos 10-14..10-20: 3c/24i pos 17,6). `/artistas-chilenas` 9i pos 19,2. Indexada nueva: guía de precio. 49 de 60 URLs no-ficha indexadas. Desconocida: `/artistas-chilenas/roser-bru`.
 - **Lote 2026-10-29:** famosas y actuales siguen en `/pintoras-chilenas` (solo dos anclas a Roser Bru). Title del índice pasa a `Artistas visuales chilenos | índice de perfiles` (47 / 146) y apunta a Mori, Zamudio y Garafulic sin ocupar a `/artista-visual-biobio`. Meta de mujeres artistas deja de decir «pintoras famosas» (124); title intacto. Guía de precio sin cifras; enlaza grandes y compra en Concepción. Sin página nueva. Lista: [`docs/seo-lote-2026-10-29.md`](../seo-lote-2026-10-29.md). `pendiente:` Request indexing (OAuth solo lectura).
+- **Corte 2026-10-30 (brief, dato hasta 2026-10-28):** 90d 12 clics · 292 imp · CTR 4,1 % · pos 9,9. Últimos 7 días (10-22..10-28): 3 clics · 45 imp · pos 9,4 (previos 10-15..10-21: 2c/26i pos 19,2). Clics 7d: home y `/prensa`. `/guias/que-es-el-impresionismo-figurativo` 6i pos 2,2. `/artistas-chilenas/pintoras-chilenas-contemporaneas` 8i pos 7,25. Indexadas 50 de 60 no-ficha. Nueva indexada: Gracia Barrios. Roser Bru pasó a descubierta, sin indexar.
+- **Lote 2026-10-30:** title y meta de la guía de impresionismo (49 / 147) responden «qué es», con figura, pincelada y luz, y nombran bosque y casas. `/impresionismo-figurativo-chile` sigue en «actual en Chile» y no se editó. Meta de contemporáneas (144) nombra el Premio Nacional de Barrios y de Bru; el title del 27 queda. Snippet y CTA de living (43 / 134) y de pintura de bosques (40 / 137). Enlaces nuevos: guía del living → bosques; fachadas → guía del comedor y pintura de bosques. Sin página nueva. Lista: [`docs/seo-lote-2026-10-30.md`](../seo-lote-2026-10-30.md). `pendiente:` Request indexing (OAuth solo lectura).
 - Gap #2: analytics (GA4/Clarity del dominio correcto)
 - Gap #3 (aprobación): diferenciar landings thin, FAQ/GEO, backlinks prensa/IG
 

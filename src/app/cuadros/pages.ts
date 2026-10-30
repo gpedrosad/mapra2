@@ -99,17 +99,17 @@ export const CUADRO_PAGES: CuadroPage[] = [
     slug: "para-living",
     path: "/cuadros/para-living",
     navLabel: "Para el living",
-    title: "Cuadros para living al óleo | Marcela Pedrosa",
+    title: "Cuadros para el living | óleo desde el sofá",
     description:
-      "Cuadros para el living: óleos de Marcela Pedrosa con color y presencia. Medidas publicadas y consulta de disponibilidad en Concepción.",
+      "Cuadros para el living, vistos desde el sofá. Bosque de 158x122 y otros óleos. WhatsApp +56 9 5618 9912. El valor no está en la ficha.",
     h1: "Cuadros para el living",
     ogKey: "elefante",
     ogAlt: "Elefante al óleo de Marcela Pedrosa, para un muro de living",
     whatsappText:
       "Hola Marcela, quiero consultar un cuadro para el living. Te cuento el muro y la obra que vi en el sitio.",
-    ctaTitle: "Pide el cuadro para tu living",
+    ctaTitle: "Consulta el cuadro de tu living",
     ctaBody:
-      "Cuéntale el ancho del muro y qué obra viste: el bosque, el elefante, las figuras, el retrato, la ciudad, los caballos, el bosque en color o los rostros.",
+      "Nombra la tela y el ancho del muro. WhatsApp +56 9 5618 9912 o contacto@marcelapedrosa.com. El valor no está en la ficha.",
     consultaIntro:
       "Si ya mediste el muro, nombra la tela del living que viste y el ancho libre.",
     gridHeading: "Óleos que se leen desde el sofá",
@@ -129,7 +129,7 @@ export const CUADRO_PAGES: CuadroPage[] = [
       },
       {
         type: "p",
-        text: `El bosque de troncos es el de mayor presencia. La ficha dice 158x122, óleo sobre tela. Son troncos verticales, luz clara entre el follaje y un suelo con vegetación baja. De lejos se lee como una franja de luz; de cerca aparecen las pinceladas. Pide holgura. Si el living es corto de muro, mira antes ${link("/cuadros/grandes-al-oleo", "cuadros grandes al óleo")} y decide con el número en la mano. El mismo bosque está contado como paisaje en ${link("/cuadros/paisajes-bosques-biobio", "bosques del Biobío")}.`,
+        text: `El bosque de troncos es el de mayor presencia. La ficha dice 158x122, óleo sobre tela. Son troncos verticales, luz clara entre el follaje y un suelo con vegetación baja. De lejos se lee como una franja de luz; de cerca aparecen las pinceladas. Pide holgura. Si el living es corto de muro, mira antes ${link("/cuadros/grandes-al-oleo", "cuadros grandes al óleo")} y decide con el número en la mano. El mismo bosque está contado como paisaje en ${link("/pintura-de-bosques", "pintura de bosques")} y en ${link("/cuadros/paisajes-bosques-biobio", "bosques del Biobío")}.`,
       },
       {
         type: "p",
@@ -471,7 +471,7 @@ export const CUADRO_PAGES: CuadroPage[] = [
       },
       {
         type: "p",
-        text: `Por lo ancho de la foto, el par se piensa para un living largo, un comedor o una recepción. La selección del comedor, con esta ficha y otras dos, está en ${link("/cuadros/para-comedor", "cuadros para el comedor")}. Una tela chica y una tela grande pueden verse parecidas en la pantalla. Sin el número de la ficha, la foto no alcanza para comprar.`,
+        text: `Por lo ancho de la foto, el par se piensa para un living largo, un comedor o una recepción. La selección del comedor, con esta ficha y otras dos, está en ${link("/cuadros/para-comedor", "cuadros para el comedor")}. Cómo medir ese paño está en ${link("/guias/elegir-cuadro-para-el-comedor", "cómo elegir un cuadro para el comedor")}. Una tela chica y una tela grande pueden verse parecidas en la pantalla. Sin el número de la ficha, la foto no alcanza para comprar.`,
       },
       {
         type: "h2",
@@ -483,7 +483,7 @@ export const CUADRO_PAGES: CuadroPage[] = [
       },
       {
         type: "p",
-        text: `El grupo de figuras tiene color, pero no es arquitectura, y no entra aquí. El bosque de troncos es paisaje y está en ${link("/cuadros/paisajes-bosques-biobio", "bosques del Biobío")}. Esas dos líneas —fachada y bosque— son las que el taller nombra cuando alguien pide un tema de lugar.`,
+        text: `El grupo de figuras tiene color, pero no es arquitectura, y no entra aquí. El bosque de troncos es paisaje y está en ${link("/pintura-de-bosques", "pintura de bosques")} y en ${link("/cuadros/paisajes-bosques-biobio", "bosques del Biobío")}. Esas dos líneas —fachada y bosque— son las que el taller nombra cuando alguien pide un tema de lugar.`,
       },
       {
         type: "h2",

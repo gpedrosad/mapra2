@@ -28,7 +28,7 @@ export const GUIDES: Guide[] = [
       "Hola Marcela, quiero elegir un cuadro para el living. Te mando las medidas del muro y cómo le da la luz.",
     consultaIntro:
       "Si ya mediste el muro y viste una tela de este taller, nombra la ficha. El valor no está en la guía.",
-    modified: "2026-10-28",
+    modified: "2026-10-30",
     blocks: elegirCuadroLiving,
   },
   {
@@ -85,10 +85,10 @@ export const GUIDES: Guide[] = [
   },
   {
     slug: "que-es-el-impresionismo-figurativo",
-    title: "Qué es el impresionismo figurativo | con obras",
+    title: "Qué es el impresionismo figurativo | figura y luz",
     description:
-      "Qué es el impresionismo figurativo: motivo reconocible, pincelada suelta y luz. La muestra de 1874 y óleos de Marcela Pedrosa para consultar.",
-    modified: "2026-10-26",
+      "Qué es el impresionismo figurativo: figura reconocible, pincelada suelta y luz del momento. Ejemplos: bosque con troncos y casas de día y de noche.",
+    modified: "2026-10-30",
     imageKey: "bosque",
     imageAlt: "Paisaje al óleo en clave de impresionismo figurativo",
     ctaTitle: "¿Quieres ver este lenguaje en una tela?",
