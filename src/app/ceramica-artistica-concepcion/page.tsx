@@ -417,7 +417,12 @@ export default async function CeramicaArtisticaConcepcionPage() {
               Además de su trabajo como pintora, <strong>Marcela Pedrosa</strong> desarrolla una 
               línea de <strong>cerámica artística en gres</strong> que complementa su obra pictórica. 
               Sus piezas cerámicas comparten la sensibilidad estética de sus pinturas: formas 
-              orgánicas, texturas expresivas y una paleta cromática armoniosa.
+              orgánicas, texturas expresivas y una paleta cromática armoniosa. El conjunto de la 
+              obra se ve en{" "}
+              <Link href="/arte-concepcion" className="text-brand underline">
+                arte en Concepción
+              </Link>
+              .
             </p>
 
             <div className="bg-surface rounded-xl p-6 mb-8">
@@ -568,7 +573,11 @@ export default async function CeramicaArtisticaConcepcionPage() {
               lenguajes contemporáneos.
             </p>
             <p className="text-ink-body leading-relaxed mb-6">
-              En escultura chilena, el perfil con fuente es el de{" "}
+              Las piezas de gres se trabajan en el{" "}
+              <Link href="/taller-arte-concepcion" className="text-brand underline">
+                taller de arte en Concepción
+              </Link>{" "}
+              de la artista. En escultura chilena, el perfil con fuente es el de{" "}
               <Link href="/artistas-chilenas/lily-garafulic" className="text-brand underline">
                 Lily Garafulic
               </Link>

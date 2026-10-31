@@ -228,7 +228,16 @@ export default async function TallerArteConcepcionPage() {
             <p className="text-ink-body leading-relaxed mb-6">
               El taller está ubicado en <strong>Concepción, Región del Biobío</strong>, una ciudad 
               con rica tradición cultural y artística. La ubicación permite acceso tanto a la 
-              inspiración urbana de la ciudad como a los paisajes naturales de la región.
+              inspiración urbana de la ciudad como a los paisajes naturales de la región. Del 
+              mismo espacio salen las piezas de{" "}
+              <Link href="/ceramica-artistica-concepcion" className="text-brand underline">
+                cerámica artística en Concepción
+              </Link>{" "}
+              y el trabajo reunido en la{" "}
+              <Link href="/galeria-arte-concepcion" className="text-brand underline">
+                galería de arte en Concepción
+              </Link>
+              .
             </p>
 
             <p className="text-ink-body leading-relaxed mb-6">

@@ -20,9 +20,9 @@ import SiteHub from "../components/seo/SiteHub";
 
 
 export const metadata: Metadata = pageMetadata({
-  title: 'Arte en Concepción | Marcela Pedrosa',
+  title: 'Arte en Concepción: óleos y taller | Marcela Pedrosa',
   description:
-    'Arte en Concepción: óleos e impresionismo figurativo de Marcela Pedrosa. Consulta la ficha por WhatsApp o correo. Sin precio en la página.',
+    'Arte en Concepción: óleos e impresionismo figurativo de Marcela Pedrosa, desde su taller. Consulta por WhatsApp o correo. Sin precio en la página.',
   path: '/arte-concepcion',
   ogImageKey: 'bosque',
   imageAlt: 'Arte y pintura de Marcela Pedrosa en Concepción',
@@ -141,7 +141,16 @@ export default async function ArteConcepcionPage() {
               </Link>
               , con capas, veladuras y pincelada suelta. Cada pieza es original y hecha a
               mano, pensada para acompañar hogares, oficinas y colecciones que buscan
-              arte con carácter en Concepción y el resto del país.
+              arte con carácter en Concepción y el resto del país. Detrás de cada tela
+              está el{" "}
+              <Link href="/taller-arte-concepcion" className="text-brand underline">
+                taller de arte en Concepción
+              </Link>
+              , donde también nace la{" "}
+              <Link href="/ceramica-artistica-concepcion" className="text-brand underline">
+                cerámica artística en Concepción
+              </Link>
+              .
             </p>
 
             <div className="bg-surface rounded-xl p-6 mb-8">
