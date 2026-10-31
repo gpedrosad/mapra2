@@ -119,7 +119,15 @@ export default async function GaleriaArteConcepcionPage() {
               </Link>{" "}
               y piezas con identidad del Biobío. Es el
               punto de partida para explorar formatos, temas y disponibilidad
-              antes de comprar o encargar.
+              antes de comprar o encargar. Las obras salen del{" "}
+              <Link href="/taller-arte-concepcion" className="text-brand underline">
+                taller de arte en Concepción
+              </Link>
+              . Para un recorrido más amplio, mira{" "}
+              <Link href="/arte-concepcion" className="text-brand underline">
+                arte en Concepción
+              </Link>
+              .
             </p>
 
             <h3 className="text-2xl font-semibold text-ink mt-10 mb-4">

@@ -12,9 +12,9 @@ import SiteHub from "../components/seo/SiteHub";
 
 
 export const metadata: Metadata = pageMetadata({
-  title: "Cuadros de fachadas al óleo | Marcela Pedrosa",
+  title: "Fachadas de Concepción y bosques al óleo | Pedrosa",
   description:
-    "Óleos de fachadas y de bosques, de Marcela Pedrosa en Concepción. Son cuadros para consultar, no un servicio de pintar muros.",
+    "Óleos de fachadas de Concepción y bosques del Biobío, de Marcela Pedrosa. Cuadros para consultar por WhatsApp o correo, no un servicio de pintar muros.",
   path: "/pintura-fachadas-concepcion",
   ogImageKey: "bosque",
   imageAlt: "Óleo de un bosque de Marcela Pedrosa, junto a su serie de fachadas",
