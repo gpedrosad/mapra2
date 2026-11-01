@@ -26,14 +26,14 @@ const FAQS = [
 ];
 
 export const metadata: Metadata = {
-  title: { absolute: "Bodegón al óleo | Marcela Pedrosa, Chile" },
+  title: { absolute: "Bodegón al óleo y naturaleza muerta | Marcela Pedrosa" },
   description:
-    "Bodegón al óleo de Marcela Pedrosa: calabazas y zapallos sobre una mesa. Es la naturaleza muerta publicada en la galería. Consulta disponibilidad.",
+    "Bodegón al óleo de Marcela Pedrosa: calabazas y zapallos sobre una mesa de madera y fondo ocre. Es la naturaleza muerta publicada en la galería; consulta disponibilidad.",
   keywords: [
-    "bodegón óleo",
-    "naturaleza muerta chile",
-    "bodegón de calabazas",
+    "bodegón al óleo",
+    "naturaleza muerta al óleo",
     "cuadro de bodegón",
+    "bodegón de calabazas",
     "marcela pedrosa bodegón",
   ],
   alternates: { canonical: `${BASE_URL}/bodegon-oleo` },
@@ -103,6 +103,10 @@ export default async function BodegonOleoPage() {
             . Cómo medir ese paño está en{" "}
             <Link href="/guias/elegir-cuadro-para-el-comedor" className="text-brand underline">
               la guía del comedor
+            </Link>
+            . Para otros muros de la casa están los{" "}
+            <Link href="/cuadros/para-living" className="text-brand underline">
+              cuadros para el living
             </Link>
             . Los{" "}
             <Link href="/retratos-al-oleo" className="text-brand underline">
