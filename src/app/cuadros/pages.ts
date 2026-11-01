@@ -371,9 +371,9 @@ export const CUADRO_PAGES: CuadroPage[] = [
     slug: "paisajes-bosques-biobio",
     path: "/cuadros/paisajes-bosques-biobio",
     navLabel: "Bosques del Biobío",
-    title: "Cuadros de bosques del Biobío | Marcela Pedrosa",
+    title: "Cuadros de bosques y paisaje al óleo | Marcela Pedrosa",
     description:
-      "Cuadros de bosques y paisaje al óleo de Marcela Pedrosa, desde Concepción, Biobío. Dos obras reales de la galería. Consulta disponibilidad.",
+      "Cuadros de bosques y pintura de paisaje del Biobío, óleo de Marcela Pedrosa desde Concepción. Dos obras reales de la galería; consulta disponibilidad.",
     h1: "Cuadros de paisajes y bosques",
     ogKey: "bosque",
     ogAlt: "Bosque de troncos al óleo de Marcela Pedrosa",
@@ -422,6 +422,10 @@ export const CUADRO_PAGES: CuadroPage[] = [
       {
         type: "h2",
         text: "Cómo pedir un bosque",
+      },
+      {
+        type: "p",
+        text: `Si buscas otro tema para la mesa o la cocina, el bodegón publicado en la galería está en ${link("/bodegon-oleo", "bodegón al óleo")}.`,
       },
       {
         type: "p",
