@@ -20,7 +20,7 @@ import SiteHub from "../components/seo/SiteHub";
 
 
 export const metadata: Metadata = pageMetadata({
-  title: 'Óleos sobre tela en Chile | consulta',
+  title: 'Óleos sobre tela en Chile | Marcela Pedrosa',
   description:
     'Óleos sobre tela en Chile, pintados en Concepción. Medidas publicadas: 158x122, 110x110, 90x120 y 100x130. Consulta por WhatsApp o correo.',
   path: '/oleo-sobre-tela-chile',
@@ -89,7 +89,7 @@ export default async function OleoSobreTelaChilePage() {
               Óleos sobre tela en Chile
             </h1>
             <p className="text-xl sm:text-2xl text-ink-body mb-8 leading-relaxed">
-              Técnica Tradicional, Calidad Profesional
+              Pintados en Concepción. Cuatro fichas traen medida: 158x122, 110x110, 90x120 y 100x130.
             </p>
           </div>
 
