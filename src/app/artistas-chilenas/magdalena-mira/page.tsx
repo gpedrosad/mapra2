@@ -1,9 +1,9 @@
 import Link from "next/link";
 import { ProfilePage, perfilMetadata } from "../ui";
 
-const TITLE = "Magdalena Mira, pintora chilena (1859-1930)";
+const TITLE = "Magdalena Mira, pintora y escultora (1859-1930)";
 const DESCRIPTION =
-  "Magdalena Mira (1859-1930), pintora y escultora. Medalla de oro en 1884. Su obra no se vende en este sitio.";
+  "Magdalena Mira Mena (1859-1930), pintora y escultora chilena. Biografía, medalla de oro de 1884 y dónde ver su obra en el Museo Nacional de Bellas Artes.";
 
 export const metadata = perfilMetadata({
   title: TITLE,
@@ -15,7 +15,7 @@ export default function MagdalenaMiraPage() {
   return (
     <ProfilePage
       slug="magdalena-mira"
-      modified="2026-10-28"
+      modified="2026-11-04"
       h1="Magdalena Mira"
       kicker="Pintora y escultora de Santiago. Nació el 30 de mayo de 1859 y murió en la misma ciudad el 14 de octubre de 1930."
       description={DESCRIPTION}

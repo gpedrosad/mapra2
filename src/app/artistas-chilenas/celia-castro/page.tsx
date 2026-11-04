@@ -1,9 +1,9 @@
 import Link from "next/link";
 import { ProfilePage, perfilMetadata } from "../ui";
 
-const TITLE = "Celia Castro, pintora de Quillota (1860-1930)";
+const TITLE = "Celia Castro, pintora chilena (1860-1930)";
 const DESCRIPTION =
-  "Celia Castro (1860-1930), de Quillota. Primera mujer pensionada para estudiar en París. Su obra no se vende aquí.";
+  "Celia Castro (1860-1930), de Quillota, una de las primeras pintoras profesionales de Chile. Biografía, premios y dónde ver su obra en museos y pinacotecas.";
 
 export const metadata = perfilMetadata({
   title: TITLE,
@@ -15,7 +15,7 @@ export default function CeliaCastroPage() {
   return (
     <ProfilePage
       slug="celia-castro"
-      modified="2026-10-28"
+      modified="2026-11-04"
       h1="Celia Castro"
       kicker="Pintora de Quillota, una de las primeras profesionales del país. Nació en 1860 y murió en Viña del Mar el 11 de junio de 1930."
       description={DESCRIPTION}

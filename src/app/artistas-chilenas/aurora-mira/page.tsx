@@ -1,9 +1,9 @@
 import Link from "next/link";
 import { ProfilePage, perfilMetadata } from "../ui";
 
-const TITLE = "Aurora Mira, pintora chilena (1863-1939)";
+const TITLE = "Aurora Mira, pintora de flores y bodegones (1863-1939)";
 const DESCRIPTION =
-  "Aurora Mira (1863-1939), retratos, flores y bodegones. Su obra no se vende aquí. El bodegón de Marcela es otra tela.";
+  "Aurora Mira Mena (1863-1939), pintora chilena de flores y bodegones. Biografía, premios y dónde ver su obra en el Museo Nacional de Bellas Artes.";
 
 export const metadata = perfilMetadata({
   title: TITLE,
@@ -15,7 +15,7 @@ export default function AuroraMiraPage() {
   return (
     <ProfilePage
       slug="aurora-mira"
-      modified="2026-10-28"
+      modified="2026-11-04"
       h1="Aurora Mira"
       kicker="Pintora de Santiago, hermana de Magdalena Mira. Nació en 1863 y murió en Santiago en diciembre de 1939."
       description={DESCRIPTION}
