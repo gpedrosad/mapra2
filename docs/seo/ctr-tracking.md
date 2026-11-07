@@ -2,6 +2,20 @@
 
 Cada entrada: URL, consulta objetivo, métricas antes (GSC, sc-domain:mpedrosa.studio), cambio, fecha y fecha de medición (+14 días).
 
+## 2026-11-07 (medir 2026-11-21)
+
+Métricas sitio 90d: 21c / 717i / CTR 2,93 % / pos 8,3; 7d 7/389 vs prev7 4/79.
+
+| URL | Consulta | Antes | Title antes → después | Notas |
+|---|---|---|---|---|
+| /pintoras-chilenas | pintoras chilenas | propuesta 11-04 (1/47 CTR 2,1 % pos 8,6 en 90d al 11-02) | "Pintoras chilenas famosas y actuales \| con fuente" → "Pintoras chilenas famosas y actuales: lista con fuentes" | description y H1 sin cambio |
+| /guias/que-es-el-impresionismo-figurativo | impresionismo figurativo | propuesta 11-04 (página 0/15 pos 3,2) | "Qué es el impresionismo figurativo \| figura y luz" → "Qué es el impresionismo figurativo: definición y ejemplos" | GuideShell usa title=H1; modified 2026-11-07 |
+
+### Tech
+- 301 `/figura-recostada` → `/pinturas/figura-recostada` (slug correcto en sitemap; live 404 confirmado 2026-11-07).
+
+Congeladas sin tocar: magdalena-mira, celia-castro, aurora-mira. Menú/nav/home intactos.
+
 ## 2026-11-04 (medir 2026-11-18)
 Métricas antes: 7 días 2026-10-27..2026-11-02 (las páginas se indexaron en esa semana; 90 días = mismos números).
 

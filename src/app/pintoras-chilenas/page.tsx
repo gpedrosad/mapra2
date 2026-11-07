@@ -14,7 +14,7 @@ import SiteHub from "../components/seo/SiteHub";
 
 
 export const metadata: Metadata = pageMetadata({
-  title: 'Pintoras chilenas famosas y actuales | con fuente',
+  title: 'Pintoras chilenas famosas y actuales: lista con fuentes',
   description:
     'Lista de pintoras chilenas famosas y actuales, con fuente: Castro, Barrios, Bru, Aldunate y Pedrosa en Concepción. Artistas chilenas mujeres pintoras.',
   path: '/pintoras-chilenas',
@@ -715,6 +715,17 @@ export default async function PintorasChilenasPage() {
                 </span>
                 <p className="text-sm text-ink-muted mt-1">
                   El estilo de Marcela Pedrosa
+                </p>
+              </Link>
+              <Link
+                href="/guias/que-es-el-impresionismo-figurativo"
+                className="block p-4 rounded-lg border border-line hover:border-brand hover:bg-surface transition-colors"
+              >
+                <span className="font-medium text-ink">
+                  Qué es el impresionismo figurativo →
+                </span>
+                <p className="text-sm text-ink-muted mt-1">
+                  Definición y ejemplos
                 </p>
               </Link>
             </div>

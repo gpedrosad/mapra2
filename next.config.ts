@@ -6,6 +6,11 @@ const nextConfig: NextConfig = {
     return [
       ...LEGACY_ARTWORK_REDIRECTS,
       {
+        source: "/figura-recostada",
+        destination: "/pinturas/figura-recostada",
+        statusCode: 301,
+      },
+      {
         source: "/cuadros-para-living",
         destination: "/cuadros/para-living",
         statusCode: 301,

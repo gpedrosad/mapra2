@@ -85,10 +85,10 @@ export const GUIDES: Guide[] = [
   },
   {
     slug: "que-es-el-impresionismo-figurativo",
-    title: "Qué es el impresionismo figurativo | figura y luz",
+    title: "Qué es el impresionismo figurativo: definición y ejemplos",
     description:
       "Qué es el impresionismo figurativo: figura reconocible, pincelada suelta y luz del momento. Ejemplos: bosque con troncos y casas de día y de noche.",
-    modified: "2026-10-30",
+    modified: "2026-11-07",
     imageKey: "bosque",
     imageAlt: "Paisaje al óleo en clave de impresionismo figurativo",
     ctaTitle: "¿Quieres ver este lenguaje en una tela?",
