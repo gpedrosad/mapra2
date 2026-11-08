@@ -134,3 +134,4 @@ Formato: `YYYY-MM-DD | tema | hecho | acción/implicación`
 ## 2026-11-08
 
 - SEO | CTR test Opus 5.5: title+meta de `/pinturas`, `/artistas-chilenas/henriette-petit` y `/guias/oleo-vs-acrilico`. H1, home y menú sin cambio | Doc `docs/seo/ctr-tracking.md`. Medir 2026-11-22
+- SEO | CTR test Opus 5.5 batch 2: title+meta de precio, `/cuadros` (fuera del menú), comprar óleo con envío, guía del comedor y cómo encargar. H1, home y menú sin cambio | Doc `docs/seo/ctr-tracking.md`. Medir 2026-11-22
