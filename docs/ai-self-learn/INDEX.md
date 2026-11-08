@@ -1,6 +1,6 @@
 # INDEX — hechos densos (leer primero)
 
-Actualizado: **2026-10-30**
+Actualizado: **2026-11-08**
 
 ## Identidad
 
@@ -83,6 +83,7 @@ Actualizado: **2026-10-30**
 - **Lote 2026-10-29:** famosas y actuales siguen en `/pintoras-chilenas` (solo dos anclas a Roser Bru). Title del índice pasa a `Artistas visuales chilenos | índice de perfiles` (47 / 146) y apunta a Mori, Zamudio y Garafulic sin ocupar a `/artista-visual-biobio`. Meta de mujeres artistas deja de decir «pintoras famosas» (124); title intacto. Guía de precio sin cifras; enlaza grandes y compra en Concepción. Sin página nueva. Lista: [`docs/seo-lote-2026-10-29.md`](../seo-lote-2026-10-29.md). `pendiente:` Request indexing (OAuth solo lectura).
 - **Corte 2026-10-30 (brief, dato hasta 2026-10-28):** 90d 12 clics · 292 imp · CTR 4,1 % · pos 9,9. Últimos 7 días (10-22..10-28): 3 clics · 45 imp · pos 9,4 (previos 10-15..10-21: 2c/26i pos 19,2). Clics 7d: home y `/prensa`. `/guias/que-es-el-impresionismo-figurativo` 6i pos 2,2. `/artistas-chilenas/pintoras-chilenas-contemporaneas` 8i pos 7,25. Indexadas 50 de 60 no-ficha. Nueva indexada: Gracia Barrios. Roser Bru pasó a descubierta, sin indexar.
 - **Lote 2026-10-30:** title y meta de la guía de impresionismo (49 / 147) responden «qué es», con figura, pincelada y luz, y nombran bosque y casas. `/impresionismo-figurativo-chile` sigue en «actual en Chile» y no se editó. Meta de contemporáneas (144) nombra el Premio Nacional de Barrios y de Bru; el title del 27 queda. Snippet y CTA de living (43 / 134) y de pintura de bosques (40 / 137). Enlaces nuevos: guía del living → bosques; fachadas → guía del comedor y pintura de bosques. Sin página nueva. Lista: [`docs/seo-lote-2026-10-30.md`](../seo-lote-2026-10-30.md). `pendiente:` Request indexing (OAuth solo lectura).
+- **CTR 2026-11-08 (Opus 5.5):** title+meta de `/pinturas` (0/20 pos 7,3), `/artistas-chilenas/henriette-petit` (0/14 pos 4,1) y `/guias/oleo-vs-acrilico` (0/15 pos 11,7). H1, home y menú intactos. Medir 2026-11-22. [`docs/seo/ctr-tracking.md`](../seo/ctr-tracking.md).
 - Gap #2: analytics (GA4/Clarity del dominio correcto)
 - Gap #3 (aprobación): diferenciar landings thin, FAQ/GEO, backlinks prensa/IG
 

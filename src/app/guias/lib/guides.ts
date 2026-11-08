@@ -51,9 +51,12 @@ export const GUIDES: Guide[] = [
   },
   {
     slug: "oleo-vs-acrilico",
-    title: "Óleo vs acrílico para comprar arte",
+    title: "Óleo vs acrílico: diferencias al comprar una pintura",
+    h1: "Óleo vs acrílico para comprar arte",
     description:
       "Diferencias entre óleo y acrílico al comprar arte original: secado, superficie, duración y qué mirar en la tela.",
+    metaDescription:
+      "Secado, brillo, olor, duración y cuidado: cómo comparar un óleo y un acrílico al comprar arte original y qué preguntar antes de colgarlo.",
     imageKey: "mujer",
     imageAlt: "Pintura al óleo de Marcela Pedrosa",
     ctaTitle: "¿Buscas un óleo para tu casa?",
@@ -63,7 +66,7 @@ export const GUIDES: Guide[] = [
       "Hola Marcela, estoy comparando óleo y acrílico. Me interesa ver obras al óleo y te cuento el espacio.",
     consultaIntro:
       "Las pinturas publicadas de Marcela son óleo sobre tela. El acrílico no está en la galería.",
-    modified: "2026-10-28",
+    modified: "2026-11-08",
     blocks: oleoVsAcrilico,
   },
   {
@@ -140,18 +143,22 @@ export function getGuide(slug: string) {
   return GUIDES.find((guide) => guide.slug === slug);
 }
 
+export function guideHeading(guide: Pick<Guide, "title" | "h1">) {
+  return guide.h1 ?? guide.title;
+}
+
 export function guideMetadata(guide: Guide): Metadata {
   const url = `${SITE_URL}/guias/${guide.slug}`;
   const image = getOgImageUrl(guide.imageKey, SITE_URL);
 
   return {
     title: { absolute: guide.title },
-    description: guide.description,
+    description: guide.metaDescription ?? guide.description,
     alternates: { canonical: url },
     authors: [{ name: "Marcela Pedrosa", url: `${SITE_URL}/marcela-pedrosa` }],
     openGraph: {
       title: guide.title,
-      description: guide.description,
+      description: guide.metaDescription ?? guide.description,
       url,
       type: "article",
       locale: "es_CL",
@@ -167,7 +174,7 @@ export function guideMetadata(guide: Guide): Metadata {
     twitter: {
       card: "summary_large_image",
       title: guide.title,
-      description: guide.description,
+      description: guide.metaDescription ?? guide.description,
       images: [image],
     },
   };

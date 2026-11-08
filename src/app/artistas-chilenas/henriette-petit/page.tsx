@@ -1,9 +1,9 @@
 import Link from "next/link";
 import { ProfilePage, perfilMetadata } from "../ui";
 
-const TITLE = "Henriette Petit, Montparnasse (1894-1983)";
+const TITLE = "Henriette Petit (1894-1983): vida y obra de la pintora";
 const DESCRIPTION =
-  "Henriette Petit (1894-1983), cofundadora del Grupo Montparnasse. Su obra no se vende en este sitio.";
+  "Ana Enriqueta Petit Marfán, cofundadora del Grupo Montparnasse: formación, París, retratos y desnudos. Perfil editorial; su obra no se vende aquí.";
 
 export const metadata = perfilMetadata({
   title: TITLE,
@@ -15,7 +15,7 @@ export default function HenriettePetitPage() {
   return (
     <ProfilePage
       slug="henriette-petit"
-      modified="2026-10-28"
+      modified="2026-11-08"
       h1="Henriette Petit"
       kicker="Enriqueta Petit, pintora del Grupo Montparnasse. Nació en Santiago el 3 de marzo de 1894 y murió en la misma ciudad el 9 de diciembre de 1983."
       description={DESCRIPTION}

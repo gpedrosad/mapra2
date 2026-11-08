@@ -3,7 +3,7 @@ import Footer from "../../components/Footer";
 import ConsultaSteps from "../../components/seo/ConsultaSteps";
 import { getOgImageUrl } from "@/lib/cloudinary";
 import { SITE_URL } from "@/lib/site";
-import { GUIDE_DATE, GUIDE_MODIFIED, GUIDES } from "../lib/guides";
+import { GUIDE_DATE, GUIDE_MODIFIED, GUIDES, guideHeading } from "../lib/guides";
 import type { Guide } from "../lib/types";
 import GuideBlocks from "./GuideBlocks";
 import GuideInquiry from "./GuideInquiry";
@@ -35,8 +35,8 @@ function articleSchema(guide: Guide) {
   return {
     "@context": "https://schema.org",
     "@type": "Article",
-    headline: guide.title,
-    description: guide.description,
+    headline: guideHeading(guide),
+    description: guide.metaDescription ?? guide.description,
     image: getOgImageUrl(guide.imageKey, SITE_URL),
     datePublished: guide.published ?? GUIDE_DATE,
     dateModified: guide.modified ?? GUIDE_MODIFIED,
@@ -80,7 +80,7 @@ function breadcrumbSchema(guide: Guide) {
       {
         "@type": "ListItem",
         position: 3,
-        name: guide.title,
+        name: guideHeading(guide),
         item: url,
       },
     ],
@@ -123,7 +123,7 @@ export default function GuideShell({ guide }: { guide: Guide }) {
             <li className="text-ink-faint" aria-hidden>
               /
             </li>
-            <li className="text-ink font-medium">{guide.title}</li>
+            <li className="text-ink font-medium">{guideHeading(guide)}</li>
           </ol>
         </nav>
 
@@ -131,7 +131,7 @@ export default function GuideShell({ guide }: { guide: Guide }) {
           Guías
         </p>
         <h1 className="font-display text-3xl sm:text-5xl font-medium tracking-tight text-ink">
-          {guide.title}
+          {guideHeading(guide)}
         </h1>
         <p className="mt-4 text-sm text-ink-muted">
           <time dateTime={published}>{spanishDate(published)}</time>
@@ -163,7 +163,7 @@ export default function GuideShell({ guide }: { guide: Guide }) {
                   href={`/guias/${item.slug}`}
                   className="block h-full rounded-xl border border-line px-4 py-3 text-ink hover:border-brand hover:bg-surface transition-colors"
                 >
-                  {item.title}
+                  {guideHeading(item)}
                 </Link>
               </li>
             ))}
