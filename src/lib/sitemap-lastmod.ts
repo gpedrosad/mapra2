@@ -5,7 +5,7 @@
  */
 const LASTMOD: Record<string, string> = {
   "/": "2026-08-23",
-  "/pinturas": "2026-10-16",
+  "/pinturas": "2026-11-08",
   "/esculturas": "2026-07-23",
   "/prensa": "2026-07-23",
   "/contacto": "2026-07-23",
@@ -30,7 +30,7 @@ const LASTMOD: Record<string, string> = {
   "/guias": "2026-10-27",
   "/guias/elegir-cuadro-para-el-living": "2026-10-30",
   "/guias/elegir-cuadro-para-el-comedor": "2026-10-28",
-  "/guias/oleo-vs-acrilico": "2026-10-28",
+  "/guias/oleo-vs-acrilico": "2026-11-08",
   "/guias/cuidar-y-colgar-pintura-al-oleo": "2026-11-03",
   "/guias/que-es-el-impresionismo-figurativo": "2026-10-30",
   "/guias/como-encargar-una-pintura": "2026-10-28",
@@ -46,7 +46,7 @@ const LASTMOD: Record<string, string> = {
   "/artistas-chilenas/celia-castro": "2026-11-04",
   "/artistas-chilenas/magdalena-mira": "2026-11-04",
   "/artistas-chilenas/aurora-mira": "2026-11-04",
-  "/artistas-chilenas/henriette-petit": "2026-10-28",
+  "/artistas-chilenas/henriette-petit": "2026-11-08",
   "/artistas-chilenas/camilo-mori": "2026-10-28",
   "/artistas-chilenas/lily-garafulic": "2026-10-24",
   "/artistas-chilenas/matilde-perez": "2026-10-28",

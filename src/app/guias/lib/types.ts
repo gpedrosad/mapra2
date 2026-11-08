@@ -9,7 +9,11 @@ export type Block =
 export type Guide = {
   slug: string;
   title: string;
+  /** H1 visible si debe quedar distinto del title del documento. */
+  h1?: string;
   description: string;
+  /** Meta description si debe quedar distinta del texto del índice. */
+  metaDescription?: string;
   imageKey: SiteImageKey;
   imageAlt: string;
   ctaTitle: string;

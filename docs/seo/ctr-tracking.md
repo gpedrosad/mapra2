@@ -2,6 +2,18 @@
 
 Cada entrada: URL, consulta objetivo, métricas antes (GSC, sc-domain:mpedrosa.studio), cambio, fecha y fecha de medición (+14 días).
 
+## 2026-11-08 — CTR test Opus 5.5 (medir 2026-11-22)
+
+Solo snippets (title + meta). H1, home y menú intactos. Baseline GSC del draft (página).
+
+| URL | Consulta | Antes (clics/impr/CTR/pos) | Title antes → después | Description antes → después |
+|---|---|---|---|---|
+| /pinturas | pinturas | página 0/20/0 %/7,3 | "Pinturas originales al óleo \| Marcela Pedrosa" → "Pinturas originales al óleo en Concepción \| Marcela Pedrosa" | "Pinturas originales al óleo de Marcela Pedrosa en Concepción. Mira cada obra, sus medidas y consulta disponibilidad." → "Óleos sobre tela de Marcela Pedrosa, pintados en su taller de Concepción. Mira cada obra y sus medidas, y consulta disponibilidad." |
+| /artistas-chilenas/henriette-petit | henriette petit | página 0/14/0 %/4,1 | "Henriette Petit, Montparnasse (1894-1983)" → "Henriette Petit (1894-1983): vida y obra de la pintora" | "Henriette Petit (1894-1983), cofundadora del Grupo Montparnasse. Su obra no se vende en este sitio." → "Ana Enriqueta Petit Marfán, cofundadora del Grupo Montparnasse: formación, París, retratos y desnudos. Perfil editorial; su obra no se vende aquí." |
+| /guias/oleo-vs-acrilico | oleo vs acrilico | página 0/15/0 %/11,7 | "Óleo vs acrílico para comprar arte" → "Óleo vs acrílico: diferencias al comprar una pintura" | "Diferencias entre óleo y acrílico al comprar arte original: secado, superficie, duración y qué mirar en la tela." → "Secado, brillo, olor, duración y cuidado: cómo comparar un óleo y un acrílico al comprar arte original y qué preguntar antes de colgarlo." |
+
+H1 sin cambios: Pinturas; Henriette Petit; Óleo vs acrílico para comprar arte (GuideShell: `h1` distinto del title).
+
 ## 2026-11-07 (medir 2026-11-21)
 
 Métricas sitio 90d: 21c / 717i / CTR 2,93 % / pos 8,3; 7d 7/389 vs prev7 4/79.

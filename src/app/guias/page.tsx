@@ -5,7 +5,7 @@ import ConsultaSteps from "../components/seo/ConsultaSteps";
 import { pageMetadata } from "@/lib/metadata";
 import { SEO_GUIDES } from "@/lib/seo-guides";
 import { SITE_URL } from "@/lib/site";
-import { GUIDES } from "./lib/guides";
+import { GUIDES, guideHeading } from "./lib/guides";
 
 const THEME_GUIDES = SEO_GUIDES.filter((guide) => guide.path !== "/guias");
 
@@ -58,7 +58,7 @@ const collection = {
       ...GUIDES.map((guide, index) => ({
         "@type": "ListItem",
         position: index + 1,
-        name: guide.title,
+        name: guideHeading(guide),
         url: `${SITE_URL}/guias/${guide.slug}`,
         description: guide.description,
       })),
@@ -245,7 +245,7 @@ export default function GuiasIndexPage() {
                 className="block rounded-xl border border-line bg-surface px-5 py-4 hover:border-brand transition-colors"
               >
                 <span className="block font-display text-xl text-ink">
-                  {guide.title}
+                  {guideHeading(guide)}
                 </span>
                 <span className="mt-2 block text-ink-body leading-relaxed">
                   {guide.description}
