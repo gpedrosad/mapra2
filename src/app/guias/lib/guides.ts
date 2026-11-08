@@ -33,9 +33,12 @@ export const GUIDES: Guide[] = [
   },
   {
     slug: "elegir-cuadro-para-el-comedor",
-    title: "Cuadro para el comedor | bodegón al óleo",
+    title: "Cómo elegir un cuadro para el comedor | Bodegón al óleo",
+    h1: "Cuadro para el comedor | bodegón al óleo",
     description:
       "Bodegón de calabazas, ciudad de colores y el par de día y noche. Mide el paño sentado y consulta el valor: no está en la ficha.",
+    metaDescription:
+      "Mide el ancho libre y la altura desde la silla, revisa la lámpara y la luz, y compara un bodegón, una ciudad y casas al óleo. El valor se consulta.",
     imageKey: "c5",
     imageAlt: "Bodegón al óleo de calabazas y zapallos, de Marcela Pedrosa",
     ctaTitle: "¿El muro es el del comedor?",
@@ -46,7 +49,7 @@ export const GUIDES: Guide[] = [
     consultaIntro:
       "Esta guía mide el paño. Si ya viste una tela, nómbrala: bodegón, ciudad o casas de día y de noche.",
     published: "2026-10-24",
-    modified: "2026-10-28",
+    modified: "2026-11-08",
     blocks: elegirCuadroComedor,
   },
   {
@@ -105,9 +108,12 @@ export const GUIDES: Guide[] = [
   },
   {
     slug: "como-encargar-una-pintura",
-    title: "Cómo encargar una pintura a un artista",
+    title: "Cómo encargar una pintura a un artista: pasos y preguntas",
+    h1: "Cómo encargar una pintura a un artista",
     description:
       "Cómo encargar una pintura: pasos, plazos generales del óleo y preguntas útiles antes de acordar motivo, tamaño y entrega.",
+    metaDescription:
+      "Qué definir antes de encargar una pintura: motivo, medidas, material, plazo, anticipo y derechos de imagen. Preguntas clave para acordarlo por escrito.",
     imageKey: "gente",
     imageAlt: "Pintura figurativa de Marcela Pedrosa",
     ctaTitle: "¿Quieres encargar una pintura?",
@@ -117,14 +123,17 @@ export const GUIDES: Guide[] = [
       "Hola Marcela, me gustaría encargar una pintura. Te cuento el motivo, las medidas del muro y la fecha que manejo.",
     consultaIntro:
       "Un encargo parte por el motivo y la medida. Si ya hay una tela que calza, consulta esa ficha.",
-    modified: "2026-10-28",
+    modified: "2026-11-08",
     blocks: encargarPintura,
   },
   {
     slug: "cuanto-cuesta-un-cuadro-original-en-chile",
-    title: "Cuánto cuesta un cuadro original en Chile",
+    title: "Cuánto cuesta un cuadro original en Chile y por qué",
+    h1: "Cuánto cuesta un cuadro original en Chile",
     description:
       "Factores que mueven el precio de un cuadro original en Chile: tamaño, técnica, circuito y encargo. El monto se consulta al taller.",
+    metaDescription:
+      "Qué mueve el valor de un cuadro original: tamaño, soporte, tiempo, trayectoria, marco y despacho. Sin cifras: aprende a pedir el monto con claridad.",
     imageKey: "mujer",
     imageAlt: "Obra original al óleo de Marcela Pedrosa",
     ctaTitle: "¿Quieres el valor de una obra concreta?",
@@ -134,7 +143,7 @@ export const GUIDES: Guide[] = [
       "Hola Marcela, quiero consultar el valor de un cuadro original. Te cuento si busco una obra disponible o un encargo, y las medidas.",
     consultaIntro:
       "Esta guía no publica montos. El valor de una obra de Marcela se pide por WhatsApp o por correo.",
-    modified: "2026-10-29",
+    modified: "2026-11-08",
     blocks: precioCuadroChile,
   },
 ];

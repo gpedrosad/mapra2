@@ -7,9 +7,9 @@ export const CUADRO_PAGES: CuadroPage[] = [
     slug: "",
     path: "/cuadros",
     navLabel: "Todos los cuadros",
-    title: "Cuadros al óleo para tu casa | Marcela Pedrosa",
+    title: "Cuadros al óleo según tu espacio | Marcela Pedrosa",
     description:
-      "Cuadros originales al óleo de Marcela Pedrosa en Concepción. Living, dormitorio, oficina, bosque o fachada. Consulta por WhatsApp.",
+      "Óleos originales de Marcela Pedrosa ordenados por espacio: living, dormitorio, comedor, oficina o regalo. Elige la obra y consulta el valor por WhatsApp.",
     h1: "Cuadros al óleo para elegir según el espacio",
     ogKey: "bosque",
     ogAlt: "Bosque al óleo de Marcela Pedrosa, pintora en Concepción",

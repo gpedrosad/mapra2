@@ -14,6 +14,20 @@ Solo snippets (title + meta). H1, home y menú intactos. Baseline GSC del draft 
 
 H1 sin cambios: Pinturas; Henriette Petit; Óleo vs acrílico para comprar arte (GuideShell: `h1` distinto del title).
 
+## 2026-11-08 — CTR test Opus 5.5 batch 2 (medir 2026-11-22)
+
+Solo snippets (title + meta). H1, home y menú intactos. `/cuadros` no está en `NAV_ITEMS`; se aplicó. Baseline GSC del draft (página).
+
+| URL | Consulta | Antes (clics/impr/CTR/pos) | Title antes → después | Description antes → después |
+|---|---|---|---|---|
+| /guias/cuanto-cuesta-un-cuadro-original-en-chile | cuánto cuesta un cuadro original en Chile | página 0/9/0 %/4,3 | "Cuánto cuesta un cuadro original en Chile" → "Cuánto cuesta un cuadro original en Chile y por qué" | "Factores que mueven el precio de un cuadro original en Chile: tamaño, técnica, circuito y encargo. El monto se consulta al taller." → "Qué mueve el valor de un cuadro original: tamaño, soporte, tiempo, trayectoria, marco y despacho. Sin cifras: aprende a pedir el monto con claridad." |
+| /cuadros | cuadros al óleo | página 0/6/0 %/6,5 | "Cuadros al óleo para tu casa \| Marcela Pedrosa" → "Cuadros al óleo según tu espacio \| Marcela Pedrosa" | "Cuadros originales al óleo de Marcela Pedrosa en Concepción. Living, dormitorio, oficina, bosque o fachada. Consulta por WhatsApp." → "Óleos originales de Marcela Pedrosa ordenados por espacio: living, dormitorio, comedor, oficina o regalo. Elige la obra y consulta el valor por WhatsApp." |
+| /comprar-cuadros-al-oleo-chile | comprar cuadros al óleo en Chile | página 0/5/0 %/5,4 | "Comprar cuadros al óleo en Chile \| Marcela Pedrosa" → "Comprar cuadros al óleo en Chile con envío \| Marcela Pedrosa" | "Cuadros al óleo originales de Marcela Pedrosa, pintora en Concepción, con envío a regiones de Chile. Consulta por WhatsApp o correo." → "Óleos originales de Marcela Pedrosa, no reproducciones, pintados en Concepción y con envío a regiones. Elige la obra y consulta por WhatsApp o correo." |
+| /guias/elegir-cuadro-para-el-comedor | cómo elegir un cuadro para el comedor | página 0/5/0 %/6,0 | "Cuadro para el comedor \| bodegón al óleo" → "Cómo elegir un cuadro para el comedor \| Bodegón al óleo" | "Bodegón de calabazas, ciudad de colores y el par de día y noche. Mide el paño sentado y consulta el valor: no está en la ficha." → "Mide el ancho libre y la altura desde la silla, revisa la lámpara y la luz, y compara un bodegón, una ciudad y casas al óleo. El valor se consulta." |
+| /guias/como-encargar-una-pintura | cómo encargar una pintura a un artista | página 0/2/0 %/9,5 | "Cómo encargar una pintura a un artista" → "Cómo encargar una pintura a un artista: pasos y preguntas" | "Cómo encargar una pintura: pasos, plazos generales del óleo y preguntas útiles antes de acordar motivo, tamaño y entrega." → "Qué definir antes de encargar una pintura: motivo, medidas, material, plazo, anticipo y derechos de imagen. Preguntas clave para acordarlo por escrito." |
+
+H1 sin cambios en las cinco.
+
 ## 2026-11-07 (medir 2026-11-21)
 
 Métricas sitio 90d: 21c / 717i / CTR 2,93 % / pos 8,3; 7d 7/389 vs prev7 4/79.

@@ -14,9 +14,9 @@ import { absoluteUrl, CONTACT_EMAIL, SITE_URL } from "@/lib/site";
 const PATH = "/comprar-cuadros-al-oleo-chile";
 
 export const metadata: Metadata = pageMetadata({
-  title: "Comprar cuadros al óleo en Chile | Marcela Pedrosa",
+  title: "Comprar cuadros al óleo en Chile con envío | Marcela Pedrosa",
   description:
-    "Cuadros al óleo originales de Marcela Pedrosa, pintora en Concepción, con envío a regiones de Chile. Consulta por WhatsApp o correo.",
+    "Óleos originales de Marcela Pedrosa, no reproducciones, pintados en Concepción y con envío a regiones. Elige la obra y consulta por WhatsApp o correo.",
   path: PATH,
   imageAlt: "Cuadros al óleo de Marcela Pedrosa",
   keywords: [
