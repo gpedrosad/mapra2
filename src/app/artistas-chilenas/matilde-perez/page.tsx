@@ -1,9 +1,9 @@
 import Link from "next/link";
 import { ProfilePage, perfilMetadata } from "../ui";
 
-const TITLE = "Matilde Pérez, arte cinético (1916-2014)";
+const TITLE = "Matilde Pérez (1916-2014), artista cinética chilena";
 const DESCRIPTION =
-  "Matilde Pérez (1916-2014), del óleo figurativo al arte cinético. Su obra no se vende en este sitio.";
+  "Matilde Pérez (1916-2014): del óleo figurativo al arte cinético. Centro de Investigaciones Cinéticas (1975, Universidad de Chile), Premio Altazor 2004.";
 
 export const metadata = perfilMetadata({
   title: TITLE,
@@ -15,7 +15,7 @@ export default function MatildePerezPage() {
   return (
     <ProfilePage
       slug="matilde-perez"
-      modified="2026-10-28"
+      modified="2026-11-09"
       h1="Matilde Pérez"
       kicker="Pintora, escultora y artista visual de Santiago. Nació el 7 de diciembre de 1916 y murió en la misma ciudad el 2 de octubre de 2014."
       description={DESCRIPTION}
