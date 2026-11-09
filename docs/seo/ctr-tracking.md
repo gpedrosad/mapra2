@@ -2,6 +2,16 @@
 
 Cada entrada: URL, consulta objetivo, métricas antes (GSC, sc-domain:mpedrosa.studio), cambio, fecha y fecha de medición (+14 días).
 
+## 2026-11-09 — CTR perfil Matilde Pérez (medir 2026-11-23)
+
+Métricas antes: GSC sc-domain:mpedrosa.studio, 28 días 2026-10-12..2026-11-08. Página 0 clics / 19 impr / CTR 0 % / pos 4,4. Consultas visibles: «arte cinetico matilde perez» 0/4 pos 1,0; «matilde perez» 0/3 pos 1,0 (el resto anonimizado).
+
+| URL | Consulta | Antes (clics/impr/CTR/pos) | Title antes → después | Description antes → después |
+|---|---|---|---|---|
+| /artistas-chilenas/matilde-perez | arte cinetico matilde perez; matilde perez | 0/19/0 %/4,4 | "Matilde Pérez, arte cinético (1916-2014)" → "Matilde Pérez (1916-2014), artista cinética chilena" | "Matilde Pérez (1916-2014), del óleo figurativo al arte cinético. Su obra no se vende en este sitio." → "Matilde Pérez (1916-2014): del óleo figurativo al arte cinético. Centro de Investigaciones Cinéticas (1975, Universidad de Chile), Premio Altazor 2004." |
+
+H1, cuerpo y schema sin cambios; `modified` y lastmod del sitemap 2026-11-09. Hechos de la description tomados del cuerpo del perfil. Copy: DeepSeek V4.1 Flash (gen-1794227405-D9up0WPvCpZpk2U0VwMf), revisado por Grok Bot. Congeladas sin tocar: prueba Opus 11-08 (medir 2026-11-22), CTR 11-07 (medir 2026-11-21), perfiles 11-04 (medir 2026-11-18). Menú/nav/home intactos.
+
 ## 2026-11-08 — CTR test Opus 5.5 (medir 2026-11-22)
 
 Solo snippets (title + meta). H1, home y menú intactos. Baseline GSC del draft (página).

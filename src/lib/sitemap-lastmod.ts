@@ -49,7 +49,7 @@ const LASTMOD: Record<string, string> = {
   "/artistas-chilenas/henriette-petit": "2026-11-08",
   "/artistas-chilenas/camilo-mori": "2026-10-28",
   "/artistas-chilenas/lily-garafulic": "2026-10-24",
-  "/artistas-chilenas/matilde-perez": "2026-10-28",
+  "/artistas-chilenas/matilde-perez": "2026-11-09",
   "/artistas-chilenas/gracia-barrios": "2026-10-28",
   "/artistas-chilenas/roser-bru": "2026-10-28",
   "/artistas-chilenas/carmen-aldunate": "2026-10-24",
