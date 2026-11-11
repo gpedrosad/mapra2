@@ -26,7 +26,40 @@ export async function generateStaticParams() {
   return works.map((work) => ({ slug: work.slug }));
 }
 
+type ArtworkPageSeo = {
+  title?: string;
+  description?: string;
+  h1?: string;
+  lede?: string;
+  seen?: string;
+};
+
+/** Snippets de ficha. Solo hechos ya documentados en el catálogo o en el repo. */
+const ARTWORK_PAGE_SEO: Record<string, ArtworkPageSeo> = {
+  "casas-dia-y-noche": {
+    description:
+      "Casas de día y de noche, óleo sobre tela. Dos vistas en una ficha, sin medida publicada. Consulta el par por WhatsApp o correo.",
+  },
+  "laguna-cordillera-atardecer": {
+    title: "Laguna y cordillera al atardecer | óleo sobre tela",
+    description:
+      "Laguna, cordillera, atardecer y juncos, óleo sobre tela de Marcela Pedrosa. Sin medida publicada. Consulta por WhatsApp o correo.",
+    h1: "Laguna y cordillera al atardecer, óleo sobre tela",
+    lede: "Óleo sobre tela: laguna, cordillera, atardecer y juncos. La ficha no publica medida.",
+    seen: "Se ve una laguna, la cordillera, el atardecer y juncos.",
+  },
+  "retrato-con-mano": {
+    title: "Retrato con mano al mentón | óleo sobre tela",
+    description:
+      "Retrato al óleo con una mano junto al mentón, de Marcela Pedrosa. Color en planos. Sin medida publicada. Consulta por WhatsApp o correo.",
+    h1: "Retrato con mano al mentón, óleo sobre tela",
+    lede: "Óleo sobre tela: un rostro de cerca y una mano junto al mentón. La ficha no publica medida.",
+  },
+};
+
 function titleFor(work: CatalogArtwork) {
+  const override = ARTWORK_PAGE_SEO[work.slug]?.title;
+  if (override) return override;
   const oil = /[oó]leo/i.test(work.medium || "");
   const candidate = oil
     ? `${work.name} | Óleo de Marcela Pedrosa`
@@ -35,14 +68,28 @@ function titleFor(work: CatalogArtwork) {
 }
 
 function descriptionFor(work: CatalogArtwork) {
-  if (work.slug === "casas-dia-y-noche") {
-    return "Casas de día y de noche, óleo sobre tela. Dos vistas en una ficha, sin medida publicada. Consulta el par por WhatsApp o correo.";
-  }
+  const override = ARTWORK_PAGE_SEO[work.slug]?.description;
+  if (override) return override;
   const facts = [work.name, work.medium, work.measure ? `medidas ${work.measure}` : ""]
     .filter(Boolean)
     .join(", ");
   const text = `${facts}. Obra de Marcela Pedrosa en Concepción. Consulta disponibilidad por WhatsApp o correo.`;
   return text.length <= 155 ? text : text.slice(0, 155);
+}
+
+function headingFor(work: CatalogArtwork) {
+  return ARTWORK_PAGE_SEO[work.slug]?.h1 ?? work.name;
+}
+
+function ledeFor(work: CatalogArtwork) {
+  return (
+    ARTWORK_PAGE_SEO[work.slug]?.lede ??
+    "Pintura original de Marcela Pedrosa, desde su taller en Concepción."
+  );
+}
+
+function seenFor(work: CatalogArtwork) {
+  return ARTWORK_PAGE_SEO[work.slug]?.seen ?? detailForPublicId(work.publicId);
 }
 
 function LinkList({ items }: { items: ArtworkSeoLink[] }) {
@@ -91,7 +138,7 @@ export default async function ArtworkPage({ params }: Props) {
   const index = works.findIndex((item) => item.slug === work.slug);
   const previous = index > 0 ? works[index - 1] : null;
   const next = index >= 0 && index < works.length - 1 ? works[index + 1] : null;
-  const seen = detailForPublicId(work.publicId);
+  const seen = seenFor(work);
   const context = artworkPageContext(work.slug);
   const schemaDescription = [work.name, seen, work.info].filter(Boolean).join(". ");
 
@@ -112,10 +159,10 @@ export default async function ArtworkPage({ params }: Props) {
 
         <header className="mb-8">
           <h1 className="font-display text-4xl sm:text-5xl font-medium tracking-tight text-ink">
-            {work.name}
+            {headingFor(work)}
           </h1>
           <p className="mt-3 text-lg text-ink-body leading-relaxed">
-            Pintura original de Marcela Pedrosa, desde su taller en Concepción.
+            {ledeFor(work)}
           </p>
         </header>
 

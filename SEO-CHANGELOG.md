@@ -1,5 +1,27 @@
 # SEO Changelog — mpedrosa.studio
 
+## 2026-11-10 — CTR fichas laguna / retrato y guía de colgar
+
+Search Console (sc-domain:mpedrosa.studio), pull 2026-11-10. Ventanas hasta 2026-11-09 (se excluyó el 11-10 por parcial). 90d (2026-08-12..2026-11-09): 22 clics / 829 impr / CTR 2,65 % / pos 9,1. 28d: 16 / 613 / 2,61 % / pos 9,1. 7d: 5 / 361 vs prev7 5 / 199. Copy aplicado por Cursor. Sin menú/nav/home. Sin precios. Sin página nueva (gaps.json vacío). Medir 2026-11-24. GA4: sin propiedad para este sitio.
+
+### `/pinturas/laguna-cordillera-atardecer`
+
+Title `Laguna y cordillera al atardecer | Óleo de Marcela Pedrosa` → `Laguna y cordillera al atardecer | óleo sobre tela`. Description con laguna, cordillera, atardecer y juncos (hechos del repo), sin medida. H1 y lede alineados. Hubs de la ficha: deja `/cuadros` y `/comprar-cuadros-al-oleo-chile` (congeladas) y apunta a impresionismo figurativo, living y la guía de colgar. `lastmod` 2026-11-10.
+
+### `/guias/cuidar-y-colgar-pintura-al-oleo`
+
+Title `Cómo cuidar y colgar una pintura al óleo` → `Cómo colgar un cuadro al óleo y cuidarlo en casa`. H1 `Cómo colgar y cuidar una pintura al óleo`. Meta nueva (146). El índice conserva la description del 11-03. Enlaces nuevos a `/pinturas/retrato-con-mano` y `/pinturas/laguna-cordillera-atardecer` (sin medida publicada). `modified` y lastmod 2026-11-10.
+
+### `/pinturas/retrato-con-mano`
+
+Title `Retrato con mano al mentón | Óleo de Marcela Pedrosa` → `Retrato con mano al mentón | óleo sobre tela`. Description con la mano al mentón y el color en planos (ficha visual ya documentada), sin medida. H1 y lede alineados. `lastmod` 2026-11-10.
+
+### Enlace de hub
+
+`/retratos-al-oleo` (fuera del menú, no congelada) nombra la guía de colgar junto al retrato con mano. Title del hub intacto.
+
+Detalle en `docs/seo/ctr-tracking.md`. Lista: `docs/seo-lote-2026-11-10.md`.
+
 ## 2026-11-09 — CTR perfil Matilde Pérez
 
 Search Console (sc-domain:mpedrosa.studio), pull 2026-11-09. 90d (2026-08-11..2026-11-08): 21 clics / 779 impr / CTR 2,70 % / pos 8,9. 7d (11-02..11-08): 5 / 395 vs prev7 (10-26..11-01) 5 / 124. Copy: DeepSeek V4.1 Flash, aplicado y revisado por Grok Bot. Sin menú/nav/home. Sin precios. Medir 2026-11-23. GA4: sin propiedad para este sitio.

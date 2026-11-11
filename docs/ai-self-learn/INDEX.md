@@ -1,6 +1,6 @@
 # INDEX — hechos densos (leer primero)
 
-Actualizado: **2026-11-08**
+Actualizado: **2026-11-10**
 
 ## Identidad
 
@@ -85,6 +85,8 @@ Actualizado: **2026-11-08**
 - **Lote 2026-10-30:** title y meta de la guía de impresionismo (49 / 147) responden «qué es», con figura, pincelada y luz, y nombran bosque y casas. `/impresionismo-figurativo-chile` sigue en «actual en Chile» y no se editó. Meta de contemporáneas (144) nombra el Premio Nacional de Barrios y de Bru; el title del 27 queda. Snippet y CTA de living (43 / 134) y de pintura de bosques (40 / 137). Enlaces nuevos: guía del living → bosques; fachadas → guía del comedor y pintura de bosques. Sin página nueva. Lista: [`docs/seo-lote-2026-10-30.md`](../seo-lote-2026-10-30.md). `pendiente:` Request indexing (OAuth solo lectura).
 - **CTR 2026-11-08 (Opus 5.5):** title+meta de `/pinturas` (0/20 pos 7,3), `/artistas-chilenas/henriette-petit` (0/14 pos 4,1) y `/guias/oleo-vs-acrilico` (0/15 pos 11,7). H1, home y menú intactos. Medir 2026-11-22. [`docs/seo/ctr-tracking.md`](../seo/ctr-tracking.md).
 - **CTR 2026-11-08 batch 2:** title+meta de `/guias/cuanto-cuesta-un-cuadro-original-en-chile`, `/cuadros` (no es menú), `/comprar-cuadros-al-oleo-chile`, `/guias/elegir-cuadro-para-el-comedor` y `/guias/como-encargar-una-pintura`. H1, home y menú intactos. Medir 2026-11-22.
+- **Corte 2026-11-10 (brief, dato hasta 2026-11-09):** 90d 22 clics · 829 imp · CTR 2,65 % · pos 9,1. 28d 16/613. 7d 5/361 vs prev7 5/199. Content gap vacío.
+- **Lote 2026-11-10:** title/H1/snippet de `/pinturas/laguna-cordillera-atardecer` (0/4 pos 1,0), `/guias/cuidar-y-colgar-pintura-al-oleo` (0/4 pos 1,8) y `/pinturas/retrato-con-mano` (0/3 pos 2,0). Enlaces no-menú. Sin página nueva. Medir 2026-11-24. Lista: [`docs/seo-lote-2026-11-10.md`](../seo-lote-2026-11-10.md).
 - Gap #2: analytics (GA4/Clarity del dominio correcto)
 - Gap #3 (aprobación): diferenciar landings thin, FAQ/GEO, backlinks prensa/IG
 

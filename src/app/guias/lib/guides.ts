@@ -74,9 +74,12 @@ export const GUIDES: Guide[] = [
   },
   {
     slug: "cuidar-y-colgar-pintura-al-oleo",
-    title: "Cómo cuidar y colgar una pintura al óleo",
+    title: "Cómo colgar un cuadro al óleo y cuidarlo en casa",
+    h1: "Cómo colgar y cuidar una pintura al óleo",
     description:
       "Cómo colgar un cuadro y cómo cuidar una pintura al óleo en casa: humedad, sol, herrajes y limpieza en seco. Para casas y departamentos en Chile.",
+    metaDescription:
+      "Cómo colgar un cuadro al óleo: dos puntos, tarugo y muro seco. Cuidado: sin sol del norte, polvo en seco. Consulta el lugar por WhatsApp o correo.",
     imageKey: "bosque",
     imageAlt: "Pintura al óleo de paisaje de Marcela Pedrosa",
     ctaTitle: "¿Vas a colgar un óleo y quieres confirmar el lugar?",
@@ -86,7 +89,7 @@ export const GUIDES: Guide[] = [
       "Hola Marcela, quiero colgar una pintura al óleo. Te cuento el muro y las medidas para hacerlo con cuidado.",
     consultaIntro:
       "Si la obra es de este taller y quieres confirmar cómo colgarla, nómbrala en el mensaje.",
-    modified: "2026-11-03",
+    modified: "2026-11-10",
     blocks: cuidarColgarOleo,
   },
   {

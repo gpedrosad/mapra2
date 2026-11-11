@@ -94,7 +94,11 @@ export default async function RetratosAlOleoPage() {
             <Link href="/pinturas/retrato-con-mano" className="text-brand underline">
               retrato con mano al mentón
             </Link>{" "}
-            acerca la cara y no trae números. El{" "}
+            acerca la cara y no trae números. Para colgarlo sin dañar la tela, la guía es{" "}
+            <Link href="/guias/cuidar-y-colgar-pintura-al-oleo" className="text-brand underline">
+              cuidar y colgar una pintura al óleo
+            </Link>
+            . El{" "}
             <Link href="/pinturas/retrato-con-lentes" className="text-brand underline">
               retrato con lentes
             </Link>{" "}

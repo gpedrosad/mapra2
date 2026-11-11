@@ -135,3 +135,8 @@ Formato: `YYYY-MM-DD | tema | hecho | acción/implicación`
 
 - SEO | CTR test Opus 5.5: title+meta de `/pinturas`, `/artistas-chilenas/henriette-petit` y `/guias/oleo-vs-acrilico`. H1, home y menú sin cambio | Doc `docs/seo/ctr-tracking.md`. Medir 2026-11-22
 - SEO | CTR test Opus 5.5 batch 2: title+meta de precio, `/cuadros` (fuera del menú), comprar óleo con envío, guía del comedor y cómo encargar. H1, home y menú sin cambio | Doc `docs/seo/ctr-tracking.md`. Medir 2026-11-22
+
+## 2026-11-10
+
+- GSC | Brief del lote (dato hasta 2026-11-09): 90d 22 clics / 829 impr / CTR 2,65 % / pos 9,1. 28d 16/613. 7d 5/361 vs prev7 5/199 | Content gap vacío. Sin propiedad GA4
+- SEO | Lote 2026-11-10: snippets de `/pinturas/laguna-cordillera-atardecer` (0/4 pos 1,0), `/guias/cuidar-y-colgar-pintura-al-oleo` (0/4 pos 1,8) y `/pinturas/retrato-con-mano` (0/3 pos 2,0). Enlaces no-menú desde la guía y `/retratos-al-oleo`. Sin página nueva. Home/menú y freeze Opus/11-09/11-07/11-04 intactos | Docs `docs/seo-lote-2026-11-10.md` y `docs/seo/ctr-tracking.md`. Medir 2026-11-24
