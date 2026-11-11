@@ -99,6 +99,6 @@ export const cuidarColgarOleo: Block[] = [
   },
   {
     type: "p",
-    text: "Si la tela es de este taller, parte por la ficha: [Bosque con luz entre troncos](/pinturas/bosque-troncos-luz) (158x122) o [Retrato de mujer](/pinturas/retrato-de-mujer) (100x130). Cómo elegir el muro del living está en [esa guía](/guias/elegir-cuadro-para-el-living). Las telas ya pensadas para ese muro están en [cuadros para el living](/cuadros/para-living).",
+    text: "Si la tela es de este taller, parte por la ficha: [Bosque con luz entre troncos](/pinturas/bosque-troncos-luz) (158x122), [Retrato de mujer](/pinturas/retrato-de-mujer) (100x130), [Retrato con mano al mentón](/pinturas/retrato-con-mano) o [Laguna y cordillera al atardecer](/pinturas/laguna-cordillera-atardecer). Las dos últimas no publican medida. Cómo elegir el muro del living está en [esa guía](/guias/elegir-cuadro-para-el-living). Las telas ya pensadas para ese muro están en [cuadros para el living](/cuadros/para-living).",
   },
 ];

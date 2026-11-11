@@ -2,6 +2,18 @@
 
 Cada entrada: URL, consulta objetivo, métricas antes (GSC, sc-domain:mpedrosa.studio), cambio, fecha y fecha de medición (+14 días).
 
+## 2026-11-10 — CTR fichas laguna / retrato y guía de colgar (medir 2026-11-24)
+
+Métricas antes: GSC sc-domain:mpedrosa.studio, 28 días 2026-10-13..2026-11-09. Consultas de estas tres URLs anonimizadas en el brief. Volumen mínimo (3–4 impresiones, posición 1–2, 0 clics).
+
+| URL | Consulta | Antes (clics/impr/CTR/pos) | Title antes → después | Description antes → después |
+|---|---|---|---|---|
+| /pinturas/laguna-cordillera-atardecer | consultas anonimizadas (pos 1,0) | 0/4/0 %/1,0 | "Laguna y cordillera al atardecer \| Óleo de Marcela Pedrosa" → "Laguna y cordillera al atardecer \| óleo sobre tela" | "Laguna y cordillera al atardecer, óleo sobre tela. Obra de Marcela Pedrosa en Concepción. Consulta disponibilidad por WhatsApp o correo." → "Laguna, cordillera, atardecer y juncos, óleo sobre tela de Marcela Pedrosa. Sin medida publicada. Consulta por WhatsApp o correo." |
+| /guias/cuidar-y-colgar-pintura-al-oleo | consultas anonimizadas (pos 1,8); snippet 11-03 ya nombraba «cómo colgar un cuadro» | 0/4/0 %/1,8 | "Cómo cuidar y colgar una pintura al óleo" → "Cómo colgar un cuadro al óleo y cuidarlo en casa" | "Cómo colgar un cuadro y cómo cuidar una pintura al óleo en casa: humedad, sol, herrajes y limpieza en seco. Para casas y departamentos en Chile." → "Cómo colgar un cuadro al óleo: dos puntos, tarugo y muro seco. Cuidado: sin sol del norte, polvo en seco. Consulta el lugar por WhatsApp o correo." |
+| /pinturas/retrato-con-mano | consultas anonimizadas (pos 2,0) | 0/3/0 %/2,0 | "Retrato con mano al mentón \| Óleo de Marcela Pedrosa" → "Retrato con mano al mentón \| óleo sobre tela" | "Retrato con mano al mentón, óleo sobre tela. Obra de Marcela Pedrosa en Concepción. Consulta disponibilidad por WhatsApp o correo." → "Retrato al óleo con una mano junto al mentón, de Marcela Pedrosa. Color en planos. Sin medida publicada. Consulta por WhatsApp o correo." |
+
+H1: laguna y retrato suman «óleo sobre tela» al nombre de catálogo; la guía pasa a `Cómo colgar y cuidar una pintura al óleo` (el title apunta a «colgar un cuadro»). `modified` / lastmod 2026-11-10. Enlace nuevo desde `/retratos-al-oleo` hacia la guía (title del hub intacto). Sin página nueva: content gap vacío. Copy revisado sobre hechos del repo. Congeladas sin tocar: prueba Opus 11-08 (medir 2026-11-22), Matilde Pérez 11-09 (medir 2026-11-23), CTR 11-07 (medir 2026-11-21), perfiles 11-04 (medir 2026-11-18). Menú/nav/home intactos.
+
 ## 2026-11-09 — CTR perfil Matilde Pérez (medir 2026-11-23)
 
 Métricas antes: GSC sc-domain:mpedrosa.studio, 28 días 2026-10-12..2026-11-08. Página 0 clics / 19 impr / CTR 0 % / pos 4,4. Consultas visibles: «arte cinetico matilde perez» 0/4 pos 1,0; «matilde perez» 0/3 pos 1,0 (el resto anonimizado).

@@ -253,8 +253,9 @@ const CONTEXT: Record<string, ArtworkPageContext> = {
     guideLead: "Para medir un muro ancho, lee",
     guide: LIVING_GUIDE,
     hubs: [
-      { href: "/comprar-cuadros-al-oleo-chile", label: "comprar cuadros al óleo" },
-      { href: "/cuadros", label: "cuadros según el muro" },
+      { href: "/impresionismo-figurativo-chile", label: "impresionismo figurativo" },
+      { href: "/cuadros/para-living", label: "cuadros para el living" },
+      { href: "/guias/cuidar-y-colgar-pintura-al-oleo", label: "cuidar y colgar un óleo" },
     ],
   },
 };
