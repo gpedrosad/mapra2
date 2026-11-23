@@ -2,6 +2,37 @@
 
 Cada entrada: URL, consulta objetivo, métricas antes (GSC, sc-domain:mpedrosa.studio), cambio, fecha y fecha de medición (+14 días).
 
+## 2026-11-23 — Revisión 2026-11-23 (sin cambios de contenido): medición test Opus 5.5 y revisión de perfiles
+
+Search Console (último día 2026-11-22). 90d: 26 clics / 1.193 impr / CTR 2.18 % / pos 10.7. 7d (2026-11-16..2026-11-22): 1 clics / 178 impr / CTR 0.56 % / pos 15.1 vs prev7 (2026-11-09..2026-11-15): 4 clics / 242 impr / CTR 1.65 % / pos 13.7. Opus 5.5 revisó las páginas candidatas y las dejó en «skipped» (sin cambios de contenido). Congeladas y no tocadas: lotes 2026-11-21 (hasta 11-28), tienda #40 (hasta 11-26) y lotes 11-10 (hasta 11-24). GA4: conector sigue pidiendo reautenticación. Medir el 2026-12-07.
+
+No aplicado: `/artistas-chilenas/celia-castro` — El último cambio de snippet (CTR test) es del ~04/11, hace apenas ~19 días. Desde entonces hay unas 53 impresiones (0/43 y 0/10 en las dos últimas semanas), muy pocas para evaluar, y cambiarlo ahora invalidaría el test. Además, el snippet actual ya cumple el brief: nombre completo, 'pintora chilena', años, biografía y museos. Con pos 1,6 en «celia castro» y CTR casi 0, es probable que un panel de conocimiento o Wikipedia acapare los clics, algo que el snippet no resuelve. Conviene reevaluar a mediados de diciembre, con 4 semanas o más de datos posteriores al cambio, y verificar si perfilMetadata agrega sufijo de marca, porque el title podría superar los 60 caracteres.
+
+No aplicado: `/artistas-chilenas/magdalena-mira` — El último cambio es del ~04/11. Desde entonces hay unas 31 impresiones (0/20 y 0/11), una muestra insuficiente para juzgar, y reescribirlo de nuevo contaminaría el test. La meta ya cubre la intención: 'Magdalena Mira Mena', 'pintora y escultora chilena', biografía y Museo Nacional de Bellas Artes, solo con datos existentes. Candidata para la próxima iteración si el CTR sigue en 0 tras 4 semanas: title 'Magdalena Mira Mena, pintora y escultora chilena', que suma 'Mena' («magdalena mira mena», pos 4) y 'chilena' sin cambiar datos. Antes hay que confirmar el largo con el sufijo de marca de perfilMetadata.
+
+
+### Test CTR Opus 5.5 — medición 14 d (2026-11-23)
+
+Antes 2026-10-24..2026-11-06 vs después 2026-11-09..2026-11-22 (GSC dataState all; el 22/11 puede no estar final: provisional). Total del sitio (8 URLs): 0/67 (CTR 0.00 %) → 1/62 (CTR 1.61 %). Sin control A/B: no es causal. Las páginas se descongelan. Re-medición 28 d en la primera corrida desde 2026-12-06.
+
+| URL | Var. | Antes (clics/impr, CTR, pos) | Después | Veredicto |
+|---|---|---|---|---|
+| `/pinturas` | A | 0/11, 0.00 %, 4.5 | 0/3, 0.00 %, 3.7 | sin datos suficientes |
+| `/artistas-chilenas/henriette-petit` | A | 0/14, 0.00 %, 4.1 | 0/17, 0.00 %, 7.6 | sin datos suficientes |
+| `/guias/oleo-vs-acrilico` | A | 0/15, 0.00 %, 11.7 | 0/12, 0.00 %, 18.2 | sin datos suficientes |
+| `/guias/cuanto-cuesta-un-cuadro-original-en-chile` | A | 0/9, 0.00 %, 4.3 | 0/8, 0.00 %, 8.1 | sin datos suficientes |
+| `/cuadros` | A | 0/6, 0.00 %, 6.5 | 0/1, 0.00 %, 1.0 | sin datos suficientes |
+| `/comprar-cuadros-al-oleo-chile` | A | 0/5, 0.00 %, 5.4 | 1/5, 20.00 %, 15.0 | sin datos suficientes |
+| `/guias/elegir-cuadro-para-el-comedor` | A | 0/5, 0.00 %, 6.0 | 0/7, 0.00 %, 8.7 | sin datos suficientes |
+| `/guias/como-encargar-una-pintura` | A | 0/2, 0.00 %, 9.5 | 0/9, 0.00 %, 6.0 | sin datos suficientes |
+
+Volumen insuficiente (8 URLs, 67 → 62 impr): no se concluye ni se revierte nada.
+
+### Medición vencida (cambios 2026-11-09, medir 11-23)
+
+- `/artistas-chilenas/matilde-perez` (cambio 11-09): antes 2026-10-27..2026-11-08 0/19 CTR 0.0 % pos 4.4 → después 2026-11-10..2026-11-22 0/0 CTR 0 % pos 0. Sin impresiones en el período posterior (0/0): sin conclusión.
+
+
 ## 2026-11-10 — CTR fichas laguna / retrato y guía de colgar (medir 2026-11-24)
 
 Métricas antes: GSC sc-domain:mpedrosa.studio, 28 días 2026-10-13..2026-11-09. Consultas de estas tres URLs anonimizadas en el brief. Volumen mínimo (3–4 impresiones, posición 1–2, 0 clics).
