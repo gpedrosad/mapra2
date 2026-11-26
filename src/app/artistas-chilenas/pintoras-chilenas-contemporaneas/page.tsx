@@ -12,13 +12,65 @@ export const metadata = perfilMetadata({
   slug: "pintoras-chilenas-contemporaneas",
 });
 
+const FAMOSAS: { slug: string; name: string; note: string }[] = [
+  { slug: "celia-castro", name: "Celia Castro", note: "pintora de Quillota, 1860-1930" },
+  { slug: "magdalena-mira", name: "Magdalena Mira", note: "pintora y escultora, 1859-1930" },
+  { slug: "aurora-mira", name: "Aurora Mira", note: "pintora de Santiago, 1863-1939" },
+  { slug: "henriette-petit", name: "Henriette Petit", note: "pintora del Grupo Montparnasse, 1894-1983" },
+  { slug: "matilde-perez", name: "Matilde Pérez", note: "pintora y artista cinética, 1916-2014" },
+  { slug: "gracia-barrios", name: "Gracia Barrios", note: "pintora, Premio Nacional 2011" },
+  { slug: "roser-bru", name: "Roser Bru", note: "pintora y grabadora, Premio Nacional 2015" },
+  { slug: "carmen-aldunate", name: "Carmen Aldunate", note: "pintora y dibujante, 1940-2026" },
+];
+
+const FAQS: { question: string; answer: string }[] = [
+  {
+    question: "¿Quiénes son pintoras chilenas actuales?",
+    answer:
+      "En este sitio, la pintora en actividad es Marcela Pedrosa, pintora y artista visual contemporánea radicada en Concepción, con más de veinte años de experiencia en pintura al óleo y un trabajo centrado en el óleo sobre tela y el impresionismo figurativo. Gracia Barrios, Roser Bru, Matilde Pérez y Carmen Aldunate tuvieron carreras que llegaron a este siglo, pero hoy están cerradas. Si la búsqueda es por pintores chilenos actuales en general, el sitio tiene además el perfil de Totoy Zamudio, pintor de Santiago nacido en 1972. El listado amplio está en la página de pintoras chilenas.",
+  },
+  {
+    question: "¿Qué pintoras chilenas son famosas?",
+    answer:
+      "Entre los perfiles de este sitio están Celia Castro, Magdalena Mira y Aurora Mira para el siglo XIX; Henriette Petit, del Grupo Montparnasse; Matilde Pérez, pintora y artista cinética; Gracia Barrios y Roser Bru, ambas con Premio Nacional; y Carmen Aldunate, pintora y dibujante. No es un ranking: cada perfil reúne fechas y hechos documentados.",
+  },
+  {
+    question: "¿Qué pintoras chilenas recibieron el Premio Nacional?",
+    answer:
+      "Entre las pintoras con perfil en este sitio, Gracia Barrios recibió el Premio Nacional de Artes Plásticas en 2011 y Roser Bru recibió el Premio Nacional en 2015. En escultura, el sitio tiene además el perfil de Lily Garafulic, Premio Nacional 1995.",
+  },
+  {
+    question: "¿Hay pintoras contemporáneas trabajando hoy en regiones?",
+    answer:
+      "Sí. Marcela Pedrosa trabaja en su taller de Concepción, en la Región del Biobío, con series sobre fachadas urbanas, bosques y paisajes del sur de Chile. Las colecciones regionales también guardan obra de pintoras de la generación anterior: hay obra de Carmen Aldunate en la Pinacoteca de la Universidad de Concepción y de Gracia Barrios en el Museo a Cielo Abierto de Valparaíso y en el Museo de Arte Moderno de Chiloé.",
+  },
+  {
+    question: "¿Cómo consultar por una obra de Marcela Pedrosa?",
+    answer:
+      "Las obras se venden por consulta. Se puede revisar lo disponible en la sección de pinturas del sitio y escribir por WhatsApp, por correo electrónico o por el formulario de contacto. Desde su taller en Concepción produce obras originales y encargos personalizados, con envío a todo Chile.",
+  },
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: FAQS.map((faq) => ({
+    "@type": "Question",
+    name: faq.question,
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: faq.answer,
+    },
+  })),
+};
+
 export default function PintorasContemporaneasPage() {
   return (
     <ProfilePage
       slug="pintoras-chilenas-contemporaneas"
       h1="Pintoras chilenas contemporáneas"
       kicker="Cuatro carreras del siglo XX y del XXI —Barrios, Bru, Pérez y Aldunate— y el taller de Marcela Pedrosa en Concepción."
-      modified="2026-10-30"
+      modified="2026-11-26"
       description={DESCRIPTION}
       person={{
         name: "Marcela Pedrosa",
@@ -117,6 +169,35 @@ export default function PintorasContemporaneasPage() {
         </Link>
         .
       </p>
+      <h2 className="text-2xl font-semibold text-ink pt-2">
+        Pintoras chilenas famosas: por dónde empezar
+      </h2>
+      <p>
+        Para quien busca pintoras chilenas famosas, estos son los perfiles de
+        este sitio, ordenados por época. No es un ranking: cada ficha reúne
+        fechas y hechos documentados.
+      </p>
+      <ul className="list-disc pl-6 space-y-1">
+        {FAMOSAS.map((perfil) => (
+          <li key={perfil.slug}>
+            <Link
+              href={`/artistas-chilenas/${perfil.slug}`}
+              className="text-brand underline"
+            >
+              {perfil.name}
+            </Link>
+            : {perfil.note}.
+          </li>
+        ))}
+      </ul>
+      <p>
+        Esta lista solo indica por dónde empezar dentro de los perfiles del
+        sitio. El listado amplio, con más nombres, está en{" "}
+        <Link href="/pintoras-chilenas" className="text-brand underline">
+          pintoras chilenas
+        </Link>
+        .
+      </p>
       <h2 className="text-2xl font-semibold text-ink pt-2">Marcela Pedrosa en Concepción</h2>
       <p>
         En la Región del Biobío, Marcela Pedrosa es una pintora y artista visual
@@ -173,6 +254,28 @@ export default function PintorasContemporaneasPage() {
         pintoras de ahora, el taller de Concepción es la respuesta que este
         sitio puede dar con datos propios.
       </p>
+      <h2 className="text-2xl font-semibold text-ink pt-2">Preguntas frecuentes</h2>
+      {FAQS.map((faq) => (
+        <div key={faq.question}>
+          <h3 className="text-xl font-semibold text-ink">{faq.question}</h3>
+          <p>{faq.answer}</p>
+        </div>
+      ))}
+      <p>
+        Para el panorama general, están las{" "}
+        <Link href="/pintoras-chilenas" className="text-brand underline">
+          pintoras chilenas
+        </Link>{" "}
+        y las{" "}
+        <Link href="/mujeres-artistas-chilenas" className="text-brand underline">
+          mujeres artistas chilenas
+        </Link>
+        .
+      </p>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
     </ProfilePage>
   );
 }
