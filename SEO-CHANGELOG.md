@@ -1,5 +1,27 @@
 # SEO Changelog — mpedrosa.studio
 
+## 2026-11-26 — Contenido nuevo: boost de pintoras chilenas contemporáneas (sin página nueva)
+
+No se crea página nueva: la única brecha detectada, «pintores chilenos actuales», tiene 6 impresiones en 90 días y no justifica una URL propia.
+
+### `src/app/artistas-chilenas/pintoras-chilenas-contemporaneas/page.tsx`
+
+Contexto GSC (28 d): 137 impresiones, posición media 10,3, crecimiento de ~38x frente al ritmo previo. TITLE, DESCRIPTION y metadata sin cambios.
+
+- **Nueva sección H2 «Pintoras chilenas famosas: por dónde empezar»**: lista breve con enlace a 8 perfiles del sitio (Celia Castro, Magdalena Mira, Aurora Mira, Henriette Petit, Matilde Pérez, Gracia Barrios, Roser Bru, Carmen Aldunate). Usa solo las notas de `PERFILES` y aclara que el listado amplio está en `/pintoras-chilenas`.
+  - Query objetivo: «pintoras chilenas famosas» (13 impr, pos 6,9).
+  - Apoyo: «artistas chilenas mujeres pintoras» (9 impr, pos 5,0) y «mujeres pintoras chilenas» (3 impr, pos 7,7).
+- **Nueva sección H2 «Preguntas frecuentes»**: 5 preguntas renderizadas como h3 + p, más JSON-LD `FAQPage` generado desde la misma constante `FAQS`, con texto idéntico al HTML. Las respuestas usan solo hechos ya presentes en la página o en `PERFILES`.
+  - «¿Quiénes son pintoras chilenas actuales?»: apunta a «pintoras chilenas actuales» (19 impr, pos 3,3) y «pintores chilenos actuales» (5 impr, pos 59; menciona el perfil de Totoy Zamudio).
+  - «¿Qué pintoras chilenas son famosas?»: apunta a «pintoras chilenas famosas» (13 impr, pos 6,9).
+  - «¿Qué pintoras chilenas recibieron el Premio Nacional?»: cubre Barrios 2011 y Bru 2015, y Garafulic 1995 como escultora.
+  - «¿Hay pintoras contemporáneas trabajando hoy en regiones?»: apunta a «pintora chilena contemporanea» (5 impr, pos 1,8) y a «pintora» (11 impr, pos 9,4).
+  - «¿Cómo consultar por una obra de Marcela Pedrosa?»: explica que las obras son por consulta (WhatsApp, correo o formulario), con envío a todo Chile y sin precios.
+- **Párrafo de cierre** con enlaces internos a `/pinturas`, `/pintoras-chilenas` y `/mujeres-artistas-chilenas`.
+- `modified` pasa de 2026-10-30 a 2026-11-26.
+
+Medir: 2026-12-10 (14 d) y 2026-12-24 (28 d). Revisar en esas fechas la posición de «pintoras chilenas famosas» y de «pintoras chilenas actuales», el CTR de la página y si Search Console detecta el FAQPage.
+
 ## 2026-11-23 — Revisión 2026-11-23 (sin cambios de contenido): medición test Opus 5.5 y revisión de perfiles
 
 Search Console (último día 2026-11-22). 90d: 26 clics / 1.193 impr / CTR 2.18 % / pos 10.7. 7d (2026-11-16..2026-11-22): 1 clics / 178 impr / CTR 0.56 % / pos 15.1 vs prev7 (2026-11-09..2026-11-15): 4 clics / 242 impr / CTR 1.65 % / pos 13.7. Opus 5.5 revisó las páginas candidatas y las dejó en «skipped» (sin cambios de contenido). Congeladas y no tocadas: lotes 2026-11-21 (hasta 11-28), tienda #40 (hasta 11-26) y lotes 11-10 (hasta 11-24). GA4: conector sigue pidiendo reautenticación. Medir el 2026-12-07.
