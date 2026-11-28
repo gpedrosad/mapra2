@@ -11,11 +11,47 @@ export const metadata = perfilMetadata({
   slug: "totoy-zamudio",
 });
 
+const FAQS: { question: string; answer: string }[] = [
+  {
+    question: "¿Quién es Totoy Zamudio?",
+    answer:
+      "Totoy Zamudio es el nombre con que se conoce a José Manuel Zamudio, pintor y artista visual chileno nacido en Santiago en 1972. Su pintura se reconoce por el color intenso, la línea irregular y unas figuras humanas que en su trabajo se conocen como monos. Pinta desde su taller en El Arrayán, en Santiago. Este perfil es informativo y no vende su obra.",
+  },
+  {
+    question: "¿Cuál es el nombre completo de Totoy Zamudio?",
+    answer:
+      "Su nombre es José Manuel Zamudio. Totoy Zamudio es el nombre con que se le conoce como pintor y artista visual.",
+  },
+  {
+    question: "¿Dónde estudió Totoy Zamudio?",
+    answer:
+      "Según una entrevista de CNN Chile de 2024, estudió primero Ingeniería en Acuicultura y la dejó en quinto año para entrar a artes. Estudió artes plásticas en la Universidad Finis Terrae, con una licenciatura con mención en pintura y grabado iniciada a mediados de los años noventa. Después obtuvo un máster en animación digital en la Universitat Pompeu Fabra, en Barcelona.",
+  },
+  {
+    question: "¿Dónde se ha expuesto la obra de Totoy Zamudio?",
+    answer:
+      "Desde 1998 ha participado en exposiciones individuales y colectivas. Las fuentes citadas en este perfil mencionan el Museo de Bellas Artes, donde en 2000 obtuvo el primer lugar de Arte en vivo, la galería La Sala en Vitacura, la Galería Ana María Matthei, el Centro Cultural Montecarmelo, la Galería StuArt y el Predio Ferial de Palermo, en Buenos Aires. También ha hecho murales e intervenciones para el centro comercial Apumanque y el hotel Vik Chile.",
+  },
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: FAQS.map((faq) => ({
+    "@type": "Question",
+    name: faq.question,
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: faq.answer,
+    },
+  })),
+};
+
 export default function TotoyZamudioPage() {
   return (
     <ProfilePage
       slug="totoy-zamudio"
-      modified="2026-10-24"
+      modified="2026-11-28"
       h1="Totoy Zamudio"
       kicker="José Manuel Zamudio, pintor y artista visual de Santiago. Nació en 1972 y trabaja un imaginario de color intenso y figuras humanas."
       description={DESCRIPTION}
@@ -64,6 +100,44 @@ export default function TotoyZamudioPage() {
         Pablo Picasso y Joan Miró, los mismos nombres que su galería usa para
         contar el inicio.
       </p>
+      <h2 className="text-2xl font-semibold text-ink pt-2">Biografía de Totoy Zamudio en breve</h2>
+      <ul className="list-disc pl-6 space-y-1">
+        <li>
+          1972: nace en Santiago José Manuel Zamudio, conocido como Totoy
+          Zamudio.
+        </li>
+        <li>
+          Estudia Ingeniería en Acuicultura y la deja en quinto año para entrar
+          a artes, según una entrevista de CNN Chile de 2024.
+        </li>
+        <li>
+          Mediados de los años noventa: inicia artes plásticas en la
+          Universidad Finis Terrae, con licenciatura con mención en pintura y
+          grabado.
+        </li>
+        <li>
+          Después de la Finis Terrae: máster en animación digital en la
+          Universitat Pompeu Fabra, en Barcelona.
+        </li>
+        <li>
+          Desde 1998: participa en exposiciones individuales y colectivas,
+          según La Tercera.
+        </li>
+        <li>
+          2000: obtiene el primer lugar de Arte en vivo del Museo de Bellas
+          Artes, según La Tercera.
+        </li>
+        <li>
+          Murales e intervenciones de gran escala para el centro comercial
+          Apumanque, en Las Condes, y para el hotel Vik Chile, en San Vicente
+          de Tagua Tagua.
+        </li>
+        <li>
+          Docencia en la Universidad Finis Terrae, la Universidad Adolfo Ibáñez
+          y la Universidad del Desarrollo; pinta desde su taller en El Arrayán,
+          en Santiago.
+        </li>
+      </ul>
       <h2 className="text-2xl font-semibold text-ink pt-2">Dónde se ha visto la obra</h2>
       <p>
         La Tercera consigna que en 2000 obtuvo el primer lugar de Arte en vivo
@@ -138,6 +212,13 @@ export default function TotoyZamudioPage() {
         es: la ficha de un pintor chileno vivo, con fecha de nacimiento, escuela
         y un imaginario que ya se reconoce en museos, galerías y muros.
       </p>
+      <h2 className="text-2xl font-semibold text-ink pt-2">Preguntas frecuentes</h2>
+      {FAQS.map((faq) => (
+        <div key={faq.question}>
+          <h3 className="text-xl font-semibold text-ink">{faq.question}</h3>
+          <p>{faq.answer}</p>
+        </div>
+      ))}
       <p>
         Este perfil responde a la búsqueda por su nombre y no vende su pintura.
         El índice está en{" "}
@@ -155,6 +236,10 @@ export default function TotoyZamudioPage() {
         </Link>
         .
       </p>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
     </ProfilePage>
   );
 }

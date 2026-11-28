@@ -1,5 +1,23 @@
 # SEO Changelog — mpedrosa.studio
 
+## 2026-11-28 — Contenido nuevo: sin página nueva (skip) y refuerzo del perfil de Totoy Zamudio
+
+### Página nueva: SKIP
+- No se creó página para el cluster genérico "pintores/artistas chilenos". Suma ~20 impresiones en 90 d repartidas en 8 queries, y ninguna supera 6 impresiones.
+- Se solaparía con `/artistas-chilenas/pintoras-chilenas-contemporaneas`, reforzada el 26/11 y todavía en ventana de 7 días.
+- "Escultoras chilenas" suma ≈5 impresiones, insuficiente para justificar una página.
+
+### `/artistas-chilenas/totoy-zamudio` (`src/app/artistas-chilenas/totoy-zamudio/page.tsx`)
+- GSC 28 d: 49 impresiones, posición 8,6 (página nueva en el período).
+- Queries 90 d: "totoy zamudio" (14 impr, pos 12,5), "totoy zamudio biografia" (6 impr, pos 7,5), "totoy zamudio esposa" (2 impr, pos 14,0), "jose manuel zamudio" (1 impr, pos 3,0).
+- Nueva sección "Biografía de Totoy Zamudio en breve", antes de "Dónde se ha visto la obra". Es una lista de 8 hitos tomados solo del texto existente: 1972 en Santiago, Ingeniería en Acuicultura (CNN Chile 2024), Finis Terrae, Pompeu Fabra, exposiciones desde 1998, Arte en vivo 2000 (La Tercera), murales para Apumanque y Vik, docencia y taller en El Arrayán. Apunta a "totoy zamudio biografia".
+- Nueva sección "Preguntas frecuentes" con 4 FAQs y JSON-LD FAQPage: quién es, nombre completo (José Manuel Zamudio, para "jose manuel zamudio"), dónde estudió y dónde se ha expuesto. Las respuestas usan solo hechos ya presentes en la página.
+- No se agregó FAQ sobre esposa, familia o pareja, porque la página no tiene datos verificados sobre eso. La query "totoy zamudio esposa" queda sin atender a propósito.
+- `modified` pasa de 2026-10-24 a 2026-11-28. TITLE, DESCRIPTION, h1 y kicker quedan sin cambios (rutina CTR aparte).
+- No se agregaron datos biográficos nuevos.
+
+Medir: 2026-12-12 (14 d) y 2026-12-26 (28 d)
+
 ## 2026-11-26 — Contenido nuevo: boost de pintoras chilenas contemporáneas (sin página nueva)
 
 No se crea página nueva: la única brecha detectada, «pintores chilenos actuales», tiene 6 impresiones en 90 días y no justifica una URL propia.
